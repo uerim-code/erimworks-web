@@ -1,53 +1,46 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Scanlyte — Kullanım Koşulları (EULA) / Terms of Use</title>
+<title>Scanlyte — Terms of Use (EULA)</title>
+<meta name="description" content="Scanlyte Terms of Use (EULA) — available in English, Türkçe, Deutsch, Français, Español, Русский, العربية, فارسی, 中文." />
 <style>
-  :root { color-scheme: light dark; }
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; max-width: 760px; margin: 0 auto; padding: 32px 20px 80px; line-height: 1.6; color: #0b1622; background: #fff; }
-  @media (prefers-color-scheme: dark) { body { background: #0b0f14; color: #e7eef6; } a { color: #4ea0ff; } }
+  :root { color-scheme: light dark; --accent: #0a84ff; --ink: #0b1622; --line: #8884; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; max-width: 760px; margin: 0 auto; padding: 32px 20px 80px; line-height: 1.6; color: var(--ink); background: #fff; }
+  @media (prefers-color-scheme: dark) { body { background: #0b0f14; color: #e7eef6; } a { color: #4ea0ff; } .langbar select { background: #131a22; color: #e7eef6; } }
   h1 { font-size: 28px; } h2 { font-size: 20px; margin-top: 32px; }
-  a { color: #0a84ff; }
-  .lang { border-bottom: 1px solid #8884; padding-bottom: 24px; margin-bottom: 24px; }
+  a { color: var(--accent); }
+  ul { padding-inline-start: 22px; }
   .muted { color: #8893a0; font-size: 14px; }
+  .langbar { display: flex; align-items: center; gap: 8px; justify-content: flex-end; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+  .langbar select { font: inherit; padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: inherit; }
+  article { display: none; }
+  article.active { display: block; }
+  article[dir="rtl"] { text-align: right; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); font-size: .9rem; color: #8893a0; }
 </style>
 </head>
 <body>
 
-<div class="lang" id="tr">
-<h1>Scanlyte — Kullanım Koşulları (EULA)</h1>
-<p class="muted">Son güncelleme: 27 Haziran 2026</p>
+<nav class="langbar">
+  <label for="lang" aria-label="Language">🌐</label>
+  <select id="lang">
+    <option value="en">English</option>
+    <option value="tr">Türkçe</option>
+    <option value="de">Deutsch</option>
+    <option value="fr">Français</option>
+    <option value="es">Español</option>
+    <option value="ru">Русский</option>
+    <option value="ar">العربية</option>
+    <option value="fa">فارسی</option>
+    <option value="zh">中文</option>
+  </select>
+</nav>
 
-<p>Bu Son Kullanıcı Lisans Sözleşmesi (“Sözleşme”), Scanlyte uygulamasını (“uygulama”) kullanımınızı düzenler. Uygulamayı indirerek veya kullanarak bu koşulları kabul etmiş olursunuz.</p>
-
-<h2>1. Lisans</h2>
-<p>Size, uygulamayı kişisel ve ticari olmayan amaçlarla cihazlarınızda kullanmanız için devredilemez, münhasır olmayan ve geri alınabilir bir lisans veriyoruz. Uygulamayı tersine mühendislik yapamaz, kopyalayamaz veya yeniden satamazsınız.</p>
-
-<h2>2. İçeriğiniz</h2>
-<p>Taradığınız tüm belgeler ve içerikler size aittir. İçerik cihazınızda saklanır; sorumluluğu size aittir. Önemli belgelerinizi ayrıca yedeklemenizi öneririz.</p>
-
-<h2>3. Abonelikler (otomatik yenilenen)</h2>
-<ul>
-  <li>Scanlyte Premium, otomatik yenilenen bir abonelik olarak sunulabilir (ör. haftalık veya yıllık). Güncel başlık, süre ve fiyat satın alma ekranında gösterilir.</li>
-  <li>Ödeme, satın almayı onayladığınızda Apple App Store veya Google Play hesabınızdan tahsil edilir.</li>
-  <li>Abonelik, mevcut dönemin bitiminden en az 24 saat önce iptal edilmediği sürece otomatik olarak yenilenir ve yenileme ücreti aynı süre içinde tahsil edilir.</li>
-  <li>Aboneliğinizi cihazınızın <strong>App Store / Google Play hesap ayarlarından</strong> yönetebilir veya iptal edebilirsiniz. İptal, mevcut dönemin sonunda yürürlüğe girer.</li>
-  <li>Varsa ücretsiz deneme süresinin kullanılmayan kısmı, bir abonelik satın aldığınızda geçersiz olur.</li>
-</ul>
-
-<h2>4. Sorumluluk reddi</h2>
-<p>Uygulama “olduğu gibi” sunulur. Tarama ve metin tanıma (OCR) sonuçlarının doğruluğunu garanti etmeyiz. Yasaların izin verdiği ölçüde, uygulamanın kullanımından doğan dolaylı zararlardan sorumlu değiliz.</p>
-
-<h2>5. Değişiklikler</h2>
-<p>Bu Sözleşme’yi zaman zaman güncelleyebiliriz. Önemli değişiklikler uygulama veya bu sayfa üzerinden bildirilir.</p>
-
-<h2>6. İletişim</h2>
-<p><a href="mailto:uc.erim@gmail.com">uc.erim@gmail.com</a></p>
-</div>
-
-<div class="lang" id="en">
+<!-- ============ ENGLISH ============ -->
+<article data-lang="en">
 <h1>Scanlyte — Terms of Use (EULA)</h1>
 <p class="muted">Last updated: June 27, 2026</p>
 
@@ -76,7 +69,308 @@
 
 <h2>6. Contact</h2>
 <p><a href="mailto:uc.erim@gmail.com">uc.erim@gmail.com</a></p>
-</div>
+</article>
+
+<!-- ============ TÜRKÇE ============ -->
+<article data-lang="tr">
+<h1>Scanlyte — Kullanım Koşulları (EULA)</h1>
+<p class="muted">Son güncelleme: 27 Haziran 2026</p>
+
+<p>Bu Son Kullanıcı Lisans Sözleşmesi (“Sözleşme”), Scanlyte uygulamasını (“uygulama”) kullanımınızı düzenler. Uygulamayı indirerek veya kullanarak bu koşulları kabul etmiş olursunuz.</p>
+
+<h2>1. Lisans</h2>
+<p>Size, uygulamayı kişisel ve ticari olmayan amaçlarla cihazlarınızda kullanmanız için devredilemez, münhasır olmayan ve geri alınabilir bir lisans veriyoruz. Uygulamayı tersine mühendislik yapamaz, kopyalayamaz veya yeniden satamazsınız.</p>
+
+<h2>2. İçeriğiniz</h2>
+<p>Taradığınız tüm belgeler ve içerikler size aittir. İçerik cihazınızda saklanır; sorumluluğu size aittir. Önemli belgelerinizi ayrıca yedeklemenizi öneririz.</p>
+
+<h2>3. Abonelikler (otomatik yenilenen)</h2>
+<ul>
+  <li>Scanlyte Premium, otomatik yenilenen bir abonelik olarak sunulabilir (ör. haftalık veya yıllık). Güncel başlık, süre ve fiyat satın alma ekranında gösterilir.</li>
+  <li>Ödeme, satın almayı onayladığınızda Apple App Store veya Google Play hesabınızdan tahsil edilir.</li>
+  <li>Abonelik, mevcut dönemin bitiminden en az 24 saat önce iptal edilmediği sürece otomatik olarak yenilenir ve yenileme ücreti aynı süre içinde tahsil edilir.</li>
+  <li>Aboneliğinizi cihazınızın <strong>App Store / Google Play hesap ayarlarından</strong> yönetebilir veya iptal edebilirsiniz. İptal, mevcut dönemin sonunda yürürlüğe girer.</li>
+  <li>Varsa ücretsiz deneme süresinin kullanılmayan kısmı, bir abonelik satın aldığınızda geçersiz olur.</li>
+</ul>
+
+<h2>4. Sorumluluk reddi</h2>
+<p>Uygulama “olduğu gibi” sunulur. Tarama ve metin tanıma (OCR) sonuçlarının doğruluğunu garanti etmeyiz. Yasaların izin verdiği ölçüde, uygulamanın kullanımından doğan dolaylı zararlardan sorumlu değiliz.</p>
+
+<h2>5. Değişiklikler</h2>
+<p>Bu Sözleşme’yi zaman zaman güncelleyebiliriz. Önemli değişiklikler uygulama veya bu sayfa üzerinden bildirilir.</p>
+
+<h2>6. İletişim</h2>
+<p><a href="mailto:uc.erim@gmail.com">uc.erim@gmail.com</a></p>
+</article>
+
+<!-- ============ DEUTSCH ============ -->
+<article data-lang="de">
+<h1>Scanlyte — Nutzungsbedingungen (EULA)</h1>
+<p class="muted">Zuletzt aktualisiert: 27. Juni 2026</p>
+
+<p>Dieser Endbenutzer-Lizenzvertrag („Vertrag“) regelt Ihre Nutzung der Scanlyte-App („die App“). Mit dem Herunterladen oder Nutzen der App stimmen Sie diesen Bedingungen zu.</p>
+
+<h2>1. Lizenz</h2>
+<p>Wir gewähren Ihnen eine nicht übertragbare, nicht ausschließliche und widerrufliche Lizenz zur Nutzung der App auf Ihren Geräten für private und kommerzielle Zwecke. Sie dürfen die App nicht zurückentwickeln, kopieren oder weiterverkaufen.</p>
+
+<h2>2. Ihre Inhalte</h2>
+<p>Alle von Ihnen gescannten Dokumente und Inhalte gehören Ihnen. Die Inhalte werden auf Ihrem Gerät gespeichert und liegen in Ihrer Verantwortung. Wir empfehlen, von wichtigen Dokumenten separate Sicherungskopien aufzubewahren.</p>
+
+<h2>3. Abonnements (automatisch verlängernd)</h2>
+<ul>
+  <li>Scanlyte Premium kann als automatisch verlängerndes Abonnement angeboten werden (z. B. wöchentlich oder jährlich). Der aktuelle Titel, die Laufzeit und der Preis werden auf dem Kaufbildschirm angezeigt.</li>
+  <li>Die Zahlung wird mit der Bestätigung des Kaufs über Ihr Apple-App-Store- oder Google-Play-Konto abgebucht.</li>
+  <li>Das Abonnement verlängert sich automatisch, sofern es nicht mindestens 24 Stunden vor Ende des laufenden Zeitraums gekündigt wird; die Verlängerungsgebühr wird innerhalb dieses Zeitraums berechnet.</li>
+  <li>Sie können Ihr Abonnement in den <strong>App-Store-/Google-Play-Kontoeinstellungen</strong> Ihres Geräts verwalten oder kündigen. Die Kündigung wird zum Ende des laufenden Zeitraums wirksam.</li>
+  <li>Ein nicht genutzter Teil einer kostenlosen Testphase verfällt, sofern angeboten, mit dem Kauf eines Abonnements.</li>
+</ul>
+
+<h2>4. Haftungsausschluss</h2>
+<p>Die App wird „wie besehen“ bereitgestellt. Wir garantieren nicht die Genauigkeit der Scan- oder Texterkennungsergebnisse (OCR). Soweit gesetzlich zulässig, haften wir nicht für indirekte Schäden, die aus der Nutzung der App entstehen.</p>
+
+<h2>5. Änderungen</h2>
+<p>Wir können diesen Vertrag von Zeit zu Zeit aktualisieren. Wesentliche Änderungen werden über die App oder diese Seite mitgeteilt.</p>
+
+<h2>6. Kontakt</h2>
+<p><a href="mailto:uc.erim@gmail.com">uc.erim@gmail.com</a></p>
+</article>
+
+<!-- ============ FRANÇAIS ============ -->
+<article data-lang="fr">
+<h1>Scanlyte — Conditions d’utilisation (CLUF)</h1>
+<p class="muted">Dernière mise à jour : 27 juin 2026</p>
+
+<p>Le présent Contrat de licence utilisateur final (« Contrat ») régit votre utilisation de l’application Scanlyte (« l’application »). En téléchargeant ou en utilisant l’application, vous acceptez ces conditions.</p>
+
+<h2>1. Licence</h2>
+<p>Nous vous accordons une licence non transférable, non exclusive et révocable pour utiliser l’application sur vos appareils à des fins personnelles et commerciales. Vous ne pouvez pas effectuer d’ingénierie inverse, copier ou revendre l’application.</p>
+
+<h2>2. Votre contenu</h2>
+<p>Tous les documents et contenus que vous scannez vous appartiennent. Le contenu est stocké sur votre appareil et relève de votre responsabilité. Nous vous recommandons de conserver des sauvegardes distinctes de vos documents importants.</p>
+
+<h2>3. Abonnements (à renouvellement automatique)</h2>
+<ul>
+  <li>Scanlyte Premium peut être proposé sous forme d’abonnement à renouvellement automatique (par ex. hebdomadaire ou annuel). Le titre, la durée et le prix en vigueur sont affichés sur l’écran d’achat.</li>
+  <li>Le paiement est débité de votre compte Apple App Store ou Google Play lors de la confirmation de l’achat.</li>
+  <li>L’abonnement se renouvelle automatiquement sauf s’il est annulé au moins 24 heures avant la fin de la période en cours, et les frais de renouvellement sont facturés au cours de cette période.</li>
+  <li>Vous pouvez gérer ou annuler votre abonnement dans les <strong>paramètres de compte App Store / Google Play</strong> de votre appareil. L’annulation prend effet à la fin de la période en cours.</li>
+  <li>Toute partie non utilisée d’un essai gratuit, s’il est proposé, est perdue lorsque vous achetez un abonnement.</li>
+</ul>
+
+<h2>4. Clause de non-responsabilité</h2>
+<p>L’application est fournie « en l’état ». Nous ne garantissons pas l’exactitude des résultats de numérisation ou de reconnaissance de texte (OCR). Dans la mesure permise par la loi, nous ne sommes pas responsables des dommages indirects résultant de l’utilisation de l’application.</p>
+
+<h2>5. Modifications</h2>
+<p>Nous pouvons mettre à jour ce Contrat de temps à autre. Les modifications importantes seront communiquées via l’application ou cette page.</p>
+
+<h2>6. Contact</h2>
+<p><a href="mailto:uc.erim@gmail.com">uc.erim@gmail.com</a></p>
+</article>
+
+<!-- ============ ESPAÑOL ============ -->
+<article data-lang="es">
+<h1>Scanlyte — Términos de uso (EULA)</h1>
+<p class="muted">Última actualización: 27 de junio de 2026</p>
+
+<p>Este Contrato de Licencia de Usuario Final («Contrato») rige tu uso de la aplicación Scanlyte («la aplicación»). Al descargar o usar la aplicación, aceptas estos términos.</p>
+
+<h2>1. Licencia</h2>
+<p>Te concedemos una licencia intransferible, no exclusiva y revocable para usar la aplicación en tus dispositivos con fines personales y comerciales. No puedes realizar ingeniería inversa, copiar ni revender la aplicación.</p>
+
+<h2>2. Tu contenido</h2>
+<p>Todos los documentos y contenidos que escaneas te pertenecen. El contenido se almacena en tu dispositivo y es tu responsabilidad. Recomendamos mantener copias de seguridad separadas de los documentos importantes.</p>
+
+<h2>3. Suscripciones (de renovación automática)</h2>
+<ul>
+  <li>Scanlyte Premium puede ofrecerse como una suscripción de renovación automática (p. ej., semanal o anual). El título, la duración y el precio vigentes se muestran en la pantalla de compra.</li>
+  <li>El pago se cargará a tu cuenta de Apple App Store o Google Play al confirmar la compra.</li>
+  <li>La suscripción se renueva automáticamente a menos que se cancele al menos 24 horas antes del final del período actual, y la tarifa de renovación se cobra dentro de ese período.</li>
+  <li>Puedes gestionar o cancelar tu suscripción en los <strong>ajustes de cuenta de App Store / Google Play</strong> de tu dispositivo. La cancelación surte efecto al final del período actual.</li>
+  <li>Cualquier parte no utilizada de una prueba gratuita, si se ofrece, se pierde al comprar una suscripción.</li>
+</ul>
+
+<h2>4. Exención de responsabilidad</h2>
+<p>La aplicación se proporciona «tal cual». No garantizamos la exactitud de los resultados de escaneo ni de reconocimiento de texto (OCR). En la medida permitida por la ley, no somos responsables de daños indirectos derivados del uso de la aplicación.</p>
+
+<h2>5. Cambios</h2>
+<p>Podemos actualizar este Contrato de vez en cuando. Los cambios importantes se comunicarán a través de la aplicación o de esta página.</p>
+
+<h2>6. Contacto</h2>
+<p><a href="mailto:uc.erim@gmail.com">uc.erim@gmail.com</a></p>
+</article>
+
+<!-- ============ РУССКИЙ ============ -->
+<article data-lang="ru">
+<h1>Scanlyte — Условия использования (EULA)</h1>
+<p class="muted">Последнее обновление: 27 июня 2026 г.</p>
+
+<p>Настоящее Лицензионное соглашение с конечным пользователем («Соглашение») регулирует использование вами приложения Scanlyte («приложение»). Загружая или используя приложение, вы соглашаетесь с этими условиями.</p>
+
+<h2>1. Лицензия</h2>
+<p>Мы предоставляем вам непередаваемую, неисключительную и отзывную лицензию на использование приложения на ваших устройствах в личных и коммерческих целях. Вы не вправе подвергать приложение обратной разработке, копировать или перепродавать его.</p>
+
+<h2>2. Ваш контент</h2>
+<p>Все документы и материалы, которые вы сканируете, принадлежат вам. Контент хранится на вашем устройстве и находится под вашей ответственностью. Рекомендуем хранить отдельные резервные копии важных документов.</p>
+
+<h2>3. Подписки (с автоматическим продлением)</h2>
+<ul>
+  <li>Scanlyte Premium может предлагаться как подписка с автоматическим продлением (например, еженедельная или годовая). Текущее название, срок и цена отображаются на экране покупки.</li>
+  <li>Оплата списывается с вашего счёта Apple App Store или Google Play после подтверждения покупки.</li>
+  <li>Подписка продлевается автоматически, если она не отменена не менее чем за 24 часа до окончания текущего периода, и плата за продление списывается в течение этого периода.</li>
+  <li>Вы можете управлять подпиской или отменить её в <strong>настройках учётной записи App Store / Google Play</strong> на вашем устройстве. Отмена вступает в силу в конце текущего периода.</li>
+  <li>Неиспользованная часть бесплатного пробного периода, если он предлагается, аннулируется при покупке подписки.</li>
+</ul>
+
+<h2>4. Отказ от ответственности</h2>
+<p>Приложение предоставляется «как есть». Мы не гарантируем точность результатов сканирования или распознавания текста (OCR). В пределах, допустимых законом, мы не несём ответственности за косвенные убытки, возникшие в результате использования приложения.</p>
+
+<h2>5. Изменения</h2>
+<p>Мы можем время от времени обновлять настоящее Соглашение. О существенных изменениях будет сообщено через приложение или на этой странице.</p>
+
+<h2>6. Контакты</h2>
+<p><a href="mailto:uc.erim@gmail.com">uc.erim@gmail.com</a></p>
+</article>
+
+<!-- ============ العربية (RTL) ============ -->
+<article data-lang="ar" dir="rtl">
+<h1>Scanlyte — شروط الاستخدام (اتفاقية الترخيص)</h1>
+<p class="muted">آخر تحديث: 27 يونيو 2026</p>
+
+<p>تحكم اتفاقية ترخيص المستخدم النهائي هذه («الاتفاقية») استخدامك لتطبيق Scanlyte («التطبيق»). بتنزيلك التطبيق أو استخدامه، فإنك توافق على هذه الشروط.</p>
+
+<h2>1. الترخيص</h2>
+<p>نمنحك ترخيصاً غير قابل للتحويل وغير حصري وقابلاً للإلغاء لاستخدام التطبيق على أجهزتك لأغراض شخصية وتجارية. لا يجوز لك إجراء هندسة عكسية للتطبيق أو نسخه أو إعادة بيعه.</p>
+
+<h2>2. المحتوى الخاص بك</h2>
+<p>جميع المستندات والمحتويات التي تمسحها ضوئياً ملك لك. يُخزَّن المحتوى على جهازك وتقع مسؤوليته عليك. نوصي بالاحتفاظ بنسخ احتياطية منفصلة للمستندات المهمة.</p>
+
+<h2>3. الاشتراكات (تلقائية التجديد)</h2>
+<ul>
+  <li>قد يُقدَّم Scanlyte Premium كاشتراك تلقائي التجديد (مثلاً أسبوعي أو سنوي). يُعرض العنوان والمدة والسعر الحالي على شاشة الشراء.</li>
+  <li>يتم خصم الدفع من حساب Apple App Store أو Google Play الخاص بك عند تأكيد الشراء.</li>
+  <li>يتجدد الاشتراك تلقائياً ما لم يتم إلغاؤه قبل 24 ساعة على الأقل من نهاية الفترة الحالية، وتُحصَّل رسوم التجديد خلال تلك الفترة.</li>
+  <li>يمكنك إدارة اشتراكك أو إلغاؤه من <strong>إعدادات حساب App Store / Google Play</strong> على جهازك. يسري الإلغاء في نهاية الفترة الحالية.</li>
+  <li>يسقط أي جزء غير مستخدم من الفترة التجريبية المجانية، إن وُجدت، عند شرائك اشتراكاً.</li>
+</ul>
+
+<h2>4. إخلاء المسؤولية</h2>
+<p>يُقدَّم التطبيق «كما هو». نحن لا نضمن دقة نتائج المسح الضوئي أو التعرّف على النصوص (OCR). وإلى الحد الذي يسمح به القانون، لا نتحمل المسؤولية عن الأضرار غير المباشرة الناشئة عن استخدام التطبيق.</p>
+
+<h2>5. التغييرات</h2>
+<p>قد نقوم بتحديث هذه الاتفاقية من وقت لآخر. سيتم الإبلاغ عن التغييرات الجوهرية عبر التطبيق أو هذه الصفحة.</p>
+
+<h2>6. التواصل</h2>
+<p><a href="mailto:uc.erim@gmail.com">uc.erim@gmail.com</a></p>
+</article>
+
+<!-- ============ فارسی (RTL) ============ -->
+<article data-lang="fa" dir="rtl">
+<h1>Scanlyte — شرایط استفاده (EULA)</h1>
+<p class="muted">آخرین به‌روزرسانی: ۲۷ ژوئن ۲۰۲۶</p>
+
+<p>این توافقنامهٔ مجوز کاربر نهایی («توافقنامه») بر استفادهٔ شما از برنامهٔ Scanlyte («برنامه») حاکم است. با دانلود یا استفاده از برنامه، شما این شرایط را می‌پذیرید.</p>
+
+<h2>۱. مجوز</h2>
+<p>ما به شما مجوزی غیرقابل انتقال، غیرانحصاری و قابل لغو برای استفاده از برنامه روی دستگاه‌هایتان برای مقاصد شخصی و تجاری اعطا می‌کنیم. شما مجاز به مهندسی معکوس، کپی‌برداری یا فروش مجدد برنامه نیستید.</p>
+
+<h2>۲. محتوای شما</h2>
+<p>تمام اسناد و محتوایی که اسکن می‌کنید متعلق به شماست. محتوا روی دستگاه شما ذخیره می‌شود و مسئولیت آن با شماست. توصیه می‌کنیم از اسناد مهم نسخهٔ پشتیبان جداگانه نگه دارید.</p>
+
+<h2>۳. اشتراک‌ها (تمدید خودکار)</h2>
+<ul>
+  <li>Scanlyte Premium ممکن است به‌صورت اشتراک با تمدید خودکار ارائه شود (مثلاً هفتگی یا سالانه). عنوان، مدت و قیمت جاری در صفحهٔ خرید نمایش داده می‌شود.</li>
+  <li>هزینه هنگام تأیید خرید از حساب Apple App Store یا Google Play شما کسر می‌شود.</li>
+  <li>اشتراک به‌طور خودکار تمدید می‌شود مگر آنکه حداقل ۲۴ ساعت پیش از پایان دورهٔ جاری لغو شود، و هزینهٔ تمدید در همان دوره دریافت می‌گردد.</li>
+  <li>می‌توانید اشتراک خود را در <strong>تنظیمات حساب App Store / Google Play</strong> دستگاهتان مدیریت یا لغو کنید. لغو در پایان دورهٔ جاری اعمال می‌شود.</li>
+  <li>بخش استفاده‌نشدهٔ دورهٔ آزمایشی رایگان، در صورت ارائه، با خرید اشتراک از بین می‌رود.</li>
+</ul>
+
+<h2>۴. سلب مسئولیت</h2>
+<p>برنامه «همان‌گونه که هست» ارائه می‌شود. ما دقت نتایج اسکن یا تشخیص متن (OCR) را تضمین نمی‌کنیم. تا حدی که قانون اجازه می‌دهد، ما مسئول خسارات غیرمستقیم ناشی از استفاده از برنامه نیستیم.</p>
+
+<h2>۵. تغییرات</h2>
+<p>ممکن است این توافقنامه را هر از چند گاه به‌روزرسانی کنیم. تغییرات مهم از طریق برنامه یا این صفحه اطلاع‌رسانی خواهد شد.</p>
+
+<h2>۶. تماس</h2>
+<p><a href="mailto:uc.erim@gmail.com">uc.erim@gmail.com</a></p>
+</article>
+
+<!-- ============ 中文 ============ -->
+<article data-lang="zh">
+<h1>Scanlyte — 使用条款（EULA）</h1>
+<p class="muted">最后更新：2026年6月27日</p>
+
+<p>本最终用户许可协议（“本协议”）规范您对 Scanlyte 应用（“本应用”）的使用。下载或使用本应用即表示您同意这些条款。</p>
+
+<h2>1. 许可</h2>
+<p>我们授予您不可转让、非排他、可撤销的许可，允许您在自己的设备上出于个人和商业目的使用本应用。您不得对本应用进行逆向工程、复制或转售。</p>
+
+<h2>2. 您的内容</h2>
+<p>您扫描的所有文档和内容均归您所有。内容存储在您的设备上，由您自行负责。我们建议您为重要文档另行保存备份。</p>
+
+<h2>3. 订阅（自动续订）</h2>
+<ul>
+  <li>Scanlyte Premium 可能以自动续订订阅的形式提供（例如按周或按年）。当前的名称、时长和价格会在购买页面上显示。</li>
+  <li>确认购买后，费用将从您的 Apple App Store 或 Google Play 账户中扣除。</li>
+  <li>除非在当前订阅期结束前至少 24 小时取消，否则订阅将自动续订，并在该期间内收取续订费用。</li>
+  <li>您可以在设备的 <strong>App Store / Google Play 账户设置</strong>中管理或取消订阅。取消将在当前订阅期结束时生效。</li>
+  <li>如提供免费试用，购买订阅后试用期中未使用的部分将作废。</li>
+</ul>
+
+<h2>4. 免责声明</h2>
+<p>本应用按“现状”提供。我们不保证扫描或文字识别（OCR）结果的准确性。在法律允许的范围内，我们不对因使用本应用而产生的间接损害承担责任。</p>
+
+<h2>5. 变更</h2>
+<p>我们可能会不时更新本协议。重大变更将通过应用或本页面进行通知。</p>
+
+<h2>6. 联系方式</h2>
+<p><a href="mailto:uc.erim@gmail.com">uc.erim@gmail.com</a></p>
+</article>
+
+<footer>Scanlyte · <a href="privacy.html">Privacy Policy</a></footer>
+
+<script>
+(function () {
+  var SUPPORTED = ['en','tr','de','fr','es','ru','ar','fa','zh'];
+  var RTL = ['ar','fa'];
+  var sel = document.getElementById('lang');
+  var articles = document.querySelectorAll('article[data-lang]');
+
+  function apply(lang) {
+    if (SUPPORTED.indexOf(lang) === -1) lang = 'en';
+    articles.forEach(function (a) {
+      a.classList.toggle('active', a.getAttribute('data-lang') === lang);
+    });
+    document.documentElement.lang = lang;
+    document.documentElement.dir = RTL.indexOf(lang) !== -1 ? 'rtl' : 'ltr';
+    sel.value = lang;
+    try { localStorage.setItem('scanlyte_doc_lang', lang); } catch (e) {}
+  }
+
+  function detect() {
+    // 1) ?lang=xx explicit deep-link wins (store listings can link a language)
+    var q = (location.search.match(/[?&]lang=([a-zA-Z-]+)/) || [])[1];
+    if (q) {
+      var qc = String(q).toLowerCase().split('-')[0];
+      if (SUPPORTED.indexOf(qc) !== -1) return qc;
+    }
+    // 2) previously chosen language
+    var saved = null;
+    try { saved = localStorage.getItem('scanlyte_doc_lang'); } catch (e) {}
+    if (saved && SUPPORTED.indexOf(saved) !== -1) return saved;
+    // 3) browser language
+    var cands = navigator.languages || [navigator.language || 'en'];
+    for (var i = 0; i < cands.length; i++) {
+      var code = String(cands[i]).toLowerCase().split('-')[0];
+      if (SUPPORTED.indexOf(code) !== -1) return code;
+    }
+    return 'en';
+  }
+
+  sel.addEventListener('change', function () { apply(sel.value); });
+  apply(detect());
+})();
+</script>
 
 </body>
 </html>

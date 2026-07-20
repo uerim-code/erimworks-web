@@ -1,63 +1,47 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Scanlyte — Gizlilik Politikası / Privacy Policy</title>
+<title>Scanlyte — Privacy Policy</title>
+<meta name="description" content="Scanlyte Privacy Policy — available in English, Türkçe, Deutsch, Français, Español, Русский, العربية, فارسی, 中文." />
 <style>
-  :root { color-scheme: light dark; }
+  :root { color-scheme: light dark; --accent: #0a84ff; --line: #8884; }
+  * { box-sizing: border-box; }
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; max-width: 760px; margin: 0 auto; padding: 32px 20px 80px; line-height: 1.6; color: #0b1622; background: #fff; }
-  @media (prefers-color-scheme: dark) { body { background: #0b0f14; color: #e7eef6; } a { color: #4ea0ff; } code { background:#161c24; } }
+  @media (prefers-color-scheme: dark) { body { background: #0b0f14; color: #e7eef6; } a { color: #4ea0ff; } code { background:#161c24; } .langbar select { background: #161c24; color: #e7eef6; } }
   h1 { font-size: 28px; } h2 { font-size: 20px; margin-top: 32px; } h3 { font-size: 16px; }
-  a { color: #0a84ff; }
-  .lang { border-bottom: 1px solid #8884; padding-bottom: 24px; margin-bottom: 24px; }
+  a { color: var(--accent); }
+  ul { padding-inline-start: 22px; }
   .muted { color: #8893a0; font-size: 14px; }
   code { background: #f0f3f8; padding: 1px 5px; border-radius: 4px; }
+  .langbar { display: flex; align-items: center; gap: 8px; justify-content: flex-end; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+  .langbar select { font: inherit; padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: inherit; }
+  article { display: none; }
+  article.active { display: block; }
+  article[dir="rtl"] { text-align: right; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); font-size: .9rem; color: #8893a0; }
 </style>
 </head>
 <body>
 
-<div class="lang" id="tr">
-<h1>Scanlyte — Gizlilik Politikası</h1>
-<p class="muted">Son güncelleme: 27 Haziran 2026</p>
+<nav class="langbar">
+  <label for="lang" aria-label="Language">🌐</label>
+  <select id="lang">
+    <option value="en">English</option>
+    <option value="tr">Türkçe</option>
+    <option value="de">Deutsch</option>
+    <option value="fr">Français</option>
+    <option value="es">Español</option>
+    <option value="ru">Русский</option>
+    <option value="ar">العربية</option>
+    <option value="fa">فارسی</option>
+    <option value="zh">中文</option>
+  </select>
+</nav>
 
-<p>Scanlyte (“uygulama”, “biz”) gizliliğinize önem verir. Bu politika, uygulamayı kullanırken verilerinizin nasıl ele alındığını açıklar.</p>
-
-<h2>Özet</h2>
-<p>Scanlyte <strong>cihaz-öncelikli</strong> bir belge tarama uygulamasıdır. Taradığınız belgeler, görüntüler ve çıkarılan metin (OCR) <strong>yalnızca cihazınızda</strong> saklanır. Bu içerikleri sunucularımıza yüklemez, üçüncü taraflarla paylaşmaz veya satmayız. Uygulamayı kullanmak için hesap oluşturmanız gerekmez.</p>
-
-<h2>Topladığımız veriler</h2>
-<ul>
-  <li><strong>Belgeleriniz ve taramalar:</strong> Cihazınızın yerel deposunda tutulur; bize iletilmez.</li>
-  <li><strong>Metin tanıma (OCR):</strong> Tamamen cihaz üzerinde (Apple Vision / Google ML Kit) çalışır; görüntüleriniz veya metniniz internete gönderilmez.</li>
-  <li><strong>Hesap:</strong> Toplanmaz. Kayıt/giriş yoktur.</li>
-  <li><strong>Kişisel veriler:</strong> Ad, e-posta, konum gibi kişisel verileri toplamayız.</li>
-</ul>
-
-<h2>İzinler</h2>
-<ul>
-  <li><strong>Kamera:</strong> Belge taramak için kullanılır. Görüntüler yalnızca cihazınızda işlenir.</li>
-  <li><strong>Fotoğraflar:</strong> Galeriden görsel içe aktarmak veya taramaları kaydetmek için (isteğe bağlı).</li>
-  <li><strong>Biyometri/Yüz Kimliği:</strong> Yalnızca uygulama kilidini açmak için, açtığınızda kullanılır.</li>
-</ul>
-
-<h2>Abonelikler ve satın almalar</h2>
-<p>Scanlyte Premium otomatik yenilenen bir abonelik içerebilir. Satın alma işlemleri Apple App Store veya Google Play tarafından gerçekleştirilir; ödeme bilgilerinize erişmeyiz. Mağaza, satın almayı doğrulamak için gerekli minimum bilgiyi işleyebilir (bkz. Apple/Google gizlilik politikaları).</p>
-
-<h2>Üçüncü taraf hizmetleri</h2>
-<p>Uygulama; reklam ağı, analiz veya izleme (tracking) SDK’sı içermez. Verilerinizi pazarlama amacıyla kullanmayız.</p>
-
-<h2>Veri saklama ve silme</h2>
-<p>Tüm içerik cihazınızda kaldığından, bir belgeyi veya uygulamayı sildiğinizde ilgili veriler cihazınızdan kalkar. Bizde size ait saklanan bir kopya yoktur.</p>
-
-<h2>Çocukların gizliliği</h2>
-<p>Uygulama 13 yaş altı çocuklara yönelik değildir ve bilerek onlardan veri toplamaz.</p>
-
-<h2>İletişim</h2>
-<p>Sorularınız için: <a href="mailto:uc.erim@gmail.com">uc.erim@gmail.com</a></p>
-</div>
-
-<div class="lang" id="en">
+<!-- ============ ENGLISH ============ -->
+<article data-lang="en">
 <h1>Scanlyte — Privacy Policy</h1>
 <p class="muted">Last updated: June 27, 2026</p>
 
@@ -95,7 +79,380 @@
 
 <h2>Contact</h2>
 <p>Questions: <a href="mailto:uc.erim@gmail.com">uc.erim@gmail.com</a></p>
-</div>
+</article>
+
+<!-- ============ TÜRKÇE ============ -->
+<article data-lang="tr">
+<h1>Scanlyte — Gizlilik Politikası</h1>
+<p class="muted">Son güncelleme: 27 Haziran 2026</p>
+
+<p>Scanlyte (“uygulama”, “biz”) gizliliğinize önem verir. Bu politika, uygulamayı kullanırken verilerinizin nasıl ele alındığını açıklar.</p>
+
+<h2>Özet</h2>
+<p>Scanlyte <strong>cihaz-öncelikli</strong> bir belge tarama uygulamasıdır. Taradığınız belgeler, görüntüler ve çıkarılan metin (OCR) <strong>yalnızca cihazınızda</strong> saklanır. Bu içerikleri sunucularımıza yüklemez, üçüncü taraflarla paylaşmaz veya satmayız. Uygulamayı kullanmak için hesap oluşturmanız gerekmez.</p>
+
+<h2>Topladığımız veriler</h2>
+<ul>
+  <li><strong>Belgeleriniz ve taramalar:</strong> Cihazınızın yerel deposunda tutulur; bize iletilmez.</li>
+  <li><strong>Metin tanıma (OCR):</strong> Tamamen cihaz üzerinde (Apple Vision / Google ML Kit) çalışır; görüntüleriniz veya metniniz internete gönderilmez.</li>
+  <li><strong>Hesap:</strong> Toplanmaz. Kayıt/giriş yoktur.</li>
+  <li><strong>Kişisel veriler:</strong> Ad, e-posta, konum gibi kişisel verileri toplamayız.</li>
+</ul>
+
+<h2>İzinler</h2>
+<ul>
+  <li><strong>Kamera:</strong> Belge taramak için kullanılır. Görüntüler yalnızca cihazınızda işlenir.</li>
+  <li><strong>Fotoğraflar:</strong> Galeriden görsel içe aktarmak veya taramaları kaydetmek için (isteğe bağlı).</li>
+  <li><strong>Biyometri/Yüz Kimliği:</strong> Yalnızca uygulama kilidini açmak için, açtığınızda kullanılır.</li>
+</ul>
+
+<h2>Abonelikler ve satın almalar</h2>
+<p>Scanlyte Premium otomatik yenilenen bir abonelik içerebilir. Satın alma işlemleri Apple App Store veya Google Play tarafından gerçekleştirilir; ödeme bilgilerinize erişmeyiz. Mağaza, satın almayı doğrulamak için gerekli minimum bilgiyi işleyebilir (bkz. Apple/Google gizlilik politikaları).</p>
+
+<h2>Üçüncü taraf hizmetleri</h2>
+<p>Uygulama; reklam ağı, analiz veya izleme (tracking) SDK’sı içermez. Verilerinizi pazarlama amacıyla kullanmayız.</p>
+
+<h2>Veri saklama ve silme</h2>
+<p>Tüm içerik cihazınızda kaldığından, bir belgeyi veya uygulamayı sildiğinizde ilgili veriler cihazınızdan kalkar. Bizde size ait saklanan bir kopya yoktur.</p>
+
+<h2>Çocukların gizliliği</h2>
+<p>Uygulama 13 yaş altı çocuklara yönelik değildir ve bilerek onlardan veri toplamaz.</p>
+
+<h2>İletişim</h2>
+<p>Sorularınız için: <a href="mailto:uc.erim@gmail.com">uc.erim@gmail.com</a></p>
+</article>
+
+<!-- ============ DEUTSCH ============ -->
+<article data-lang="de">
+<h1>Scanlyte — Datenschutzerklärung</h1>
+<p class="muted">Zuletzt aktualisiert: 27. Juni 2026</p>
+
+<p>Scanlyte („die App“, „wir“) respektiert Ihre Privatsphäre. Diese Erklärung beschreibt, wie Ihre Daten bei der Nutzung der App behandelt werden.</p>
+
+<h2>Zusammenfassung</h2>
+<p>Scanlyte ist ein <strong>lokal-zuerst</strong> arbeitender Dokumentenscanner. Ihre gescannten Dokumente, Bilder und der erkannte Text (OCR) werden <strong>ausschließlich auf Ihrem Gerät</strong> gespeichert. Wir laden diese Inhalte nicht auf unsere Server hoch, geben sie nicht an Dritte weiter und verkaufen sie nicht. Für die Nutzung der App benötigen Sie kein Konto.</p>
+
+<h2>Daten, die wir erheben</h2>
+<ul>
+  <li><strong>Ihre Dokumente und Scans:</strong> Werden im lokalen Speicher Ihres Geräts aufbewahrt; sie werden niemals an uns übermittelt.</li>
+  <li><strong>Texterkennung (OCR):</strong> Läuft vollständig auf dem Gerät (Apple Vision / Google ML Kit); Ihre Bilder und Texte werden nicht über das Internet gesendet.</li>
+  <li><strong>Konto:</strong> Keines. Es gibt keine Registrierung und keine Anmeldung.</li>
+  <li><strong>Personenbezogene Daten:</strong> Wir erheben keine personenbezogenen Daten wie Name, E-Mail-Adresse oder Standort.</li>
+</ul>
+
+<h2>Berechtigungen</h2>
+<ul>
+  <li><strong>Kamera:</strong> Wird zum Scannen von Dokumenten verwendet. Bilder werden nur auf Ihrem Gerät verarbeitet.</li>
+  <li><strong>Fotos:</strong> Zum Importieren von Bildern aus Ihrer Mediathek oder zum Speichern von Scans (optional).</li>
+  <li><strong>Biometrie/Face ID:</strong> Nur zum Entsperren der App, wenn Sie die App-Sperre aktivieren.</li>
+</ul>
+
+<h2>Abonnements und Käufe</h2>
+<p>Scanlyte Premium kann ein automatisch verlängerbares Abonnement umfassen. Käufe werden über den Apple App Store oder Google Play abgewickelt; wir haben keinen Zugriff auf Ihre Zahlungsdaten. Der Store kann die zur Validierung eines Kaufs erforderlichen Mindestinformationen verarbeiten (siehe Datenschutzerklärungen von Apple/Google).</p>
+
+<h2>Dienste von Drittanbietern</h2>
+<p>Die App enthält keine Werbenetzwerke, keine Analyse- und keine Tracking-SDKs. Wir verwenden Ihre Daten nicht für Marketingzwecke.</p>
+
+<h2>Datenspeicherung und Löschung</h2>
+<p>Da alle Inhalte auf Ihrem Gerät verbleiben, entfernt das Löschen eines Dokuments oder der App die zugehörigen Daten von Ihrem Gerät. Wir bewahren keine Kopie Ihrer Inhalte auf.</p>
+
+<h2>Privatsphäre von Kindern</h2>
+<p>Die App richtet sich nicht an Kinder unter 13 Jahren und erhebt wissentlich keine Daten von ihnen.</p>
+
+<h2>Kontakt</h2>
+<p>Fragen: <a href="mailto:uc.erim@gmail.com">uc.erim@gmail.com</a></p>
+</article>
+
+<!-- ============ FRANÇAIS ============ -->
+<article data-lang="fr">
+<h1>Scanlyte — Politique de confidentialité</h1>
+<p class="muted">Dernière mise à jour : 27 juin 2026</p>
+
+<p>Scanlyte (« l’application », « nous ») respecte votre vie privée. Cette politique explique comment vos données sont traitées lorsque vous utilisez l’application.</p>
+
+<h2>Résumé</h2>
+<p>Scanlyte est un scanner de documents <strong>local d’abord</strong>. Vos documents numérisés, vos images et le texte reconnu (OCR) sont stockés <strong>uniquement sur votre appareil</strong>. Nous ne téléversons pas ce contenu sur nos serveurs, ne le partageons pas avec des tiers et ne le vendons pas. Vous n’avez pas besoin de compte pour utiliser l’application.</p>
+
+<h2>Données que nous collectons</h2>
+<ul>
+  <li><strong>Vos documents et numérisations :</strong> Conservés dans le stockage local de votre appareil ; jamais transmis à nous.</li>
+  <li><strong>Reconnaissance de texte (OCR) :</strong> S’exécute entièrement sur l’appareil (Apple Vision / Google ML Kit) ; vos images et vos textes ne sont pas envoyés sur Internet.</li>
+  <li><strong>Compte :</strong> Aucun. Il n’y a ni inscription ni connexion.</li>
+  <li><strong>Données personnelles :</strong> Nous ne collectons pas de données personnelles telles que le nom, l’e-mail ou la localisation.</li>
+</ul>
+
+<h2>Autorisations</h2>
+<ul>
+  <li><strong>Caméra :</strong> Utilisée pour numériser des documents. Les images sont traitées uniquement sur votre appareil.</li>
+  <li><strong>Photos :</strong> Pour importer des images depuis votre photothèque ou enregistrer des numérisations (facultatif).</li>
+  <li><strong>Biométrie/Face ID :</strong> Uniquement pour déverrouiller l’application, lorsque vous activez le verrouillage de l’application.</li>
+</ul>
+
+<h2>Abonnements et achats</h2>
+<p>Scanlyte Premium peut inclure un abonnement à renouvellement automatique. Les achats sont gérés par l’Apple App Store ou Google Play ; nous n’accédons pas à vos informations de paiement. La boutique peut traiter le minimum d’informations nécessaires pour valider un achat (voir les politiques de confidentialité d’Apple/Google).</p>
+
+<h2>Services tiers</h2>
+<p>L’application ne contient aucun réseau publicitaire, aucun outil d’analyse ni aucun SDK de suivi. Nous n’utilisons pas vos données à des fins marketing.</p>
+
+<h2>Conservation et suppression des données</h2>
+<p>Comme tout le contenu reste sur votre appareil, la suppression d’un document ou de l’application supprime les données correspondantes de votre appareil. Nous ne détenons aucune copie de votre contenu.</p>
+
+<h2>Confidentialité des enfants</h2>
+<p>L’application ne s’adresse pas aux enfants de moins de 13 ans et ne collecte pas sciemment leurs données.</p>
+
+<h2>Contact</h2>
+<p>Questions : <a href="mailto:uc.erim@gmail.com">uc.erim@gmail.com</a></p>
+</article>
+
+<!-- ============ ESPAÑOL ============ -->
+<article data-lang="es">
+<h1>Scanlyte — Política de privacidad</h1>
+<p class="muted">Última actualización: 27 de junio de 2026</p>
+
+<p>Scanlyte («la aplicación», «nosotros») respeta tu privacidad. Esta política explica cómo se tratan tus datos cuando usas la aplicación.</p>
+
+<h2>Resumen</h2>
+<p>Scanlyte es un escáner de documentos <strong>que prioriza lo local</strong>. Tus documentos escaneados, imágenes y el texto reconocido (OCR) se almacenan <strong>solo en tu dispositivo</strong>. No subimos este contenido a nuestros servidores, no lo compartimos con terceros ni lo vendemos. No necesitas una cuenta para usar la aplicación.</p>
+
+<h2>Datos que recopilamos</h2>
+<ul>
+  <li><strong>Tus documentos y escaneos:</strong> Se guardan en el almacenamiento local de tu dispositivo; nunca se nos transmiten.</li>
+  <li><strong>Reconocimiento de texto (OCR):</strong> Se ejecuta totalmente en el dispositivo (Apple Vision / Google ML Kit); tus imágenes y textos no se envían por Internet.</li>
+  <li><strong>Cuenta:</strong> Ninguna. No hay registro ni inicio de sesión.</li>
+  <li><strong>Datos personales:</strong> No recopilamos datos personales como nombre, correo electrónico o ubicación.</li>
+</ul>
+
+<h2>Permisos</h2>
+<ul>
+  <li><strong>Cámara:</strong> Se usa para escanear documentos. Las imágenes se procesan solo en tu dispositivo.</li>
+  <li><strong>Fotos:</strong> Para importar imágenes de tu fototeca o guardar escaneos (opcional).</li>
+  <li><strong>Biometría/Face ID:</strong> Solo para desbloquear la aplicación, cuando activas el bloqueo de la app.</li>
+</ul>
+
+<h2>Suscripciones y compras</h2>
+<p>Scanlyte Premium puede incluir una suscripción de renovación automática. Las compras las gestionan la Apple App Store o Google Play; no accedemos a tus datos de pago. La tienda puede procesar la información mínima necesaria para validar una compra (consulta las políticas de privacidad de Apple/Google).</p>
+
+<h2>Servicios de terceros</h2>
+<p>La aplicación no contiene redes publicitarias, herramientas de analítica ni SDK de seguimiento. No usamos tus datos con fines de marketing.</p>
+
+<h2>Conservación y eliminación de datos</h2>
+<p>Como todo el contenido permanece en tu dispositivo, al eliminar un documento o la aplicación se eliminan de tu dispositivo los datos relacionados. No conservamos ninguna copia de tu contenido.</p>
+
+<h2>Privacidad de los menores</h2>
+<p>La aplicación no está dirigida a menores de 13 años y no recopila datos de ellos a sabiendas.</p>
+
+<h2>Contacto</h2>
+<p>Preguntas: <a href="mailto:uc.erim@gmail.com">uc.erim@gmail.com</a></p>
+</article>
+
+<!-- ============ РУССКИЙ ============ -->
+<article data-lang="ru">
+<h1>Scanlyte — Политика конфиденциальности</h1>
+<p class="muted">Последнее обновление: 27 июня 2026 г.</p>
+
+<p>Scanlyte («приложение», «мы») уважает вашу конфиденциальность. Эта политика объясняет, как обрабатываются ваши данные при использовании приложения.</p>
+
+<h2>Кратко</h2>
+<p>Scanlyte — это сканер документов, работающий <strong>прежде всего локально</strong>. Отсканированные вами документы, изображения и распознанный текст (OCR) хранятся <strong>только на вашем устройстве</strong>. Мы не загружаем это содержимое на наши серверы, не передаём его третьим лицам и не продаём. Для использования приложения учётная запись не требуется.</p>
+
+<h2>Данные, которые мы собираем</h2>
+<ul>
+  <li><strong>Ваши документы и сканы:</strong> Хранятся в локальной памяти вашего устройства; никогда не передаются нам.</li>
+  <li><strong>Распознавание текста (OCR):</strong> Выполняется полностью на устройстве (Apple Vision / Google ML Kit); ваши изображения и текст не отправляются через Интернет.</li>
+  <li><strong>Учётная запись:</strong> Отсутствует. Регистрации и входа нет.</li>
+  <li><strong>Персональные данные:</strong> Мы не собираем персональные данные, такие как имя, электронная почта или местоположение.</li>
+</ul>
+
+<h2>Разрешения</h2>
+<ul>
+  <li><strong>Камера:</strong> Используется для сканирования документов. Изображения обрабатываются только на вашем устройстве.</li>
+  <li><strong>Фото:</strong> Для импорта изображений из вашей медиатеки или сохранения сканов (необязательно).</li>
+  <li><strong>Биометрия/Face ID:</strong> Только для разблокировки приложения, если вы включили блокировку приложения.</li>
+</ul>
+
+<h2>Подписки и покупки</h2>
+<p>Scanlyte Premium может включать автоматически продлеваемую подписку. Покупки обрабатываются Apple App Store или Google Play; мы не имеем доступа к вашим платёжным данным. Магазин может обрабатывать минимальный объём информации, необходимый для подтверждения покупки (см. политики конфиденциальности Apple/Google).</p>
+
+<h2>Сторонние сервисы</h2>
+<p>Приложение не содержит рекламных сетей, аналитики или SDK отслеживания. Мы не используем ваши данные в маркетинговых целях.</p>
+
+<h2>Хранение и удаление данных</h2>
+<p>Поскольку всё содержимое остаётся на вашем устройстве, удаление документа или приложения удаляет соответствующие данные с вашего устройства. У нас не хранится копия вашего содержимого.</p>
+
+<h2>Конфиденциальность детей</h2>
+<p>Приложение не предназначено для детей младше 13 лет и не собирает их данные осознанно.</p>
+
+<h2>Контакты</h2>
+<p>Вопросы: <a href="mailto:uc.erim@gmail.com">uc.erim@gmail.com</a></p>
+</article>
+
+<!-- ============ العربية (RTL) ============ -->
+<article data-lang="ar" dir="rtl">
+<h1>Scanlyte — سياسة الخصوصية</h1>
+<p class="muted">آخر تحديث: 27 يونيو 2026</p>
+
+<p>يحترم Scanlyte («التطبيق»، «نحن») خصوصيتك. توضّح هذه السياسة كيفية التعامل مع بياناتك عند استخدامك للتطبيق.</p>
+
+<h2>ملخّص</h2>
+<p>Scanlyte هو ماسح مستندات <strong>يعمل محلياً أولاً</strong>. تُخزَّن المستندات التي تمسحها والصور والنص المُتعرَّف عليه (OCR) <strong>على جهازك فقط</strong>. نحن لا نرفع هذا المحتوى إلى خوادمنا ولا نشاركه مع أطراف ثالثة ولا نبيعه. ولا تحتاج إلى حساب لاستخدام التطبيق.</p>
+
+<h2>البيانات التي نجمعها</h2>
+<ul>
+  <li><strong>مستنداتك وعمليات المسح:</strong> تُحفظ في التخزين المحلي لجهازك؛ ولا تُرسَل إلينا أبداً.</li>
+  <li><strong>التعرّف على النص (OCR):</strong> يعمل بالكامل على الجهاز (Apple Vision / Google ML Kit)؛ ولا تُرسل صورك أو نصوصك عبر الإنترنت.</li>
+  <li><strong>الحساب:</strong> لا يوجد. لا يوجد تسجيل أو دخول.</li>
+  <li><strong>البيانات الشخصية:</strong> لا نجمع بيانات شخصية مثل الاسم أو البريد الإلكتروني أو الموقع.</li>
+</ul>
+
+<h2>الأذونات</h2>
+<ul>
+  <li><strong>الكاميرا:</strong> تُستخدم لمسح المستندات. تتم معالجة الصور على جهازك فقط.</li>
+  <li><strong>الصور:</strong> لاستيراد الصور من مكتبتك أو حفظ عمليات المسح (اختياري).</li>
+  <li><strong>القياسات الحيوية/Face ID:</strong> فقط لفتح قفل التطبيق، عند تفعيلك لقفل التطبيق.</li>
+</ul>
+
+<h2>الاشتراكات والمشتريات</h2>
+<p>قد يتضمّن Scanlyte Premium اشتراكاً يتجدّد تلقائياً. تتم معالجة المشتريات عبر Apple App Store أو Google Play؛ ونحن لا نطّلع على بيانات الدفع الخاصة بك. وقد يعالج المتجر الحد الأدنى من المعلومات اللازمة للتحقق من عملية الشراء (راجع سياسات خصوصية Apple/Google).</p>
+
+<h2>خدمات الأطراف الثالثة</h2>
+<p>لا يحتوي التطبيق على شبكات إعلانية أو أدوات تحليلات أو حِزم تتبّع (SDK). ولا نستخدم بياناتك لأغراض تسويقية.</p>
+
+<h2>الاحتفاظ بالبيانات وحذفها</h2>
+<p>بما أن كل المحتوى يبقى على جهازك، فإن حذف مستند أو حذف التطبيق يزيل البيانات المرتبطة به من جهازك. ولا نحتفظ بأي نسخة من محتواك.</p>
+
+<h2>خصوصية الأطفال</h2>
+<p>التطبيق غير موجَّه للأطفال دون سن 13 عاماً ولا يجمع بياناتهم عن قصد.</p>
+
+<h2>التواصل</h2>
+<p>للاستفسارات: <a href="mailto:uc.erim@gmail.com">uc.erim@gmail.com</a></p>
+</article>
+
+<!-- ============ فارسی (RTL) ============ -->
+<article data-lang="fa" dir="rtl">
+<h1>Scanlyte — سیاست حریم خصوصی</h1>
+<p class="muted">آخرین به‌روزرسانی: ۲۷ ژوئن ۲۰۲۶</p>
+
+<p>Scanlyte («برنامه»، «ما») به حریم خصوصی شما احترام می‌گذارد. این سیاست توضیح می‌دهد که هنگام استفاده از برنامه با داده‌های شما چگونه رفتار می‌شود.</p>
+
+<h2>خلاصه</h2>
+<p>Scanlyte یک اسکنر سند <strong>محلی‌محور</strong> است. سندهای اسکن‌شده، تصاویر و متن تشخیص‌داده‌شده (OCR) <strong>فقط روی دستگاه شما</strong> ذخیره می‌شوند. ما این محتوا را روی سرورهای خود بارگذاری نمی‌کنیم، با اشخاص ثالث به اشتراک نمی‌گذاریم و نمی‌فروشیم. برای استفاده از برنامه نیازی به حساب کاربری ندارید.</p>
+
+<h2>داده‌هایی که جمع‌آوری می‌کنیم</h2>
+<ul>
+  <li><strong>سندها و اسکن‌های شما:</strong> در حافظهٔ محلی دستگاه شما نگهداری می‌شوند و هرگز به ما ارسال نمی‌شوند.</li>
+  <li><strong>تشخیص متن (OCR):</strong> کاملاً روی دستگاه اجرا می‌شود (Apple Vision / Google ML Kit)؛ تصاویر و متن شما از طریق اینترنت ارسال نمی‌شوند.</li>
+  <li><strong>حساب کاربری:</strong> وجود ندارد. ثبت‌نام یا ورودی در کار نیست.</li>
+  <li><strong>داده‌های شخصی:</strong> ما داده‌های شخصی مانند نام، ایمیل یا موقعیت مکانی جمع‌آوری نمی‌کنیم.</li>
+</ul>
+
+<h2>دسترسی‌ها</h2>
+<ul>
+  <li><strong>دوربین:</strong> برای اسکن سندها استفاده می‌شود. تصاویر فقط روی دستگاه شما پردازش می‌شوند.</li>
+  <li><strong>عکس‌ها:</strong> برای وارد کردن تصاویر از کتابخانهٔ شما یا ذخیرهٔ اسکن‌ها (اختیاری).</li>
+  <li><strong>زیست‌سنجی/Face ID:</strong> فقط برای باز کردن قفل برنامه، هنگامی که قفل برنامه را فعال می‌کنید.</li>
+</ul>
+
+<h2>اشتراک‌ها و خریدها</h2>
+<p>Scanlyte Premium ممکن است شامل اشتراکی با تمدید خودکار باشد. خریدها توسط Apple App Store یا Google Play انجام می‌شوند؛ ما به اطلاعات پرداخت شما دسترسی نداریم. فروشگاه ممکن است حداقل اطلاعات لازم برای تأیید خرید را پردازش کند (به سیاست‌های حریم خصوصی Apple/Google مراجعه کنید).</p>
+
+<h2>خدمات اشخاص ثالث</h2>
+<p>برنامه هیچ شبکهٔ تبلیغاتی، ابزار تحلیل یا SDK ردیابی ندارد. ما از داده‌های شما برای بازاریابی استفاده نمی‌کنیم.</p>
+
+<h2>نگهداری و حذف داده‌ها</h2>
+<p>از آنجا که تمام محتوا روی دستگاه شما باقی می‌ماند، حذف یک سند یا حذف برنامه، داده‌های مرتبط را از دستگاه شما پاک می‌کند. ما هیچ نسخه‌ای از محتوای شما نگه نمی‌داریم.</p>
+
+<h2>حریم خصوصی کودکان</h2>
+<p>این برنامه برای کودکان زیر ۱۳ سال طراحی نشده و آگاهانه داده‌ای از آن‌ها جمع‌آوری نمی‌کند.</p>
+
+<h2>تماس</h2>
+<p>پرسش‌ها: <a href="mailto:uc.erim@gmail.com">uc.erim@gmail.com</a></p>
+</article>
+
+<!-- ============ 中文 ============ -->
+<article data-lang="zh">
+<h1>Scanlyte — 隐私政策</h1>
+<p class="muted">最后更新：2026年6月27日</p>
+
+<p>Scanlyte（“本应用”“我们”）尊重您的隐私。本政策说明您在使用本应用时，您的数据是如何被处理的。</p>
+
+<h2>摘要</h2>
+<p>Scanlyte 是一款<strong>本地优先</strong>的文档扫描应用。您扫描的文档、图像以及识别出的文字（OCR）<strong>仅存储在您的设备上</strong>。我们不会将这些内容上传到我们的服务器、与第三方共享或出售。使用本应用无需注册账户。</p>
+
+<h2>我们收集的数据</h2>
+<ul>
+  <li><strong>您的文档和扫描件：</strong>保存在您设备的本地存储中；绝不会传输给我们。</li>
+  <li><strong>文字识别（OCR）：</strong>完全在设备上运行（Apple Vision / Google ML Kit）；您的图像和文字不会通过互联网发送。</li>
+  <li><strong>账户：</strong>无。没有注册或登录。</li>
+  <li><strong>个人数据：</strong>我们不收集姓名、电子邮箱或位置等个人数据。</li>
+</ul>
+
+<h2>权限</h2>
+<ul>
+  <li><strong>相机：</strong>用于扫描文档。图像仅在您的设备上处理。</li>
+  <li><strong>照片：</strong>用于从您的相册导入图片或保存扫描件（可选）。</li>
+  <li><strong>生物识别/Face ID：</strong>仅在您启用应用锁后，用于解锁本应用。</li>
+</ul>
+
+<h2>订阅与购买</h2>
+<p>Scanlyte Premium 可能包含自动续期订阅。购买由 Apple App Store 或 Google Play 处理；我们不会接触您的支付信息。商店可能会处理验证购买所需的最少信息（参见 Apple/Google 隐私政策）。</p>
+
+<h2>第三方服务</h2>
+<p>本应用不包含任何广告网络、分析或跟踪 SDK。我们不会将您的数据用于营销。</p>
+
+<h2>数据保留与删除</h2>
+<p>由于所有内容都保留在您的设备上，删除某个文档或卸载应用即会从您的设备上移除相关数据。我们不持有您内容的任何副本。</p>
+
+<h2>儿童隐私</h2>
+<p>本应用不面向 13 岁以下儿童，也不会有意收集他们的数据。</p>
+
+<h2>联系方式</h2>
+<p>如有疑问：<a href="mailto:uc.erim@gmail.com">uc.erim@gmail.com</a></p>
+</article>
+
+<footer>Scanlyte · <a href="terms.html">Terms of Use (EULA)</a></footer>
+
+<script>
+(function () {
+  var SUPPORTED = ['en','tr','de','fr','es','ru','ar','fa','zh'];
+  var RTL = ['ar','fa'];
+  var sel = document.getElementById('lang');
+  var articles = document.querySelectorAll('article[data-lang]');
+
+  function apply(lang) {
+    if (SUPPORTED.indexOf(lang) === -1) lang = 'en';
+    articles.forEach(function (a) {
+      a.classList.toggle('active', a.getAttribute('data-lang') === lang);
+    });
+    document.documentElement.lang = lang;
+    document.documentElement.dir = RTL.indexOf(lang) !== -1 ? 'rtl' : 'ltr';
+    sel.value = lang;
+    try { localStorage.setItem('scanlyte_doc_lang', lang); } catch (e) {}
+  }
+
+  function detect() {
+    // 1) ?lang=xx explicit deep-link wins (store listings can link a language)
+    var q = (location.search.match(/[?&]lang=([a-zA-Z-]+)/) || [])[1];
+    if (q) {
+      var qc = String(q).toLowerCase().split('-')[0];
+      if (SUPPORTED.indexOf(qc) !== -1) return qc;
+    }
+    // 2) previously chosen language
+    var saved = null;
+    try { saved = localStorage.getItem('scanlyte_doc_lang'); } catch (e) {}
+    if (saved && SUPPORTED.indexOf(saved) !== -1) return saved;
+    // 3) browser language
+    var cands = navigator.languages || [navigator.language || 'en'];
+    for (var i = 0; i < cands.length; i++) {
+      var code = String(cands[i]).toLowerCase().split('-')[0];
+      if (SUPPORTED.indexOf(code) !== -1) return code;
+    }
+    return 'en';
+  }
+
+  sel.addEventListener('change', function () { apply(sel.value); });
+  apply(detect());
+})();
+</script>
 
 </body>
 </html>
