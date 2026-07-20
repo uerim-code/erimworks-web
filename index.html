@@ -73,6 +73,10 @@
     @keyframes sheen { to { background-position: 200% center; } }
     .sub { margin-top: 20px; color: var(--muted); font-size: clamp(1rem, 2.4vw, 1.15rem); line-height: 1.6; }
 
+    /* section heading */
+    .shead { margin: 46px 0 16px; display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; }
+    .shead::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
     /* apps grid */
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
     .card {
@@ -132,6 +136,7 @@
       </p>
     </header>
 
+    <h2 class="shead reveal"><span data-tr="Uygulamalar" data-en="Apps">Uygulamalar</span></h2>
     <section class="grid reveal" aria-label="Apps">
       <a class="card" href="https://chembiocalc.com" target="_blank" rel="noopener">
         <img class="ic" src="apps/chembiocalc.png" alt="ChemBioCalc" width="56" height="56" loading="lazy" />
@@ -186,6 +191,15 @@
         <div class="cn"><div class="nm">Pottiq</div>
           <div class="tg" data-tr="Bitki bakım hatırlatıcı" data-en="Plant care reminder">Bitki bakım hatırlatıcı</div></div>
       </div>
+    </section>
+
+    <h2 class="shead reveal"><span data-tr="Yazılım & Platformlar" data-en="Software & Platforms">Yazılım & Platformlar</span></h2>
+    <section class="grid reveal" aria-label="Software & Platforms">
+      <a class="card" href="https://unvportal.com" target="_blank" rel="noopener">
+        <img class="ic" src="apps/erimportal.svg" alt="ErimPortal" width="56" height="56" loading="lazy" />
+        <div class="cn"><div class="nm">ErimPortal <span class="go">↗</span></div>
+          <div class="tg" data-tr="Akademik & laboratuvar yönetim platformu" data-en="Academic & lab management platform">Akademik & laboratuvar yönetim platformu</div></div>
+      </a>
     </section>
 
     <footer class="reveal">
