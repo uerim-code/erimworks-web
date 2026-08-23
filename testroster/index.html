@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TestRoster — 14 günlük kapalı testi baştan sona yönet</title>
+<meta name="description" content="Google Play kapalı testi için tester bul, kimin hangi gün test ettiğini ölç, kampanya sonunda doğrulanabilir bir rapor al.">
+<style>
+  :root{--ink:#101418;--muted:#5f6c73;--line:#e4e9ec;--accent:#0f7f5c;--bg:#f7f8f8}
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;margin:0;color:var(--ink);background:var(--bg);line-height:1.65}
+  main{max-width:720px;margin:0 auto;padding:40px 24px 64px}
+  h1{font-size:2em;line-height:1.2;letter-spacing:-.02em;margin:0 0 12px}
+  h2{font-size:1.15em;margin:2em 0 .6em}
+  p{margin:0 0 14px}
+  .lede{font-size:1.08em;color:var(--muted)}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:18px 0}
+  ol{padding-left:20px} li{margin-bottom:8px}
+  .links a{display:inline-block;margin-right:14px;color:var(--accent);font-weight:600}
+  code{background:#eef1f2;padding:2px 6px;border-radius:5px;font-size:.92em}
+  footer{border-top:1px solid var(--line);margin-top:40px;padding-top:18px;color:var(--muted);font-size:.92em}
+  .en{color:#3f4b52}
+</style>
+</head>
+<body>
+<main>
+  <h1>TestRoster</h1>
+  <p class="lede">Google Play kapalı testi 12 tester ve 14 gün ister. Zor olan tester bulmak değil — 14 gün boyunca kimin <em>gerçekten</em> test ettiğini bilmektir.</p>
+
+  <div class="card">
+    <p><strong>Herkesin kendi uygulaması var.</strong> Kendi kapalı testinizi yürütürken başka geliştiricilerin uygulamalarını test edersiniz. Düzenli test eden kullanıcı eşleşme sırasında öne geçer; kendi kampanyası daha hızlı dolar.</p>
+    <p style="margin:0"><strong>Karşılıklı olan test, değerlendirme değil:</strong> yıldız ya da yorum üzerine kurulu hiçbir düzen yok.</p>
+  </div>
+
+  <h2>Nasıl çalışır</h2>
+  <ol>
+    <li>Uygulamada tek bir Google Grubuna katılırsınız; tester listesi budur.</li>
+    <li>Uygulamanızı eklersiniz ve grup adresini Play Console'da kapalı test ayarlarına yapıştırırsınız. <strong>Bu adım yapılmadan testerlar uygulamanızı kuramaz.</strong></li>
+    <li>Katılım bağlantınızı girersiniz; uygulama bağlantının paket adınızla eşleştiğini doğrular.</li>
+    <li>Gruptaki kullanıcılar testinize katılır; kimin hangi gün ne kadar süre test ettiği ölçülür.</li>
+  </ol>
+
+  <h2>Ölçüm, beyan değil</h2>
+  <p>Tester izin verirse test edilen uygulamada geçen süre Android'in kullanım istatistikleriyle ölçülür. İzin vermeyen tester süreyi elle başlatır ve kayıt "düşük güven" olarak işaretlenir. Ekran görüntüsü yükleyip "test ettim" demenin bir karşılığı yoktur.</p>
+  <p>Uygulama başka uygulamaların ekran içeriğini <strong>okumaz</strong>; AccessibilityService kullanılmaz.</p>
+
+  <h2>Planlar</h2>
+  <p><strong>Community (ücretsiz):</strong> 1 uygulama, 14 tester, 14 günlük kampanya, günlük takip ve test dosyası. <strong>Pro / Studio (abonelik):</strong> tester düşüş uyarıları, yedek tester akışı, ekran kapsamı analizi, ayrıntılı raporlar. Abonelikler otomatik yenilenir; koşullar <a href="terms.html">Kullanım Koşulları</a>'nda.</p>
+
+  <h2>Google Play üretim erişimi</h2>
+  <p>Bu araç üretim erişimi konusunda <strong>söz vermez</strong>. Play'in kararı Google'a aittir; TestRoster süreci kayda geçirir, sonucu değil.</p>
+
+  <p class="links">
+    <a href="privacy.html">Gizlilik Politikası</a>
+    <a href="terms.html">Kullanım Koşulları (EULA)</a>
+    <a href="support.html">Destek</a>
+  </p>
+
+  <hr style="border:none;border-top:1px solid var(--line);margin:40px 0">
+
+  <h1 class="en">TestRoster</h1>
+  <p class="lede">Google Play closed testing asks for 12 testers and 14 days. The hard part is not finding testers — it is knowing who <em>actually</em> tested during those 14 days.</p>
+
+  <div class="card">
+    <p class="en"><strong>Everyone here has an app of their own.</strong> You run your own closed test while testing other developers' apps. Testing regularly moves you up the matching queue, so your own campaign fills faster.</p>
+    <p class="en" style="margin:0"><strong>What is mutual is the testing, not the evaluation:</strong> nothing here is built on stars or written reviews.</p>
+  </div>
+
+  <h2 class="en">How it works</h2>
+  <ol class="en">
+    <li>You join a single Google Group in the app; that group is the tester list.</li>
+    <li>You add your app and paste the group address into the closed testing settings in Play Console. <strong>Without this step testers cannot install your app.</strong></li>
+    <li>You enter your opt-in link; the app checks it against your package name.</li>
+    <li>People in the group join your test; who tested on which day, and for how long, is measured.</li>
+  </ol>
+
+  <h2 class="en">Measured, not claimed</h2>
+  <p class="en">If the tester allows it, time spent in the tested app is measured with Android usage statistics. Without permission the tester starts the timer manually and the record is marked "low confidence". Uploading a screenshot does not count as testing.</p>
+  <p class="en">The app does <strong>not</strong> read other apps' screen content and does not use AccessibilityService.</p>
+
+  <h2 class="en">Plans</h2>
+  <p class="en"><strong>Community (free):</strong> 1 app, 14 testers, a 14-day campaign, daily tracking and the test dossier. <strong>Pro / Studio (subscription):</strong> dropout alerts, replacement tester flow, screen coverage analysis, detailed reports. Subscriptions renew automatically; terms are in the <a href="terms.html">Terms of Use</a>.</p>
+
+  <h2 class="en">Google Play production access</h2>
+  <p class="en">This tool makes <strong>no promise</strong> about production access. That decision belongs to Google; TestRoster records the process, not the outcome.</p>
+
+  <p class="links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Use (EULA)</a>
+    <a href="support.html">Support</a>
+  </p>
+
+  <footer>
+    Erimworks · <a href="mailto:contact@erimworks.com">contact@erimworks.com</a> ·
+    <a href="https://groups.google.com/g/testroster-testers">Tester grubu</a>
+  </footer>
+</main>
+</body>
+</html>
