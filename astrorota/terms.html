@@ -9,6 +9,11 @@
   body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;max-width:720px;margin:0 auto;padding:24px;line-height:1.6;color:#222}
   h1{font-size:1.6em} h2{font-size:1.2em;margin-top:1.6em} .en{color:#444}
   hr{margin:2.5em 0;border:none;border-top:1px solid #ddd}
+  /* Abonelik tablosu: sure ve fiyat, App Store 3.1.2 geregi bir bakista okunur olmali. */
+  table{border-collapse:collapse;width:100%;margin:1em 0;font-size:.95em}
+  th,td{border:1px solid #ddd;padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:#f6f6f6;font-weight:600}
+  @media (max-width:520px){ th,td{padding:6px 7px;font-size:.9em} }
 </style>
 </head>
 <body>
@@ -21,12 +26,21 @@
 <p>Size, Uygulamayı sahibi olduğunuz veya kontrol ettiğiniz cihazlarda kişisel ve ticari olmayan amaçla kullanmanız için devredilemez, münhasır olmayan bir lisans verilir. Uygulamayı kaynak koda dönüştüremez, kiralayamaz, satamaz veya yeniden dağıtamazsınız.</p>
 
 <h2>Uygulama İçi Satın Alma</h2>
-<p><strong>AstroRota Pro tek seferlik bir satın almadır; otomatik yenilenen bir abonelik değildir.</strong> Bir kez satın alındığında yenilenmez, sizden tekrar ücret alınmaz ve iptal edilecek bir yenileme yoktur.</p>
+<p><strong>AstroRota'daki ücretli açılımların tamamı otomatik yenilenen aboneliktir.</strong></p>
+<table>
+<tr><th>Abonelik</th><th>Süre</th><th>Fiyat</th><th>Neyi açar</th></tr>
+<tr><td>Astro Takvim</td><td>1 yıl</td><td>14,99 USD / yıl</td><td>Uyarı kurma, sınırsız favori, takvime aktarma (ICS), 2050'ye kadar tüm takvim olayları. <strong>Doğum haritası dahil değildir.</strong></td></tr>
+<tr><td>Natal Aylık</td><td>1 ay</td><td>3,99 USD / ay</td><td>Doğum haritası ve yorumları, transitler, haritaya göre uyarı</td></tr>
+<tr><td>Natal Yıllık</td><td>1 yıl</td><td>24,99 USD / yıl</td><td>Natal Aylık ile aynı içerik</td></tr>
+</table>
 <ul>
-<li>Pro; uyarı kurmayı, sınırsız favoriyi ve takvime aktarmayı (ICS) açar.</li>
-<li>Fiyat satın alma ekranında, mağazanın belirlediği yerel para biriminde gösterilir.</li>
-<li>Ödeme, satın almayı onayladığınızda App Store / Google Play hesabınızdan tahsil edilir.</li>
-<li>Aynı mağaza hesabıyla yeni bir cihaza geçtiğinizde "Satın alımları geri yükle" ile açılımınızı ücretsiz geri yükleyebilirsiniz.</li>
+<li><strong>Abonelikler ayrıdır.</strong> Astro Takvim aboneliği takvim özelliklerini açar; doğum haritası, transitler ve haritaya göre uyarılar yalnız Natal aboneliğine dahildir. Biri diğerini kapsamaz.</li>
+<li><strong>Otomatik yenileme:</strong> Abonelik, içinde bulunulan dönem bitmeden <strong>en az 24 saat önce</strong> iptal edilmezse kendiliğinden yenilenir.</li>
+<li><strong>Ücretlendirme:</strong> Yenileme ücreti, dönemin bitimine 24 saat kalana kadar App Store / Google Play hesabınızdan tahsil edilir.</li>
+<li><strong>İptal:</strong> Aboneliğinizi cihazınızın mağaza ayarlarından dilediğiniz an iptal edebilirsiniz. İptal, içinde bulunduğunuz dönemin sonunda geçerli olur; o döneme ait ücret iade edilmez.</li>
+<li>Fiyatlar yukarıda ABD doları üzerinden verilmiştir; satın alma ekranında mağazanın belirlediği yerel para biriminde gösterilir ve ülkenize göre değişebilir.</li>
+<li>Aynı mağaza hesabıyla yeni bir cihaza geçtiğinizde "Satın alımları geri yükle" ile aboneliğinizi ücretsiz geri yükleyebilirsiniz.</li>
+<li>Abonelik sona erdiğinde açtığı özellikler kapanır; cihazınızdaki verileriniz silinmez.</li>
 <li>İade talepleri mağaza tarafından yönetilir: <a href="https://support.apple.com/tr-tr/HT204084">Apple</a> · <a href="https://support.google.com/googleplay/answer/2479637">Google Play</a>.</li>
 </ul>
 
@@ -62,12 +76,21 @@
 <p class="en">You are granted a non-transferable, non-exclusive licence to use the App on devices you own or control, for personal, non-commercial purposes. You may not reverse engineer, rent, sell or redistribute the App.</p>
 
 <h2 class="en">In-App Purchase</h2>
-<p class="en"><strong>AstroRota Pro is a one-time purchase, not an auto-renewing subscription.</strong> Once bought it does not renew, you are never charged again, and there is no renewal to cancel.</p>
+<p class="en"><strong>All paid unlocks in AstroRota are auto-renewing subscriptions.</strong></p>
+<table class="en">
+<tr><th>Subscription</th><th>Length</th><th>Price</th><th>What it unlocks</th></tr>
+<tr><td>Astro Takvim</td><td>1 year</td><td>USD 14.99 / year</td><td>Alerts, unlimited favourites, calendar export (ICS), all calendar events through 2050. <strong>The birth chart is not included.</strong></td></tr>
+<tr><td>Natal Monthly</td><td>1 month</td><td>USD 3.99 / month</td><td>Birth chart and readings, transits, chart-based alerts</td></tr>
+<tr><td>Natal Annual</td><td>1 year</td><td>USD 24.99 / year</td><td>Same content as Natal Monthly</td></tr>
+</table>
 <ul class="en">
-<li>Pro unlocks alerts, unlimited favourites and calendar export (ICS).</li>
-<li>The price is shown on the purchase screen in your local currency as set by the store.</li>
-<li>Payment is charged to your App Store / Google Play account when you confirm the purchase.</li>
-<li>On a new device with the same store account, "Restore purchases" restores your unlock at no cost.</li>
+<li><strong>The subscriptions are separate.</strong> The Astro Takvim subscription unlocks the calendar features; the birth chart, transits and chart-based alerts are only part of the Natal subscription. Neither includes the other.</li>
+<li><strong>Auto-renewal:</strong> A subscription renews automatically unless it is cancelled <strong>at least 24 hours before</strong> the end of the current period.</li>
+<li><strong>Billing:</strong> The renewal charge is taken from your App Store / Google Play account within 24 hours before the end of the period.</li>
+<li><strong>Cancellation:</strong> You can cancel at any time in your device's store settings. Cancellation takes effect at the end of the current period; the current period is not refunded.</li>
+<li>Prices above are in US dollars; the purchase screen shows your local currency as set by the store, and prices may differ by country.</li>
+<li>On a new device with the same store account, "Restore purchases" restores your subscription at no cost.</li>
+<li>When a subscription ends, the features it unlocked are locked again; the data on your device is not deleted.</li>
 <li>Refunds are handled by the store: <a href="https://support.apple.com/en-us/HT204084">Apple</a> · <a href="https://support.google.com/googleplay/answer/2479637">Google Play</a>.</li>
 </ul>
 
