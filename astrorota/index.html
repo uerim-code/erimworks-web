@@ -4,13 +4,80 @@
 <link rel="canonical" href="https://erimworks.com/astrorota/"/>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AstroRota – Destek / Support</title>
+  <title>Ay Boşlukta mı? Ay boşlukta saatleri, retro takvimi ve ay fazları | AstroRota</title>
+  <meta name="description" content="Ay şu an boşlukta mı? Ay boşlukta aralıklarını, gezegen retrolarını ve ay fazlarını kendi saat diliminde gör. NASA JPL efemeris verisine dayanır, hesap istemez, veriler cihazda kalır." />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AstroRota" />
+  <meta property="og:locale" content="tr_TR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:url" content="https://erimworks.com/astrorota/" />
+  <meta property="og:title" content="Ay Boşlukta mı? — Ay boşlukta saatleri ve retro takvimi" />
+  <meta property="og:description" content="Ay boşlukta aralıkları, gezegen retroları ve ay fazları kendi saat diliminde. NASA JPL verisi, hesap yok, veri cihazda kalır." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Ay Boşlukta mı? — AstroRota" />
+  <meta name="twitter:description" content="Ay boşlukta aralıkları, retrolar ve ay fazları kendi saat diliminde." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "AstroRota — Ay Boşlukta mı?",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "iOS, Android",
+        "url": "https://erimworks.com/astrorota/",
+        "description": "Ay boşlukta aralıkları, gezegen retroları ve ay fazları için astrolojik takvim. Kendi saat diliminde, hesap gerektirmeden.",
+        "inLanguage": ["tr", "en"],
+        "author": { "@type": "Person", "name": "Ümit Can Erim" },
+        "offers": [
+          { "@type": "Offer", "name": "Astro Takvim (yıllık)", "price": "14.99", "priceCurrency": "USD" },
+          { "@type": "Offer", "name": "Natal (aylık)", "price": "3.99", "priceCurrency": "USD" },
+          { "@type": "Offer", "name": "Natal (yıllık)", "price": "24.99", "priceCurrency": "USD" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Ay boşlukta ne demek?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Ay, bulunduğu burçtan çıkmadan önce başka bir gezegenle son büyük açısını tamamlar. O andan bir sonraki burca girene kadar geçen süreye \u201cAy boşlukta\u201d (void-of-course) denir. Astrolojide bu aralık, yeni ve bağlayıcı işler başlatmak için elverişsiz sayılır." }
+          },
+          {
+            "@type": "Question",
+            "name": "Ay boşluktayken ne yapılmaz?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Geleneksel yorum, sonuç doğuracak yeni başlangıçlardan kaçınmayı önerir: sözleşme imzalamak, teklif vermek, önemli bir satın alma yapmak gibi. Rutin işler, tamamlama ve dinlenme için sakıncalı görülmez. Bu bir inanç çerçevesidir; kararların sorumluluğu kişiye aittir." }
+          },
+          {
+            "@type": "Question",
+            "name": "Ay boşlukta saatleri nasıl hesaplanır?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Ay'ın son büyük açısını tamamladığı an ile burç değiştirdiği an arasındaki aralıktır. AstroRota bu anları NASA JPL Horizons'ın kamuya açık efemeris verisinden önceden hesaplanmış bir katalogdan okur ve seçtiğiniz saat diliminde gösterir." }
+          },
+          {
+            "@type": "Question",
+            "name": "Retro gölge dönemi nedir?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Bir gezegen geri harekete başlamadan önce ve düz harekete döndükten sonra, aynı burç derecelerinden ikinci kez geçtiği dönemlerdir. Etkinin retronun kendisinden önce başlayıp sonra bittiği kabul edilir; AstroRota gölge dönemlerini de ayrı gösterir." }
+          },
+          {
+            "@type": "Question",
+            "name": "Uygulama konum izni istiyor mu?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Hayır. Saatler seçtiğiniz saat dilimine göre hesaplanır; isterseniz şehir seçebilirsiniz. Konum izni istenmez, hesap açılmaz ve veriler cihazınızda kalır." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       background:linear-gradient(160deg,#131A2E 0%,#2C3A6B 100%);min-height:100vh;
-      display:flex;align-items:center;justify-content:center;padding:24px;color:#E8ECF7}
-    .card{background:#1B2440;border:1px solid #3A4574;border-radius:20px;padding:44px 36px;max-width:620px;width:100%}
+      display:flex;align-items:flex-start;justify-content:center;padding:24px;color:#E8ECF7}
+    .card{background:#1B2440;border:1px solid #3A4574;border-radius:20px;padding:44px 36px;max-width:720px;width:100%}
+    h3{font-size:15px;font-weight:700;margin:22px 0 6px;color:#E8ECF7}
     .icon{font-size:52px;text-align:center;margin-bottom:12px}
     h1{font-size:28px;font-weight:800;text-align:center;margin-bottom:6px}
     .subtitle{color:#A9B3D0;text-align:center;margin-bottom:32px;font-size:16px}
@@ -29,7 +96,20 @@
     <h1>AstroRota</h1>
     <p class="subtitle">Ay boşlukta, retrolar ve ay fazları — kendi saatinde.</p>
 
+    <h2>Ay boşlukta nedir?</h2>
+    <p>Ay, bulunduğu burçtan çıkmadan önce başka bir gezegenle <strong>son büyük açısını</strong> tamamlar. O andan bir sonraki burca girene kadar geçen süreye <strong>“Ay boşlukta”</strong> (void-of-course) denir. Bu aralık her burç geçişinde bir kez oluşur; bazen birkaç dakika, bazen bir günden uzun sürer.</p>
+
+    <h3>Ay boşluktayken ne yapılmaz?</h3>
+    <p>Geleneksel yorum, <em>sonuç doğuracak yeni başlangıçlardan</em> kaçınmayı önerir: sözleşme imzalamak, teklif vermek, önemli bir satın alma yapmak gibi. Rutin işler, hâlihazırda başlamış bir işi tamamlamak ve dinlenmek için sakıncalı görülmez. Bu bir inanç çerçevesidir, bir öngörü değil; kararlarınızın sorumluluğu size aittir.</p>
+
+    <h3>Ay boşlukta saatleri nasıl hesaplanır?</h3>
+    <p>Ay'ın son büyük açısını tamamladığı an ile burç değiştirdiği an arasındaki aralıktır. AstroRota bu iki anı <strong>NASA JPL Horizons</strong>'ın kamuya açık efemeris verisinden önceden hesaplanmış bir katalogdan okur ve <strong>seçtiğiniz saat diliminde</strong> gösterir. Her olayın UTC karşılığı da detay ekranında yazar.</p>
+
+    <h3>Retro ve gölge dönemi nedir?</h3>
+    <p>Bir gezegen, Dünya'dan bakıldığında bir süre geriye gidiyormuş gibi görünür; buna <strong>retro</strong> denir. Retro başlamadan önce ve bittikten sonra gezegenin aynı burç derecelerinden ikinci kez geçtiği aralıklara <strong>gölge dönemi</strong> denir. Etkinin retronun kendisinden önce başlayıp sonra bittiği kabul edildiği için AstroRota gölge dönemlerini ayrı gösterir — sekiz gezegenin tamamı için.</p>
+
     <h2>Sık sorulanlar</h2>
+    <p><strong>Uygulama konum izni istiyor mu?</strong> Hayır. Saatler seçtiğiniz saat dilimine göre hesaplanır; isterseniz şehir seçebilirsiniz. Hesap açılmaz, sunucu yoktur, veriler cihazınızda kalır.</p>
     <p><strong>Saatler neye göre?</strong> Seçtiğin saat dilimine göre. Konum izni istemiyoruz; her olayın UTC karşılığını da detay ekranında görebilirsin.</p>
     <p><strong>Veriler nereden geliyor?</strong> NASA JPL Horizons'ın kamuya açık efemeris verisinden önceden hesaplanmış bir katalogdan.</p>
     <p><strong>Ücretli neler var?</strong> İki ayrı yıllık/aylık abonelik: <strong>Astro Takvim</strong> (14,99 USD/yıl) uyarıları, sınırsız favoriyi, ICS aktarımını ve 2050'ye kadar tüm takvim olaylarını açar. <strong>Natal</strong> (3,99 USD/ay veya 24,99 USD/yıl) doğum haritasını, transitleri ve haritaya göre uyarıları açar. İkisi ayrıdır; biri diğerini kapsamaz. Aboneliklerin ikisi de otomatik yenilenir, mağaza ayarlarından dilediğin an iptal edebilirsin. Yeni cihazda "Satın alımları geri yükle" ile ücretsiz geri gelir.</p>
