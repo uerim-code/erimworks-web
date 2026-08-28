@@ -1,0 +1,5 @@
+# erimworks.com
+User-agent: *
+Allow: /
+
+Sitemap: https://erimworks.com/sitemap.xml
