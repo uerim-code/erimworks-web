@@ -1,0 +1,11 @@
+
+# Guvenlik: secret dosyalari asla commit edilmez
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks
+*.p8
+*.p12
+*.mobileprovision
+*service-account*.json
