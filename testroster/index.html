@@ -8,38 +8,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TestRoster — 14 günlük kapalı testi baştan sona yönet</title>
 <meta name="description" content="Google Play kapalı testi için tester bul, kimin hangi gün test ettiğini ölç, kampanya sonunda doğrulanabilir bir rapor al.">
-<style>
-  :root{--ink:#101418;--muted:#5f6c73;--line:#e4e9ec;--accent:#0f7f5c;--bg:#f7f8f8}
-  *{box-sizing:border-box}
-  body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;margin:0;color:var(--ink);background:var(--bg);line-height:1.65}
-  main{max-width:720px;margin:0 auto;padding:40px 24px 64px}
-  h1{font-size:2em;line-height:1.2;letter-spacing:-.02em;margin:0 0 12px}
-  h2{font-size:1.15em;margin:2em 0 .6em}
-  p{margin:0 0 14px}
-  .lede{font-size:1.08em;color:var(--muted)}
-  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:18px 0}
-  ol{padding-left:20px} li{margin-bottom:8px}
-  .links a{display:inline-block;margin-right:14px;color:var(--accent);font-weight:600}
-  code{background:#eef1f2;padding:2px 6px;border-radius:5px;font-size:.92em}
-  footer{border-top:1px solid var(--line);margin-top:40px;padding-top:18px;color:var(--muted);font-size:.92em}
-  .en{color:#3f4b52}
-  form.wl{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 0}
-  form.wl input{flex:1 1 220px;padding:10px 12px;border:1px solid var(--line);border-radius:9px;font-size:1em;font-family:inherit}
-  form.wl button{padding:10px 18px;border:0;border-radius:9px;background:var(--accent);color:#fff;font-weight:600;font-size:1em;cursor:pointer}
-  form.wl button[disabled]{opacity:.6;cursor:default}
-  .wl-msg{margin:10px 0 0;font-size:.94em;color:var(--muted);min-height:1.2em}
-  .wl-msg[data-tone="error"]{color:#a3341f}
-  .wl-msg[data-tone="ok"]{color:var(--accent)}
-</style>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Erimworks">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:url" content="https://erimworks.com/testroster/">
+<meta property="og:title" content="TestRoster — 14 günlük kapalı testi baştan sona yönet">
+<meta property="og:description" content="Google Play kapalı testi için tester bul, kimin hangi gün test ettiğini ölç, kampanya sonunda doğrulanabilir bir rapor al.">
+<meta property="og:image" content="https://erimworks.com/assets/og-erimworks.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://erimworks.com/assets/og-erimworks.png">
+<meta name="theme-color" content="#f4f2ed" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#15181c" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="/">Erimworks</a>
+    <nav class="site-nav" aria-label="Ana menü">
+      <a href="/unvportal/">Yazılım</a>
+      <a href="/#uygulamalar">Uygulamalar</a>
+      <a href="/iletisim/">İletişim</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+<div class="read">
+
 <main>
   <h1>TestRoster</h1>
-  <p class="lede">Google Play kapalı testi 12 tester ve 14 gün ister. Zor olan tester bulmak değil — 14 gün boyunca kimin <em>gerçekten</em> test ettiğini bilmektir.</p>
+  <p class="lede">Google Play kapalı testi 12 tester ve 14 gün ister. Tester bulmak kolay kısmı; asıl mesele 14 gün boyunca kimin <em>gerçekten</em> test ettiğini bilmek.</p>
 
   <div class="card">
     <p><strong>Herkesin kendi uygulaması var.</strong> Kendi kapalı testinizi yürütürken başka geliştiricilerin uygulamalarını test edersiniz. Düzenli test eden kullanıcı eşleşme sırasında öne geçer; kendi kampanyası daha hızlı dolar.</p>
-    <p style="margin:0"><strong>Karşılıklı olan test, değerlendirme değil:</strong> yıldız ya da yorum üzerine kurulu hiçbir düzen yok.</p>
+    <p style="margin:0"><strong>Karşılıklılık yalnız testte:</strong> yıldız ya da yorum üzerine kurulu hiçbir düzen yok.</p>
   </div>
 
   <h2>Nasıl çalışır</h2>
@@ -50,7 +56,7 @@
     <li>Gruptaki kullanıcılar testinize katılır; kimin hangi gün ne kadar süre test ettiği ölçülür.</li>
   </ol>
 
-  <h2>Ölçüm, beyan değil</h2>
+  <h2>Süre nasıl ölçülüyor</h2>
   <p>Tester izin verirse test edilen uygulamada geçen süre Android'in kullanım istatistikleriyle ölçülür. İzin vermeyen tester süreyi elle başlatır ve kayıt "düşük güven" olarak işaretlenir. Ekran görüntüsü yükleyip "test ettim" demenin bir karşılığı yoktur.</p>
   <p>Uygulama başka uygulamaların ekran içeriğini <strong>okumaz</strong>; AccessibilityService kullanılmaz.</p>
 
@@ -58,11 +64,11 @@
   <p><strong>Community (ücretsiz):</strong> 1 uygulama, 14 tester, 14 günlük kampanya, günlük takip ve test dosyası. <strong>Pro ($9,99/ay):</strong> 3 uygulama, tester düşüş uyarıları, yedek tester akışı. <strong>Studio ($24,99/ay):</strong> 10 uygulama, ekip koltuğu, ekran kapsamı analizi. Yıllık alırsan iki ay bedava. Ödeyeceğin tutarı kendi para biriminde Play gösterir. Abonelikler otomatik yenilenir; koşullar <a href="terms">Kullanım Koşulları</a>'nda.</p>
 
   <h2>Google Play üretim erişimi</h2>
-  <p>Bu araç üretim erişimi konusunda <strong>söz vermez</strong>. Play'in kararı Google'a aittir; TestRoster süreci kayda geçirir, sonucu değil.</p>
+  <p>Bu araç üretim erişimi konusunda <strong>söz vermez</strong>. Play'in kararı Google'a aittir; TestRoster yalnız süreci kayda geçirir.</p>
 
   <div class="card" id="wl-tr">
     <h2 style="margin-top:0">Uygulama henüz Play'de değil</h2>
-    <p>Kapalı test hazırlığı sürüyor. Yayınlandığında haber vermemiz için adresini bırakabilirsin — <strong>tek bir e-posta</strong> gönderilir, başka bir şey için kullanılmaz.</p>
+    <p>Kapalı test hazırlığı sürüyor. Yayınlandığında haber vermemiz için adresini bırakabilirsin. <strong>Tek bir e-posta</strong> gönderilir, başka bir şey için kullanılmaz.</p>
     <form class="wl" data-locale="tr" novalidate>
       <input type="email" name="email" required placeholder="e-posta adresin" aria-label="E-posta adresin">
       <button type="submit">Haber ver</button>
@@ -78,8 +84,8 @@
 
   <hr style="border:none;border-top:1px solid var(--line);margin:40px 0">
 
-  <h1 class="en">TestRoster</h1>
-  <p class="lede">Google Play closed testing asks for 12 testers and 14 days. The hard part is not finding testers — it is knowing who <em>actually</em> tested during those 14 days.</p>
+  <h2 class="en" style="margin-top:0">TestRoster</h2>
+  <p class="lede">Google Play closed testing asks for 12 testers and 14 days. Finding testers is the easy part; the hard part is knowing who <em>actually</em> tested during those 14 days.</p>
 
   <div class="card">
     <p class="en"><strong>Everyone here has an app of their own.</strong> You run your own closed test while testing other developers' apps. Testing regularly moves you up the matching queue, so your own campaign fills faster.</p>
@@ -106,7 +112,7 @@
 
   <div class="card" id="wl-en">
     <h2 class="en" style="margin-top:0">The app is not on Play yet</h2>
-    <p class="en">Closed-test preparation is still under way. Leave your address and we will tell you when it ships — <strong>one email</strong>, used for nothing else.</p>
+    <p class="en">Closed-test preparation is still under way. Leave your address and we will tell you when it ships. <strong>One email</strong>, used for nothing else.</p>
     <form class="wl" data-locale="en" novalidate>
       <input type="email" name="email" required placeholder="your email address" aria-label="Your email address">
       <button type="submit">Notify me</button>
@@ -120,10 +126,15 @@
     <a href="support">Support</a>
   </p>
 
-  <footer>
+</div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
     Erimworks · <a href="mailto:contact@erimworks.com">contact@erimworks.com</a> ·
     <a href="https://groups.google.com/g/testroster-testers">Tester grubu</a>
-  </footer>
+    </div>
+</footer>
 </main>
 
 <script>

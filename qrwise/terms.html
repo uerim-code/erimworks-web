@@ -8,26 +8,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>QRwise — Terms of Use (EULA)</title>
 <meta name="description" content="QRwise Terms of Use (EULA) — available in English, Türkçe, Deutsch, Français, Español, Русский, العربية, فارسی, 中文." />
-<style>
-  :root { --accent: #0b6e4f; --ink: #10221c; --line: #dce3e0; }
-  * { box-sizing: border-box; }
-  body { font-family: -apple-system, Roboto, Helvetica, Arial, sans-serif; max-width: 760px; margin: 0 auto; padding: 24px; line-height: 1.6; color: var(--ink); }
-  h1 { color: var(--accent); font-size: 1.6rem; }
-  h2 { color: var(--accent); margin-top: 32px; font-size: 1.15rem; }
-  a { color: var(--accent); }
-  ul { padding-inline-start: 22px; }
-  .langbar { display: flex; align-items: center; gap: 8px; justify-content: flex-end; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
-  .langbar select { font: inherit; padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); }
-  article { display: none; }
-  article.active { display: block; }
-  article[dir="rtl"] { text-align: right; }
-  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); font-size: .9rem; color: #5c6b66; }
-</style>
+<meta name="theme-color" content="#f4f2ed" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#15181c" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="/">Erimworks</a>
+    <nav class="site-nav" aria-label="Ana menü">
+      <a href="/unvportal/">Yazılım</a>
+      <a href="/#uygulamalar">Uygulamalar</a>
+      <a href="/iletisim/">İletişim</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+<div class="read">
+
 <nav class="langbar">
-  <label for="lang" aria-label="Language">🌐</label>
+  <label for="lang" aria-label="Language">Dil / Language</label>
   <select id="lang">
     <option value="en">English</option>
     <option value="tr">Türkçe</option>
@@ -43,7 +45,7 @@
 
 <!-- ============ ENGLISH ============ -->
 <article data-lang="en">
-  <h1>QRwise — Terms of Use (EULA)</h1>
+  <h1>QRwise: Terms of Use (EULA)</h1>
   <p><em>Last updated: 27 June 2026</em></p>
   <p>By downloading or using QRwise, you agree to these terms.</p>
   <h2>License</h2>
@@ -65,7 +67,7 @@
 
 <!-- ============ TÜRKÇE ============ -->
 <article data-lang="tr">
-  <h1>QRwise — Kullanım Koşulları (EULA)</h1>
+  <h1>QRwise: Kullanım Koşulları (EULA)</h1>
   <p><em>Son güncelleme: 27 Haziran 2026</em></p>
   <p>QRwise’ı indirerek veya kullanarak bu koşulları kabul edersin.</p>
   <h2>Lisans</h2>
@@ -87,7 +89,7 @@
 
 <!-- ============ DEUTSCH ============ -->
 <article data-lang="de">
-  <h1>QRwise — Nutzungsbedingungen (EULA)</h1>
+  <h1>QRwise: Nutzungsbedingungen (EULA)</h1>
   <p><em>Zuletzt aktualisiert: 27. Juni 2026</em></p>
   <p>Mit dem Herunterladen oder Nutzen von QRwise stimmen Sie diesen Bedingungen zu.</p>
   <h2>Lizenz</h2>
@@ -109,7 +111,7 @@
 
 <!-- ============ FRANÇAIS ============ -->
 <article data-lang="fr">
-  <h1>QRwise — Conditions d’utilisation (CLUF)</h1>
+  <h1>QRwise: Conditions d’utilisation (CLUF)</h1>
   <p><em>Dernière mise à jour : 27 juin 2026</em></p>
   <p>En téléchargeant ou en utilisant QRwise, vous acceptez ces conditions.</p>
   <h2>Licence</h2>
@@ -131,7 +133,7 @@
 
 <!-- ============ ESPAÑOL ============ -->
 <article data-lang="es">
-  <h1>QRwise — Términos de uso (EULA)</h1>
+  <h1>QRwise: Términos de uso (EULA)</h1>
   <p><em>Última actualización: 27 de junio de 2026</em></p>
   <p>Al descargar o usar QRwise, aceptas estos términos.</p>
   <h2>Licencia</h2>
@@ -153,7 +155,7 @@
 
 <!-- ============ РУССКИЙ ============ -->
 <article data-lang="ru">
-  <h1>QRwise — Условия использования (EULA)</h1>
+  <h1>QRwise: Условия использования (EULA)</h1>
   <p><em>Последнее обновление: 27 июня 2026 г.</em></p>
   <p>Загружая или используя QRwise, вы принимаете настоящие условия.</p>
   <h2>Лицензия</h2>
@@ -239,7 +241,12 @@
   <p><a href="mailto:contact@erimworks.com">contact@erimworks.com</a></p>
 </article>
 
-<footer>QRwise · <a href="privacy.html">Privacy Policy</a></footer>
+</div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">QRwise · <a href="privacy.html">Privacy Policy</a>  </div>
+</footer>
 
 <script>
 (function () {

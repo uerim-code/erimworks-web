@@ -8,16 +8,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TestRoster — Hesap Silme / Delete Account</title>
 <meta name="description" content="TestRoster hesabınızı ve verilerinizi nasıl silersiniz: uygulama içinden veya e-posta ile. TestRoster account and data deletion for Android.">
-<style>
-  body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;max-width:720px;margin:0 auto;padding:24px;line-height:1.6;color:#222}
-  h1{font-size:1.6em} h2{font-size:1.2em;margin-top:1.6em} .en{color:#444}
-  hr{margin:2.5em 0;border:none;border-top:1px solid #ddd}
-  table{border-collapse:collapse;width:100%;margin:1em 0} th,td{border:1px solid #ddd;padding:8px;text-align:left;font-size:.95em}
-  ol{padding-left:1.2em}
-</style>
+<meta name="theme-color" content="#f4f2ed" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#15181c" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-<h1>TestRoster — Hesap ve veri silme</h1>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="/">Erimworks</a>
+    <nav class="site-nav" aria-label="Ana menü">
+      <a href="/unvportal/">Yazılım</a>
+      <a href="/#uygulamalar">Uygulamalar</a>
+      <a href="/iletisim/">İletişim</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+<div class="read">
+
+<h1>TestRoster: Hesap ve veri silme</h1>
 <p><em>Son güncelleme: 29 Ağustos 2026</em></p>
 
 <p>Bu sayfa, TestRoster hesabınızı ve verilerinizi nasıl sildireceğinizi anlatır. Uygulamayı cihazınızdan kaldırmış olsanız da bu yollar açıktır.</p>
@@ -39,7 +50,7 @@
 <tr><td>Ad, e-posta, takma ad</td><td>Kalıcı olarak silinir</td></tr>
 <tr><td>Cihaz kaydı ve bildirim jetonları</td><td>Kalıcı olarak silinir</td></tr>
 <tr><td>Test oturumları ve görev kayıtlarınız</td><td>Kalıcı olarak silinir</td></tr>
-<tr><td>Geliştiricilere gönderdiğiniz hata raporları ve geri bildirimler</td><td>Kimliğinizle <strong>bağlantısı kesilerek</strong> saklanır — karşı tarafın kendi test kayıtlarına hakkı vardır</td></tr>
+<tr><td>Geliştiricilere gönderdiğiniz hata raporları ve geri bildirimler</td><td>Kimliğinizle <strong>bağlantısı kesilerek</strong> saklanır; karşı tarafın kendi test kayıtlarına hakkı vardır</td></tr>
 <tr><td>Satın alma ve fatura kayıtları</td><td>Kimliğinizle bağlantısı kesilerek, <strong>yasal saklama süresi</strong> boyunca saklanır</td></tr>
 </table>
 
@@ -47,7 +58,7 @@
 
 <hr>
 
-<h1 class="en">TestRoster — Account and data deletion</h1>
+<h2 class="en">TestRoster: Account and data deletion</h2>
 <p class="en"><em>Last updated: 29 August 2026</em></p>
 
 <p class="en">This page explains how to delete your TestRoster account and data. These routes stay open even if you have already removed the app from your device.</p>
@@ -69,7 +80,7 @@
 <tr><td>Name, email, alias</td><td>Permanently deleted</td></tr>
 <tr><td>Device records and notification tokens</td><td>Permanently deleted</td></tr>
 <tr><td>Your test sessions and task records</td><td>Permanently deleted</td></tr>
-<tr><td>Bug reports and feedback you sent to developers</td><td>Kept <strong>without any link to your identity</strong> — the other party has a right to their own test records</td></tr>
+<tr><td>Bug reports and feedback you sent to developers</td><td>Kept <strong>without any link to your identity</strong> ; the other party has a right to their own test records</td></tr>
 <tr><td>Purchase and billing records</td><td>Kept without any link to your identity for the <strong>legally required retention period</strong></td></tr>
 </table>
 
@@ -77,5 +88,19 @@
 
 <hr>
 <p><a href="/testroster/">TestRoster</a> · <a href="/testroster/privacy">Gizlilik / Privacy</a> · <a href="/testroster/terms">Koşullar / Terms</a> · <a href="/testroster/support">Destek / Support</a></p>
+</div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-bottom" style="border-top:0;padding-top:0">
+      <span>© <span class="yr">2026</span> Erimworks</span>
+      <a href="/">Ana sayfa</a>
+      <a href="/iletisim/">İletişim</a>
+      <a href="mailto:contact@erimworks.com">contact@erimworks.com</a>
+    </div>
+  </div>
+</footer>
+<script>document.querySelectorAll('.yr').forEach(function(n){n.textContent=new Date().getFullYear();});</script>
 </body>
 </html>

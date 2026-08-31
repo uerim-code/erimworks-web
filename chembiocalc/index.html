@@ -30,27 +30,26 @@
   ]
 }
 </script>
-<style>
-  :root{--ink:#131018;--muted:#615b6d;--line:#e7e3ee;--accent:#6B37D5;--bg:#f8f7fb}
-  *{box-sizing:border-box}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;margin:0;color:var(--ink);background:var(--bg);line-height:1.65}
-  main{max-width:720px;margin:0 auto;padding:40px 24px 64px}
-  .top{display:flex;align-items:center;gap:16px;margin-bottom:20px}
-  .top img{width:64px;height:64px;border-radius:16px;flex:none;box-shadow:0 4px 16px rgba(0,0,0,.14)}
-  h1{font-size:2em;line-height:1.2;letter-spacing:-.02em;margin:0}
-  h2{font-size:1.15em;margin:2em 0 .6em}
-  p{margin:0 0 14px}
-  .lede{font-size:1.08em;color:var(--muted)}
-  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:18px 0}
-  ul{padding-left:20px;margin:0 0 14px} li{margin-bottom:6px}
-  .links a{display:inline-block;margin:0 14px 8px 0;color:var(--accent);font-weight:600;text-decoration:none}
-  .links a:hover{text-decoration:underline}
-  .en{color:#4a4453}
-  footer{border-top:1px solid var(--line);margin-top:40px;padding-top:18px;color:var(--muted);font-size:.92em}
-  footer a{color:var(--accent);text-decoration:none}
-</style>
+<meta name="theme-color" content="#f4f2ed" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#15181c" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="/">Erimworks</a>
+    <nav class="site-nav" aria-label="Ana menü">
+      <a href="/unvportal/">Yazılım</a>
+      <a href="/#uygulamalar">Uygulamalar</a>
+      <a href="/iletisim/">İletişim</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+<div class="read">
+
 <main>
   <div class="top">
     <img src="../apps/chembiocalc.png" alt="ChemBioCalc" width="64" height="64">
@@ -61,8 +60,8 @@
   <p class="lede en">Chemistry, molecular biology and pharmacy calculators for the lab. Available on iOS and Android.</p>
 
   <div class="card">
-    <p style="margin:0"><strong>Uygulamanın kendi sitesi:</strong> ChemBioCalc'ın hesaplayıcıları, dokümantasyonu ve web sürümü <a href="https://chembiocalc.com" style="color:var(--accent);font-weight:600">chembiocalc.com</a> adresinde.</p>
-    <p style="margin:8px 0 0" class="en">The app has its own site at <a href="https://chembiocalc.com" style="color:var(--accent);font-weight:600">chembiocalc.com</a>.</p>
+    <p style="margin:0"><strong>Uygulamanın kendi sitesi:</strong> ChemBioCalc'ın hesaplayıcıları, dokümantasyonu ve web sürümü <a href="https://chembiocalc.com">chembiocalc.com</a> adresinde.</p>
+    <p style="margin:8px 0 0" class="en">The app has its own site at <a href="https://chembiocalc.com">chembiocalc.com</a>.</p>
   </div>
 
   <h2>İndir / Download</h2>
@@ -80,10 +79,15 @@
     <a href="https://chembiocalc.com/support" rel="noopener">Destek / Support ↗</a>
   </p>
 
-  <footer>
+</div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
     ChemBioCalc, <a href="https://erimworks.com/">Erimworks</a> tarafından geliştirilir ·
     <a href="mailto:contact@erimworks.com">contact@erimworks.com</a>
-  </footer>
+    </div>
+</footer>
 </main>
 </body>
 </html>
