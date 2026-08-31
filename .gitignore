@@ -9,3 +9,6 @@
 *.p12
 *.mobileprovision
 *service-account*.json
+
+# Makineye ozel Claude Code ayarlari
+.claude/settings.local.json
