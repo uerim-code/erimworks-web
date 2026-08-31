@@ -1,265 +1,348 @@
 <!doctype html>
 <html lang="tr">
 <head>
-<link rel="canonical" href="https://erimworks.com/"/>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <title>Erimworks — Mobil Uygulamalar &amp; Oyunlar</title>
-  <meta name="description" content="Erimworks bağımsız bir yazılım stüdyosudur: ChemBioCalc, Scanyra, QRwise, Pikaro, Match Manor ve Restla. Uygulamaların gizlilik ve kullanım koşulları burada." />
-  <meta property="og:title" content="Erimworks — Mobil Uygulamalar &amp; Oyunlar" />
-  <meta property="og:description" content="Bağımsız stüdyo: ChemBioCalc, Scanyra, QRwise, Pikaro, Match Manor, Restla. Uygulamaların gizlilik ve kullanım koşulları tek yerde." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://erimworks.com/" />
-  <meta name="theme-color" content="#05070d" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Erimworks",
-    "url": "https://erimworks.com/",
-    "email": "contact@erimworks.com",
-    "logo": "https://erimworks.com/apple-touch-icon.png",
-    "description": "Mobil uygulamalar ve oyunlar geliştiren bağımsız yazılım stüdyosu.",
-    "founder": { "@type": "Person", "name": "Ümit Can Erim" }
-  }
-  </script>
-  <style>
-    :root {
-      --bg: #05070d;
-      --fg: #eef1f8;
-      --muted: #93a0b8;
-      --line: rgba(255,255,255,0.08);
-      --c1: #4f8cff;
-      --c2: #a855f7;
-      --c3: #22d3ee;
-      --glass: rgba(255,255,255,0.04);
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://erimworks.com/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Erimworks — Kurumsal yönetim yazılımları ve mobil uygulamalar</title>
+<meta name="description" content="Üniversiteler için UNVPortal laboratuvar, sınav ve kalite yönetim platformu ile App Store ve Google Play'de yayında olan mobil uygulamalar geliştiriyoruz.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#f4f2ed" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#15181c" media="(prefers-color-scheme: dark)">
+<meta name="author" content="Ümit Can Erim">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Erimworks">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:url" content="https://erimworks.com/">
+<meta property="og:title" content="Erimworks — Kurumsal yönetim yazılımları ve mobil uygulamalar">
+<meta property="og:description" content="Üniversite ve laboratuvarlar için UNVPortal yönetim platformu; App Store ve Google Play'de yayında olan mobil uygulamalar.">
+<meta property="og:image" content="https://erimworks.com/assets/og-erimworks.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Erimworks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Erimworks — Kurumsal yönetim yazılımları ve mobil uygulamalar">
+<meta name="twitter:description" content="Üniversite ve laboratuvarlar için UNVPortal yönetim platformu; App Store ve Google Play'de yayında olan mobil uygulamalar.">
+<meta name="twitter:image" content="https://erimworks.com/assets/og-erimworks.png">
+<link rel="preload" href="/assets/site.css" as="style">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://erimworks.com/#org",
+      "name": "Erimworks",
+      "url": "https://erimworks.com/",
+      "email": "contact@erimworks.com",
+      "logo": "https://erimworks.com/apple-touch-icon.png",
+      "image": "https://erimworks.com/assets/og-erimworks.png",
+      "description": "Üniversiteler ve laboratuvarlar için yönetim platformları ile mobil uygulamalar geliştiren bağımsız yazılım stüdyosu.",
+      "founder": { "@type": "Person", "name": "Ümit Can Erim" },
+      "knowsLanguage": ["tr", "en"],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "email": "contact@erimworks.com",
+        "availableLanguage": ["Turkish", "English"]
+      },
+      "sameAs": ["https://unvportal.com/", "https://chembiocalc.com/"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://erimworks.com/#site",
+      "url": "https://erimworks.com/",
+      "name": "Erimworks",
+      "inLanguage": "tr",
+      "publisher": { "@id": "https://erimworks.com/#org" }
+    },
+    {
+      "@type": "ItemList",
+      "name": "Erimworks yazılım ve platformları",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "UNVPortal Labs", "url": "https://erimworks.com/unvportal/labs/" },
+        { "@type": "ListItem", "position": 2, "name": "UNVPortal Exams", "url": "https://erimworks.com/unvportal/sinav/" },
+        { "@type": "ListItem", "position": 3, "name": "UNVPortal Quality", "url": "https://erimworks.com/unvportal/kalite/" }
+      ]
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      min-height: 100svh;
-      position: relative;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ---- animated aurora background (fixed) ---- */
-    .orb { position: fixed; border-radius: 50%; filter: blur(90px); opacity: 0.5; pointer-events: none; z-index: 0; will-change: transform; }
-    .orb.a { width: 46vmax; height: 46vmax; left: -14vmax; top: -16vmax;
-      background: radial-gradient(circle at 30% 30%, var(--c1), transparent 62%); animation: drift1 22s ease-in-out infinite; }
-    .orb.b { width: 40vmax; height: 40vmax; right: -14vmax; top: -8vmax;
-      background: radial-gradient(circle at 50% 50%, var(--c2), transparent 62%); animation: drift2 26s ease-in-out infinite; }
-    .orb.c { width: 42vmax; height: 42vmax; left: 15vmax; top: 40vmax;
-      background: radial-gradient(circle at 50% 50%, var(--c3), transparent 62%); animation: drift3 30s ease-in-out infinite; }
-    @keyframes drift1 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(8vmax,6vmax) scale(1.12)} }
-    @keyframes drift2 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-7vmax,7vmax) scale(1.08)} }
-    @keyframes drift3 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(6vmax,-8vmax) scale(1.14)} }
-
-    body::after {
-      content: ""; position: fixed; inset: 0; z-index: 1; pointer-events: none;
-      background:
-        radial-gradient(120% 80% at 50% 20%, transparent 45%, rgba(0,0,0,0.55) 100%),
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/></svg>");
-    }
-
-    .stage { position: relative; z-index: 2; max-width: 1040px; margin: 0 auto; padding: 34px 22px 88px; }
-
-    /* hero */
-    .hero { text-align: center; margin-bottom: 30px; }
-    .badge {
-      display: inline-flex; align-items: center; gap: 9px;
-      padding: 7px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--glass);
-      backdrop-filter: blur(10px); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px;
-    }
-    .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--c3);
-      box-shadow: 0 0 0 0 rgba(34,211,238,0.6); animation: pulse 2.2s infinite; }
-    @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(34,211,238,0.55)} 70%{box-shadow:0 0 0 12px rgba(34,211,238,0)} 100%{box-shadow:0 0 0 0 rgba(34,211,238,0)} }
-
-    .brand {
-      font-size: clamp(2.8rem, 11vw, 6rem); font-weight: 800; letter-spacing: -0.045em; line-height: 0.95;
-      background: linear-gradient(100deg, #ffffff 10%, var(--c1) 45%, var(--c2) 70%, var(--c3) 100%);
-      -webkit-background-clip: text; background-clip: text; color: transparent;
-      background-size: 200% auto; animation: sheen 8s linear infinite;
-    }
-    .brand .dot { color: var(--c3); -webkit-text-fill-color: var(--c3); }
-    @keyframes sheen { to { background-position: 200% center; } }
-    .sub { margin-top: 20px; color: var(--muted); font-size: clamp(1rem, 2.4vw, 1.15rem); line-height: 1.6; }
-
-    /* section heading */
-    .shead { margin: 46px 0 16px; display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; }
-    .shead::after { content: ""; flex: 1; height: 1px; background: var(--line); }
-
-    /* apps grid */
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
-    .card {
-      display: flex; align-items: center; gap: 15px; padding: 16px;
-      border: 1px solid var(--line); border-radius: 16px; background: var(--glass);
-      backdrop-filter: blur(8px); color: var(--fg); text-decoration: none;
-      transition: transform .18s cubic-bezier(.2,.7,.2,1), border-color .18s, background .18s;
-    }
-    a.card:hover { transform: translateY(-3px); border-color: rgba(255,255,255,0.18); background: rgba(255,255,255,0.06); }
-    .ic { width: 56px; height: 56px; border-radius: 14px; flex: none; box-shadow: 0 4px 14px rgba(0,0,0,0.35); }
-    .cn { min-width: 0; }
-    .nm { font-weight: 700; font-size: 1.02rem; letter-spacing: -0.01em; display: flex; align-items: center; gap: 7px; }
-    .nm .go { color: var(--muted); font-size: 0.85rem; opacity: 0; transition: opacity .18s, transform .18s; }
-    a.card:hover .nm .go { opacity: 1; transform: translateX(2px); }
-    .tg { margin-top: 3px; color: var(--muted); font-size: 0.88rem; line-height: 1.4; }
-    .nm .nml { color: inherit; text-decoration: none; }
-    .nm .nml:hover { text-decoration: underline; }
-    .sl { margin-top: 6px; font-size: 0.8rem; }
-    .sl a { color: var(--c3); text-decoration: none; font-weight: 600; }
-    .sl a:hover { text-decoration: underline; }
-    .legal { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: center; font-size: 0.84rem; }
-    .legal a { color: #8aa0c6; text-decoration: none; }
-    .legal a:hover { text-decoration: underline; }
-    .soon { display: inline-block; margin-left: 8px; padding: 2px 8px; border-radius: 20px; border: 1px solid rgba(168,85,247,0.4); background: rgba(168,85,247,0.12); color: #c9a4ff; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; vertical-align: middle; }
-
-    /* language toggle */
-    .lang { position: fixed; top: 20px; right: 20px; z-index: 3; display: inline-flex; border: 1px solid var(--line); border-radius: 999px; background: var(--glass); backdrop-filter: blur(10px); overflow: hidden; }
-    .lang button { appearance: none; border: 0; background: transparent; cursor: pointer; color: var(--muted); font: inherit; font-size: 0.78rem; font-weight: 700; padding: 8px 14px; letter-spacing: 0.06em; transition: color .2s, background .2s; }
-    .lang button[aria-pressed="true"] { color: #fff; background: rgba(255,255,255,0.10); }
-
-    footer { margin-top: 48px; text-align: center; color: #67728a; font-size: 0.84rem; }
-    footer a { color: #8aa0c6; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .2s; }
-    footer a:hover { border-bottom-color: #8aa0c6; }
-
-    .reveal { opacity: 0; transform: translateY(14px); animation: rise .8s cubic-bezier(.2,.7,.2,1) forwards; }
-    @keyframes rise { to { opacity: 1; transform: none; } }
-
-    @media (prefers-reduced-motion: reduce) {
-      .orb, .brand, .pulse { animation: none !important; }
-      .reveal { animation: none !important; opacity: 1; transform: none; }
-      html { scroll-behavior: auto; }
-    }
-  </style>
+  ]
+}
+</script>
 </head>
 <body>
-  <div class="orb a"></div>
-  <div class="orb b"></div>
-  <div class="orb c"></div>
 
-  <nav class="lang" aria-label="Language">
-    <button id="tr" aria-pressed="true">TR</button>
-    <button id="en" aria-pressed="false">EN</button>
-  </nav>
-
-  <main class="stage">
-    <header class="hero">
-      <span class="badge reveal">
-        <span class="pulse"></span>
-        <span data-tr="Bağımsız Stüdyo" data-en="Independent Studio">Bağımsız Stüdyo</span>
-      </span>
-      <h1 class="brand reveal">erimworks<span class="dot">.</span></h1>
-      <p class="sub reveal"
-         data-tr="Tasarlayıp geliştirdiğimiz mobil uygulamalar ve oyunlar — tek çatı altında."
-         data-en="The mobile apps and games we design and build — all under one roof.">
-        Tasarlayıp geliştirdiğimiz mobil uygulamalar ve oyunlar — tek çatı altında.
-      </p>
-    </header>
-
-    <h2 class="shead reveal"><span data-tr="Yazılım & Platformlar" data-en="Software & Platforms">Yazılım & Platformlar</span></h2>
-    <section class="grid reveal" aria-label="Software & Platforms">
-      <a class="card" href="https://unvportal.com" target="_blank" rel="noopener">
-        <img class="ic" src="apps/erimportal.svg" alt="ErimPortal" width="56" height="56" loading="lazy" />
-        <div class="cn"><div class="nm">ErimPortal <span class="go">↗</span></div>
-          <div class="tg" data-tr="Akademik & laboratuvar yönetim platformu" data-en="Academic & lab management platform">Akademik & laboratuvar yönetim platformu</div></div>
-      </a>
-      <div class="card">
-        <img class="ic" src="apps/qualityos.svg" alt="QualityOS" width="56" height="56" loading="lazy" />
-        <div class="cn"><div class="nm">QualityOS <span class="soon" data-tr="Çok Yakında" data-en="Coming Soon">Çok Yakında</span></div>
-          <div class="tg" data-tr="Kalite yönetimini yeniden tanımlayan işletim sistemi — daha hızlı, daha akıllı, daha az sürtünme." data-en="The operating system reinventing quality management — faster, smarter, radically less friction.">Kalite yönetimini yeniden tanımlayan işletim sistemi — daha hızlı, daha akıllı, daha az sürtünme.</div></div>
-      </div>
-    </section>
-
-    <h2 class="shead reveal"><span data-tr="Uygulamalar" data-en="Apps">Uygulamalar</span></h2>
-    <section class="grid reveal" aria-label="Apps">
-      <div class="card">
-        <img class="ic" src="apps/chembiocalc.png" alt="ChemBioCalc" width="56" height="56" loading="lazy" />
-        <div class="cn"><div class="nm"><a class="nml" href="chembiocalc/">ChemBioCalc</a></div>
-          <div class="tg" data-tr="Kimya, moleküler biyoloji & eczacılık hesaplayıcıları" data-en="Chemistry, molecular biology & pharmacy calculators">Kimya, moleküler biyoloji & eczacılık hesaplayıcıları</div>
-          <div class="sl"><a href="https://chembiocalc.com" target="_blank" rel="noopener">chembiocalc.com ↗</a></div></div>
-      </div>
-
-      <a class="card" href="https://dozify.app" target="_blank" rel="noopener">
-        <img class="ic" src="apps/dozify.png" alt="Dozify" width="56" height="56" loading="lazy" />
-        <div class="cn"><div class="nm">Dozify <span class="go">↗</span></div>
-          <div class="tg" data-tr="GLP-1 doz & iğne takibi" data-en="GLP-1 dose & injection tracker">GLP-1 doz & iğne takibi</div></div>
-      </a>
-
-      <a class="card" href="https://apps.apple.com/app/id6763049517" target="_blank" rel="noopener">
-        <img class="ic" src="apps/match-manor.png" alt="Match Manor" width="56" height="56" loading="lazy" />
-        <div class="cn"><div class="nm">Match Manor <span class="go">↗</span></div>
-          <div class="tg" data-tr="Eşleştirme bulmacası & malikane" data-en="Match-3 puzzle & manor decor">Eşleştirme bulmacası & malikane</div></div>
-      </a>
-
-      <a class="card" href="https://apps.apple.com/app/id6792860755" target="_blank" rel="noopener">
-        <img class="ic" src="apps/pikaro.png" alt="Pikaro" width="56" height="56" loading="lazy" />
-        <div class="cn"><div class="nm">Pikaro <span class="go">↗</span></div>
-          <div class="tg" data-tr="Piksel sayı boyama" data-en="Pixel colour by number">Piksel sayı boyama</div></div>
-      </a>
-
-
-      <a class="card" href="https://apps.apple.com/app/id6785031754" target="_blank" rel="noopener">
-        <img class="ic" src="apps/qrwise.png" alt="QRwise" width="56" height="56" loading="lazy" />
-        <div class="cn"><div class="nm">QRwise <span class="go">↗</span></div>
-          <div class="tg" data-tr="QR tarayıcı & oluşturucu" data-en="QR scanner & generator">QR tarayıcı & oluşturucu</div></div>
-      </a>
-
-      <a class="card" href="scanyra/">
-        <img class="ic" src="apps/scanlyte.png" alt="Scanyra" width="56" height="56" loading="lazy" />
-        <div class="cn"><div class="nm">Scanyra <span class="go">→</span></div>
-          <div class="tg" data-tr="PDF & belge tarayıcı" data-en="PDF & document scanner">PDF & belge tarayıcı</div></div>
-      </a>
-
-      <a class="card" href="https://apps.apple.com/app/id6787410696" target="_blank" rel="noopener">
-        <img class="ic" src="apps/restla.png" alt="Restla" width="56" height="56" loading="lazy" />
-        <div class="cn"><div class="nm">Restla <span class="go">↗</span></div>
-          <div class="tg" data-tr="Göz molası zamanlayıcı" data-en="Eye break timer">Göz molası zamanlayıcı</div></div>
-      </a>
-
-      <div class="card">
-        <img class="ic" src="apps/furably.png" alt="Furably" width="56" height="56" loading="lazy" />
-        <div class="cn"><div class="nm">Furably</div>
-          <div class="tg" data-tr="Evcil hayvan bakım takibi" data-en="Pet care tracker">Evcil hayvan bakım takibi</div></div>
-      </div>
-
-      <div class="card">
-        <img class="ic" src="apps/pottiq.png" alt="Pottiq" width="56" height="56" loading="lazy" />
-        <div class="cn"><div class="nm">Pottiq</div>
-          <div class="tg" data-tr="Bitki bakım hatırlatıcı" data-en="Plant care reminder">Bitki bakım hatırlatıcı</div></div>
-      </div>
-
-      <a class="card" href="testroster/" style="text-decoration:none;color:inherit">
-        <img class="ic" src="apps/erimportal.svg" alt="TestRoster" width="56" height="56" loading="lazy" />
-        <div class="cn"><div class="nm">TestRoster</div>
-          <div class="tg" data-tr="Kapalı test takibi" data-en="Closed testing tracker">Kapalı test takibi</div></div>
-      </a>
-    </section>
-
-    <h2 class="shead reveal"><span data-tr="Gizlilik & Kullanım Koşulları" data-en="Privacy & Terms of Use">Gizlilik & Kullanım Koşulları</span></h2>
-    <nav class="legal reveal" aria-label="Legal">
-      <a href="astrorota/">AstroRota</a>
-      <a href="https://chembiocalc.com/privacy" target="_blank" rel="noopener">ChemBioCalc ↗</a>
-      <a href="match-manor/">Match Manor</a>
-      <a href="pikaro/">Pikaro</a>
-      <a href="qrwise/">QRwise</a>
-      <a href="restla/">Restla</a>
-      <a href="scanyra/">Scanyra</a>
-      <a href="testroster/">TestRoster</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="/">Erimworks</a>
+    <nav class="site-nav" aria-label="Ana menü">
+      <a href="/unvportal/" data-tr="Yazılım" data-en="Software">Yazılım</a>
+      <a href="#uygulamalar" data-tr="Uygulamalar" data-en="Apps">Uygulamalar</a>
+      <a href="/iletisim/" data-tr="İletişim" data-en="Contact">İletişim</a>
     </nav>
+    <nav class="lang" aria-label="Dil / Language">
+      <button id="tr" type="button" aria-pressed="true">TR</button>
+      <button id="en" type="button" aria-pressed="false">EN</button>
+    </nav>
+  </div>
+</header>
 
-    <footer class="reveal">
-      © <span id="y"></span> Erimworks ·
-      <a href="mailto:contact@erimworks.com" data-tr="İletişim" data-en="Get in touch">İletişim</a>
-    </footer>
-  </main>
+<main class="wrap">
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+  <div class="read">
+    <h1>Erimworks</h1>
+    <p class="lede"
+       data-tr="Üniversiteler ve laboratuvarlar için kurumsal yönetim platformları geliştiriyoruz. Aynı ekip App Store ve Google Play'de yayında olan mobil uygulamaları da yazıyor."
+       data-en="We build management platforms for universities and laboratories. The same team also ships the mobile apps listed on the App Store and Google Play.">Üniversiteler ve laboratuvarlar için kurumsal yönetim platformları geliştiriyoruz. Aynı ekip App Store ve Google Play'de yayında olan mobil uygulamaları da yazıyor.</p>
+    <p class="small"
+       data-tr="Kurulum, kurumsal lisans ve canlı sunum talepleri için contact@erimworks.com adresine yazabilirsiniz."
+       data-en="Write to contact@erimworks.com for deployment, institutional licensing and live demo requests.">Kurulum, kurumsal lisans ve canlı sunum talepleri için contact@erimworks.com adresine yazabilirsiniz.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="/unvportal/" data-tr="Platformu incele" data-en="Explore the platform">Platformu incele</a>
+      <a class="btn btn-quiet" href="/iletisim/" data-tr="Sunum talep et" data-en="Request a demo">Sunum talep et</a>
+    </div>
+  </div>
+
+  <section id="yazilim" aria-labelledby="h-yazilim">
+    <div class="section-head">
+      <h2 id="h-yazilim" data-tr="Yazılım ve platformlar" data-en="Software and platforms">Yazılım ve platformlar</h2>
+      <p data-tr="UNVPortal, bir kurumun laboratuvar, sınav ve kalite süreçlerini tek veritabanı üzerinde yürüten modüler bir platformdur. Modüller ayrı ayrı ya da birlikte kullanılabilir."
+         data-en="UNVPortal runs an institution's laboratory, examination and quality processes on a single database. Modules can be used separately or together.">UNVPortal, bir kurumun laboratuvar, sınav ve kalite süreçlerini tek veritabanı üzerinde yürüten modüler bir platformdur. Modüller ayrı ayrı ya da birlikte kullanılabilir.</p>
+    </div>
+
+    <div class="rows">
+      <article class="row">
+        <img class="ic" src="/apps/erimportal.svg" alt="" width="52" height="52" loading="lazy">
+        <div>
+          <h3><a href="/unvportal/labs/">UNVPortal Labs</a><span class="tag" data-tr="Yayında" data-en="Live">Yayında</span></h3>
+          <p data-tr="Laboratuvar ve deney yönetimi, cihaz ile sarf stoğu takibi, rezervasyon, akademik uygulama ve yoklama kaydı."
+             data-en="Laboratory and experiment management, equipment and consumable stock, booking, academic sessions and attendance.">Laboratuvar ve deney yönetimi, cihaz ile sarf stoğu takibi, rezervasyon, akademik uygulama ve yoklama kaydı.</p>
+          <div class="actions">
+            <a class="btn btn-sm" href="/unvportal/labs/" data-tr="Ne yaptığını gör" data-en="See what it does">Ne yaptığını gör</a>
+            <a class="btn btn-sm btn-quiet" href="https://unvportal.com/giris/laboratuvar" rel="noopener" data-tr="Kullanıcı girişi" data-en="Sign in">Kullanıcı girişi</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="ic-mono" aria-hidden="true">E</div>
+        <div>
+          <h3><a href="/unvportal/sinav/">UNVPortal Exams</a><span class="tag" data-tr="Yayında" data-en="Live">Yayında</span></h3>
+          <p data-tr="Sınav hazırlama ve uygulama, optik form değerlendirme, öğrenme çıktısı ve program çıktısı analizi."
+             data-en="Exam authoring and delivery, optical form marking, learning outcome and programme outcome analysis.">Sınav hazırlama ve uygulama, optik form değerlendirme, öğrenme çıktısı ve program çıktısı analizi.</p>
+          <div class="actions">
+            <a class="btn btn-sm" href="/unvportal/sinav/" data-tr="Ne yaptığını gör" data-en="See what it does">Ne yaptığını gör</a>
+            <a class="btn btn-sm btn-quiet" href="https://unvportal.com/giris/sinav" rel="noopener" data-tr="Kullanıcı girişi" data-en="Sign in">Kullanıcı girişi</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="row">
+        <img class="ic" src="/apps/qualityos.svg" alt="" width="52" height="52" loading="lazy">
+        <div>
+          <h3><a href="/unvportal/kalite/">UNVPortal Quality</a><span class="tag" data-tr="Yayında" data-en="Live">Yayında</span></h3>
+          <p data-tr="Süreç ve komisyon yönetimi, karar, eylem ve kanıt kaydı, PUKÖ döngüsü, birim ve kurum iç değerlendirme raporları."
+             data-en="Process and committee management, decisions, actions and evidence, the PDCA cycle, unit and institutional self-assessment reports.">Süreç ve komisyon yönetimi, karar, eylem ve kanıt kaydı, PUKÖ döngüsü, birim ve kurum iç değerlendirme raporları.</p>
+          <div class="actions">
+            <a class="btn btn-sm" href="/unvportal/kalite/" data-tr="Ne yaptığını gör" data-en="See what it does">Ne yaptığını gör</a>
+            <a class="btn btn-sm btn-quiet" href="https://unvportal.com/giris/quality" rel="noopener" data-tr="Kullanıcı girişi" data-en="Sign in">Kullanıcı girişi</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <p class="small" style="margin-top:18px"
+       data-tr="Hazırlanan iki modül daha var: kurumun kimlik sağlayıcısı, öğrenci bilgi sistemi ve belge yönetimiyle bağlantı kuran UNVPortal Connect, belge ve mevzuat çözümlemesi yapan UNVPortal Intelligence. Ayrıntılar platform sayfasında."
+       data-en="Two further modules are in preparation: UNVPortal Connect for identity provider, student information and document management integrations, and UNVPortal Intelligence for document and regulation analysis. Details on the platform page.">Hazırlanan iki modül daha var: kurumun kimlik sağlayıcısı, öğrenci bilgi sistemi ve belge yönetimiyle bağlantı kuran UNVPortal Connect, belge ve mevzuat çözümlemesi yapan UNVPortal Intelligence. Ayrıntılar platform sayfasında.</p>
+  </section>
+
+  <section id="uygulamalar" aria-labelledby="h-uygulamalar">
+    <div class="section-head">
+      <h2 id="h-uygulamalar" data-tr="Uygulamalar" data-en="Apps">Uygulamalar</h2>
+      <p data-tr="App Store ve Google Play'de yayında olan, tasarımını ve kodunu kendimizin yazdığı uygulamalar."
+         data-en="Apps we design and build ourselves, published on the App Store and Google Play.">App Store ve Google Play'de yayında olan, tasarımını ve kodunu kendimizin yazdığı uygulamalar.</p>
+    </div>
+
+    <div class="rows">
+      <article class="row">
+        <img class="ic" src="/apps/chembiocalc.png" alt="" width="52" height="52" loading="lazy">
+        <div>
+          <h3><a href="/chembiocalc/">ChemBioCalc</a></h3>
+          <p data-tr="Kimya, moleküler biyoloji ve eczacılık laboratuvarları için hesaplayıcılar. iOS ve Android."
+             data-en="Chemistry, molecular biology and pharmacy calculators for the lab. iOS and Android.">Kimya, moleküler biyoloji ve eczacılık laboratuvarları için hesaplayıcılar. iOS ve Android.</p>
+          <div class="actions">
+            <a class="btn btn-sm" href="/chembiocalc/" data-tr="Ne yaptığını gör" data-en="See what it does">Ne yaptığını gör</a>
+            <a class="btn btn-sm btn-quiet" href="https://chembiocalc.com" rel="noopener">chembiocalc.com</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="ic-mono" aria-hidden="true">A</div>
+        <div>
+          <h3><a href="/astrorota/">AstroRota</a></h3>
+          <p data-tr="Ay boşlukta aralıkları, gezegen retroları ve ay fazları. NASA JPL efemeris verisine dayanır."
+             data-en="Void-of-course Moon periods, planetary retrogrades and lunar phases, computed from NASA JPL ephemeris data.">Ay boşlukta aralıkları, gezegen retroları ve ay fazları. NASA JPL efemeris verisine dayanır.</p>
+          <div class="actions">
+            <a class="btn btn-sm" href="/astrorota/" data-tr="Ne yaptığını gör" data-en="See what it does">Ne yaptığını gör</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="ic-mono" aria-hidden="true">T</div>
+        <div>
+          <h3><a href="/testroster/">TestRoster</a></h3>
+          <p data-tr="Google Play kapalı testi için tester bulma ve 14 gün boyunca kimin gerçekten test ettiğini ölçme."
+             data-en="Find testers for a Google Play closed test and measure who actually tested across the 14 days.">Google Play kapalı testi için tester bulma ve 14 gün boyunca kimin gerçekten test ettiğini ölçme.</p>
+          <div class="actions">
+            <a class="btn btn-sm" href="/testroster/" data-tr="Ne yaptığını gör" data-en="See what it does">Ne yaptığını gör</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="row">
+        <img class="ic" src="/apps/dozify.png" alt="" width="52" height="52" loading="lazy">
+        <div>
+          <h3><a href="https://dozify.app" rel="noopener">Dozify</a></h3>
+          <p data-tr="GLP-1 doz ve iğne takibi." data-en="GLP-1 dose and injection tracking.">GLP-1 doz ve iğne takibi.</p>
+          <div class="actions">
+            <a class="btn btn-sm" href="https://dozify.app" rel="noopener">dozify.app</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="row">
+        <img class="ic" src="/apps/scanlyte.png" alt="" width="52" height="52" loading="lazy">
+        <div>
+          <h3><a href="/scanyra/">Scanyra</a></h3>
+          <p data-tr="PDF ve belge tarayıcı." data-en="PDF and document scanner.">PDF ve belge tarayıcı.</p>
+          <div class="actions">
+            <a class="btn btn-sm btn-quiet" href="https://apps.apple.com/app/id6785098766" rel="noopener">App Store</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="row">
+        <img class="ic" src="/apps/qrwise.png" alt="" width="52" height="52" loading="lazy">
+        <div>
+          <h3><a href="/qrwise/">QRwise</a></h3>
+          <p data-tr="QR kod tarayıcı ve oluşturucu." data-en="QR code scanner and generator.">QR kod tarayıcı ve oluşturucu.</p>
+          <div class="actions">
+            <a class="btn btn-sm btn-quiet" href="https://apps.apple.com/app/id6785031754" rel="noopener">App Store</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="row">
+        <img class="ic" src="/apps/restla.png" alt="" width="52" height="52" loading="lazy">
+        <div>
+          <h3><a href="/restla/">Restla</a></h3>
+          <p data-tr="Ekran başında göz molası hatırlatan zamanlayıcı." data-en="A timer that reminds you to rest your eyes at the screen.">Ekran başında göz molası hatırlatan zamanlayıcı.</p>
+          <div class="actions">
+            <a class="btn btn-sm btn-quiet" href="https://apps.apple.com/app/id6787410696" rel="noopener">App Store</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="row">
+        <img class="ic" src="/apps/match-manor.png" alt="" width="52" height="52" loading="lazy">
+        <div>
+          <h3><a href="/match-manor/">Match Manor</a></h3>
+          <p data-tr="Eşleştirme bulmacası ve malikane döşeme oyunu." data-en="A match-three puzzle with manor decoration.">Eşleştirme bulmacası ve malikane döşeme oyunu.</p>
+          <div class="actions">
+            <a class="btn btn-sm btn-quiet" href="https://apps.apple.com/app/id6763049517" rel="noopener">App Store</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="row">
+        <img class="ic" src="/apps/pikaro.png" alt="" width="52" height="52" loading="lazy">
+        <div>
+          <h3><a href="/pikaro/">Pikaro</a></h3>
+          <p data-tr="Piksel sayı boyama." data-en="Pixel colour by number.">Piksel sayı boyama.</p>
+          <div class="actions">
+            <a class="btn btn-sm btn-quiet" href="https://apps.apple.com/app/id6792860755" rel="noopener">App Store</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="ic-mono" aria-hidden="true">O</div>
+        <div>
+          <h3><a href="/owndex/">Owndex</a></h3>
+          <p data-tr="Garanti süresi, iade penceresi ve fiş takibi." data-en="Warranty, return window and receipt tracking.">Garanti süresi, iade penceresi ve fiş takibi.</p>
+        </div>
+      </article>
+
+      <article class="row">
+        <img class="ic" src="/apps/furably.png" alt="" width="52" height="52" loading="lazy">
+        <div>
+          <h3>Furably<span class="tag" data-tr="Hazırlanıyor" data-en="In progress">Hazırlanıyor</span></h3>
+          <p data-tr="Evcil hayvan bakım takibi." data-en="Pet care tracking.">Evcil hayvan bakım takibi.</p>
+        </div>
+      </article>
+
+      <article class="row">
+        <img class="ic" src="/apps/pottiq.png" alt="" width="52" height="52" loading="lazy">
+        <div>
+          <h3>Pottiq<span class="tag" data-tr="Hazırlanıyor" data-en="In progress">Hazırlanıyor</span></h3>
+          <p data-tr="Bitki bakım hatırlatıcı." data-en="Plant care reminders.">Bitki bakım hatırlatıcı.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="iletisim" aria-labelledby="h-iletisim">
+    <div class="section-head">
+      <h2 id="h-iletisim" data-tr="Kullanmak, satın almak ya da sunum istemek" data-en="Using, buying or requesting a demo">Kullanmak, satın almak ya da sunum istemek</h2>
+    </div>
+    <div class="read">
+      <p data-tr="Platformu kurumunuzda kullanmak, fiyat teklifi almak ya da canlı sunum planlamak için tek adres contact@erimworks.com. Kurumunuzun adını, kaç kullanıcı olacağını ve hangi modülleri düşündüğünüzü yazarsanız ilk yanıtta takvim önerisi gönderiyoruz."
+         data-en="For deploying the platform at your institution, requesting a quote or scheduling a live demo, write to contact@erimworks.com. Tell us your institution, the number of users and the modules you have in mind, and the first reply will include proposed times.">Platformu kurumunuzda kullanmak, fiyat teklifi almak ya da canlı sunum planlamak için tek adres contact@erimworks.com. Kurumunuzun adını, kaç kullanıcı olacağını ve hangi modülleri düşündüğünüzü yazarsanız ilk yanıtta takvim önerisi gönderiyoruz.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="/iletisim/" data-tr="İletişim sayfası" data-en="Contact page">İletişim sayfası</a>
+        <a class="btn btn-quiet" href="mailto:contact@erimworks.com">contact@erimworks.com</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="hukuki" aria-labelledby="h-hukuki">
+    <div class="section-head">
+      <h2 id="h-hukuki" data-tr="Gizlilik ve kullanım koşulları" data-en="Privacy and terms of use">Gizlilik ve kullanım koşulları</h2>
+      <p data-tr="Mağaza listelemelerinde kullanılan hukuki metinler." data-en="The legal documents referenced from the store listings.">Mağaza listelemelerinde kullanılan hukuki metinler.</p>
+    </div>
+    <ul class="foot-links" style="margin-top:16px">
+      <li><a href="/astrorota/">AstroRota</a></li>
+      <li><a href="https://chembiocalc.com/privacy" rel="noopener">ChemBioCalc</a></li>
+      <li><a href="/match-manor/">Match Manor</a></li>
+      <li><a href="/owndex/">Owndex</a></li>
+      <li><a href="/pikaro/">Pikaro</a></li>
+      <li><a href="/qrwise/">QRwise</a></li>
+      <li><a href="/restla/">Restla</a></li>
+      <li><a href="/scanyra/">Scanyra</a></li>
+      <li><a href="/testroster/">TestRoster</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <p style="margin:0">© <span id="y">2026</span> Erimworks ·
+      <a href="mailto:contact@erimworks.com">contact@erimworks.com</a> ·
+      <a href="/unvportal/" data-tr="Yazılım" data-en="Software">Yazılım</a> ·
+      <a href="/iletisim/" data-tr="İletişim" data-en="Contact">İletişim</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+  (function () {
     var nodes = document.querySelectorAll('[data-tr]');
     var btnTR = document.getElementById('tr'), btnEN = document.getElementById('en');
     function setLang(lang) {
@@ -273,6 +356,7 @@
     setLang(saved || ((navigator.language || 'tr').toLowerCase().indexOf('tr') === 0 ? 'tr' : 'en'));
     btnTR.addEventListener('click', function () { setLang('tr'); });
     btnEN.addEventListener('click', function () { setLang('en'); });
-  </script>
+  })();
+</script>
 </body>
 </html>
