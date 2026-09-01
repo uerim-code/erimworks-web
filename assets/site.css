@@ -70,7 +70,7 @@ a:hover { color: var(--link-h); text-decoration: underline; text-underline-offse
 .read { max-width: var(--read); }
 
 /* Mono etiket: bu tasarimin imzasi. */
-.k, .eyebrow, .tag, .tag-soon, .stat-label, .snum, .hero-panel-title, .foot-col h4 {
+.k, .tag, .tag-soon, .stat-label, .snum, .hero-panel-title, .foot-col h4 {
   font-family: var(--mono);
   font-variant-ligatures: none;
 }
@@ -124,9 +124,21 @@ strong { font-weight: 600; color: var(--fg); }
 code { font-family: var(--mono); background: var(--surface-2); border: 1px solid var(--line); padding: 1px 6px; font-size: 0.87em; }
 .rule { border: 0; border-top: 1px solid var(--line); margin: 52px 0; }
 
+/* ETIKET.
+   Onceki hali mono, 11.5px, 0.16em harf araligiyla ve gri idi. Turkce
+   metinde harfler o kadar acilinca satir "civi yazisi" gibi okunuyordu ve
+   hemen ustundeki kirinti da mono oldugu icin basligin ustunde ust uste IKI
+   gri aralikli satir duruyordu. Simdi tek satir, sans, vurgu renginde ve
+   onunde kisa bir vurgu cubugu var: etiket gibi okunuyor, dagilmis karakter
+   gibi degil. */
 .eyebrow {
-  font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--fg-4); font-weight: 400; margin: 0 0 22px;
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--sans);
+  font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--accent); font-weight: 650; margin: 0 0 18px;
+}
+.eyebrow::before {
+  content: ""; width: 18px; height: 2px; background: var(--accent); flex: none;
 }
 
 /* Numarali bolum basligi */
@@ -262,7 +274,7 @@ main.wrap { padding-top: 44px; padding-bottom: 28px; }
 .cta-mail { font-family: var(--mono); font-size: 17px; color: var(--link); border-bottom: 1px solid var(--line-2); padding-bottom: 5px; }
 
 /* ========================== IC SAYFA OGELERI ========================== */
-.crumbs { font-family: var(--mono); font-size: 12.5px; color: var(--fg-4); margin: 0 0 22px; }
+.crumbs { font-size: 13px; color: var(--fg-4); margin: 0 0 22px; }
 .crumbs a { color: var(--fg-4); }
 .crumbs span { padding: 0 8px; color: var(--line-2); }
 
@@ -386,3 +398,92 @@ form.wl button[disabled] { opacity: .6; cursor: default; }
   .pcard-head, .pcard > p, .pcard .actions { padding-left: 22px; padding-right: 22px; margin-left: 0; margin-right: 0; }
   .pgrid .chips { margin-left: 22px; margin-right: 22px; }
 }
+
+/* ===========================================================================
+   IC SAYFA RITMI
+   Sayfalar "duz bir metin sutunu" gibi akiyordu: baslik, madde, baslik,
+   paragraf. Asagidaki kurallar isaretlemeye DOKUNMADAN yapi veriyor;
+   kanca olarak sayfalarda zaten duran aria-labelledby kimlikleri kullaniliyor,
+   boylece yirmi sayfanin hepsi tek dosyadan duzeliyor.
+   =========================================================================== */
+
+/* Giris blogu sayfanin "tepesi" olsun: altina cizgi, altinda nefes. */
+/* Giris blogunun altina AYRI bir cizgi konmuyor: hemen altindaki ilk
+   .section-head zaten ust cizgi tasiyor ve ikisi yan yana gelince kisa-uzun
+   iki cizgi ust uste duruyordu. Yalniz nefes birakiliyor. */
+main.wrap > .read:first-of-type { padding-bottom: 8px; }
+
+/* Bolumler numaralanir. Numara isaretlemede degil sayacta; her sayfa
+   kendiliginden dogru sirayi alir. Kapanis ve "In English" bolumlerinde
+   .section-head olmadigi icin onlar numaralanmaz. */
+main.wrap { counter-reset: bolum; }
+main.wrap .section-head {
+  /* Ana sayfadaki .section-head numara + metin icin flex; ic sayfalarda
+     numara sayactan ve mutlak konumdan geldigi icin flex gereksiz ve
+     zararli: baslikla altindaki aciklama yan yana diziliyordu. */
+  display: block;
+  counter-increment: bolum;
+  position: relative;
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
+  margin: 56px 0 22px;
+}
+main.wrap .section-head::before {
+  content: counter(bolum, decimal-leading-zero);
+  font-family: var(--mono); font-size: 12px; color: var(--fg-4);
+  position: absolute; top: 22px; left: 0;
+}
+main.wrap .section-head > * { padding-left: 42px; }
+@media (max-width: 46rem) {
+  main.wrap .section-head > * { padding-left: 0; }
+  main.wrap .section-head::before { position: static; display: block; margin-bottom: 8px; }
+}
+
+/* "Kimler kullaniyor" listesi madde yigini degil KART IZGARASI olur ve
+   okuma sutunundan tasarak sayfaya genislik verir. */
+section[aria-labelledby="h-kim"] { max-width: none; }
+section[aria-labelledby="h-kim"] > ul {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: 1fr; gap: 14px;
+}
+@media (min-width: 52rem) {
+  section[aria-labelledby="h-kim"] > ul { grid-template-columns: 1fr 1fr; }
+}
+section[aria-labelledby="h-kim"] > ul > li {
+  margin: 0; padding: 20px 22px;
+  background: var(--surface); border: 1px solid var(--line);
+  color: var(--fg-2); font-size: 14.5px; line-height: 1.6;
+}
+section[aria-labelledby="h-kim"] > ul > li > strong {
+  display: block; margin-bottom: 6px;
+  color: var(--fg); font-size: 15px; font-weight: 600; letter-spacing: -0.01em;
+}
+section[aria-labelledby="h-kim"] > .section-head,
+section[aria-labelledby="h-kim"] > p { max-width: var(--read); }
+
+/* "Ne yapar" bolumu h3 + paragraf dizisiydi ve nerede bittigi belli olmuyordu.
+   Her yetenek kendi blogu: solda vurgu cizgisi, aralarinda bosluk. */
+section[aria-labelledby="h-neyapar"] h3 {
+  position: relative; padding-left: 18px; margin-top: 34px;
+}
+section[aria-labelledby="h-neyapar"] h3::before {
+  content: ""; position: absolute; left: 0; top: 4px; bottom: 2px;
+  width: 2px; background: var(--accent);
+}
+section[aria-labelledby="h-neyapar"] h3 + p { padding-left: 18px; }
+
+/* Tablo basligi yuzeye otursun; satirlar okunakli kalsin. */
+table thead th, table tr:first-child th { background: var(--surface); }
+th { padding-left: 14px; }
+th:first-child { border-left: 1px solid var(--line); }
+th:last-child { border-right: 1px solid var(--line); }
+td { padding-left: 14px; }
+td:first-child { border-left: 1px solid var(--line); }
+td:last-child { border-right: 1px solid var(--line); }
+table tr:hover td { background: rgba(255,255,255,0.018); }
+
+/* Madde isaretleri vurgu renginde: gri noktalar zeminde kayboluyordu. */
+main.wrap li::marker { color: var(--accent); }
+
+/* Kapanis ve "In English" bolumleri arasinda ayirici. */
+main.wrap > section.read + section.read { border-top: 1px solid var(--line); padding-top: 34px; }
