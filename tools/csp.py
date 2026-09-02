@@ -34,9 +34,19 @@ KOK = pathlib.Path(__file__).resolve().parent.parent
 # <a href> — CSP bağlantıları kısıtlamaz, yalnız YÜKLENEN kaynağı kısıtlar.
 FONT_STIL = "https://fonts.googleapis.com"
 FONT_DOSYA = "https://fonts.gstatic.com"
-# testroster/index.html bekleme listesi kaydını buraya POST ediyor; siteden ağa
-# çıkan TEK istek bu.
+# testroster/index.html bekleme listesi kaydını buraya POST ediyor.
 TESTROSTER_API = "https://iebavqhqsldsxjmiquhy.supabase.co"
+
+# ⚠ CLOUDFLARE WEB ANALYTICS — DEPODA İZİ YOK. Beacon betiğini Cloudflare
+# KENAR SUNUCUDA yanıta enjekte ediyor, yani HTML kaynağını tarayarak
+# bulunamaz. İlk CSP sürümü tam da bu yüzden onu bloklamıştı: politika
+# depodaki dosyalar ölçülerek yazılmıştı ve bu betik orada yok. Canlı sayfayı
+# tarayıcıda açınca ihlal görüldü.
+#
+# Ders: bu sitenin CSP'si yalnız kaynaktan ölçülerek doğrulanamaz. Değiştiren
+# kişi CANLI sayfayı tarayıcı konsoluyla da açmalı.
+CF_BEACON = "https://static.cloudflareinsights.com"
+CF_RUM = "https://cloudflareinsights.com"
 
 SCRIPT_DESENI = re.compile(r"<script(?![^>]*\bsrc=)([^>]*)>(.*?)</script>", re.S)
 
@@ -61,11 +71,11 @@ def politika() -> str:
         "object-src 'none'",
         "frame-ancestors 'none'",
         "form-action 'self'",
-        "script-src 'self' " + " ".join(hashler()),
+        "script-src 'self' " + " ".join(hashler()) + f" {CF_BEACON}",
         f"style-src 'self' 'unsafe-inline' {FONT_STIL}",
         f"font-src 'self' {FONT_DOSYA}",
         "img-src 'self' data:",
-        f"connect-src 'self' {TESTROSTER_API}",
+        f"connect-src 'self' {TESTROSTER_API} {CF_RUM}",
         "upgrade-insecure-requests",
     ])
 
