@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
 <link rel="canonical" href="https://erimworks.com/testroster/"/>
 <meta charset="utf-8">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TestRoster — 14 günlük kapalı testi baştan sona yönet</title>
-<meta name="description" content="Google Play kapalı testi için tester bul, kimin hangi gün test ettiğini ölç, kampanya sonunda doğrulanabilir bir rapor al.">
+<title>TestRoster — Run your 14-day closed test end to end</title>
+<meta name="description" content="Find testers for your Google Play closed test, measure who actually tested on which day, and finish with a verifiable report.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Erimworks">
 <meta property="og:locale" content="tr_TR">
 <meta property="og:url" content="https://erimworks.com/testroster/">
 <meta property="og:title" content="TestRoster — 14 günlük kapalı testi baştan sona yönet">
-<meta property="og:description" content="Google Play kapalı testi için tester bul, kimin hangi gün test ettiğini ölç, kampanya sonunda doğrulanabilir bir rapor al.">
+<meta property="og:description" content="Find testers for your Google Play closed test, measure who actually tested on which day, and finish with a verifiable report.">
 <meta property="og:image" content="https://erimworks.com/assets/og-erimworks.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -24,69 +24,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="/assets/site.css">
+<style>
+  /* Sayfanın BİRİNCİL dili artık İngilizce; paylaşılan stil `.en`i
+     ikincil dil sayıp soluklaştırıyor. Yalnızca bu sayfalarda geri
+     alınıyor — site.css diğer uygulamalarda aynen kalsın diye. */
+  .en { color: inherit; }
+</style>
 </head>
 <body>
-
-<header class="site-head">
-  <div class="wrap">
-    <a class="wordmark" href="/">Erimworks</a>
-    <nav class="site-nav" aria-label="Ana menü">
-      <a href="/unvportal/">Yazılım</a>
-      <a href="/#uygulamalar">Uygulamalar</a>
-      <a href="/iletisim/">İletişim</a>
-    </nav>
-  </div>
-</header>
-
-<main class="wrap">
-<div class="read">
-
-<main>
-  <h1>TestRoster</h1>
-  <p class="lede">Google Play kapalı testi 12 tester ve 14 gün ister. Tester bulmak kolay kısmı; asıl mesele 14 gün boyunca kimin <em>gerçekten</em> test ettiğini bilmek.</p>
-
-  <div class="card">
-    <p><strong>Herkesin kendi uygulaması var.</strong> Kendi kapalı testinizi yürütürken başka geliştiricilerin uygulamalarını test edersiniz. Düzenli test eden kullanıcı eşleşme sırasında öne geçer; kendi kampanyası daha hızlı dolar.</p>
-    <p style="margin:0"><strong>Karşılıklılık yalnız testte:</strong> yıldız ya da yorum üzerine kurulu hiçbir düzen yok.</p>
-  </div>
-
-  <h2>Nasıl çalışır</h2>
-  <ol>
-    <li>Uygulamada tek bir Google Grubuna katılırsınız; tester listesi budur.</li>
-    <li>Uygulamanızı eklersiniz ve grup adresini Play Console'da kapalı test ayarlarına yapıştırırsınız. <strong>Bu adım yapılmadan testerlar uygulamanızı kuramaz.</strong></li>
-    <li>Katılım bağlantınızı girersiniz; uygulama bağlantının paket adınızla eşleştiğini doğrular.</li>
-    <li>Gruptaki kullanıcılar testinize katılır; kimin hangi gün ne kadar süre test ettiği ölçülür.</li>
-  </ol>
-
-  <h2>Süre nasıl ölçülüyor</h2>
-  <p>Tester izin verirse test edilen uygulamada geçen süre Android'in kullanım istatistikleriyle ölçülür. İzin vermeyen tester süreyi elle başlatır ve kayıt "düşük güven" olarak işaretlenir. Ekran görüntüsü yükleyip "test ettim" demenin bir karşılığı yoktur.</p>
-  <p>Uygulama başka uygulamaların ekran içeriğini <strong>okumaz</strong>; AccessibilityService kullanılmaz.</p>
-
-  <h2>Planlar</h2>
-  <p><strong>Community (ücretsiz):</strong> 1 uygulama, 14 tester, 14 günlük kampanya, günlük takip ve test dosyası. <strong>Pro ($9,99/ay):</strong> 3 uygulama, tester düşüş uyarıları, yedek tester akışı. <strong>Studio ($24,99/ay):</strong> 10 uygulama, ekip koltuğu, ekran kapsamı analizi. Yıllık alırsan iki ay bedava. Ödeyeceğin tutarı kendi para biriminde Play gösterir. Abonelikler otomatik yenilenir; koşullar <a href="terms">Kullanım Koşulları</a>'nda.</p>
-
-  <h2>Google Play üretim erişimi</h2>
-  <p>Bu araç üretim erişimi konusunda <strong>söz vermez</strong>. Play'in kararı Google'a aittir; TestRoster yalnız süreci kayda geçirir.</p>
-
-  <div class="card" id="wl-tr">
-    <h2 style="margin-top:0">Uygulama henüz Play'de değil</h2>
-    <p>Kapalı test hazırlığı sürüyor. Yayınlandığında haber vermemiz için adresini bırakabilirsin. <strong>Tek bir e-posta</strong> gönderilir, başka bir şey için kullanılmaz.</p>
-    <form class="wl" data-locale="tr" novalidate>
-      <input type="email" name="email" required placeholder="e-posta adresin" aria-label="E-posta adresin">
-      <button type="submit">Haber ver</button>
-    </form>
-    <p class="wl-msg" role="status" aria-live="polite"></p>
-  </div>
-
-  <p class="links">
-    <a href="privacy">Gizlilik Politikası</a>
-    <a href="terms">Kullanım Koşulları (EULA)</a>
-    <a href="support">Destek</a>
-  </p>
-
-  <hr style="border:none;border-top:1px solid var(--line);margin:40px 0">
-
-  <h2 class="en" style="margin-top:0">TestRoster</h2>
+  <h1 class="en" style="margin-top:0">TestRoster</h1>
   <p class="lede">Google Play closed testing asks for 12 testers and 14 days. Finding testers is the easy part; the hard part is knowing who <em>actually</em> tested during those 14 days.</p>
 
   <div class="card">
@@ -130,6 +76,67 @@
 
 </div>
 </main>
+</main>
+
+
+  <hr style="border:none;border-top:1px solid var(--line);margin:40px 0">
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="/">Erimworks</a>
+    <nav class="site-nav" aria-label="Ana menü">
+      <a href="/unvportal/">Yazılım</a>
+      <a href="/#uygulamalar">Uygulamalar</a>
+      <a href="/iletisim/">İletişim</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+<div class="read">
+
+<main>
+  <h2>TestRoster</h2>
+  <p class="lede">Google Play kapalı testi 12 tester ve 14 gün ister. Tester bulmak kolay kısmı; asıl mesele 14 gün boyunca kimin <em>gerçekten</em> test ettiğini bilmek.</p>
+
+  <div class="card">
+    <p><strong>Herkesin kendi uygulaması var.</strong> Kendi kapalı testinizi yürütürken başka geliştiricilerin uygulamalarını test edersiniz. Düzenli test eden kullanıcı eşleşme sırasında öne geçer; kendi kampanyası daha hızlı dolar.</p>
+    <p style="margin:0"><strong>Karşılıklılık yalnız testte:</strong> yıldız ya da yorum üzerine kurulu hiçbir düzen yok.</p>
+  </div>
+
+  <h2>Nasıl çalışır</h2>
+  <ol>
+    <li>Uygulamada tek bir Google Grubuna katılırsınız; tester listesi budur.</li>
+    <li>Uygulamanızı eklersiniz ve grup adresini Play Console'da kapalı test ayarlarına yapıştırırsınız. <strong>Bu adım yapılmadan testerlar uygulamanızı kuramaz.</strong></li>
+    <li>Katılım bağlantınızı girersiniz; uygulama bağlantının paket adınızla eşleştiğini doğrular.</li>
+    <li>Gruptaki kullanıcılar testinize katılır; kimin hangi gün ne kadar süre test ettiği ölçülür.</li>
+  </ol>
+
+  <h2>Süre nasıl ölçülüyor</h2>
+  <p>Tester izin verirse test edilen uygulamada geçen süre Android'in kullanım istatistikleriyle ölçülür. İzin vermeyen tester süreyi elle başlatır ve kayıt "düşük güven" olarak işaretlenir. Ekran görüntüsü yükleyip "test ettim" demenin bir karşılığı yoktur.</p>
+  <p>Uygulama başka uygulamaların ekran içeriğini <strong>okumaz</strong>; AccessibilityService kullanılmaz.</p>
+
+  <h2>Planlar</h2>
+  <p><strong>Community (ücretsiz):</strong> 1 uygulama, 14 tester, 14 günlük kampanya, günlük takip ve test dosyası. <strong>Pro ($9,99/ay):</strong> 3 uygulama, tester düşüş uyarıları, yedek tester akışı. <strong>Studio ($24,99/ay):</strong> 10 uygulama, ekip koltuğu, ekran kapsamı analizi. Yıllık alırsan iki ay bedava. Ödeyeceğin tutarı kendi para biriminde Play gösterir. Abonelikler otomatik yenilenir; koşullar <a href="terms">Kullanım Koşulları</a>'nda.</p>
+
+  <h2>Google Play üretim erişimi</h2>
+  <p>Bu araç üretim erişimi konusunda <strong>söz vermez</strong>. Play'in kararı Google'a aittir; TestRoster yalnız süreci kayda geçirir.</p>
+
+  <div class="card" id="wl-tr">
+    <h2 style="margin-top:0">Uygulama henüz Play'de değil</h2>
+    <p>Kapalı test hazırlığı sürüyor. Yayınlandığında haber vermemiz için adresini bırakabilirsin. <strong>Tek bir e-posta</strong> gönderilir, başka bir şey için kullanılmaz.</p>
+    <form class="wl" data-locale="tr" novalidate>
+      <input type="email" name="email" required placeholder="e-posta adresin" aria-label="E-posta adresin">
+      <button type="submit">Haber ver</button>
+    </form>
+    <p class="wl-msg" role="status" aria-live="polite"></p>
+  </div>
+
+  <p class="links">
+    <a href="privacy">Gizlilik Politikası</a>
+    <a href="terms">Kullanım Koşulları (EULA)</a>
+    <a href="support">Destek</a>
+  </p>
 
 <footer class="site-foot">
   <div class="wrap">
@@ -137,7 +144,6 @@
     <a href="https://groups.google.com/g/testroster-testers">Tester grubu</a>
     </div>
 </footer>
-</main>
 
 <script>
 /*
