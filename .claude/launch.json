@@ -4,8 +4,21 @@
     {
       "name": "erimworks-static",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "9137"],
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "9137"
+      ],
       "port": 9137
+    },
+    {
+      "name": "kursos-web-yerel",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "cd '/Users/umitcanerim/Desktop/merkür müzik/merkur-saas' && APP_ENV=development PORT=3000 SUPABASE_JWT_SECRET=e2e-only-jwt-secret-0123456789abcdef0123456789 pnpm --filter @kursos/web start"
+      ],
+      "port": 3000
     }
   ]
 }

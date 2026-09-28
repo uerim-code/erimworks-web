@@ -289,7 +289,17 @@ main.wrap { padding-top: 44px; padding-bottom: 28px; }
 .app-grid { display: grid; grid-template-columns: 1fr; border-top: 1px solid var(--line); }
 @media (min-width: 46rem) { .app-grid { grid-template-columns: 1fr 1fr; column-gap: 44px; } }
 @media (min-width: 76rem) { .app-grid { grid-template-columns: repeat(4, minmax(0,1fr)); column-gap: 36px; } }
-.app-row { padding: 17px 0; border-bottom: 1px solid var(--line); }
+/* Kart ızgara: ikon SOL sütunda tüm satırları kaplar, metin sağ sütunda akar.
+   Böylece HTML'de sarmalayıcı <div> gerekmedi — <img> kartın ilk çocuğu olarak
+   eklendi, h3 ve paragraflar olduğu gibi kaldı. */
+.app-row { padding: 17px 0; border-bottom: 1px solid var(--line);
+  display: grid; grid-template-columns: 44px 1fr; column-gap: 12px; }
+.app-row > :not(.app-icon) { grid-column: 2; }
+.app-icon { grid-column: 1; grid-row: 1 / -1; align-self: start;
+  width: 44px; height: 44px; border-radius: 10px; display: block;
+  /* Açık zeminli ikonlar beyaz sayfada kaybolmasın diye içeriden ince çerçeve;
+     dıştan border kullanılsaydı 44px'e eklenip ızgarayı kaydırırdı. */
+  box-shadow: inset 0 0 0 1px rgba(18,20,26,.10); }
 .app-row h3 { margin: 0 0 3px; font-size: 15.5px; font-weight: 600; letter-spacing: -0.015em; }
 .app-row h3 a { color: var(--ink); }
 .app-row h3 a:hover { color: var(--accent); text-decoration: none; }
