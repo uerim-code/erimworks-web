@@ -268,7 +268,6 @@ main.wrap { padding-top: 44px; padding-bottom: 28px; }
   background: var(--live-soft); color: var(--live); border: 1px solid var(--live-line);
   vertical-align: 2px;
 }
-.tag-soon { background: var(--surface-3); color: var(--muted-2); border-color: var(--line-2); }
 
 .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; padding: 0; list-style: none; }
 .chips li {
