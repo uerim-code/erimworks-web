@@ -225,6 +225,10 @@ main.wrap { padding-top: 44px; padding-bottom: 28px; }
 .platform-band .wrap { padding-top: 76px; padding-bottom: 8px; }
 .band-head { max-width: 66ch; margin-bottom: 34px; }
 .band-head h2 { margin-bottom: 10px; }
+/* Alt grup başlığı (ör. "Artık geliştirilmiyor"): bant başlığıyla aynı ritim,
+   bir kademe küçük — ana bölüm başlığıyla yarışmasın. */
+.band-head h3 { margin: 0 0 8px; font-family: var(--display); font-size: 19px;
+  font-weight: 600; letter-spacing: -0.015em; color: var(--ink); }
 .band-head p { color: var(--muted); margin: 0; font-size: 16.5px; line-height: 1.6; }
 
 /* Kimlik şeridi solda; pastel kart değil. */
