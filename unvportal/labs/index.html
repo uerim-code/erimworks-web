@@ -43,7 +43,7 @@
       "inLanguage": ["tr", "en"],
       "featureList": [
         "Laboratuvar ve deney tanımları",
-        "Cihaz envanteri, bakım ve kalibrasyon kaydı",
+        "Cihaz rezervasyonu, onay akışı ve kullanım raporu",
         "Sarf malzeme stok takibi ve kritik seviye uyarısı",
         "Laboratuvar ve cihaz rezervasyon takvimi",
         "Akademik uygulama oturumları ve yoklama"
@@ -65,8 +65,8 @@
       "mainEntity": [
         { "@type": "Question", "name": "Laboratuvar yönetim sistemi ne işe yarar?",
           "acceptedAnswer": { "@type": "Answer", "text": "Laboratuvarda hangi deneyin yapıldığını, hangi cihazın ne zaman kullanıldığını, sarf malzemesinin ne kadar kaldığını ve oturumlara kimin katıldığını tek kayıt üzerinden tutar. Elektronik tablo ve kâğıt defterle dağılan bilgiyi tek yerde toplar." } },
-        { "@type": "Question", "name": "Cihaz kalibrasyon ve bakım takibi var mı?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Her cihaz için bakım ve kalibrasyon kayıtları tutulur, tarihi yaklaşan cihazlar listelenir. Bu kayıtlar kalite modülünde kanıt olarak doğrudan kullanılabilir." } },
+        { "@type": "Question", "name": "Kurum dışından cihaz talebi alınabiliyor mu?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Alınabiliyor. Her anabilim dalı için paylaşılabilir bir bağlantı üretilir; talep eden kişi ad, kurum ve kullanım amacını yazar. Talep onay kuyruğuna düşer, sorumlusu onaylar ya da gerekçesiyle reddeder." } },
         { "@type": "Question", "name": "Öğrenci yoklaması nasıl alınıyor?",
           "acceptedAnswer": { "@type": "Answer", "text": "Uygulama oturumu açılır ve katılım oturum kaydına işlenir. Dönem sonunda her öğrencinin katıldığı oturum sayısı ve devam durumu rapor olarak alınır." } },
         { "@type": "Question", "name": "Fiyat nedir?",
@@ -109,11 +109,11 @@
       <h2 id="h-kim">Kimler kullanıyor</h2>
     </div>
     <ul>
-      <li><strong>Laboratuvar sorumlusu:</strong> cihaz envanteri, bakım takvimi, sarf stoğu ve rezervasyon çakışmaları.</li>
+      <li><strong>Laboratuvar sorumlusu:</strong> cihaz rezervasyon taleplerinin onayı, sarf stoğu ve çakışma kontrolü.</li>
       <li><strong>Öğretim üyesi:</strong> uygulama oturumu açma, deney föyü bağlama, yoklama ve dönem sonu katılım raporu.</li>
       <li><strong>Araştırmacı ve lisansüstü öğrenci:</strong> cihaz rezervasyonu, kullanım kaydı, deney sonucu ekleme.</li>
       <li><strong>Satın alma ve idari birim:</strong> hangi sarfın hangi hızda tükendiğini gösteren tüketim geçmişi.</li>
-      <li><strong>Kalite birimi:</strong> kalibrasyon ve bakım kayıtlarına kanıt olarak erişim.</li>
+      <li><strong>Kalite birimi:</strong> cihaz kullanım raporlarına ve sarf tüketim geçmişine kanıt olarak erişim.</li>
     </ul>
   </section>
 
@@ -123,10 +123,10 @@
     </div>
 
     <h3>Laboratuvar ve deney yönetimi</h3>
-    <p>Her laboratuvar birim ağacına bağlanır. Deneyler ad, amaç, gerekli cihaz ve sarf listesiyle tanımlanır; bir deney birden çok derste kullanılabilir. Deney föyleri ve güvenlik notları kayda eklenir, öğrenci oturum öncesinde erişir.</p>
+    <p>Her laboratuvar birim ağacına bağlanır. Ders, deney haftalarına ve her hafta kendi aktivitelerine ayrılır; aktiviteye PDF ya da Word şablonu eklenir, öğrenci oturum öncesinde erişir. Her öğrenciye QR etiketli ayrı bir numune atanır: numunenin gerçek değeri ve kabul toleransı önceden tanımlıdır.</p>
 
-    <h3>Cihaz envanteri, bakım ve kalibrasyon</h3>
-    <p>Cihazlar demirbaş numarası, konumu ve sorumlusuyla listelenir. Her cihazın bakım ve kalibrasyon geçmişi tutulur; tarihi yaklaşanlar ayrı bir listede toplanır. Arızalı cihaz kullanım dışına alındığında o cihazı isteyen rezervasyonlar da uyarı verir.</p>
+    <h3>Cihaz rezervasyonu ve onay akışı</h3>
+    <p>Cihazlar konumu, çalışma saatleri ve günlük ya da saatlik rezervasyon moduyla tanımlanır; bakıma alınan günler müsait olmayan tarih olarak işaretlenir. Anabilim dalı için paylaşılabilir bir bağlantı üretilir, böylece kurum dışından da talep alınır. Gelen talep onay kuyruğuna düşer; tek tek ya da toplu onaylanır, reddedilirse gerekçesi kaydedilir. Randevu öncesi hatırlatma otomatik gider, kullanım sonrası kayıt tutulur ve dönem sonunda cihaz başına kullanım raporu alınır.</p>
 
     <h3>Sarf malzeme stoğu</h3>
     <p>Giriş, çıkış ve sayım kayıtları tutulur. Kritik seviyenin altına düşen malzeme listelenir, tüketim geçmişi satın alma planı için dışa aktarılır. Lot ve son kullanma tarihi olan malzemelerde süresi geçenler ayrılır.</p>
@@ -145,7 +145,7 @@
     <table>
       <tr><th>Soru</th><th>Elektronik tabloda</th><th>UNVPortal Labs'te</th></tr>
       <tr><td>Bu cihaz geçen dönem kaç saat kullanıldı?</td><td>Kayıt tutulduysa elle sayılır</td><td>Rezervasyon ve kullanım kaydından hesaplanır</td></tr>
-      <tr><td>Kalibrasyon tarihi geçen cihaz var mı?</td><td>Dosya açılıp kontrol edilir</td><td>Tarihi yaklaşan cihazlar listelenir</td></tr>
+      <tr><td>Onay bekleyen cihaz talebi var mı?</td><td>E-posta kutusu taranır</td><td>Onay kuyruğunda listelenir</td></tr>
       <tr><td>Bu sarf ne zaman biter?</td><td>Tahmin edilir</td><td>Tüketim geçmişinden görülür</td></tr>
       <tr><td>Öğrenci kaç uygulamaya katıldı?</td><td>Yoklama kâğıtları toplanır</td><td>Oturum kayıtlarından raporlanır</td></tr>
       <tr><td>Kalite raporuna kanıt lazım</td><td>Belgeler tek tek aranır</td><td>Kayda bağlantı verilir</td></tr>
@@ -178,8 +178,8 @@
         <p>Rezervasyon ve deney föyü erişimi için öğrenci hesabı açılabiliyor. Yalnız yoklama alınacaksa öğrenci girişi zorunlu değil.</p>
       </details>
       <details>
-        <summary>Kalibrasyon kayıtları akreditasyon dosyasında kullanılabilir mi?</summary>
-        <p>Kullanılabiliyor. Quality modülü kurulduğunda kanıt istenen maddeye bu kayıt doğrudan bağlanıyor, belge ikinci kez yüklenmiyor.</p>
+        <summary>Cihaz kullanım raporları akreditasyon dosyasında kullanılabilir mi?</summary>
+        <p>Kullanılabiliyor. Quality modülü kurulduğunda kanıt istenen maddeye bu rapor doğrudan bağlanıyor, belge ikinci kez yüklenmiyor.</p>
       </details>
       <details>
         <summary>Fiyat nedir?</summary>
@@ -202,7 +202,7 @@
 
   <section class="read">
     <h2>In English</h2>
-    <p class="en">UNVPortal Labs is a laboratory management system for universities and research groups. It records experiments, equipment inventory with maintenance and calibration history, consumable stock with low-level alerts, laboratory and instrument booking, and attendance for academic sessions. It runs in the browser and shares one database with UNVPortal Exams and Quality, so staff, courses and units are defined once. Previously published as ErimPortal. For pricing or a live demo, write to <a href="mailto:contact@erimworks.com">contact@erimworks.com</a>.</p>
+    <p class="en">UNVPortal Labs is a laboratory management system for universities and research groups. It assigns a QR-tagged sample to each student and grades the submitted result against the sample’s true value and tolerance, handles instrument booking with an approval queue and usage reports, tracks consumable stock with low-level alerts, and records attendance for academic sessions. It runs in the browser and shares one database with UNVPortal Exams and Quality, so staff, courses and units are defined once. Previously published as ErimPortal. For pricing or a live demo, write to <a href="mailto:contact@erimworks.com">contact@erimworks.com</a>.</p>
   </section>
 
 </main>
