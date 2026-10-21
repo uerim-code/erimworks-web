@@ -16,7 +16,7 @@
       "runtimeExecutable": "bash",
       "runtimeArgs": [
         "-c",
-        "cd '/Users/umitcanerim/Desktop/merkür müzik/merkur-saas' && APP_ENV=development PORT=3000 SUPABASE_JWT_SECRET=e2e-only-jwt-secret-0123456789abcdef0123456789 pnpm --filter @kursos/web start"
+        "cd '/Users/umitcanerim/projects/merkur-saas' && APP_ENV=development PORT=3000 SUPABASE_JWT_SECRET=e2e-only-jwt-secret-0123456789abcdef0123456789 pnpm --filter @kursos/web start"
       ],
       "port": 3000
     }
