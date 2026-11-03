@@ -48,7 +48,7 @@
   --ink-2:     #474d5c;
   --muted:     #5a6170;
   --muted-2:   #696f7e;
-  --muted-3:   #6f7583;   /* kucuk etiketler: 4.5:1 uzeri, AA */
+  --muted-3:   #656b79;   /* kucuk etiketler: surface-2 uzerinde 4.9:1, AA (v2.1: 6f7583 4.3:1 kaliyordu) */
 
   /* --- Çizgiler --- */
   --line:      #e6e6e0;
@@ -164,7 +164,10 @@
 }
 
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+/* Kaydirma cubugu olugu her iki kenarda sabit: cubuk gelip gidince sayfa
+   yana kaymaz ve .wrap gercek goruntu alaninda ortalanir (v2.1: cubuk
+   icerigi 15px saga itiyor, kenar bosluklari asimetrik goruniyordu). */
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scrollbar-gutter: stable both-edges; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
@@ -278,7 +281,11 @@ code { font-family: var(--mono); background: var(--surface-3); border: 1px solid
 /* İç sayfalarda da aynı imza: sayfanın tepesinde sönümlenen saç teli ızgara.
    Yalnız ilk ekranda görünür (460 px), aşağısı tertemiz kalır. Ana sayfadaki
    hero ile iç sayfaları aynı sistemin parçası yapan tek işaret bu. */
-main.wrap { padding-top: 48px; padding-bottom: 32px; position: relative; isolation: isolate; }
+/* overflow-x: clip: ::before ızgarası left/right negatif --pad ile viewport
+   kenarına taşıyordu; bu sağda tam --pad kadar (mobilde 22px, masaüstünde
+   72px) yatay kaydırma yaratıyordu. clip bleed'i kırpar, dikey akışı ve
+   yapışkan üst bandı (kardeş öğe) bozmaz. */
+main.wrap { padding-top: 48px; padding-bottom: 32px; position: relative; isolation: isolate; overflow-x: clip; }
 main.wrap::before {
   content: ""; position: absolute; z-index: -1; pointer-events: none;
   top: 0; left: calc(var(--pad) * -1); right: calc(var(--pad) * -1); height: 460px;
@@ -439,7 +446,7 @@ main.wrap::before {
 .pcard-head h3 { margin: 0; font-size: 23px; font-weight: 600; letter-spacing: -0.035em; }
 .pcard-head h3 a { color: var(--ink); }
 .pcard-head h3 a:hover { color: var(--accent); text-decoration: none; }
-.pcard-body > p { margin: 0 0 24px; font-size: 16px; line-height: 1.65; color: var(--muted); max-width: 86ch; }
+.pcard-body > p { margin: 0 0 24px; font-size: 16px; line-height: 1.65; color: var(--muted); max-width: 72ch; }
 .pcard .actions { margin: 0 0 4px; }
 
 .pgrid { display: grid; grid-template-columns: 1fr; gap: 18px; }
