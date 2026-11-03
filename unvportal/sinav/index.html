@@ -23,25 +23,32 @@
 <meta name="twitter:image" content="https://erimworks.com/assets/og-unvportal.png">
 <meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0b0c10" media="(prefers-color-scheme: dark)">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="/assets/site.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "SoftwareApplication",
+      "@type": [
+        "SoftwareApplication",
+        "WebApplication"
+      ],
+      "@id": "https://erimworks.com/unvportal/sinav/#app",
       "name": "UNVPortal Exams",
-      "alternateName": ["Sınav Otomasyonu", "Sınav Yönetim Sistemi"],
+      "alternateName": [
+        "Sınav Otomasyonu",
+        "Sınav Yönetim Sistemi"
+      ],
       "applicationCategory": "BusinessApplication",
       "applicationSubCategory": "Sınav yönetim sistemi",
       "operatingSystem": "Web tarayıcısı",
       "url": "https://erimworks.com/unvportal/sinav/",
       "installUrl": "https://unvportal.com/giris/sinav",
       "description": "Sınav hazırlama, uygulama, optik form değerlendirme ile öğrenme ve program çıktısı analizi yapan sınav yönetim sistemi.",
-      "inLanguage": ["tr", "en"],
+      "inLanguage": [
+        "tr",
+        "en"
+      ],
       "featureList": [
         "Soru havuzu ve sınav kurma",
         "Sınav uygulama ve oturum planı",
@@ -49,30 +56,136 @@
         "Madde analizi ve sonuç raporları",
         "Öğrenme çıktısı ve program çıktısı ölçümü"
       ],
-      "isPartOf": { "@type": "SoftwareApplication", "name": "UNVPortal", "url": "https://erimworks.com/unvportal/" },
-      "offers": { "@type": "Offer", "priceCurrency": "TRY", "price": "0", "description": "Kurumsal lisans; teklif ile belirlenir.", "availability": "https://schema.org/InStock", "url": "https://erimworks.com/iletisim/" },
-      "publisher": { "@type": "Organization", "name": "Erimworks", "url": "https://erimworks.com/" }
+      "isPartOf": {
+        "@type": "SoftwareApplication",
+        "@id": "https://erimworks.com/unvportal/#app",
+        "name": "UNVPortal",
+        "url": "https://erimworks.com/unvportal/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "description": "Kurumsal lisans; teklif ile belirlenir.",
+        "availability": "https://schema.org/InStock",
+        "url": "https://erimworks.com/iletisim/",
+        "eligibleCustomerType": "https://schema.org/Business",
+        "businessFunction": "http://purl.org/goodrelations/v1#LeaseOut"
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://erimworks.com/#founder",
+        "name": "Ümit Can Erim"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://erimworks.com/#org",
+        "name": "Erimworks",
+        "url": "https://erimworks.com/"
+      },
+      "image": "https://erimworks.com/assets/og-unvportal.png",
+      "provider": {
+        "@id": "https://erimworks.com/#org"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://erimworks.com/unvportal/sinav/#webpage"
+      }
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Erimworks", "item": "https://erimworks.com/" },
-        { "@type": "ListItem", "position": 2, "name": "UNVPortal", "item": "https://erimworks.com/unvportal/" },
-        { "@type": "ListItem", "position": 3, "name": "Exams", "item": "https://erimworks.com/unvportal/sinav/" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Erimworks",
+          "item": "https://erimworks.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "UNVPortal",
+          "item": "https://erimworks.com/unvportal/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Exams",
+          "item": "https://erimworks.com/unvportal/sinav/"
+        }
       ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "Optik formlar nasıl değerlendiriliyor?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Optik okuyucudan çıkan dosya sisteme yüklenir, cevap anahtarıyla eşleştirilir ve sonuçlar öğrenci bazında hesaplanır. Birden çok kitapçık türü desteklenir; iptal edilen soru işaretlendiğinde puanlama yeniden hesaplanır." } },
-        { "@type": "Question", "name": "Program çıktısı ölçümü nasıl yapılıyor?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Her soru bir öğrenme çıktısına, öğrenme çıktıları da program çıktılarına bağlanır. Sınav sonuçları hesaplandığında öğrencinin ve dersin her çıktıdaki başarı düzeyi otomatik çıkar." } },
-        { "@type": "Question", "name": "Madde analizi var mı?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Soru güçlük ve ayırt edicilik değerleri hesaplanır. Beklenenden düşük ayırt ediciliğe sahip sorular listelenir ve soru havuzunda işaretlenebilir." } },
-        { "@type": "Question", "name": "Fiyat nedir?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Kurumsal lisans; kullanıcı sayısı ve seçilen modüllere göre teklif ile belirlenir. Teklif ve canlı sunum için contact@erimworks.com adresine iletebilirsiniz." } }
+        {
+          "@type": "Question",
+          "name": "Hangi optik okuyucularla çalışıyor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "UNVPortal Exams, optik okuyucunun ürettiği veri dosyası üzerinden çalışıyor; cihaz markasına bağlı değil. Kurulum sırasında kurumun okuyucusuna ait çıktı biçimi tanımlanır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Çevrim içi sınav yapılabiliyor mu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "UNVPortal Exams'in şu anki sürümü basılı sınav ve optik değerlendirme akışı üzerine kurulu. Çevrim içi sınav ihtiyacınızı yazarsanız yol haritasındaki durumunu netleştirebiliriz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Var olan soru havuzumuzu aktarabilir miyiz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Var olan soru havuzu UNVPortal Exams'e aktarılabilir: elektronik tablo ya da metin dosyası halindeki soru listeleri içe aktarılıyor. Çıktı eşlemesi kurulum sırasında birlikte belirlenir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sonuçlar öğrenci bilgi sistemine aktarılıyor mu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "UNVPortal Exams'ten not listesi dışa aktarılabiliyor. Öğrenci bilgi sistemine doğrudan bağlantı, kurumun kullandığı sisteme göre UNVPortal Connect kapsamında kuruluyor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Fiyat nedir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "UNVPortal Exams fiyatı kurumsal lisans modelindedir; kullanıcı sayısı ve seçilen modüllere göre teklif ile belirleniyor. Teklif ve canlı sunum için contact@erimworks.com adresine iletebilirsiniz."
+          }
+        }
       ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://erimworks.com/unvportal/sinav/#webpage",
+      "url": "https://erimworks.com/unvportal/sinav/",
+      "name": "Sınav Yönetim ve Otomasyon Sistemi — UNVPortal Exams | Erimworks",
+      "inLanguage": "tr",
+      "isPartOf": {
+        "@id": "https://erimworks.com/#site"
+      },
+      "about": {
+        "@id": "https://erimworks.com/unvportal/sinav/#app"
+      },
+      "publisher": {
+        "@id": "https://erimworks.com/#org"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://erimworks.com/assets/og-unvportal.png",
+        "width": 1200,
+        "height": 630
+      },
+      "dateModified": "2026-11-03",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          ".lede"
+        ]
+      }
     }
   ]
 }
@@ -93,17 +206,22 @@
 
 <main class="wrap">
   <p class="crumbs"><a href="/">Erimworks</a><span>/</span><a href="/unvportal/">UNVPortal</a><span>/</span>Exams</p>
+  <p class="small muted" style="margin:6px 0 0">Son güncelleme: <time datetime="2026-11-03">3 Kasım 2026</time></p>
 
   <div class="read">
     <p class="eyebrow">Sınav yönetim sistemi</p>
     <h1>UNVPortal Exams: sınavı kurar, okur ve çıktıya bağlar</h1>
-    <p class="lede">Soru havuzundan sınav kurulur, oturum planlanır, optik formlar okunur ve sonuçlar hesaplanır. Bunun üzerine öğrenme çıktısı ile program çıktısı ölçümü aynı sistemde çıkar; akreditasyon dönemi geldiğinde ayrıca hesaplanacak bir şey kalmaz.</p>
+    <p class="lede">UNVPortal Exams, üniversiteler için geliştirilmiş web tabanlı bir sınav yönetim ve otomasyon sistemidir. Soru havuzundan sınav kurma, oturum ve salon planı, optik form değerlendirme, madde analizi ile öğrenme çıktısı ve program çıktısı ölçümü aynı sistemde yapılır. Her soru bir öğrenme çıktısına bağlı olduğu için çıktı başarı düzeyleri sınav okunduğunda hesaplanır; akreditasyon dönemi geldiğinde ayrıca hesaplanacak bir şey kalmaz.</p>
     <div class="actions">
       <a class="btn btn-primary" href="mailto:contact@erimworks.com?subject=UNVPortal%20Exams%20sunum%20talebi">Sunum talep edin</a>
       <a class="btn btn-quiet" href="https://unvportal.com/giris/sinav" rel="noopener">Kullanıcı girişi</a>
     </div>
   </div>
 
+  <section aria-labelledby="h-nedir" class="read">
+    <div class="section-head"><h2 id="h-nedir">Sınav otomasyon sistemi nedir?</h2></div>
+    <p>Sınav otomasyon sistemi, bir eğitim kurumunda soru havuzu, sınav kurma, oturum planlama, optik form okuma, puanlama ve sonuç analizini tek yazılımda toplayan sistemdir. Optik değerlendirme, optik okuyucudan çıkan cevap verisinin cevap anahtarıyla eşleştirilerek puanlanmasıdır; madde analizi ise her sorunun güçlük ve ayırt edicilik değerini hesaplar. UNVPortal Exams, bu adımlara öğrenme çıktısı ve program çıktısı ölçümünü ekleyen bir sınav otomasyon sistemidir.</p>
+  </section>
   <section aria-labelledby="h-kim" class="read">
     <div class="section-head"><h2 id="h-kim">Kimler kullanıyor</h2></div>
     <ul>
@@ -156,23 +274,23 @@
     <div class="faq">
       <details>
         <summary>Hangi optik okuyucularla çalışıyor?</summary>
-        <p>Okuyucunun ürettiği veri dosyası üzerinden çalışıyor, cihaz markasına bağlı değil. Kurulum sırasında kurumun okuyucusuna ait çıktı biçimi tanımlanır.</p>
+        <p>UNVPortal Exams, optik okuyucunun ürettiği veri dosyası üzerinden çalışıyor; cihaz markasına bağlı değil. Kurulum sırasında kurumun okuyucusuna ait çıktı biçimi tanımlanır.</p>
       </details>
       <details>
         <summary>Çevrim içi sınav yapılabiliyor mu?</summary>
-        <p>Şu anki sürüm basılı sınav ve optik değerlendirme akışı üzerine kurulu. Çevrim içi uygulama ihtiyacınızı yazarsanız yol haritasındaki durumunu netleştirebiliriz.</p>
+        <p>UNVPortal Exams'in şu anki sürümü basılı sınav ve optik değerlendirme akışı üzerine kurulu. Çevrim içi sınav ihtiyacınızı yazarsanız yol haritasındaki durumunu netleştirebiliriz.</p>
       </details>
       <details>
         <summary>Var olan soru havuzumuzu aktarabilir miyiz?</summary>
-        <p>Elektronik tablo ya da metin dosyası halindeki soru listeleri içe aktarılıyor. Çıktı eşlemesi kurulum sırasında birlikte belirlenir.</p>
+        <p>Var olan soru havuzu UNVPortal Exams'e aktarılabilir: elektronik tablo ya da metin dosyası halindeki soru listeleri içe aktarılıyor. Çıktı eşlemesi kurulum sırasında birlikte belirlenir.</p>
       </details>
       <details>
         <summary>Sonuçlar öğrenci bilgi sistemine aktarılıyor mu?</summary>
-        <p>Not listesi dışa aktarılabiliyor. Doğrudan bağlantı, kurumun kullandığı sisteme göre UNVPortal Connect kapsamında kuruluyor.</p>
+        <p>UNVPortal Exams'ten not listesi dışa aktarılabiliyor. Öğrenci bilgi sistemine doğrudan bağlantı, kurumun kullandığı sisteme göre UNVPortal Connect kapsamında kuruluyor.</p>
       </details>
       <details>
         <summary>Fiyat nedir?</summary>
-        <p>Kurumsal lisans; kullanıcı sayısı ve seçilen modüllere göre teklif ile belirleniyor. Teklif ve canlı sunum için contact@erimworks.com adresine iletebilirsiniz.</p>
+        <p>UNVPortal Exams fiyatı kurumsal lisans modelindedir; kullanıcı sayısı ve seçilen modüllere göre teklif ile belirleniyor. Teklif ve canlı sunum için contact@erimworks.com adresine iletebilirsiniz.</p>
       </details>
     </div>
   </section>
@@ -190,8 +308,8 @@
   </section>
 
   <section class="read">
-    <h2>In English</h2>
-    <p class="en">UNVPortal Exams is an examination management system for higher education. It holds a question bank tagged by topic, difficulty and learning outcome; builds exams with multiple booklet versions; plans sessions, halls and invigilators; marks optical answer sheets against the key; and reports item difficulty and discrimination. Because every question is linked to a learning outcome and each outcome to a programme outcome, attainment levels are produced as the exam is marked and can be used directly as accreditation evidence. For pricing or a live demo, write to <a href="mailto:contact@erimworks.com">contact@erimworks.com</a>.</p>
+    <h2 lang="en">In English</h2>
+    <p class="en" lang="en">UNVPortal Exams is an examination management system for higher education. It holds a question bank tagged by topic, difficulty and learning outcome; builds exams with multiple booklet versions; plans sessions, halls and invigilators; marks optical answer sheets against the key; and reports item difficulty and discrimination. Because every question is linked to a learning outcome and each outcome to a programme outcome, attainment levels are produced as the exam is marked and can be used directly as accreditation evidence. For pricing or a live demo, write to <a href="mailto:contact@erimworks.com">contact@erimworks.com</a>.</p>
   </section>
 
 </main>
@@ -201,7 +319,9 @@
     <p style="margin:0">© <span class="yr">2026</span> Erimworks ·
       <a href="mailto:contact@erimworks.com">contact@erimworks.com</a> ·
       <a href="/unvportal/">UNVPortal</a> ·
-      <a href="/iletisim/">İletişim</a>
+      <a href="/iletisim/">İletişim</a> ·
+      <a href="/hakkimizda/">Hakkımızda</a> ·
+      <a href="/gizlilik/">Gizlilik</a>
     </p>
   </div>
 </footer>

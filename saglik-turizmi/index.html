@@ -23,25 +23,32 @@
 <meta name="twitter:image" content="https://erimworks.com/assets/og-ipos.png">
 <meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0b0c10" media="(prefers-color-scheme: dark)">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="/assets/site.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "SoftwareApplication",
+      "@type": [
+        "SoftwareApplication",
+        "WebApplication"
+      ],
+      "@id": "https://erimworks.com/saglik-turizmi/#app",
       "name": "International Patient OS",
-      "alternateName": ["IPOS", "Sağlık Turizmi CRM"],
+      "alternateName": [
+        "IPOS",
+        "Sağlık Turizmi CRM"
+      ],
       "applicationCategory": "BusinessApplication",
       "applicationSubCategory": "Sağlık turizmi operasyon ve CRM yazılımı",
       "operatingSystem": "Web tarayıcısı, iOS, Android",
       "url": "https://erimworks.com/saglik-turizmi/",
       "installUrl": "https://clinic.erimworks.com/oturum",
       "description": "Sağlık turizmi yapan klinikler için hasta adayından taburculuğa ve teşvik dosyasının kapanışına kadar tek vaka kaydı üzerinden yürüyen operasyon platformu.",
-      "inLanguage": ["tr", "en"],
+      "inLanguage": [
+        "tr",
+        "en"
+      ],
       "featureList": [
         "WhatsApp, e-posta ve form mesajları için tek gelen kutusu",
         "Aday hastadan taburculuğa tek vaka dosyası",
@@ -51,30 +58,124 @@
         "Devlet teşvik dosyası ve başvuru takibi",
         "Hasta portalı ve çok dilli iletişim"
       ],
-      "offers": { "@type": "Offer", "priceCurrency": "TRY", "price": "0", "description": "Kurumsal lisans; klinik büyüklüğüne göre teklif ile belirlenir.", "availability": "https://schema.org/InStock", "url": "https://erimworks.com/iletisim/" },
-      "publisher": { "@type": "Organization", "name": "Erimworks", "url": "https://erimworks.com/" }
+      "offers": {
+        "@type": "Offer",
+        "description": "Kurumsal lisans; klinik büyüklüğüne göre teklif ile belirlenir.",
+        "availability": "https://schema.org/InStock",
+        "url": "https://erimworks.com/iletisim/",
+        "eligibleCustomerType": "https://schema.org/Business",
+        "businessFunction": "http://purl.org/goodrelations/v1#LeaseOut"
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://erimworks.com/#founder",
+        "name": "Ümit Can Erim"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://erimworks.com/#org",
+        "name": "Erimworks",
+        "url": "https://erimworks.com/"
+      },
+      "image": "https://erimworks.com/assets/og-ipos.png",
+      "provider": {
+        "@id": "https://erimworks.com/#org"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://erimworks.com/saglik-turizmi/#webpage"
+      }
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Erimworks", "item": "https://erimworks.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Sağlık turizmi yazılımı", "item": "https://erimworks.com/saglik-turizmi/" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Erimworks",
+          "item": "https://erimworks.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Sağlık turizmi yazılımı",
+          "item": "https://erimworks.com/saglik-turizmi/"
+        }
       ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "Sağlık turizmi CRM'i normal CRM'den nasıl ayrılır?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Genel CRM satış hunisini takip eder. Sağlık turizminde satıştan sonra iş bitmez: cerrah incelemesi, uçuş, otel, transfer, ameliyat, kontrol ve teşvik dosyası aynı hastaya bağlıdır. International Patient OS bu adımların hepsini tek vaka kaydı üzerinde tutar." } },
-        { "@type": "Question", "name": "WhatsApp entegrasyonu var mı?",
-          "acceptedAnswer": { "@type": "Answer", "text": "WhatsApp Business, e-posta ve web formundan gelen mesajlar tek gelen kutusunda toplanır, yanıt süresi ölçülür ve her konuşma ilgili vakaya bağlanır. Hastanın dili farklıysa mesaj çevirisiyle birlikte gösterilir." } },
-        { "@type": "Question", "name": "Devlet teşviklerini takip ediyor mu?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Teşvik kategorileri koda gömülmez, veri olarak tutulur ve sürümlenir; mevzuat değiştiğinde geçmiş hesaplar bozulmaz. Ön onay, başvuru, gider havuzu ve çifte destek kontrolü sistem içinde yürür." } },
-        { "@type": "Question", "name": "Hasta verisi nerede duruyor?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Her klinik ayrı kiracı kaydıdır ve izolasyon veritabanı seviyesinde zorlanır: kiracı belirtilmemiş bir sorgu sıfır satır döner. Denetim kaydı yalnızca eklenebilir, silinemez." } },
-        { "@type": "Question", "name": "Yapay zekâ klinik karar veriyor mu?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Hayır. Sistem özetler, sınıflandırır ve incelenmesi gereken durumları işaretler. Tanı koymaz, cerrahi uygunluğa karar vermez; kararı hekim verir ve kaydı hekim onaylar." } }
+        {
+          "@type": "Question",
+          "name": "Genel bir CRM ile arasındaki fark ne?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "International Patient OS ile genel bir CRM arasındaki fark, işin nerede bittiğidir. Genel CRM satış hunisini takip eder ve teklif kabul edilince işi biter; sağlık turizminde asıl iş orada başlar: cerrah incelemesi, uçuş, otel, transfer, ameliyat, kontrol ve teşvik dosyası aynı hastaya bağlıdır. International Patient OS o adımların hepsini tek vaka kaydında tutar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Birden çok kliniğimiz var, hepsini tek yerden yönetebilir miyiz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "International Patient OS birden çok kliniği tek yerden yönetebilir. Çok klinikli kurumlarda sahiplik bir kez tanımlanır, izolasyon klinik seviyesinde kalır ve merkezî operasyon panosu her klinik için ayrı ayrı okunur. Yetki devri rolü büyütmez, yalnız daraltır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "WhatsApp entegrasyonu için ne gerekiyor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "International Patient OS'un WhatsApp entegrasyonu için kliniğin kendi Meta WhatsApp Business hesabı ve şablon onayı gerekiyor. Bu adım Meta tarafında takvimsel süre ister; kurulumun geri kalanı buna bağlı değildir, entegrasyon sonradan bağlanır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mevcut hasta kayıtlarımızı aktarabilir miyiz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mevcut hasta kayıtları International Patient OS'a aktarılabilir: elektronik tablo halindeki hasta, teklif ve ödeme kayıtları içe aktarılıyor. Alan eşlemesi kurulum sırasında birlikte belirlenir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Fiyat nedir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "International Patient OS fiyatı kurumsal lisans modelindedir; klinik sayısı ve kullanıcı sayısına göre teklif ile belirleniyor. Teklif ve canlı sunum için contact@erimworks.com adresine iletebilirsiniz."
+          }
+        }
       ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://erimworks.com/saglik-turizmi/#webpage",
+      "url": "https://erimworks.com/saglik-turizmi/",
+      "name": "Sağlık Turizmi CRM ve Operasyon Yazılımı — International Patient OS",
+      "inLanguage": "tr",
+      "isPartOf": {
+        "@id": "https://erimworks.com/#site"
+      },
+      "about": {
+        "@id": "https://erimworks.com/saglik-turizmi/#app"
+      },
+      "publisher": {
+        "@id": "https://erimworks.com/#org"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://erimworks.com/assets/og-ipos.png",
+        "width": 1200,
+        "height": 630
+      },
+      "dateModified": "2026-11-03",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          ".lede"
+        ]
+      }
     }
   ]
 }
@@ -95,17 +196,22 @@
 
 <main class="wrap">
   <p class="crumbs"><a href="/">Erimworks</a><span>/</span>Sağlık turizmi yazılımı</p>
+  <p class="small muted" style="margin:6px 0 0">Son güncelleme: <time datetime="2026-11-03">3 Kasım 2026</time></p>
 
   <div class="read">
     <p class="eyebrow">Sağlık turizmi operasyon platformu</p>
     <h1>International Patient OS: ilk mesajdan teşvik dosyasının kapanışına</h1>
-    <p class="lede">Yurt dışından hasta kabul eden bir klinikte iş, teklif kabul edilince başlar. Cerrah incelemesi, uçuş, otel, transfer, ameliyat, kontrol ve teşvik başvurusu aynı hastaya bağlıdır ama çoğu klinikte altı ayrı yerde tutulur. International Patient OS hepsini tek vaka kaydı üzerinde yürütür.</p>
+    <p class="lede">International Patient OS, yurt dışından hasta kabul eden klinikler için geliştirilmiş web tabanlı bir sağlık turizmi operasyon ve CRM sistemidir. İlk mesajdan teşvik dosyasının kapanışına kadar cerrah incelemesi, teklif, uçuş, otel, transfer, ameliyat, kontrol ve teşvik başvurusu tek vaka kaydı üzerinde yürür. Çoğu klinikte altı ayrı yerde tutulan bu adımlar aynı hastaya bağlanır. Arayüz Türkçe ve İngilizce; altı ek dil için altyapı hazırdır.</p>
     <div class="actions">
       <a class="btn btn-primary" href="mailto:contact@erimworks.com?subject=International%20Patient%20OS%20sunum%20talebi">Sunum talep edin</a>
       <a class="btn btn-quiet" href="https://clinic.erimworks.com/oturum" rel="noopener">Kullanıcı girişi</a>
     </div>
   </div>
 
+  <section aria-labelledby="h-nedir" class="read">
+    <div class="section-head"><h2 id="h-nedir">Sağlık turizmi CRM'i nedir?</h2></div>
+    <p>Sağlık turizmi CRM'i, yurt dışından hasta kabul eden kliniklerin hasta iletişimini, teklif ve vaka sürecini, seyahat planını ve vaka bazlı finansı tek kayıtta yöneten yazılımdır. Genel CRM'den farkı, işin teklif kabulüyle bitmemesidir: uçuş, otel, transfer, ameliyat, kontrol ve teşvik dosyası (devlet desteği başvuru kaydı) aynı hastaya bağlanır. International Patient OS, bu adımları tek vaka kaydında yürüten bir sağlık turizmi CRM'idir.</p>
+  </section>
   <section aria-labelledby="h-kim" class="read">
     <div class="section-head"><h2 id="h-kim">Kimler kullanıyor</h2></div>
     <ul>
@@ -165,23 +271,23 @@
     <div class="faq">
       <details>
         <summary>Genel bir CRM ile arasındaki fark ne?</summary>
-        <p>Genel CRM satış hunisini takip eder ve teklif kabul edilince işi biter. Sağlık turizminde asıl iş orada başlar: cerrah incelemesi, uçuş, otel, transfer, ameliyat, kontrol ve teşvik dosyası aynı hastaya bağlıdır. Bu sistem o adımların hepsini tek vaka kaydında tutar.</p>
+        <p>International Patient OS ile genel bir CRM arasındaki fark, işin nerede bittiğidir. Genel CRM satış hunisini takip eder ve teklif kabul edilince işi biter; sağlık turizminde asıl iş orada başlar: cerrah incelemesi, uçuş, otel, transfer, ameliyat, kontrol ve teşvik dosyası aynı hastaya bağlıdır. International Patient OS o adımların hepsini tek vaka kaydında tutar.</p>
       </details>
       <details>
         <summary>Birden çok kliniğimiz var, hepsini tek yerden yönetebilir miyiz?</summary>
-        <p>Yönetebilirsiniz. Çok klinikli kurumlarda sahiplik bir kez tanımlanır, izolasyon klinik seviyesinde kalır ve merkezî operasyon panosu her klinik için ayrı ayrı okunur. Yetki devri rolü büyütmez, yalnız daraltır.</p>
+        <p>International Patient OS birden çok kliniği tek yerden yönetebilir. Çok klinikli kurumlarda sahiplik bir kez tanımlanır, izolasyon klinik seviyesinde kalır ve merkezî operasyon panosu her klinik için ayrı ayrı okunur. Yetki devri rolü büyütmez, yalnız daraltır.</p>
       </details>
       <details>
         <summary>WhatsApp entegrasyonu için ne gerekiyor?</summary>
-        <p>Kliniğin kendi Meta WhatsApp Business hesabı ve şablon onayı gerekiyor. Bu adım Meta tarafında takvimsel süre ister; kurulumun geri kalanı buna bağlı değildir, entegrasyon sonradan bağlanır.</p>
+        <p>International Patient OS'un WhatsApp entegrasyonu için kliniğin kendi Meta WhatsApp Business hesabı ve şablon onayı gerekiyor. Bu adım Meta tarafında takvimsel süre ister; kurulumun geri kalanı buna bağlı değildir, entegrasyon sonradan bağlanır.</p>
       </details>
       <details>
         <summary>Mevcut hasta kayıtlarımızı aktarabilir miyiz?</summary>
-        <p>Elektronik tablo halindeki hasta, teklif ve ödeme kayıtları içe aktarılıyor. Alan eşlemesi kurulum sırasında birlikte belirlenir.</p>
+        <p>Mevcut hasta kayıtları International Patient OS'a aktarılabilir: elektronik tablo halindeki hasta, teklif ve ödeme kayıtları içe aktarılıyor. Alan eşlemesi kurulum sırasında birlikte belirlenir.</p>
       </details>
       <details>
         <summary>Fiyat nedir?</summary>
-        <p>Kurumsal lisans; klinik sayısı ve kullanıcı sayısına göre teklif ile belirleniyor. Teklif ve canlı sunum için contact@erimworks.com adresine iletebilirsiniz.</p>
+        <p>International Patient OS fiyatı kurumsal lisans modelindedir; klinik sayısı ve kullanıcı sayısına göre teklif ile belirleniyor. Teklif ve canlı sunum için contact@erimworks.com adresine iletebilirsiniz.</p>
       </details>
     </div>
   </section>
@@ -198,8 +304,8 @@
   </section>
 
   <section class="read">
-    <h2>In English</h2>
-    <p class="en">International Patient OS runs the operation of clinics that treat patients from abroad. Enquiries from WhatsApp, email and web forms arrive in one inbox with translation; each becomes a lead and then a case that moves through a state machine. Surgeon review, quotes and packages, surgery scheduling with conflicts refused at the database, flights, hotels and transfers, per-case finance in multiple currencies, and government incentive files all hang off that single case record. Tenant isolation is enforced in Postgres, the audit trail is append-only, and the system never makes a clinical decision: it summarises and flags, the surgeon decides. For pricing or a live demo, write to <a href="mailto:contact@erimworks.com">contact@erimworks.com</a>.</p>
+    <h2 lang="en">In English</h2>
+    <p class="en" lang="en">International Patient OS runs the operation of clinics that treat patients from abroad. Enquiries from WhatsApp, email and web forms arrive in one inbox with translation; each becomes a lead and then a case that moves through a state machine. Surgeon review, quotes and packages, surgery scheduling with conflicts refused at the database, flights, hotels and transfers, per-case finance in multiple currencies, and government incentive files all hang off that single case record. Tenant isolation is enforced in Postgres, the audit trail is append-only, and the system never makes a clinical decision: it summarises and flags, the surgeon decides. For pricing or a live demo, write to <a href="mailto:contact@erimworks.com">contact@erimworks.com</a>.</p>
   </section>
 
 </main>
@@ -209,7 +315,9 @@
     <p style="margin:0">© <span class="yr">2026</span> Erimworks ·
       <a href="mailto:contact@erimworks.com">contact@erimworks.com</a> ·
       <a href="/">Ana sayfa</a> ·
-      <a href="/iletisim/">İletişim</a>
+      <a href="/iletisim/">İletişim</a> ·
+      <a href="/hakkimizda/">Hakkımızda</a> ·
+      <a href="/gizlilik/">Gizlilik</a>
     </p>
   </div>
 </footer>

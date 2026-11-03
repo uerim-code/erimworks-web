@@ -23,24 +23,32 @@
 <meta name="twitter:image" content="https://erimworks.com/assets/og-kursos.png">
 <meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0b0c10" media="(prefers-color-scheme: dark)">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="/assets/site.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "SoftwareApplication",
+      "@type": [
+        "SoftwareApplication",
+        "WebApplication"
+      ],
+      "@id": "https://erimworks.com/kurs-yonetim/#app",
       "name": "KursOS",
-      "alternateName": ["Kurs Yönetim Sistemi", "Sanat Okulu Yönetim Sistemi", "Atölye Yönetim Yazılımı"],
+      "alternateName": [
+        "Kurs Yönetim Sistemi",
+        "Sanat Okulu Yönetim Sistemi",
+        "Atölye Yönetim Yazılımı"
+      ],
       "applicationCategory": "BusinessApplication",
       "applicationSubCategory": "Kurs ve sanat okulu yönetim sistemi",
       "operatingSystem": "Web tarayıcısı",
       "url": "https://erimworks.com/kurs-yonetim/",
       "description": "Kurs, sanat okulu, atölye ve müzik okulu için ders programı, öğrenci ve eğitmen yönetimi, tahsilat, borç takibi ve eğitmen hakediş sistemi. Her kurum kendi markası ve kendi mobil uygulamasıyla kurulur.",
-      "inLanguage": ["tr", "en"],
+      "inLanguage": [
+        "tr",
+        "en"
+      ],
       "featureList": [
         "Tekrarlayan atölye serisi ve beş görünümlü takvim",
         "Atölye kapasitesi, oda tipi zorunluluğu ve ders arası hazırlık süresi",
@@ -54,30 +62,132 @@
         "Kuruma özel marka, alan adı ve mobil uygulama",
         "Çok kiracılı yapı: her kurum kendi verisinde"
       ],
-      "offers": { "@type": "Offer", "priceCurrency": "TRY", "price": "0", "description": "Kurumsal lisans; şube ve kullanıcı sayısına göre teklif ile belirlenir.", "availability": "https://schema.org/InStock", "url": "https://erimworks.com/iletisim/" },
-      "publisher": { "@type": "Organization", "name": "Erimworks", "url": "https://erimworks.com/" }
+      "offers": {
+        "@type": "Offer",
+        "description": "Kurumsal lisans; şube ve kullanıcı sayısına göre teklif ile belirlenir.",
+        "availability": "https://schema.org/InStock",
+        "url": "https://erimworks.com/iletisim/",
+        "eligibleCustomerType": "https://schema.org/Business",
+        "businessFunction": "http://purl.org/goodrelations/v1#LeaseOut"
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://erimworks.com/#founder",
+        "name": "Ümit Can Erim"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://erimworks.com/#org",
+        "name": "Erimworks",
+        "url": "https://erimworks.com/"
+      },
+      "image": "https://erimworks.com/assets/og-kursos.png",
+      "provider": {
+        "@id": "https://erimworks.com/#org"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://erimworks.com/kurs-yonetim/#webpage"
+      }
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Erimworks", "item": "https://erimworks.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Kurs ve akademi yönetimi", "item": "https://erimworks.com/kurs-yonetim/" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Erimworks",
+          "item": "https://erimworks.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Kurs ve akademi yönetimi",
+          "item": "https://erimworks.com/kurs-yonetim/"
+        }
       ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "Tekrarlayan haftalık dersler nasıl yönetiliyor?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Ders bir seri olarak tanımlanır. Bir günü değiştirmek istediğinizde üç kapsamdan birini seçersiniz: yalnız bu ders, bu ve sonrakiler, ya da serinin tamamı. Değişiklik seçtiğiniz kapsam dışına taşmaz." } },
-        { "@type": "Question", "name": "Eğitmen hakedişi hesaplanıyor mu?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Hesaplanıyor. Yapılan derslerden eğitmen başına hakediş çıkar; tahsilat, borç ve hakediş aynı finans ekranından raporlanır." } },
-        { "@type": "Question", "name": "Borcu olan öğrenci ders alabilir mi?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Kurumun tercihi. Gecikmiş ödeme durumunda ders planlamayı engelleyen bir kural var; açık bırakılırsa borç yalnız uyarı olarak görünür." } },
-        { "@type": "Question", "name": "Birden çok şubemiz ve branşımız var, olur mu?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Sistem çok kiracılı tasarlandı. Aynı kurum altında birden çok iş birimi (örneğin müzik ve sanat) ayrı ayrı çalışabilir; kurumlar birbirinin verisini göremez ve bu izolasyon veritabanı seviyesinde zorlanır." } },
-        { "@type": "Question", "name": "WhatsApp hatırlatması için ne gerekiyor?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Kurumun kendi Meta WhatsApp Business hesabı ve onaylı mesaj şablonları gerekiyor. Sistem onaylı şablon defterini tutar ve hatırlatmanın ihtiyaç duyduğu ama onaylanmamış şablonları uyarı olarak listeler." } }
+        {
+          "@type": "Question",
+          "name": "Mevcut öğrenci listemizi aktarabilir miyiz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mevcut öğrenci listesi KursOS'a aktarılabilir: elektronik tablo halindeki öğrenci, eğitmen ve paket listeleri kurulum sırasında içe aktarılıyor. Sütun eşlemesi kurulum sırasında birlikte belirlenir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Birebir ders dışında grup dersi de var mı?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "KursOS'ta birebir dersin yanında grup dersi de var. Aynı takvim ve paket yapısı grup dersleri için de çalışıyor; kontenjan ve bekleme listesi grup derslerinde devreye giriyor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Veliler sisteme giriyor mu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "KursOS'ta öğrenci ve veli portalı var: program, kalan ders, ödevler ve borç durumu görünüyor. Portal erişimi kurum tarafından açılıyor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Öğrencilerimiz \"KursOS\" adını görecek mi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Öğrenciler KursOS adını görmez. KursOS ürünün adı; kurulum kurumunuzun markası, logosu ve alan adıyla yapılıyor. Mobil uygulama da mağazalara kurumunuzun kendi adıyla çıkıyor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mobil uygulama için ayrı bir geliştirme gerekiyor mu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "KursOS mobil uygulaması için ayrı bir geliştirme gerekmiyor. Uygulama aynı API'ye bağlanan beyaz etiket bir istemci; kurumunuz için marka, ikon ve mağaza kaydı ayarlanıp yayınlanıyor. Apple ve Google hesabının kurum adına açılması gereken tek adım, çünkü mağazalar bunu geliştirici hesabına bağlı istiyor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Fiyat nedir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "KursOS fiyatı kurumsal lisans modelindedir; şube, eğitmen ve kullanıcı sayısına göre teklif ile belirleniyor. Teklif ve canlı sunum için contact@erimworks.com adresine iletebilirsiniz."
+          }
+        }
       ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://erimworks.com/kurs-yonetim/#webpage",
+      "url": "https://erimworks.com/kurs-yonetim/",
+      "name": "Kurs ve Sanat Okulu Yönetim Sistemi — KursOS | Erimworks",
+      "inLanguage": "tr",
+      "isPartOf": {
+        "@id": "https://erimworks.com/#site"
+      },
+      "about": {
+        "@id": "https://erimworks.com/kurs-yonetim/#app"
+      },
+      "publisher": {
+        "@id": "https://erimworks.com/#org"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://erimworks.com/assets/og-kursos.png",
+        "width": 1200,
+        "height": 630
+      },
+      "dateModified": "2026-11-03",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          ".lede"
+        ]
+      }
     }
   ]
 }
@@ -98,11 +208,12 @@
 
 <main class="wrap">
   <p class="crumbs"><a href="/">Erimworks</a><span>/</span>Kurs ve sanat okulu yönetimi</p>
+  <p class="small muted" style="margin:6px 0 0">Son güncelleme: <time datetime="2026-11-03">3 Kasım 2026</time></p>
 
   <div class="read">
     <p class="eyebrow">Kurs ve sanat okulu yönetim sistemi</p>
     <h1>KursOS: ders programı, tahsilat ve hakediş aynı kayıtta</h1>
-    <p class="lede">Bir sanat okulunda üç soru sürekli sorulur: bu hafta kim hangi saatte hangi atölyede, bu öğrencinin kaç dersi kaldı, bu ay hangi eğitmene ne ödenecek. KursOS üçünü de aynı kayıttan cevaplar. Sistem bir sanat okulunun günlük işine göre yazıldı; müzik okulu, dil kursu ve hobi akademisi de aynı yapıda çalışır.</p>
+    <p class="lede">KursOS, sanat okulları, müzik okulları, dil kursları ve hobi akademileri için geliştirilmiş web tabanlı, çok kiracılı bir kurs yönetim sistemidir. Tekrarlayan ders serisi, beş görünümlü takvim, atölye ve oda kapasitesi, öğrenci paketi ve kalan ders takibi ile bekleme listesi aynı kayıtta tutulur. Öğrenci ve veli portalı, tahsilat, borç ve üç modelli eğitmen hakedişi de aynı kayıttan yürür. Sistem bir sanat okulunun günlük işine göre yazıldı; kurulum kurumun kendi markası ve alan adıyla yapılır.</p>
     <div class="actions">
       <a class="btn btn-primary" href="mailto:contact@erimworks.com?subject=KursOS%20sunum%20talebi">Sunum talep edin</a>
       <a class="btn btn-quiet" href="/iletisim/">Fiyat teklifi</a>
@@ -110,6 +221,10 @@
     <p class="small" style="margin-top:14px">Sistem ilk kurumunda canlı çalışıyor ve yeni kurumlara açılıyor. <strong>KursOS ürünün adıdır, kurumunuzun göreceği ad değil:</strong> kurulum sizin markanızla, sizin alan adınızla yapılır ve mobil uygulama mağazalara kurumunuzun kendi adıyla çıkar.</p>
   </div>
 
+  <section aria-labelledby="h-nedir" class="read">
+    <div class="section-head"><h2 id="h-nedir">Kurs yönetim sistemi nedir?</h2></div>
+    <p>Kurs yönetim sistemi, bir eğitim kurumunun ders programını, öğrenci kayıtlarını ve ders paketlerini, eğitmen atamalarını, oda kullanımını ve tahsilat ile eğitmen ödemelerini tek veritabanında tutan yazılımdır. Sanat ve müzik okullarında ayırt edici gereksinimler tekrarlayan haftalık ders serisi, oda tipi zorunluluğu ve paketten düşen ders sayısıdır. KursOS, bu yapıyı kurumun kendi markasıyla sunan çok kiracılı bir kurs yönetim sistemidir.</p>
+  </section>
   <section aria-labelledby="h-kim" class="read">
     <div class="section-head"><h2 id="h-kim">Kimler için</h2></div>
     <ul>
@@ -177,27 +292,27 @@
     <div class="faq">
       <details>
         <summary>Mevcut öğrenci listemizi aktarabilir miyiz?</summary>
-        <p>Elektronik tablo halindeki öğrenci, eğitmen ve paket listeleri kurulum sırasında içe aktarılıyor. Sütun eşlemesi kurulum sırasında birlikte belirlenir.</p>
+        <p>Mevcut öğrenci listesi KursOS'a aktarılabilir: elektronik tablo halindeki öğrenci, eğitmen ve paket listeleri kurulum sırasında içe aktarılıyor. Sütun eşlemesi kurulum sırasında birlikte belirlenir.</p>
       </details>
       <details>
         <summary>Birebir ders dışında grup dersi de var mı?</summary>
-        <p>Var. Aynı takvim ve paket yapısı grup dersleri için de çalışıyor; kontenjan ve bekleme listesi grup derslerinde devreye giriyor.</p>
+        <p>KursOS'ta birebir dersin yanında grup dersi de var. Aynı takvim ve paket yapısı grup dersleri için de çalışıyor; kontenjan ve bekleme listesi grup derslerinde devreye giriyor.</p>
       </details>
       <details>
         <summary>Veliler sisteme giriyor mu?</summary>
-        <p>Öğrenci ve veli portalı var: program, kalan ders, ödevler ve borç durumu görünüyor. Portal erişimi kurum tarafından açılıyor.</p>
+        <p>KursOS'ta öğrenci ve veli portalı var: program, kalan ders, ödevler ve borç durumu görünüyor. Portal erişimi kurum tarafından açılıyor.</p>
       </details>
       <details>
         <summary>Öğrencilerimiz "KursOS" adını görecek mi?</summary>
-        <p>Görmeyecek. KursOS ürünün adı; kurulum sizin markanız, logonuz ve alan adınızla yapılıyor. Mobil uygulama da mağazalara kurumunuzun kendi adıyla çıkıyor.</p>
+        <p>Öğrenciler KursOS adını görmez. KursOS ürünün adı; kurulum kurumunuzun markası, logosu ve alan adıyla yapılıyor. Mobil uygulama da mağazalara kurumunuzun kendi adıyla çıkıyor.</p>
       </details>
       <details>
         <summary>Mobil uygulama için ayrı bir geliştirme gerekiyor mu?</summary>
-        <p>Gerekmiyor. Uygulama aynı API'ye bağlanan beyaz etiket bir istemci; kurumunuz için marka, ikon ve mağaza kaydı ayarlanıp yayınlanıyor. Apple ve Google hesabının kurum adına açılması gereken tek adım, çünkü mağazalar bunu geliştirici hesabına bağlı istiyor.</p>
+        <p>KursOS mobil uygulaması için ayrı bir geliştirme gerekmiyor. Uygulama aynı API'ye bağlanan beyaz etiket bir istemci; kurumunuz için marka, ikon ve mağaza kaydı ayarlanıp yayınlanıyor. Apple ve Google hesabının kurum adına açılması gereken tek adım, çünkü mağazalar bunu geliştirici hesabına bağlı istiyor.</p>
       </details>
       <details>
         <summary>Fiyat nedir?</summary>
-        <p>Kurumsal lisans; şube, eğitmen ve kullanıcı sayısına göre teklif ile belirleniyor. Teklif ve canlı sunum için contact@erimworks.com adresine iletebilirsiniz.</p>
+        <p>KursOS fiyatı kurumsal lisans modelindedir; şube, eğitmen ve kullanıcı sayısına göre teklif ile belirleniyor. Teklif ve canlı sunum için contact@erimworks.com adresine iletebilirsiniz.</p>
       </details>
     </div>
   </section>
@@ -214,8 +329,8 @@
   </section>
 
   <section class="read">
-    <h2>In English</h2>
-    <p class="en">KursOS is a multi-tenant management platform for music schools, art centres, language courses and academies. It handles recurring lesson series with three edit scopes, a calendar with day, week, month, teacher and room views, students and lesson packages with remaining-credit tracking, waitlists and trial lessons, assignments and submissions, announcements and a student portal, and finance covering collections, outstanding balances and teacher earnings. WhatsApp reminders run through the institution's own Meta account against an approved-template ledger. Tenant isolation is enforced in the database, and no single institution's name is hard-coded anywhere. KursOS is the product name, not the one your students see: each deployment carries the institution's own brand, logo and domain, and the white-label mobile client is published to the App Store and Google Play under the institution's own name. For pricing or a live demo, write to <a href="mailto:contact@erimworks.com">contact@erimworks.com</a>.</p>
+    <h2 lang="en">In English</h2>
+    <p class="en" lang="en">KursOS is a multi-tenant management platform for music schools, art centres, language courses and academies. It handles recurring lesson series with three edit scopes, a calendar with day, week, month, teacher and room views, students and lesson packages with remaining-credit tracking, waitlists and trial lessons, assignments and submissions, announcements and a student portal, and finance covering collections, outstanding balances and teacher earnings. WhatsApp reminders run through the institution's own Meta account against an approved-template ledger. Tenant isolation is enforced in the database, and no single institution's name is hard-coded anywhere. KursOS is the product name, not the one your students see: each deployment carries the institution's own brand, logo and domain, and the white-label mobile client is published to the App Store and Google Play under the institution's own name. For pricing or a live demo, write to <a href="mailto:contact@erimworks.com">contact@erimworks.com</a>.</p>
   </section>
 
 </main>
@@ -225,7 +340,9 @@
     <p style="margin:0">© <span class="yr">2026</span> Erimworks ·
       <a href="mailto:contact@erimworks.com">contact@erimworks.com</a> ·
       <a href="/">Ana sayfa</a> ·
-      <a href="/iletisim/">İletişim</a>
+      <a href="/iletisim/">İletişim</a> ·
+      <a href="/hakkimizda/">Hakkımızda</a> ·
+      <a href="/gizlilik/">Gizlilik</a>
     </p>
   </div>
 </footer>
