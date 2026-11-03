@@ -25,8 +25,22 @@
 /sitemap.xml
   Cache-Control: public, max-age=3600
 
-# Kök sayfa: /*.html kuralı "/" ile eşleşmiyor, aksi hâlde max-age=0 kalıyor.
+# Kök ve dizin sayfaları: /*.html kuralı "/" ve "/hakkimizda/" gibi dizin
+# adresleriyle eşleşmiyor (Pages temiz URL sunar), aksi hâlde max-age=0 kalıyor.
 /
+  Cache-Control: public, max-age=600, must-revalidate
+
+/*/
+  Cache-Control: public, max-age=600, must-revalidate
+
+# Uzantısız hukuki/destek sayfaları (mağaza uyum yüzeyi; nadiren değişir)
+/*/privacy
+  Cache-Control: public, max-age=600, must-revalidate
+
+/*/terms
+  Cache-Control: public, max-age=600, must-revalidate
+
+/*/support
   Cache-Control: public, max-age=600, must-revalidate
 
 /llms.txt
