@@ -12,3 +12,7 @@
 
 # Makineye ozel Claude Code ayarlari
 .claude/settings.local.json
+
+# Tasarim/denetim araci ciktilari (ekran goruntuleri, hook config) — depoya girmez
+.taste-skill/
+.impeccable/
