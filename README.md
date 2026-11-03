@@ -53,3 +53,18 @@ indirip aynı kalıpla ekle.
 - Ana sayfa ve ürün sayfalarındaki JSON-LD, `https://erimworks.com/#org` ve
   `#founder` kimliklerine `@id` ile bağlanır; yeni sayfa eklerken aynı
   `@id`'leri kullan, `publisher`'ı satır içi yeniden tanımlama.
+
+## IndexNow
+
+Kök dizindeki `e5711a3b8b16fb65709daa31e9f39703.txt` IndexNow anahtar dosyasıdır (içeriği dosya adıyla
+aynı; herkese açık olması tasarım gereği). Bing, Yandex, Naver ve Seznam bu
+protokolü okur; ChatGPT araması Bing dizinine dayandığı için önemlidir.
+Yayından sonra değişen adresleri bildirmek için:
+
+```
+curl -s -X POST https://api.indexnow.org/indexnow -H 'Content-Type: application/json; charset=utf-8' \
+  -d '{"host":"erimworks.com","key":"e5711a3b8b16fb65709daa31e9f39703","keyLocation":"https://erimworks.com/e5711a3b8b16fb65709daa31e9f39703.txt","urlList":["https://erimworks.com/","https://erimworks.com/hakkimizda/"]}'
+```
+
+Yanıt 200 ya da 202 ise kabul edildi. Cloudflare panelinde Caching → Crawler
+Hints açıksa Cloudflare da aynı protokolle otomatik bildirim yapar.
