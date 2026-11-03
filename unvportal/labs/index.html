@@ -23,25 +23,32 @@
 <meta name="twitter:image" content="https://erimworks.com/assets/og-unvportal.png">
 <meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0b0c10" media="(prefers-color-scheme: dark)">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="/assets/site.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "SoftwareApplication",
+      "@type": [
+        "SoftwareApplication",
+        "WebApplication"
+      ],
+      "@id": "https://erimworks.com/unvportal/labs/#app",
       "name": "UNVPortal Labs",
-      "alternateName": ["ErimPortal", "Laboratuvar Yönetim Sistemi"],
+      "alternateName": [
+        "ErimPortal",
+        "Laboratuvar Yönetim Sistemi"
+      ],
       "applicationCategory": "BusinessApplication",
       "applicationSubCategory": "Laboratuvar yönetim sistemi",
       "operatingSystem": "Web tarayıcısı",
       "url": "https://erimworks.com/unvportal/labs/",
       "installUrl": "https://unvportal.com/giris/laboratuvar",
       "description": "Üniversite ve araştırma laboratuvarları için deney, cihaz, sarf stoğu, rezervasyon ve yoklama yönetimi sağlayan laboratuvar yönetim sistemi.",
-      "inLanguage": ["tr", "en"],
+      "inLanguage": [
+        "tr",
+        "en"
+      ],
       "featureList": [
         "Laboratuvar ve deney tanımları",
         "Cihaz rezervasyonu, onay akışı ve kullanım raporu",
@@ -49,30 +56,136 @@
         "Laboratuvar ve cihaz rezervasyon takvimi",
         "Akademik uygulama oturumları ve yoklama"
       ],
-      "isPartOf": { "@type": "SoftwareApplication", "name": "UNVPortal", "url": "https://erimworks.com/unvportal/" },
-      "offers": { "@type": "Offer", "priceCurrency": "TRY", "price": "0", "description": "Kurumsal lisans; teklif ile belirlenir.", "availability": "https://schema.org/InStock", "url": "https://erimworks.com/iletisim/" },
-      "publisher": { "@type": "Organization", "name": "Erimworks", "url": "https://erimworks.com/" }
+      "isPartOf": {
+        "@type": "SoftwareApplication",
+        "@id": "https://erimworks.com/unvportal/#app",
+        "name": "UNVPortal",
+        "url": "https://erimworks.com/unvportal/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "description": "Kurumsal lisans; teklif ile belirlenir.",
+        "availability": "https://schema.org/InStock",
+        "url": "https://erimworks.com/iletisim/",
+        "eligibleCustomerType": "http://purl.org/goodrelations/v1#Business",
+        "businessFunction": "http://purl.org/goodrelations/v1#LeaseOut"
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://erimworks.com/#founder",
+        "name": "Ümit Can Erim"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://erimworks.com/#org",
+        "name": "Erimworks",
+        "url": "https://erimworks.com/"
+      },
+      "image": "https://erimworks.com/assets/og-unvportal.png",
+      "provider": {
+        "@id": "https://erimworks.com/#org"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://erimworks.com/unvportal/labs/#webpage"
+      }
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Erimworks", "item": "https://erimworks.com/" },
-        { "@type": "ListItem", "position": 2, "name": "UNVPortal", "item": "https://erimworks.com/unvportal/" },
-        { "@type": "ListItem", "position": 3, "name": "Labs", "item": "https://erimworks.com/unvportal/labs/" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Erimworks",
+          "item": "https://erimworks.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "UNVPortal",
+          "item": "https://erimworks.com/unvportal/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Labs",
+          "item": "https://erimworks.com/unvportal/labs/"
+        }
       ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "Laboratuvar yönetim sistemi ne işe yarar?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Laboratuvarda hangi deneyin yapıldığını, hangi cihazın ne zaman kullanıldığını, sarf malzemesinin ne kadar kaldığını ve oturumlara kimin katıldığını tek kayıt üzerinden tutar. Elektronik tablo ve kâğıt defterle dağılan bilgiyi tek yerde toplar." } },
-        { "@type": "Question", "name": "Kurum dışından cihaz talebi alınabiliyor mu?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Alınabiliyor. Her anabilim dalı için paylaşılabilir bir bağlantı üretilir; talep eden kişi ad, kurum ve kullanım amacını yazar. Talep onay kuyruğuna düşer, sorumlusu onaylar ya da gerekçesiyle reddeder." } },
-        { "@type": "Question", "name": "Öğrenci yoklaması nasıl alınıyor?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Uygulama oturumu açılır ve katılım oturum kaydına işlenir. Dönem sonunda her öğrencinin katıldığı oturum sayısı ve devam durumu rapor olarak alınır." } },
-        { "@type": "Question", "name": "Fiyat nedir?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Kurumsal lisans; kullanıcı sayısı ve laboratuvar sayısına göre teklif ile belirlenir. Teklif ve canlı sunum için contact@erimworks.com adresine iletebilirsiniz." } }
+        {
+          "@type": "Question",
+          "name": "Mevcut cihaz listemizi aktarabilir miyiz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mevcut cihaz listesi UNVPortal Labs'e aktarılabilir: elektronik tablo halindeki cihaz, sarf ve laboratuvar listeleri kurulum sırasında içe aktarılıyor. Sütun eşlemesi kurulum sırasında birlikte belirlenir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kaç laboratuvar tanımlanabilir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "UNVPortal Labs'te tanımlanabilecek laboratuvar sayısında sınır yok. Lisans, laboratuvar sayısı değil kullanıcı sayısı üzerinden belirleniyor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Öğrenciler de giriş yapıyor mu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "UNVPortal Labs'te rezervasyon ve deney föyü erişimi için öğrenci hesabı açılabiliyor. Yalnız yoklama alınacaksa öğrenci girişi zorunlu değil."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cihaz kullanım raporları akreditasyon dosyasında kullanılabilir mi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "UNVPortal Labs'in cihaz kullanım raporları akreditasyon dosyasında kanıt olarak kullanılabiliyor. Quality modülü kurulduğunda kanıt istenen maddeye bu rapor doğrudan bağlanıyor, belge ikinci kez yüklenmiyor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Fiyat nedir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "UNVPortal Labs fiyatı kurumsal lisans modelindedir; kullanıcı sayısına ve seçilen modüllere göre teklif ile belirleniyor. Teklif ve canlı sunum için contact@erimworks.com adresine iletebilirsiniz."
+          }
+        }
       ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://erimworks.com/unvportal/labs/#webpage",
+      "url": "https://erimworks.com/unvportal/labs/",
+      "name": "Laboratuvar Yönetim Sistemi — UNVPortal Labs | Erimworks",
+      "inLanguage": "tr",
+      "isPartOf": {
+        "@id": "https://erimworks.com/#site"
+      },
+      "about": {
+        "@id": "https://erimworks.com/unvportal/labs/#app"
+      },
+      "publisher": {
+        "@id": "https://erimworks.com/#org"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://erimworks.com/assets/og-unvportal.png",
+        "width": 1200,
+        "height": 630
+      },
+      "dateModified": "2026-11-03",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          ".lede"
+        ]
+      }
     }
   ]
 }
@@ -93,11 +206,12 @@
 
 <main class="wrap">
   <p class="crumbs"><a href="/">Erimworks</a><span>/</span><a href="/unvportal/">UNVPortal</a><span>/</span>Labs</p>
+  <p class="small muted" style="margin:6px 0 0">Son güncelleme: <time datetime="2026-11-03">3 Kasım 2026</time></p>
 
   <div class="read">
     <p class="eyebrow">Laboratuvar yönetim sistemi</p>
     <h1>UNVPortal Labs: laboratuvarın günlük işini kayda geçirir</h1>
-    <p class="lede">Hangi deney yapıldı, hangi cihaz kim tarafından ne zaman kullanıldı, sarf malzemesinden ne kadar kaldı, uygulamaya kim katıldı. UNVPortal Labs bu soruların cevabını tek bir sistemde tutar; cevap için elektronik tablolara ve laboratuvar defterine dönmek gerekmez.</p>
+    <p class="lede">UNVPortal Labs, üniversite ve araştırma laboratuvarları için geliştirilmiş web tabanlı bir laboratuvar yönetim sistemidir (LIMS). Deney ve numune kayıtları, cihaz rezervasyonu ve onay akışı, sarf malzeme stoğu, akademik uygulama oturumları ve yoklama aynı sistemde tutulur. Hangi deney yapıldı, hangi cihaz kim tarafından ne zaman kullanıldı, sarf malzemesinden ne kadar kaldı sorularının cevabı için elektronik tablolara ve laboratuvar defterine dönmek gerekmez.</p>
     <div class="actions">
       <a class="btn btn-primary" href="mailto:contact@erimworks.com?subject=UNVPortal%20Labs%20sunum%20talebi">Sunum talep edin</a>
       <a class="btn btn-quiet" href="https://unvportal.com/giris/laboratuvar" rel="noopener">Kullanıcı girişi</a>
@@ -105,6 +219,10 @@
     <p class="small" style="margin-top:14px">Bu modül daha önce <strong>ErimPortal</strong> adıyla yayınlanıyordu. Kurulumlar ve hesaplar aynı sistemde devam ediyor.</p>
   </div>
 
+  <section aria-labelledby="h-nedir" class="read">
+    <div class="section-head"><h2 id="h-nedir">Laboratuvar yönetim sistemi (LIMS) nedir?</h2></div>
+    <p>Laboratuvar yönetim sistemi (LIMS, Laboratory Information Management System), bir laboratuvarın numune, deney, cihaz, sarf malzeme ve kullanıcı kayıtlarını tek veritabanında tutan yazılımdır. Hangi deneyin kimin tarafından hangi cihazda yapıldığını, cihazın ne kadar kullanıldığını ve hangi malzemenin ne zaman biteceğini kayıt üzerinden raporlar. UNVPortal Labs, üniversite laboratuvarlarının günlük işine göre yazılmış bu türden bir laboratuvar yönetim sistemidir.</p>
+  </section>
   <section aria-labelledby="h-kim" class="read">
     <div class="section-head">
       <h2 id="h-kim">Kimler kullanıyor</h2>
@@ -168,23 +286,23 @@
     <div class="faq">
       <details>
         <summary>Mevcut cihaz listemizi aktarabilir miyiz?</summary>
-        <p>Evet. Elektronik tablo halindeki cihaz, sarf ve laboratuvar listeleri kurulum sırasında içe aktarılıyor. Sütun eşlemesi kurulum sırasında birlikte belirlenir.</p>
+        <p>Mevcut cihaz listesi UNVPortal Labs'e aktarılabilir: elektronik tablo halindeki cihaz, sarf ve laboratuvar listeleri kurulum sırasında içe aktarılıyor. Sütun eşlemesi kurulum sırasında birlikte belirlenir.</p>
       </details>
       <details>
         <summary>Kaç laboratuvar tanımlanabilir?</summary>
-        <p>Sayı sınırı yok. Lisans, kullanıcı sayısı üzerinden belirleniyor.</p>
+        <p>UNVPortal Labs'te tanımlanabilecek laboratuvar sayısında sınır yok. Lisans, laboratuvar sayısı değil kullanıcı sayısı üzerinden belirleniyor.</p>
       </details>
       <details>
         <summary>Öğrenciler de giriş yapıyor mu?</summary>
-        <p>Rezervasyon ve deney föyü erişimi için öğrenci hesabı açılabiliyor. Yalnız yoklama alınacaksa öğrenci girişi zorunlu değil.</p>
+        <p>UNVPortal Labs'te rezervasyon ve deney föyü erişimi için öğrenci hesabı açılabiliyor. Yalnız yoklama alınacaksa öğrenci girişi zorunlu değil.</p>
       </details>
       <details>
         <summary>Cihaz kullanım raporları akreditasyon dosyasında kullanılabilir mi?</summary>
-        <p>Kullanılabiliyor. Quality modülü kurulduğunda kanıt istenen maddeye bu rapor doğrudan bağlanıyor, belge ikinci kez yüklenmiyor.</p>
+        <p>UNVPortal Labs'in cihaz kullanım raporları akreditasyon dosyasında kanıt olarak kullanılabiliyor. Quality modülü kurulduğunda kanıt istenen maddeye bu rapor doğrudan bağlanıyor, belge ikinci kez yüklenmiyor.</p>
       </details>
       <details>
         <summary>Fiyat nedir?</summary>
-        <p>Kurumsal lisans; kullanıcı sayısına ve seçilen modüllere göre teklif ile belirleniyor. Teklif ve canlı sunum için contact@erimworks.com adresine iletebilirsiniz.</p>
+        <p>UNVPortal Labs fiyatı kurumsal lisans modelindedir; kullanıcı sayısına ve seçilen modüllere göre teklif ile belirleniyor. Teklif ve canlı sunum için contact@erimworks.com adresine iletebilirsiniz.</p>
       </details>
     </div>
   </section>
@@ -202,8 +320,8 @@
   </section>
 
   <section class="read">
-    <h2>In English</h2>
-    <p class="en">UNVPortal Labs is a laboratory management system for universities and research groups. It assigns a QR-tagged sample to each student and grades the submitted result against the sample’s true value and tolerance, handles instrument booking with an approval queue and usage reports, tracks consumable stock with low-level alerts, and records attendance for academic sessions. It runs in the browser and shares one database with UNVPortal Exams and Quality, so staff, courses and units are defined once. Previously published as ErimPortal. For pricing or a live demo, write to <a href="mailto:contact@erimworks.com">contact@erimworks.com</a>.</p>
+    <h2 lang="en">In English</h2>
+    <p class="en" lang="en">UNVPortal Labs is a laboratory management system for universities and research groups. It assigns a QR-tagged sample to each student and grades the submitted result against the sample’s true value and tolerance, handles instrument booking with an approval queue and usage reports, tracks consumable stock with low-level alerts, and records attendance for academic sessions. It runs in the browser and shares one database with UNVPortal Exams and Quality, so staff, courses and units are defined once. Previously published as ErimPortal. For pricing or a live demo, write to <a href="mailto:contact@erimworks.com">contact@erimworks.com</a>.</p>
   </section>
 
 </main>
@@ -213,7 +331,9 @@
     <p style="margin:0">© <span class="yr">2026</span> Erimworks ·
       <a href="mailto:contact@erimworks.com">contact@erimworks.com</a> ·
       <a href="/unvportal/">UNVPortal</a> ·
-      <a href="/iletisim/">İletişim</a>
+      <a href="/iletisim/">İletişim</a> ·
+      <a href="/hakkimizda/">Hakkımızda</a> ·
+      <a href="/gizlilik/">Gizlilik</a>
     </p>
   </div>
 </footer>

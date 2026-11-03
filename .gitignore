@@ -16,3 +16,6 @@
 # Tasarim/denetim araci ciktilari (ekran goruntuleri, hook config) — depoya girmez
 .taste-skill/
 .impeccable/
+
+# Denetim raporlari (SEO/GEO/ASO) — site Pages uzerinden yayinlandigi icin depoya girmez
+reports/

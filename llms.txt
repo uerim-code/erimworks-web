@@ -1,0 +1,39 @@
+# Erimworks
+
+> Erimworks is an independent software studio based in Türkiye. It builds multi-tenant process-management platforms for universities, medical-tourism clinics and art/music schools, and publishes consumer mobile apps on the App Store and Google Play under the developer name Erimworks. Primary site language: Turkish; every product page ends with an "In English" summary. Contact: contact@erimworks.com
+
+## Platforms (B2B, browser-based, Turkish + English UI)
+
+- [UNVPortal — Laboratuvar, sınav ve kalite yönetim sistemi](https://erimworks.com/unvportal/): Modular higher-education platform. The Labs, Exams and Quality modules share one database and can each be licensed alone. Connect and Intelligence modules are in preparation.
+- [UNVPortal Labs — Laboratuvar Yönetim Sistemi](https://erimworks.com/unvportal/labs/): Laboratory management system (LIMS): QR-tagged samples graded against true value and tolerance, instrument booking with an approval queue, consumable stock with low-level alerts, academic session attendance. Formerly ErimPortal.
+- [UNVPortal Exams — Sınav Yönetim ve Otomasyon Sistemi](https://erimworks.com/unvportal/sinav/): Question bank tagged by topic, difficulty and learning outcome; multi-booklet exams; optical-sheet marking; item analysis; learning- and programme-outcome attainment for accreditation.
+- [UNVPortal Quality — Kalite Yönetim ve Akreditasyon Sistemi](https://erimworks.com/unvportal/kalite/): Institution-wide quality management: tasks and evidence per criterion, committees, decisions and actions, PDCA (PUKÖ) cycle, self-assessment reports. Formerly QualityOS. Not an accreditation body.
+- [International Patient OS — Sağlık Turizmi CRM ve Operasyon Yazılımı](https://erimworks.com/saglik-turizmi/): Operations platform for clinics treating patients from abroad: unified WhatsApp/email/form inbox with translation, case state machine, surgeon review, surgery and travel scheduling, per-case multi-currency finance, government incentive files. Postgres-level tenant isolation, append-only audit log.
+- [KursOS — Kurs ve Sanat Okulu Yönetim Sistemi](https://erimworks.com/kurs-yonetim/): White-label management platform for art, music and language schools: recurring lesson series, room and capacity rules, lesson packages, waitlists, student/parent portal, collections and three teacher-earnings models, WhatsApp reminders.
+- [TestRoster](https://erimworks.com/testroster/): Finds testers for Google Play 14-day closed tests and measures who actually tested on which day, ending with a verifiable report.
+
+## Mobile apps (consumer)
+
+- [ChemBioCalc](https://erimworks.com/chembiocalc/): Chemistry, molecular biology and pharmacy calculators for the lab. iOS and Android. Product site: https://chembiocalc.com
+- [Dozify](https://dozify.app): GLP-1 dose, weight and meal tracker. iOS. Product site: https://dozify.app
+- [Scanyra](https://erimworks.com/scanyra/): Document scanner that produces multi-page PDFs from the phone camera. iOS and Android. Formerly Scanlyte.
+- [QRwise](https://erimworks.com/qrwise/): QR code reader and generator. iOS.
+- [Owndex](https://erimworks.com/owndex/): Warranty, return-window and receipt tracker. iOS.
+- [Match Manor](https://erimworks.com/match-manor/): Match puzzle game. iOS and Android.
+- [AstroRota](https://erimworks.com/astrorota/): Void-of-course Moon intervals, planetary retrogrades and Moon phases in the user's time zone, based on NASA JPL ephemeris data.
+- [Pikaro](https://erimworks.com/pikaro/) and [Restla](https://erimworks.com/restla/): published and working, no longer actively developed (OS-compatibility updates only).
+
+## Company
+
+- [Hakkımızda — About Erimworks](https://erimworks.com/hakkimizda/): Who builds the software, how deployments work, tenant isolation and data handling.
+- [İletişim, teklif ve sunum talebi](https://erimworks.com/iletisim/): Enterprise licensing, pricing quotes and live demo requests for all platforms; app support uses the same address.
+- Licensing model: per-institution enterprise quote based on user count and selected modules; cloud hosting managed by Erimworks or on-premises.
+- [Gizlilik ve KVKK](https://erimworks.com/gizlilik/): Privacy notice for the erimworks.com website itself.
+- Developer pages: https://apps.apple.com/developer/id1894513244 · https://play.google.com/store/apps/developer?id=Erimworks · https://github.com/uerim-code
+
+## Optional
+
+- [Scanyra Support](https://erimworks.com/scanyra/support)
+- [TestRoster Support](https://erimworks.com/testroster/support)
+- Privacy policies and EULAs for every app live under each app's path, e.g. https://erimworks.com/qrwise/privacy and https://erimworks.com/qrwise/terms
+- Sitemap: https://erimworks.com/sitemap.xml

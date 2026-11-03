@@ -32,8 +32,8 @@ KOK = pathlib.Path(__file__).resolve().parent.parent
 
 # Ölçülen dış yükler (2026-09-02). Sayfalardaki diğer https adreslerinin hepsi
 # <a href> — CSP bağlantıları kısıtlamaz, yalnız YÜKLENEN kaynağı kısıtlar.
-FONT_STIL = "https://fonts.googleapis.com"
-FONT_DOSYA = "https://fonts.gstatic.com"
+# Fontlar 2026-11-03'ten beri /assets/fonts/ altında kendi sunucumuzda; Google
+# Fonts origin'leri politikadan çıkarıldı (render-blocking dış CSS + 3. taraf).
 # testroster/index.html bekleme listesi kaydını buraya POST ediyor.
 TESTROSTER_API = "https://iebavqhqsldsxjmiquhy.supabase.co"
 
@@ -72,8 +72,8 @@ def politika() -> str:
         "frame-ancestors 'none'",
         "form-action 'self'",
         "script-src 'self' " + " ".join(hashler()) + f" {CF_BEACON}",
-        f"style-src 'self' 'unsafe-inline' {FONT_STIL}",
-        f"font-src 'self' {FONT_DOSYA}",
+        "style-src 'self' 'unsafe-inline'",
+        "font-src 'self'",
         "img-src 'self' data:",
         f"connect-src 'self' {TESTROSTER_API} {CF_RUM}",
         "upgrade-insecure-requests",
