@@ -67,7 +67,7 @@ def main() -> int:
                 hatalar.append(f"{u}: JSON-LD geçersiz: {e}")
                 continue
             g = d.get("@graph", [d])
-            wp = [n for n in g if n.get("@type") == "WebPage"]
+            wp = [n for n in g if n.get("@type") in ("WebPage", "AboutPage", "ContactPage")]
             if not wp or wp[0].get("url") != u or wp[0].get("inLanguage") != p["lang"]:
                 hatalar.append(f"{u}: WebPage url/inLanguage canonical ve <html lang> ile uyuşmuyor")
             for n in g:

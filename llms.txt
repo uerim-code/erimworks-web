@@ -27,8 +27,8 @@
 
 ## Company
 
-- [Hakkımızda — About Erimworks](https://erimworks.com/hakkimizda/): Who builds the software, how deployments work, tenant isolation and data handling.
-- [İletişim, teklif ve sunum talebi](https://erimworks.com/iletisim/): Enterprise licensing, pricing quotes and live demo requests for all platforms; app support uses the same address.
+- [Hakkımızda — About Erimworks](https://erimworks.com/hakkimizda/) · [English](https://erimworks.com/en/about/): Who builds the software, how deployments work, tenant isolation and data handling.
+- [İletişim, teklif ve sunum talebi](https://erimworks.com/iletisim/) · [English](https://erimworks.com/en/contact/): Enterprise licensing, pricing quotes and live demo requests for all platforms; app support uses the same address.
 - Licensing model: per-institution enterprise quote based on user count and selected modules; cloud hosting managed by Erimworks or on-premises.
 - [Gizlilik ve KVKK](https://erimworks.com/gizlilik/): Privacy notice for the erimworks.com website itself.
 - Developer pages: https://apps.apple.com/developer/id1894513244 · https://play.google.com/store/apps/developer?id=Erimworks · https://github.com/uerim-code
