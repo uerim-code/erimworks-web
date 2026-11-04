@@ -1,8 +1,10 @@
 # Erimworks
 
-> Erimworks is an independent software studio based in Türkiye. It builds multi-tenant process-management platforms for universities, medical-tourism clinics and art/music schools, and publishes consumer mobile apps on the App Store and Google Play under the developer name Erimworks. Primary site language: Turkish; every product page ends with an "In English" summary. Contact: contact@erimworks.com
+> Erimworks is an independent software studio based in Türkiye. It builds multi-tenant process-management platforms for universities, medical-tourism clinics and art/music schools, and publishes consumer mobile apps on the App Store and Google Play under the developer name Erimworks. Primary site language: Turkish; the home page and the six B2B product pages have full English versions under /en/ (linked below), and other pages end with an "In English" summary. Contact: contact@erimworks.com
 
 ## Platforms (B2B, browser-based, Turkish + English UI)
+
+- English versions: [Home](https://erimworks.com/en/) · [UNVPortal](https://erimworks.com/en/unvportal/) · [Labs](https://erimworks.com/en/unvportal/labs/) · [Exams](https://erimworks.com/en/unvportal/exams/) · [Quality](https://erimworks.com/en/unvportal/quality/) · [International Patient OS](https://erimworks.com/en/medical-tourism/) · [KursOS](https://erimworks.com/en/school-management/)
 
 - [UNVPortal — Laboratuvar, sınav ve kalite yönetim sistemi](https://erimworks.com/unvportal/): Modular higher-education platform. The Labs, Exams and Quality modules share one database and can each be licensed alone. Connect and Intelligence modules are in preparation.
 - [UNVPortal Labs — Laboratuvar Yönetim Sistemi](https://erimworks.com/unvportal/labs/): Laboratory management system (LIMS): QR-tagged samples graded against true value and tolerance, instrument booking with an approval queue, consumable stock with low-level alerts, academic session attendance. Formerly ErimPortal.

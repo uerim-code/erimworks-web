@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://erimworks.com/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://erimworks.com/astrorota/</loc>
@@ -11,6 +11,34 @@
   <url>
     <loc>https://erimworks.com/chembiocalc/</loc>
     <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://erimworks.com/en/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://erimworks.com/en/medical-tourism/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://erimworks.com/en/school-management/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://erimworks.com/en/unvportal/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://erimworks.com/en/unvportal/exams/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://erimworks.com/en/unvportal/labs/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://erimworks.com/en/unvportal/quality/</loc>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://erimworks.com/gizlilik/</loc>
@@ -26,7 +54,7 @@
   </url>
   <url>
     <loc>https://erimworks.com/kurs-yonetim/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://erimworks.com/match-manor/</loc>
@@ -50,7 +78,7 @@
   </url>
   <url>
     <loc>https://erimworks.com/saglik-turizmi/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://erimworks.com/scanyra/</loc>
@@ -62,18 +90,18 @@
   </url>
   <url>
     <loc>https://erimworks.com/unvportal/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://erimworks.com/unvportal/kalite/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://erimworks.com/unvportal/labs/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://erimworks.com/unvportal/sinav/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
 </urlset>
