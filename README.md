@@ -68,3 +68,18 @@ curl -s -X POST https://api.indexnow.org/indexnow -H 'Content-Type: application/
 
 Yanıt 200 ya da 202 ise kabul edildi. Cloudflare panelinde Caching → Crawler
 Hints açıksa Cloudflare da aynı protokolle otomatik bildirim yapar.
+
+## İngilizce sayfalar ve hreflang
+
+Ana sayfa ve altı B2B sayfanın İngilizce sürümü `en/` altında ayrı adreslerdir
+(`/` ↔ `/en/`, `/unvportal/sinav/` ↔ `/en/unvportal/exams/` vb.). TR ve EN
+sayfalar birbirini `<link rel="alternate" hreflang>` ile gösterir; x-default TR.
+Dil seçici artık bağlantıdır, ana sayfadaki `data-tr`/`data-en` takası kaldırıldı.
+
+```
+python3 tools/hreflang.py      # çiftler, JSON-LD ve SSS eşleşmesi; sorun varsa 1
+```
+
+**Bir çiftin tek tarafını değiştirince bunu çalıştır.** EN sayfa yazarken ürün
+`@id`'si TR köküyle aynı kalır (`https://erimworks.com/unvportal/#app`); yalnız
+`WebPage` düğümü `/en/` altındadır.

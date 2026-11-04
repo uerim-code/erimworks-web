@@ -192,6 +192,9 @@
         "width": 1200,
         "height": 630
       },
+      "workTranslation": {
+        "@id": "https://erimworks.com/en/#webpage"
+      },
       "dateModified": "2026-11-03",
       "speakable": {
         "@type": "SpeakableSpecification",
@@ -317,8 +320,8 @@
       <a class="nav-cta" href="/iletisim/" data-tr="Sunum talep edin" data-en="Request a demo">Sunum talep edin</a>
     </nav>
     <nav class="lang" aria-label="Dil / Language">
-      <button id="tr" type="button" aria-pressed="true">TR</button>
-      <button id="en" type="button" aria-pressed="false">EN</button>
+      <a href="/" hreflang="tr" aria-current="page">TR</a>
+      <a href="/en/" hreflang="en" lang="en">EN</a>
     </nav>
   </div>
 </header>
@@ -596,32 +599,16 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© <span id="y">2026</span> Erimworks</span>
+      <span>© <span class="yr">2026</span> Erimworks</span>
       <a href="/iletisim/" data-tr="İletişim" data-en="Contact">İletişim</a>
       <a href="/hakkimizda/" data-tr="Hakkımızda" data-en="About">Hakkımızda</a>
       <a href="/gizlilik/" data-tr="Gizlilik ve KVKK" data-en="Privacy">Gizlilik ve KVKK</a>
+      <a href="/en/" hreflang="en" lang="en">English</a>
       <a href="https://unvportal.com/" rel="noopener">unvportal.com</a>
     </div>
   </div>
 </footer>
 
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-  (function () {
-    var nodes = document.querySelectorAll('[data-tr]');
-    var btnTR = document.getElementById('tr'), btnEN = document.getElementById('en');
-    function setLang(lang) {
-      nodes.forEach(function (n) { var v = n.getAttribute('data-' + lang); if (v != null) n.textContent = v; });
-      document.documentElement.lang = lang;
-      btnTR.setAttribute('aria-pressed', String(lang === 'tr'));
-      btnEN.setAttribute('aria-pressed', String(lang === 'en'));
-      try { localStorage.setItem('ew_lang', lang); } catch (e) {}
-    }
-    var saved = null; try { saved = localStorage.getItem('ew_lang'); } catch (e) {}
-    setLang(saved || ((navigator.language || 'tr').toLowerCase().indexOf('tr') === 0 ? 'tr' : 'en'));
-    btnTR.addEventListener('click', function () { setLang('tr'); });
-    btnEN.addEventListener('click', function () { setLang('en'); });
-  })();
-</script>
+<script>document.querySelectorAll('.yr').forEach(function(n){n.textContent=new Date().getFullYear();});</script>
 </body>
 </html>
