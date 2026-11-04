@@ -54,7 +54,7 @@ SCRIPT_DESENI = re.compile(r"<script(?![^>]*\bsrc=)([^>]*)>(.*?)</script>", re.S
 def hashler() -> list[str]:
     bulunan: set[str] = set()
     for f in sorted(KOK.rglob("*.html")):
-        if "node_modules" in f.parts:
+        if {"node_modules", "reports", ".claude"} & set(f.parts):
             continue
         for oz, govde in SCRIPT_DESENI.findall(f.read_text(encoding="utf-8", errors="replace")):
             if "ld+json" in oz:

@@ -48,7 +48,7 @@ def son_degisim(f: pathlib.Path) -> str:
 def sayfalar() -> list[tuple[str, str]]:
     cikti: list[tuple[str, str]] = []
     for f in sorted(KOK.rglob("*.html")):
-        if "node_modules" in f.parts or f.name == "404.html":
+        if {"node_modules", "reports", ".claude"} & set(f.parts) or f.name == "404.html":
             continue
         if f.stem in HUKUKI:
             continue

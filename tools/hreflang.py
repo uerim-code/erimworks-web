@@ -31,7 +31,7 @@ TABAN = "https://erimworks.com"
 def main() -> int:
     sayfalar: dict[str, dict] = {}
     for f in sorted(KOK.rglob("*.html")):
-        if "node_modules" in f.parts:
+        if {"node_modules", "reports", ".claude"} & set(f.parts):
             continue
         s = f.read_text(encoding="utf-8")
         bas = s[: s.find("</head>")]
