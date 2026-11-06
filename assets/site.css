@@ -113,8 +113,29 @@
   --display: Sora, "Plus Jakarta Sans", system-ui, sans-serif;
   --sans: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* --- TİPOGRAFİ ÖLÇEĞİ: YEDİ KADEME, ARASI YOK. Denetimde ana sayfada 13
+         ayrı punto ölçüldü (12, 12.5, 13, 13.5, 14, 14.5, 15, 15.5, 16, 16.5,
+         17, 18, 19, 20, 23, 36). Yarım piksellik kademe hiyerarşi kurmaz,
+         yalnız tutarsızlık üretir: 14 ile 14.5 arasındaki farkı kimse
+         göremez ama sayfanın derlenmemiş durduğunu herkes sezer.
+         YENİ PUNTO EKLEME — en yakın kademeye oturt. --- */
+  --t-micro: 13px;   /* büyük harf etiket, kırıntı, alt bilgi, künye */
+  --t-small: 14px;   /* ikincil arayüz metni, kart notu, dar ekran tablosu */
+  --t-ui:    15px;   /* gezinme, düğme, tablo hücresi, satır başlığı */
+  --t-body:  17px;   /* AKAN METİN: gövde, liste, form alanı */
+  --t-lede:  19px;   /* giriş paragrafı, bölüm başlığı (h3), alt başlık */
+  --t-title: 23px;   /* kart başlığı */
+  --t-stat:  36px;   /* tek bir sayı: istatistik */
+  --t-h1: clamp(2.1rem, 3.8vw, 3.4rem);
+  --t-h2: clamp(1.5rem, 2.8vw, 2.2rem);
   --wrap: 1312px;
-  --read: 760px;
+  /* ⚠ ÖLÇÜ px İLE VERİLİR, ch İLE DEĞİL. ch, "0" rakamının genişliğidir
+     ve Plus Jakarta Sans'ta ortalama harften ~%40 geniştir: 72ch satır
+     başına 72 değil ~100 karakter demek. Denetimde tam bu yüzden
+     "max-width: 72ch" verilmiş paragraflar 120 karakterde ölçüldü. */
+  --read: 600px;          /* 17px gövdede ~80 karakter; 760px'de 105 idi */
+  --read-wide: 880px;     /* tablo ve ızgaralar ölçüyü aşar */
   --pad:  72px;
   --head: 72px;                                 /* yapışkan bant yüksekliği */
   --band: clamp(56px, 6.2vw, 92px);             /* bölümler arası nefes */
@@ -158,7 +179,7 @@
     --live-line: rgba(82,194,147,0.34);
     --danger:    #e8795e;
 
-    --block:       #14161c;
+    --block:       #1b1f28;
     --block-ink:   #f4f6f9;
     --block-mute:  #a2a9b7;
     --block-mute-2:#7f8694;
@@ -194,7 +215,7 @@ body {
   background: var(--page);
   color: var(--ink);
   font-family: var(--sans);
-  font-size: 16px;
+  font-size: var(--t-body);
   line-height: 1.62;
   accent-color: var(--accent);
   -webkit-font-smoothing: antialiased;
@@ -209,7 +230,31 @@ a:hover { color: var(--accent-d); text-decoration: underline; text-underline-off
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
 
 .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--pad); }
-.read { max-width: var(--read); }
+.read { max-width: var(--read); margin-inline: auto; }
+/* Okuma sütunu ortalanınca kırıntı satırı, ayraç ve sütun dışında kalan
+   her doğrudan çocuk da aynı eksene gelmeli; yoksa kırıntı solda, metin
+   ortada kalıyor ve sayfa kırık görünüyor. */
+main.wrap > .crumbs, main.wrap > .rule, main.wrap > p, main.wrap > h2, main.wrap > .note, main.wrap > .card {
+  max-width: var(--read); margin-inline: auto;
+}
+/* Tablo, kıyas ızgarası ve kart listeleri okuma ölçüsünü aşar: düz
+   metin 80 karakterde kalırken üç sütunlu tablo sıkışmasın. */
+main.wrap .read > table, main.wrap .read > .cols { max-width: var(--read-wide); width: var(--read-wide);
+  margin-left: calc((var(--read-wide) - var(--read)) / -2); }
+@media (max-width: 62rem) {
+  main.wrap .read > table, main.wrap .read > .cols { max-width: 100%; width: 100%; margin-left: 0; }
+}
+
+/* İÇERİĞE ATLA. Her sayfada üst bantta 4–7 bağlantı var; klavyeyle gelen
+   kullanıcı bunları her sayfada tek tek geçiyordu (WCAG 2.4.1). Görünmez
+   durur, sekme ile odaklanınca bandın üstüne gelir. */
+.skip {
+  position: absolute; left: 12px; top: -64px; z-index: 60;
+  background: var(--solid); color: var(--solid-ink);
+  padding: 11px 18px; border-radius: var(--r-2); font-size: var(--t-ui); font-weight: 600;
+  transition: top .16s var(--ease);
+}
+.skip:focus { top: 12px; color: var(--solid-ink); text-decoration: none; }
 
 /* ========================== ÜST BANT ==========================
    Yarı saydam + bulanık: sayfa altından kayarken içerik şeridin ardında
@@ -228,7 +273,7 @@ a:hover { color: var(--accent-d); text-decoration: underline; text-underline-off
 .site-head .wrap { display: flex; align-items: center; gap: 30px; min-height: var(--head); flex-wrap: wrap; }
 .wordmark {
   display: inline-flex; align-items: center; gap: 12px;
-  font-family: var(--display); font-size: 18px; font-weight: 600; letter-spacing: -0.025em;
+  font-family: var(--display); font-size: var(--t-body); font-weight: 600; letter-spacing: -0.025em;
   color: var(--ink); text-decoration: none; margin-right: auto;
 }
 .wordmark:hover { color: var(--ink); text-decoration: none; }
@@ -244,7 +289,7 @@ a:hover { color: var(--accent-d); text-decoration: underline; text-underline-off
   content: ""; position: absolute; left: 7px; top: 50%; margin-top: -5px;
   width: 12px; height: 10px; border-left: 1.8px solid currentColor; border-top: 1.8px solid currentColor;
 }
-.site-nav { display: flex; align-items: center; gap: 6px; font-size: 14.5px; font-weight: 500; }
+.site-nav { display: flex; align-items: center; gap: 6px; font-size: var(--t-ui); font-weight: 500; }
 .site-nav a {
   color: var(--muted); text-decoration: none; padding: 8px 12px; border-radius: var(--r-1);
   transition: color .16s var(--ease), background .16s var(--ease);
@@ -253,7 +298,7 @@ a:hover { color: var(--accent-d); text-decoration: underline; text-underline-off
 .site-nav a[aria-current="page"] { color: var(--ink); font-weight: 600; }
 .site-nav .nav-cta {
   background: var(--solid); color: var(--solid-ink);
-  border-radius: var(--r-2); padding: 9.5px 18px; font-size: 14px; font-weight: 600;
+  border-radius: var(--r-2); padding: 9.5px 18px; font-size: var(--t-ui); font-weight: 600;
   margin-left: 10px; box-shadow: var(--sh-1);
 }
 .site-nav .nav-cta:hover { background: var(--solid-h); color: var(--solid-ink); }
@@ -263,7 +308,7 @@ a:hover { color: var(--accent-d); text-decoration: underline; text-underline-off
 .lang { display: inline-flex; border: 1px solid var(--line-2); border-radius: var(--r-1); overflow: hidden; background: var(--surface); }
 .lang a, .lang button {
   appearance: none; border: 0; background: transparent; cursor: pointer; text-decoration: none;
-  font: inherit; font-size: 12.5px; font-weight: 600; color: var(--muted-2);
+  font: inherit; font-size: var(--t-micro); font-weight: 600; color: var(--muted-2);
   padding: 6px 11px; line-height: 1.6; transition: color .16s var(--ease), background .16s var(--ease);
 }
 .lang a:hover, .lang button:hover { color: var(--ink); text-decoration: none; }
@@ -272,26 +317,24 @@ a:hover { color: var(--accent-d); text-decoration: underline; text-underline-off
 
 /* ========================== TİPOGRAFİ ========================== */
 h1, h2, h3, h4 { font-family: var(--display); color: var(--ink); font-weight: 600; letter-spacing: -0.035em; margin: 0; text-wrap: balance; }
-h1 { font-size: clamp(2.1rem, 3.8vw, 3.4rem); line-height: 1.06; margin-bottom: 24px; letter-spacing: -0.04em; }
-h2 { font-size: clamp(1.5rem, 2.8vw, 2.2rem); line-height: 1.14; margin-bottom: 12px; }
-h3 { font-size: 1.15rem; line-height: 1.4; margin: 32px 0 8px; letter-spacing: -0.025em; }
+h1 { font-size: var(--t-h1); line-height: 1.06; margin-bottom: 24px; letter-spacing: -0.04em; }
+h2 { font-size: var(--t-h2); line-height: 1.14; margin-bottom: 12px; }
+h3 { font-size: var(--t-lede); line-height: 1.4; margin: 32px 0 8px; letter-spacing: -0.025em; }
 p { margin: 0 0 16px; text-wrap: pretty; }
-.lede { font-size: 1.16rem; line-height: 1.62; color: var(--ink-2); margin-bottom: 20px; }
+.lede { font-size: var(--t-lede); line-height: 1.62; color: var(--ink-2); margin-bottom: 20px; }
 .en, .muted { color: var(--muted-2); }
-.small { font-size: 0.94rem; }
+.small { font-size: var(--t-ui); }
 ul, ol { margin: 0 0 16px; padding-left: 22px; }
 li { margin-bottom: 8px; }
 strong { font-weight: 600; color: var(--ink); }
 code { font-family: var(--mono); background: var(--surface-3); border: 1px solid var(--line); border-radius: 5px; padding: 1px 6px; font-size: 0.88em; }
 .rule { border: 0; border-top: 1px solid var(--line); margin: 52px 0; }
 
-/* Etiket: bordo çubuk + metin. Mono ve geniş harf aralığı bilerek yok. */
-.eyebrow {
-  display: flex; align-items: center; gap: 11px;
-  font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--muted-2); font-weight: 600; margin: 0 0 22px;
-}
-.eyebrow::before { content: ""; width: 22px; height: 2px; background: var(--accent); flex: none; border-radius: 1px; }
+/* .eyebrow KALDIRILDI (2026-11-06 denetimi). Başlık üstü küçük etiket iki
+   bağımsız tasarım denetiminin de kesin yasak listesindeydi ve metni zaten
+   lede'nin ilk cümlesinde birebir tekrarlanıyordu: "Laboratuvar yönetim
+   sistemi" etiketi "…bir laboratuvar yönetim sistemidir (LIMS)" cümlesinin
+   üstünde duruyordu. 14 sayfadan silindi; bilgi kaybı yok. Geri ekleme. */
 
 /* İç sayfalarda da aynı imza: sayfanın tepesinde sönümlenen saç teli ızgara.
    Yalnız ilk ekranda görünür (460 px), aşağısı tertemiz kalır. Ana sayfadaki
@@ -311,13 +354,13 @@ main.wrap::before {
   -webkit-mask-image: radial-gradient(70% 100% at 88% 0%, #000 0%, transparent 68%);
   mask-image: radial-gradient(70% 100% at 88% 0%, #000 0%, transparent 68%);
 }
-:target { scroll-margin-top: calc(var(--head) + 24px); }
+:target { scroll-margin-top: calc(var(--head) + 40px); }
 
 /* ========================== DÜĞMELER ========================== */
 .actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0 0; align-items: center; }
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  padding: 12.5px 24px; border-radius: var(--r-2); font-size: 15px; font-weight: 600;
+  padding: 12.5px 24px; border-radius: var(--r-2); font-size: var(--t-ui); font-weight: 600;
   line-height: 1.4; text-decoration: none; cursor: pointer; white-space: nowrap;
   border: 1px solid var(--line-2); color: var(--ink); background: var(--surface);
   box-shadow: var(--sh-1);
@@ -330,7 +373,7 @@ main.wrap::before {
 .btn-primary:hover { background: var(--solid-h); border-color: var(--solid-h); color: var(--solid-ink); }
 .btn-quiet { background: transparent; border-color: var(--line-2); box-shadow: none; }
 .btn-quiet:hover { background: var(--surface); }
-.btn-sm { padding: 8.5px 15px; font-size: 13.5px; border-radius: var(--r-1); }
+.btn-sm { padding: 8.5px 15px; font-size: var(--t-small); border-radius: var(--r-1); }
 
 /* ========================== HERO ========================== */
 .hero { position: relative; isolation: isolate; border-bottom: 0; }
@@ -352,9 +395,9 @@ main.wrap::before {
    Tek kademede başlık 1120 px'de beş satıra düşüyor ve sayfa sıkışık duruyordu. */
 @media (min-width: 68rem) { .hero-grid { grid-template-columns: 1fr 404px; gap: 56px; } }
 @media (min-width: 80rem) { .hero-grid { grid-template-columns: 1fr 468px; gap: 76px; } }
-.hero h1 { max-width: 22ch; }
-.hero-lede { font-size: 19px; line-height: 1.58; color: var(--ink-2); margin: 0 0 20px; max-width: 52ch; }
-.hero-note { font-size: 15.5px; line-height: 1.65; color: var(--muted-2); margin: 0 0 30px; max-width: 52ch; }
+.hero h1 { max-width: 660px; }
+.hero-lede { font-size: var(--t-lede); line-height: 1.58; color: var(--ink-2); margin: 0 0 20px; max-width: 600px; }
+.hero-note { font-size: var(--t-ui); line-height: 1.65; color: var(--muted-2); margin: 0 0 30px; max-width: 520px; }
 
 /* Katmanlı yığın: derinlik açık zeminde katmandan ve tek yumuşak gölgeden.
    v2'de iki dolu katman yerine TEK saç teli çerçeve — dolu katmanlar koyu
@@ -375,7 +418,7 @@ main.wrap::before {
 .stack-title {
   display: flex; align-items: center; gap: 9px;
   padding: 16px 20px 14px; border-bottom: 1px solid var(--line-3);
-  font-size: 11.5px; font-weight: 700; letter-spacing: 0.1em; color: var(--muted-3); margin: 0;
+  font-size: var(--t-micro); font-weight: 700; letter-spacing: 0.08em; color: var(--muted-3); margin: 0;
   background: var(--surface-2);
 }
 /* Yayın işareti: yeşil nokta ve etrafında yavaş nefes alan halka. Hareket
@@ -395,13 +438,13 @@ main.wrap::before {
 .stack-panel li + li a { border-top: 1px solid var(--line-3); }
 .stack-panel a {
   display: flex; align-items: center; gap: 13px; padding: 14px 20px;
-  color: var(--ink); text-decoration: none; font-size: 14.5px; font-weight: 600;
+  color: var(--ink); text-decoration: none; font-size: var(--t-ui); font-weight: 600;
   transition: background .16s var(--ease);
 }
 .stack-panel a:hover { background: var(--surface-2); color: var(--ink); text-decoration: none; }
 .stack-panel .sp-mark { width: 3px; height: 26px; border-radius: 2px; flex: none; background: var(--unv); }
 .stack-panel .sp-name { flex: 1; min-width: 0; }
-.stack-panel .sp-tag { font-size: 12.5px; font-weight: 500; color: var(--muted-3); }
+.stack-panel .sp-tag { font-size: var(--t-micro); font-weight: 500; color: var(--muted-3); }
 /* Ok: her zaman görünür ama soluk; satır üzerinde koyulaşıp 3 px kayar. */
 .stack-panel a::after {
   content: ""; flex: none; width: 6px; height: 6px; margin-left: 2px;
@@ -412,7 +455,7 @@ main.wrap::before {
 .stack-panel a:hover::after { opacity: 1; border-color: var(--accent); transform: rotate(45deg) translate(2px, -2px); }
 .stack-foot {
   border-top: 1px solid var(--line-3); background: var(--surface-2);
-  padding: 12px 20px; margin: 0; font-size: 12.5px; color: var(--muted-3); line-height: 1.5;
+  padding: 13px 20px; margin: 0; font-size: var(--t-small); color: var(--muted-3); line-height: 1.5;
 }
 [data-brand="ipos"] .sp-mark, .sp-mark[data-brand="ipos"] { background: var(--ipos); }
 [data-brand="kurs"] .sp-mark, .sp-mark[data-brand="kurs"] { background: var(--kurs); }
@@ -429,21 +472,24 @@ main.wrap::before {
   .stat:last-child { border-right: 0; padding-right: var(--pad); }
 }
 .stat-num {
-  font-family: var(--display); font-size: 36px; font-weight: 600;
+  font-family: var(--display); font-size: var(--t-stat); font-weight: 600;
   letter-spacing: -0.045em; line-height: 1.05; color: var(--ink);
   font-variant-numeric: tabular-nums lining-nums;   /* rakamlar sütun hâlinde hizalansın */
 }
-.stat-label { font-size: 12px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted-2); margin-top: 9px; }
+.stat-label { font-size: var(--t-micro); font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted-2); margin-top: 9px; }
 
 /* ========================== ÜRÜN BLOKLARI ========================== */
 .platform-band .wrap { padding-top: var(--band); padding-bottom: 8px; }
-.band-head { max-width: 66ch; margin-bottom: 32px; }
+/* Bandın sonundaki serbest paragraf ölçüsüz kalıyordu: 1168px'de satır
+   başına 105 karakter. Diğer metinlerle aynı ölçüye çekildi. */
+.platform-band .wrap > p { max-width: 520px; }
+.band-head { max-width: 560px; margin-bottom: 32px; }
 .band-head h2 { margin-bottom: 10px; }
 /* Alt grup başlığı (ör. "Artık geliştirilmiyor"): bant başlığıyla aynı ritim,
    bir kademe küçük — ana bölüm başlığıyla yarışmasın. */
-.band-head h3 { margin: 0 0 8px; font-family: var(--display); font-size: 19px;
+.band-head h3 { margin: 0 0 8px; font-family: var(--display); font-size: var(--t-lede);
   font-weight: 600; letter-spacing: -0.02em; color: var(--ink); }
-.band-head p { color: var(--muted); margin: 0; font-size: 16.5px; line-height: 1.6; }
+.band-head p { color: var(--ink-2); margin: 0; font-size: var(--t-body); line-height: 1.62; }
 
 /* Kimlik şeridi solda; pastel kart değil. */
 .pcard {
@@ -458,18 +504,18 @@ main.wrap::before {
 .pcard[data-brand="kurs"]::before { background: var(--kurs); }
 .pcard-body { padding: 32px 36px; flex: 1; min-width: 0; }
 .pcard-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
-.pcard-head h3 { margin: 0; font-size: 23px; font-weight: 600; letter-spacing: -0.035em; }
+.pcard-head h3 { margin: 0; font-size: var(--t-title); font-weight: 600; letter-spacing: -0.035em; }
 .pcard-head h3 a { color: var(--ink); }
 .pcard-head h3 a:hover { color: var(--accent); text-decoration: none; }
-.pcard-body > p { margin: 0 0 24px; font-size: 16px; line-height: 1.65; color: var(--muted); max-width: 72ch; }
+.pcard-body > p { margin: 0 0 24px; font-size: var(--t-body); line-height: 1.68; color: var(--ink-2); max-width: 575px; }
 .pcard .actions { margin: 0 0 4px; }
 
 .pgrid { display: grid; grid-template-columns: 1fr; gap: 18px; }
 @media (min-width: 60rem) { .pgrid { grid-template-columns: 1fr 1fr; } }
 .pgrid .pcard { margin-bottom: 0; }
 .pgrid .pcard-body { padding: 28px 30px; }
-.pgrid .pcard-head h3 { font-size: 20px; letter-spacing: -0.03em; }
-.pgrid .pcard-body > p { margin-bottom: 16px; font-size: 15px; line-height: 1.62; }
+.pgrid .pcard-head h3 { font-size: var(--t-lede); letter-spacing: -0.03em; }
+.pgrid .pcard-body > p { margin-bottom: 16px; font-size: var(--t-body); line-height: 1.65; }
 
 .modules { margin-top: 4px; }
 /* Modül satırı: kenarlara taşan dolgu sayesinde üzerine gelince satırın
@@ -481,22 +527,22 @@ main.wrap::before {
   transition: background .16s var(--ease);
 }
 .module:hover { background: var(--surface-2); }
-.module h4 { font-size: 15.5px; font-weight: 600; letter-spacing: -0.015em; margin: 0; }
+.module h4 { font-size: var(--t-ui); font-weight: 600; letter-spacing: -0.015em; margin: 0; }
 .module h4 a { color: var(--ink); }
 .module h4 a:hover { color: var(--accent); text-decoration: none; }
-.module p { margin: 0; color: var(--muted-2); font-size: 14px; line-height: 1.55; }
+.module p { margin: 0; color: var(--muted); font-size: var(--t-small); line-height: 1.55; }
 .module .actions { margin: 0; gap: 8px; }
 @media (max-width: 60rem) { .module { grid-template-columns: 1fr; } }
 
 .tag {
-  display: inline-flex; align-items: center; font-size: 11.5px; font-weight: 700;
+  display: inline-flex; align-items: center; font-size: var(--t-micro); font-weight: 700;
   letter-spacing: 0.05em; text-transform: uppercase; padding: 4px 9px; border-radius: 5px;
   background: var(--live-soft); color: var(--live); border: 1px solid var(--live-line);
 }
 
 .chips { display: flex; flex-wrap: wrap; gap: 7px; margin: 0 0 18px; padding: 0; list-style: none; }
 .chips li {
-  margin: 0; font-size: 12.5px; color: var(--muted-2); line-height: 1.5;
+  margin: 0; font-size: var(--t-micro); color: var(--muted-2); line-height: 1.5;
   border: 1px solid var(--line); background: var(--surface-2); border-radius: 6px; padding: 5px 10px;
 }
 
@@ -505,7 +551,7 @@ main.wrap::before {
   width: 40px; height: 40px; border-radius: var(--r-2); flex: none;
   display: flex; align-items: center; justify-content: center;
   background: var(--surface-3); border: 1px solid var(--line-2); color: var(--ink-2);
-  font-family: var(--display); font-size: 15px; font-weight: 600;
+  font-family: var(--display); font-size: var(--t-ui); font-weight: 600;
 }
 
 /* ========================== UYGULAMA DİZİNİ ========================== */
@@ -526,18 +572,27 @@ main.wrap::before {
   box-shadow: inset 0 0 0 1px rgba(16,18,25,.10), var(--sh-1);
   transition: transform .18s var(--ease); }
 .app-row:hover .app-icon { transform: translateY(-1px); }
-.app-row h3 { margin: 0 0 3px; font-size: 15.5px; font-weight: 600; letter-spacing: -0.02em; }
+.app-row h3 { margin: 0 0 3px; font-size: var(--t-ui); font-weight: 600; letter-spacing: -0.02em; }
 .app-row h3 a { color: var(--ink); }
 .app-row h3 a:hover { color: var(--accent); text-decoration: none; }
-.app-row p { margin: 0; color: var(--muted-2); font-size: 13.5px; line-height: 1.5; }
-.app-row .app-links { margin-top: 8px; font-size: 12.5px; display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.app-row p { margin: 0; color: var(--muted-2); font-size: var(--t-small); line-height: 1.5; }
+.app-row .app-links { margin-top: 8px; font-size: var(--t-micro); display: flex; flex-wrap: wrap; gap: 4px 14px; }
 .app-row .app-links a { color: var(--muted-2); font-weight: 500; }
 .app-row .app-links a:hover { color: var(--accent); text-decoration: none; }
+
+/* Emekli uygulamalar: karar anından hemen önce iki büyük kart ve
+   "Artık geliştirilmiyor" başlığı duruyordu — satın alma incelemecisinin
+   CTA'dan önce okuduğu son şey terk edilmiş ürünlerdi. Tek satıra indi. */
+.app-retired {
+  margin: 22px 0 0; font-size: var(--t-small); line-height: 1.6; color: var(--muted-2);
+  max-width: 460px;
+}
 
 /* ========================== KAPANIŞ VE ALT BİLGİ ==========================
    İkisi tek koyu blok: sayfaya taban veriyor. Koyu temada blok sayfadan bir
    ton AÇIK olur; yoksa taban kaybolur, sayfa dibi delik gibi görünürdü. */
-.cta-band { background: var(--block); color: var(--block-ink); position: relative; isolation: isolate; }
+.cta-band { background: var(--block); color: var(--block-ink); position: relative; isolation: isolate;
+  border-top: 1px solid var(--line); }
 .cta-band::before {
   content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
   background-image:
@@ -549,11 +604,11 @@ main.wrap::before {
 }
 .cta-band .wrap { padding-top: clamp(48px, 5vw, 66px); padding-bottom: clamp(48px, 5vw, 66px); display: flex; align-items: center; gap: 44px; flex-wrap: wrap; }
 .cta-band > .wrap > div:first-child { flex: 1 1 460px; }
-.cta-band h2 { color: var(--block-ink); margin: 0 0 10px; font-size: clamp(1.6rem, 2.6vw, 2rem); }
-.cta-band p { color: var(--block-mute); margin: 0; max-width: 60ch; font-size: 16px; line-height: 1.6; }
+.cta-band h2 { color: var(--block-ink); margin: 0 0 10px; }
+.cta-band p { color: var(--block-mute); margin: 0; max-width: 545px; font-size: var(--t-body); line-height: 1.6; }
 .cta-mail {
   display: inline-flex; align-items: center; gap: 10px;
-  font-family: var(--display); font-size: 18px; font-weight: 500; color: var(--block-ink);
+  font-family: var(--display); font-size: var(--t-lede); font-weight: 500; color: var(--block-ink);
   border: 1px solid var(--block-line); border-radius: var(--r-2); padding: 13px 20px;
   transition: border-color .16s var(--ease), background .16s var(--ease);
 }
@@ -568,38 +623,52 @@ main.wrap::before {
 
 .site-foot {
   margin-top: auto; background: var(--block); color: var(--block-mute);
-  padding: 6px 0 36px; font-size: 14px;
+  padding: 6px 0 36px; font-size: var(--t-small);
 }
 .cta-band + .site-foot { padding-top: 0; }
 .site-foot a { color: var(--block-mute); transition: color .16s var(--ease); }
 .site-foot a:hover { color: var(--block-ink); text-decoration: none; }
 .foot-cols { display: grid; grid-template-columns: 1fr; gap: 30px; padding-top: 42px; margin-bottom: 32px; border-top: 1px solid var(--block-line); }
 @media (min-width: 46rem) { .foot-cols { grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 44px; } }
-.foot-col h4 { font-family: var(--sans); font-size: 11.5px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--block-mute-2); font-weight: 600; margin: 0 0 14px; }
+.foot-col h4 { font-family: var(--sans); font-size: var(--t-micro); letter-spacing: 0.09em; text-transform: uppercase; color: var(--block-mute-2); font-weight: 600; margin: 0 0 14px; }
 .foot-col ul { list-style: none; margin: 0; padding: 0; }
 .foot-col li { margin: 0 0 9px; }
-.foot-brand .wordmark { color: var(--block-ink); font-size: 17px; margin: 0 0 14px; }
-.foot-brand p { color: var(--block-mute-2); max-width: 36ch; margin: 0 0 10px; font-size: 14px; }
+.foot-brand .wordmark { color: var(--block-ink); font-size: var(--t-body); margin: 0 0 14px; }
+.foot-brand p { color: var(--block-mute-2); max-width: 290px; margin: 0 0 10px; font-size: var(--t-small); }
 .foot-bottom {
   border-top: 1px solid var(--block-line); padding-top: 20px;
-  display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 13px; color: var(--block-mute-2);
+  display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: var(--t-micro); color: var(--block-mute-2);
 }
 .foot-links { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 0; padding: 0; list-style: none; }
 
 /* ========================== İÇ SAYFA ÖGELERİ ========================== */
-.crumbs { font-size: 13px; color: var(--muted-2); margin: 0 0 20px; }
+/* Kırıntı satırı + güncellik damgası tek satırda. Damga eskiden h1'in
+   ÜSTÜNDE ayrı bir paragraftı ve kırıntıya 0 px mesafedeydi: iki küçük gri
+   satır birbirine yapışıyor, başlıktan önce okunuyordu. */
+.crumbs { font-size: var(--t-micro); color: var(--muted-2); margin: 0 0 24px;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 10px; }
+.crumbs-date { margin-left: auto; color: var(--muted-3); font-size: var(--t-micro); }
+@media (max-width: 44rem) { .crumbs-date { margin-left: 0; } }
 .crumbs a { color: var(--muted-2); }
 .crumbs a:hover { color: var(--accent); }
-.crumbs span { padding: 0 8px; color: var(--line-2); }
+/* Ayraç span'i; tarih damgası bu kuralın dışında kalmalı — yoksa tarih
+   --line-2 rengine düşüyor ve 1.3:1 kontrastla görünmez oluyor. */
+.crumbs span:not(.crumbs-date) { padding: 0; color: var(--line-2); }
 
 .note, .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-3); padding: 22px 26px; margin: 24px 0; box-shadow: var(--sh-1); }
 .note > :last-child, .card > :last-child { margin-bottom: 0; }
 
-table { width: 100%; border-collapse: collapse; margin: 22px 0; font-size: 15px; }
+table { width: 100%; border-collapse: collapse; margin: 22px 0; font-size: var(--t-ui); }
 th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
 th { font-weight: 600; color: var(--ink); background: var(--surface-2); }
 td { color: var(--muted); }
 th:first-child, td:first-child { padding-left: 0; }
+/* Kıyas tablosunda kazanan sütun işaretlenir. Denetimden önce "elektronik
+   tabloda" ile "UNVPortal'da" sütunları aynı griydi: okuyan kişi hangi
+   tarafın bizim olduğunu görsel olarak ayırt edemiyordu. */
+table.kiyas th:last-child { color: var(--ink); background: var(--accent-soft); }
+table.kiyas td:last-child { color: var(--ink); background: var(--accent-soft); font-weight: 500; }
+table.kiyas th:last-child, table.kiyas td:last-child { border-bottom-color: var(--line-2); }
 
 .faq { border-top: 1px solid var(--line); }
 .faq details { border-bottom: 1px solid var(--line); }
@@ -612,26 +681,19 @@ th:first-child, td:first-child { padding-left: 0; }
 
 /* İç sayfa ritmi: numaralı bölümler, kanca olarak aria kimlikleri. */
 main.wrap > .read:first-of-type { padding-bottom: 8px; }
-main.wrap { counter-reset: bolum; }
 main.wrap .section-head {
-  display: block; counter-increment: bolum; position: relative;
-  border-top: 1px solid var(--line); padding-top: 22px; margin: 56px 0 22px;
+  display: block; position: relative;
+  border-top: 1px solid var(--line); padding-top: 26px; margin: 60px 0 24px;
 }
-main.wrap .section-head::before {
-  content: counter(bolum, decimal-leading-zero);
-  font-size: 12.5px; font-weight: 600; color: var(--muted-3);
-  font-variant-numeric: tabular-nums;
-  position: absolute; top: 22px; left: 0;
-}
-main.wrap .section-head > * { padding-left: 42px; }
+main.wrap .section-head > * { padding-left: 0; }
 main.wrap .section-head h2 { margin-bottom: 6px; }
 main.wrap .section-head p { color: var(--muted); margin: 0; }
-@media (max-width: 46rem) {
-  main.wrap .section-head > * { padding-left: 0; }
-  main.wrap .section-head::before { position: static; display: block; margin-bottom: 8px; }
-}
 
-section[aria-labelledby="h-kim"] { max-width: none; }
+
+/* Kart ızgarası okuma ölçüsünü aşar ama AYNI EKSENDE kalır. Önceki
+   hâlinde bölüm "max-width: none" ile sayfanın soluna kaçıyordu: üstteki
+   paragraf 420 pikselden, bölüm başlığı 136 pikselden başlıyordu ve sayfa
+   iki ayrı sol kenara sahip görünüyordu. Tablo ve .cols ile aynı kalıp. */
 section[aria-labelledby="h-kim"] > ul {
   list-style: none; margin: 0; padding: 0;
   display: grid; grid-template-columns: 1fr; gap: 14px;
@@ -639,16 +701,21 @@ section[aria-labelledby="h-kim"] > ul {
 @media (min-width: 52rem) { section[aria-labelledby="h-kim"] > ul { grid-template-columns: 1fr 1fr; } }
 section[aria-labelledby="h-kim"] > ul > li {
   margin: 0; padding: 20px 22px; background: var(--surface); border: 1px solid var(--line);
-  border-radius: var(--r-3); color: var(--muted); font-size: 14.5px; line-height: 1.6;
+  border-radius: var(--r-3); color: var(--muted); font-size: var(--t-ui); line-height: 1.6;
   box-shadow: var(--sh-1);
   transition: border-color .18s var(--ease), box-shadow .18s var(--ease);
 }
 section[aria-labelledby="h-kim"] > ul > li:hover { border-color: var(--line-2); box-shadow: var(--sh-2); }
 section[aria-labelledby="h-kim"] > ul > li > strong {
-  display: block; margin-bottom: 6px; color: var(--ink); font-size: 15px; font-weight: 600;
+  display: block; margin-bottom: 6px; color: var(--ink); font-size: var(--t-ui); font-weight: 600;
 }
-section[aria-labelledby="h-kim"] > .section-head,
-section[aria-labelledby="h-kim"] > p { max-width: var(--read); }
+section[aria-labelledby="h-kim"] > ul {
+  max-width: var(--read-wide); width: var(--read-wide);
+  margin-left: calc((var(--read-wide) - var(--read)) / -2);
+}
+@media (max-width: 62rem) {
+  section[aria-labelledby="h-kim"] > ul { max-width: 100%; width: 100%; margin-left: 0; }
+}
 
 section[aria-labelledby="h-neyapar"] h3 { position: relative; padding-left: 18px; margin-top: 34px; }
 section[aria-labelledby="h-neyapar"] h3::before {
@@ -657,16 +724,32 @@ section[aria-labelledby="h-neyapar"] h3::before {
 section[aria-labelledby="h-neyapar"] h3 + p { padding-left: 18px; }
 
 main.wrap li::marker { color: var(--accent); }
+
+/* Akan metin: TEK boy, TEK renk. Denetimden önce aynı sayfada uzun
+   paragraflar dört ayrı renkteydi (ink, ink-2, muted, muted-2) ve en
+   yaygını 4.9:1 gri idi — sayfa bitmemiş görünüyordu. Gri artık yalnız
+   ikincil notlarda. */
+main.wrap .read > p,
+main.wrap .read > ul > li,
+main.wrap .read > ol > li,
+main.wrap section[aria-labelledby] > p,
+section[aria-labelledby="h-neyapar"] h3 + p,
+.faq details > p,
+article[data-lang] p, article[data-lang] li {
+  color: var(--ink-2); font-size: var(--t-body); line-height: 1.68;
+}
+main.wrap .read > p.lede { font-size: var(--t-lede); line-height: 1.6; }
+main.wrap .small, main.wrap .muted, .meta { font-size: var(--t-small); }
 main.wrap > section.read + section.read { border-top: 1px solid var(--line); padding-top: 34px; }
 
 /* ========================== ESKİ SAYFALARDAN DEVRALINAN ========================== */
 .rows { border-top: 1px solid var(--line); margin-top: 18px; }
 .row { display: grid; grid-template-columns: 40px 1fr; gap: 16px; align-items: start; padding: 20px 0; border-bottom: 1px solid var(--line); }
 .row.no-ic { grid-template-columns: 1fr; }
-.row h3 { margin: 0 0 4px; font-size: 15.5px; font-weight: 600; }
+.row h3 { margin: 0 0 4px; font-size: var(--t-ui); font-weight: 600; }
 .row h3 a { color: var(--ink); }
 .row h3 a:hover { color: var(--accent); text-decoration: none; }
-.row p { margin: 0; color: var(--muted-2); font-size: 14.5px; }
+.row p { margin: 0; color: var(--muted-2); font-size: var(--t-small); }
 .row .actions { margin-top: 12px; gap: 8px; }
 
 .top { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
@@ -677,15 +760,15 @@ main.wrap > section.read + section.read { border-top: 1px solid var(--line); pad
 .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 4px 44px; }
 
 .icon { width: 52px; height: 52px; border-radius: 13px; display: block; margin-bottom: 16px; box-shadow: var(--ring), var(--sh-1); }
-.subtitle { font-size: 1.1rem; color: var(--ink-2); margin: 0 0 22px; }
+.subtitle { font-size: var(--t-lede); color: var(--ink-2); margin: 0 0 22px; }
 .faq-item { border-bottom: 1px solid var(--line); padding: 4px 0 14px; margin-bottom: 14px; }
 .faq-item h3 { margin-top: 18px; }
 .faq-item > :last-child { margin-bottom: 0; }
 .contact-box { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-3); padding: 20px 24px; margin: 26px 0; box-shadow: var(--sh-1); }
 .contact-box p { margin: 0 0 6px; color: var(--muted-2); }
 .contact-box a { font-weight: 600; }
-.privacy-link { margin: 12px 0; font-size: 0.95rem; }
-.foot { border-top: 1px solid var(--line); margin-top: 36px; padding-top: 18px; color: var(--muted-2); font-size: 0.92rem; }
+.privacy-link { margin: 12px 0; font-size: var(--t-small); }
+.foot { border-top: 1px solid var(--line); margin-top: 36px; padding-top: 18px; color: var(--muted-2); font-size: var(--t-small); }
 
 /* ========================== HUKUKİ METİN SAYFALARI ==========================
    DİKKAT: App Store ve Google Play listelemelerinden açılırlar.
@@ -698,39 +781,39 @@ main.wrap > section.read + section.read { border-top: 1px solid var(--line); pad
 .langbar {
   display: flex; align-items: center; gap: 10px; justify-content: flex-end;
   margin-bottom: 26px; padding-bottom: 16px; border-bottom: 1px solid var(--line);
-  font-size: 13px; color: var(--muted-2);
+  font-size: var(--t-micro); color: var(--muted-2);
 }
 .langbar select {
-  font: inherit; font-size: 14px; padding: 8px 11px;
+  font: inherit; font-size: var(--t-small); padding: 8px 11px;
   border: 1px solid var(--line-2); border-radius: var(--r-1); background: var(--surface); color: var(--ink);
 }
 article[data-lang] { display: none; }
 article[data-lang].active { display: block; }
 article[dir="rtl"] { text-align: right; }
-article[data-lang] h1 { font-size: clamp(1.6rem, 3vw, 2rem); }
-article[data-lang] h2 { font-size: 1.2rem; margin-top: 30px; }
+article[data-lang] h1 { font-size: var(--t-h2); }
+article[data-lang] h2 { font-size: var(--t-lede); margin-top: 30px; }
 article[data-lang] p, article[data-lang] li { line-height: 1.72; color: var(--muted); }
 
 .badge {
-  display: inline-block; font-size: 11.5px; font-weight: 700;
+  display: inline-block; font-size: var(--t-micro); font-weight: 700;
   letter-spacing: 0.11em; text-transform: uppercase; color: var(--muted-2);
   background: var(--surface-2); border: 1px solid var(--line);
   border-radius: 6px; padding: 5px 10px; margin: 0 0 18px;
 }
-.meta { font-size: 13.5px; color: var(--muted-2); margin: 0 0 28px; }
+.meta { font-size: var(--t-small); color: var(--muted-2); margin: 0 0 28px; }
 .contact {
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-3);
-  padding: 20px 24px; margin: 28px 0; color: var(--muted); font-size: 15px; line-height: 1.7;
+  padding: 20px 24px; margin: 28px 0; color: var(--muted); font-size: var(--t-ui); line-height: 1.7;
   box-shadow: var(--sh-1);
 }
-.contact strong { display: inline-block; margin-bottom: 4px; color: var(--ink); font-size: 15px; }
+.contact strong { display: inline-block; margin-bottom: 4px; color: var(--ink); font-size: var(--t-ui); }
 .contact a, .email { font-weight: 600; }
 
 /* TestRoster bekleme listesi formu */
 form.wl { display: flex; gap: 10px; flex-wrap: wrap; margin: 4px 0 0; }
 form.wl input {
   flex: 1 1 220px; padding: 12px 14px; border: 1px solid var(--line-2);
-  border-radius: var(--r-2); font-size: 1em; font-family: inherit;
+  border-radius: var(--r-2); font-size: var(--t-body); font-family: inherit;
   background: var(--surface); color: var(--ink);
   transition: border-color .16s var(--ease), box-shadow .16s var(--ease);
 }
@@ -739,17 +822,26 @@ form.wl input::placeholder { color: var(--muted-3); }
 form.wl button {
   padding: 12px 22px; border: 1px solid var(--solid); border-radius: var(--r-2);
   background: var(--solid); color: var(--solid-ink); font-weight: 600;
-  font-size: 0.96em; font-family: inherit; cursor: pointer;
+  font-size: var(--t-ui); font-family: inherit; cursor: pointer;
   transition: background .16s var(--ease);
 }
 form.wl button:hover { background: var(--solid-h); }
 form.wl button[disabled] { opacity: .6; cursor: default; }
-.wl-msg { margin: 10px 0 0; font-size: .94em; color: var(--muted-2); min-height: 1.2em; }
+.wl-msg { margin: 10px 0 0; font-size: var(--t-small); color: var(--muted-2); min-height: 1.2em; }
 .wl-msg[data-tone="error"] { color: var(--danger); }
 .wl-msg[data-tone="ok"] { color: var(--live); }
 
 /* ========================== DAR EKRAN ========================== */
 @media (max-width: 62rem) { :root { --pad: 40px; } }
+/* 45–54rem (tablet dikey dahil): bant tek satırda kalsın. Ölçülmüştü —
+   720–855px arasında TR/EN seçici ikinci satıra düşüyor, bant 107px
+   oluyor ve çapa atlamaları başlığı bandın altına sokuyordu. */
+@media (min-width: 45rem) and (max-width: 54rem) {
+  .site-head .wrap { flex-wrap: nowrap; gap: 16px; }
+  .site-nav { gap: 2px; }
+  .site-nav a { padding: 8px 9px; font-size: var(--t-small); }
+  .site-nav .nav-cta { margin-left: 4px; padding: 9px 13px; }
+}
 @media (max-width: 44rem) {
   :root { --pad: 22px; --head: 64px; }
   .site-head .wrap { flex-wrap: nowrap; gap: 12px; }
@@ -757,9 +849,15 @@ form.wl button[disabled] { opacity: .6; cursor: default; }
      baglantilari zaten alt bilgide, "Sunum talep edin" dugmesi de hemen
      altta hero'da duruyor; ust bantta tekrari dil seciciyi kirpiyordu. */
   .site-nav { gap: 0; }
-  .site-nav a { display: none; }
-  .wordmark { font-size: 16px; }
-  .hero-lede { font-size: 17px; }
+  .site-nav a:not(.nav-cta) { display: none; }
+  /* Dar ekranda bölüm bağlantıları düşer ama DÖNÜŞÜM DÜĞMESİ KALIR.
+     Ölçüldü: 375px'de logo+düğme+dil 331px'lik şeride ancak sığıyor,
+     bu yüzden düğme burada bir kademe küçük ve asla sarmıyor. */
+  .site-nav .nav-cta { margin-left: 0; padding: 8px 11px; font-size: var(--t-small); white-space: nowrap; }
+  .site-head .wrap { gap: 8px; padding-left: 16px; padding-right: 16px; }
+  .lang a, .lang button { padding: 6px 9px; }
+  .wordmark { font-size: var(--t-ui); gap: 9px; }
+  .hero-lede { font-size: var(--t-body); }
   .hero h1 { max-width: none; }
   .stack::before { display: none; }
   .pcard-body { padding: 24px 22px; }
@@ -767,7 +865,7 @@ form.wl button[disabled] { opacity: .6; cursor: default; }
   .module { margin: 0; padding: 14px 0; }
   .section-head { margin-top: 46px; }
   .cta-band .wrap { gap: 26px; }
-  table { font-size: 14px; }
+  table { font-size: var(--t-small); }
   th, td { padding: 10px 10px; }
 }
 

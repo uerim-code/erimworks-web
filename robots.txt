@@ -4,6 +4,8 @@
 User-agent: *
 Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
+# Denetim arsivi: canli sayfalarin eski kopyalari, taranmasina gerek yok
+Disallow: /reports/
 
 # AI arama ve cevap motorları (açıkça izinli)
 User-agent: OAI-SearchBot
