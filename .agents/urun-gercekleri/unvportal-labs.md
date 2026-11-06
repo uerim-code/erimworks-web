@@ -48,5 +48,6 @@ TeorikYoklama, Transkript, ÜrünGiriş, Yoklama + `danisman/` ve `ogrenci/` alt
 
 - Bu nesil (FastAPI + React) hâlâ satılan ürün mü, yoksa `unvplatform` monorepo'suna mı
   taşınıyor? `unvplatform/apps` altında yalnız `quality-web` ve `quality-mobile` var.
-- Sitedeki "numune atama ve sonuç değerlendirme" ifadesinin kod karşılığı hangi uç?
-  `evaluation.py` ödev/puan odaklı görünüyor.
+- ~~Numune atama iddiasının kod karşılığı~~ **yanıtlandı:** `models_v2.py: Numune`
+  modeli gerçek — aktiviteye bağlı, `qr_token`, `gercek_deger`, `tolerans_mutlak`/
+  `tolerans_yuzde`, `analit_turu`, durum ve puan dağılımı alanlarıyla. İddia destekli.
