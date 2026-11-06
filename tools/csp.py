@@ -24,11 +24,10 @@ from __future__ import annotations
 
 import base64
 import hashlib
-import pathlib
 import re
 import sys
 
-KOK = pathlib.Path(__file__).resolve().parent.parent
+from sayfalar import KOK, sayfalar
 
 # Ölçülen dış yükler (2026-09-02). Sayfalardaki diğer https adreslerinin hepsi
 # <a href> — CSP bağlantıları kısıtlamaz, yalnız YÜKLENEN kaynağı kısıtlar.
@@ -53,9 +52,11 @@ SCRIPT_DESENI = re.compile(r"<script(?![^>]*\bsrc=)([^>]*)>(.*?)</script>", re.S
 
 def hashler() -> list[str]:
     bulunan: set[str] = set()
-    for f in sorted(KOK.rglob("*.html")):
-        if {"node_modules", "reports", ".claude"} & set(f.parts):
-            continue
+    # Sayfa listesi tools/sayfalar.py'den: yalnız git'in takip ettiği, yani
+    # YALNIZ yayına giden dosyalar. Daha önce burada elle bir dışlama listesi
+    # vardı ({node_modules, reports, .claude}); sorun şu ki yoksayılan her yeni
+    # klasör o listeye ayrıca yazılmadıkça politikaya sızıyor.
+    for f in sayfalar():
         for oz, govde in SCRIPT_DESENI.findall(f.read_text(encoding="utf-8", errors="replace")):
             if "ld+json" in oz:
                 continue
