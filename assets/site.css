@@ -749,7 +749,9 @@ main.wrap > section.read + section.read { border-top: 1px solid var(--line); pad
 .row h3 { margin: 0 0 4px; font-size: var(--t-ui); font-weight: 600; }
 .row h3 a { color: var(--ink); }
 .row h3 a:hover { color: var(--accent); text-decoration: none; }
-.row p { margin: 0; color: var(--muted-2); font-size: var(--t-small); }
+.row p { margin: 0; color: var(--muted-2); font-size: var(--t-small); max-width: 520px; }
+/* Satır ölçüsü: bant genişliğinde (1168px) bu paragraflar satır başına 108
+   karaktere çıkıyordu, İngilizce sayfada 126'ya. Ölçü px ile verildi. */
 .row .actions { margin-top: 12px; gap: 8px; }
 
 .top { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
