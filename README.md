@@ -21,6 +21,26 @@ hash tutmaz, tarayıcı betiği sessizce bloklar ve hiçbir hata görünmez. Bu
 sitede en pahalı kayıp gizlilik/destek sayfalarındaki dil seçicidir — o
 sayfalar mağaza uyum yüzeyi.
 
+## Stil damgası (cache-busting)
+
+`/assets/site.css` adresinin sonundaki `?v=` damgası ÜRETİLİR: CSS'in kendi
+sha256'sının ilk on hanesi.
+
+```
+python3 tools/assets.py           # damgayı güncelle
+python3 tools/assets.py --check   # bayatsa 1 ile çık
+```
+
+**CSS'i her değiştirdikten sonra bunu çalıştır.** Çalıştırılmazsa değişiklik
+ziyaretçiye ULAŞMAZ ve hiçbir hata görünmez: `_headers` `/assets/*` için yedi
+günlük önbellek veriyor, Cloudflare adrese göre önbelleğe alıyor ve Pages'e
+dağıtım kenar sunucudaki eski nesneyi düşürmüyor. 2026-11-06'da ölçüldü —
+canlı sitede HTML yeniydi, CSS beş günlüktü (`age: 435322`, `cf-cache-status:
+HIT`): taze işaretleme, henüz var olmayan sınıflara atıf.
+
+Damga sayesinde `/assets/*` için uzun önbellek artık doğru: adres içerikle
+birlikte değişiyor.
+
 ## Sitemap
 
 `sitemap.xml` de ÜRETİLİR: canonical'ı kendini gösteren, noindex olmayan ve
