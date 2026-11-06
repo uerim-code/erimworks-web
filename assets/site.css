@@ -114,7 +114,11 @@
   --sans: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --wrap: 1312px;
-  --read: 620px;          /* ~80 karakter/satır; 760px'de 105 idi */
+  /* ⚠ ÖLÇÜ px İLE VERİLİR, ch İLE DEĞİL. ch, "0" rakamının genişliğidir
+     ve Plus Jakarta Sans'ta ortalama harften ~%40 geniştir: 72ch satır
+     başına 72 değil ~100 karakter demek. Denetimde tam bu yüzden
+     "max-width: 72ch" verilmiş paragraflar 120 karakterde ölçüldü. */
+  --read: 620px;          /* 17px gövdede ~80 karakter; 760px'de 105 idi */
   --read-wide: 880px;     /* tablo ve ızgaralar ölçüyü aşar */
   --pad:  72px;
   --head: 72px;                                 /* yapışkan bant yüksekliği */
@@ -375,9 +379,9 @@ main.wrap::before {
    Tek kademede başlık 1120 px'de beş satıra düşüyor ve sayfa sıkışık duruyordu. */
 @media (min-width: 68rem) { .hero-grid { grid-template-columns: 1fr 404px; gap: 56px; } }
 @media (min-width: 80rem) { .hero-grid { grid-template-columns: 1fr 468px; gap: 76px; } }
-.hero h1 { max-width: 22ch; }
-.hero-lede { font-size: 19px; line-height: 1.58; color: var(--ink-2); margin: 0 0 20px; max-width: 52ch; }
-.hero-note { font-size: 15.5px; line-height: 1.65; color: var(--muted-2); margin: 0 0 30px; max-width: 52ch; }
+.hero h1 { max-width: 660px; }
+.hero-lede { font-size: 19px; line-height: 1.58; color: var(--ink-2); margin: 0 0 20px; max-width: 600px; }
+.hero-note { font-size: 15.5px; line-height: 1.65; color: var(--muted-2); margin: 0 0 30px; max-width: 560px; }
 
 /* Katmanlı yığın: derinlik açık zeminde katmandan ve tek yumuşak gölgeden.
    v2'de iki dolu katman yerine TEK saç teli çerçeve — dolu katmanlar koyu
@@ -462,8 +466,8 @@ main.wrap::before {
 .platform-band .wrap { padding-top: var(--band); padding-bottom: 8px; }
 /* Bandın sonundaki serbest paragraf ölçüsüz kalıyordu: 1168px'de satır
    başına 105 karakter. Diğer metinlerle aynı ölçüye çekildi. */
-.platform-band .wrap > p { max-width: 72ch; }
-.band-head { max-width: 66ch; margin-bottom: 32px; }
+.platform-band .wrap > p { max-width: 560px; }
+.band-head { max-width: 560px; margin-bottom: 32px; }
 .band-head h2 { margin-bottom: 10px; }
 /* Alt grup başlığı (ör. "Artık geliştirilmiyor"): bant başlığıyla aynı ritim,
    bir kademe küçük — ana bölüm başlığıyla yarışmasın. */
@@ -487,7 +491,7 @@ main.wrap::before {
 .pcard-head h3 { margin: 0; font-size: 23px; font-weight: 600; letter-spacing: -0.035em; }
 .pcard-head h3 a { color: var(--ink); }
 .pcard-head h3 a:hover { color: var(--accent); text-decoration: none; }
-.pcard-body > p { margin: 0 0 24px; font-size: 16.5px; line-height: 1.68; color: var(--ink-2); max-width: 72ch; }
+.pcard-body > p { margin: 0 0 24px; font-size: 16.5px; line-height: 1.68; color: var(--ink-2); max-width: 575px; }
 .pcard .actions { margin: 0 0 4px; }
 
 .pgrid { display: grid; grid-template-columns: 1fr; gap: 18px; }
@@ -565,7 +569,7 @@ main.wrap::before {
    CTA'dan önce okuduğu son şey terk edilmiş ürünlerdi. Tek satıra indi. */
 .app-retired {
   margin: 22px 0 0; font-size: 14.5px; line-height: 1.6; color: var(--muted-2);
-  max-width: 78ch;
+  max-width: 500px;
 }
 
 /* ========================== KAPANIŞ VE ALT BİLGİ ==========================
@@ -585,7 +589,7 @@ main.wrap::before {
 .cta-band .wrap { padding-top: clamp(48px, 5vw, 66px); padding-bottom: clamp(48px, 5vw, 66px); display: flex; align-items: center; gap: 44px; flex-wrap: wrap; }
 .cta-band > .wrap > div:first-child { flex: 1 1 460px; }
 .cta-band h2 { color: var(--block-ink); margin: 0 0 10px; font-size: clamp(1.6rem, 2.6vw, 2rem); }
-.cta-band p { color: var(--block-mute); margin: 0; max-width: 60ch; font-size: 16px; line-height: 1.6; }
+.cta-band p { color: var(--block-mute); margin: 0; max-width: 545px; font-size: 16px; line-height: 1.6; }
 .cta-mail {
   display: inline-flex; align-items: center; gap: 10px;
   font-family: var(--display); font-size: 18px; font-weight: 500; color: var(--block-ink);
@@ -614,7 +618,7 @@ main.wrap::before {
 .foot-col ul { list-style: none; margin: 0; padding: 0; }
 .foot-col li { margin: 0 0 9px; }
 .foot-brand .wordmark { color: var(--block-ink); font-size: 17px; margin: 0 0 14px; }
-.foot-brand p { color: var(--block-mute-2); max-width: 36ch; margin: 0 0 10px; font-size: 14px; }
+.foot-brand p { color: var(--block-mute-2); max-width: 290px; margin: 0 0 10px; font-size: 14px; }
 .foot-bottom {
   border-top: 1px solid var(--block-line); padding-top: 20px;
   display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 13px; color: var(--block-mute-2);
