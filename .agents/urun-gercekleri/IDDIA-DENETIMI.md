@@ -93,7 +93,7 @@ yanlış söylüyor hem elindeki en güçlü güvence argümanını harcıyor.
 |---|---|---|
 | Ana sayfa: "kiracı izolasyonu veritabanı düzeyinde (RLS)" | **DESTEKLENEN** | Quality 19 RLS politika dosyası; Labs/Exams `014_rls_public_tablolar.py`; IPOS RLS göçleri + izolasyon testi; KursOS RLS göçleri. Dördünde de gerçek. |
 | TestRoster: "Community (ücretsiz): 1 uygulama, 14 tester, 14 günlük kampanya" | **DESTEKLENEN + KAPILI** | `packages/contracts/src/plans.ts: FREE_PLAN_LIMITS` birebir aynı; ayrıca `check-plan-matrix-drift.mjs` sunucudaki `plan_features` ile karşılaştırıp sapmada yayını kesiyor. Sitedeki en iyi korunan sayı bu. |
-| TestRoster: "Pro $9,99 / Studio $24,99, 3 ve 10 uygulama, ekip koltuğu" | **DOĞRULANAMADI** | Yerelde `supabase/migrations` boş (şema uzakta); ücretli plan limitleri ve fiyatlar koddan doğrulanamıyor. Ayrıca `FAZ-DURUM` Faz 29/39: mağaza satın alma katmanı **bağlı değil**. |
+| TestRoster: "Pro $9,99 / Studio $24,99, 3 ve 10 uygulama, ekip koltuğu" | **FİYATLAR DESTEKLENEN, LİMİTLER DOĞRULANAMADI** — *bu denetim ilk turda yanıldı* | Fiyatlar şemada değil `packages/contracts/src/billing-products.ts` içinde: `SUBSCRIPTION_PRODUCTS` → pro_monthly 9.990.000 µUSD, pro_yearly 99.990.000, studio_monthly 24.990.000; siteyle birebir. İlk tur yalnız `supabase/migrations` klasörüne bakıp "doğrulanamadı" demişti. Ücretli plan **limitleri** (3/10 uygulama, koltuk) hâlâ uzak şemada ve doğrulanamıyor. `FAZ-DURUM` Faz 29/39: mağaza satın alma katmanı **bağlı değil**. |
 | TestRoster: "Uygulama henüz Play'de değil" | **DESTEKLENEN / dürüst** | Faz 35–36 kısmi; mağaza görselleri üretilmemiş. Sayfa bunu açıkça yazıyor — iyi. |
 | IPOS: "Yapay zekâ klinik karar vermez; tanı koymaz" | **DESTEKLENEN / iyi** | Doğru sınır çiziliyor. |
 | IPOS: WhatsApp için kliniğin kendi Meta hesabı gerekir | **DESTEKLENEN** | Doğru koşul, sayfada duruyor. |
@@ -149,7 +149,34 @@ yanlış söylüyor hem elindeki en güçlü güvence argümanını harcıyor.
    Aynı kontrolde **UNVPortal Quality iOS uygulaması 1.0.0 REJECTED** (2026-09-13)
    çıktı; 2026-11-08'de Quality sayfasına yazdığım "Mobil uygulama var mı? Var."
    cevabı da aynı şekilde koşullandırıldı.
-5. **TestRoster'da Production Readiness Score**, dropout riski, otomatik yerine tester.
+5. ~~**TestRoster'da Production Readiness Score**, dropout riski, otomatik yerine
+   tester.~~ **YAPILDI** (2026-11-08). Sayfaya üç bölüm eklendi (çift dilli):
+   · **Test dosyası** — sayfa "test dosyası" diyordu ama ne olduğunu hiç
+     anlatmıyordu, oysa ürünün kendi konumlandırmasında asıl fark bu. Sunucuda
+     üretiliyor, değiştirilemiyor; Community özet alıyor, JSON/CSV ücretli
+     (`dossier.ts: allowedFormats`).
+   · **Hazırlık skoru** — altı sinyal (`enums/readiness.ts`: coverage,
+     continuity, tester_health, critical_bugs, feedback_resolution,
+     build_stability) ve beş engelleyici ayrı listeleniyor. Deny-list D4 gereği
+     zorunlu uyarı (`READINESS_DISCLAIMER`) metne aynen taşındı: skorun Google'ın
+     inceleme kararıyla ilgisi yok.
+   · **Tester sessizleşince** — risk seviyeleri (low/medium/high/confirmed) ve
+     tolerans penceresi (`dropout-risk.ts`), ardından güvenilirliğe göre sıralı
+     yedek tester talebi (`replacement.ts`). Community'de yok, sunucu
+     `FEATURE_NOT_IN_PLAN` dönüyor — bu sınır da yazıldı.
+   JSON-LD `featureList` 5'ten 8 maddeye çıktı.
+
+   **⚠️ Bu denetim fiyatlarda da yanılmış.** Yukarıdaki tabloda "Pro $9,99 /
+   Studio $24,99 → DOĞRULANAMADI (şema uzakta)" yazıyordu. Fiyatlar şemada
+   değil, `packages/contracts/src/billing-products.ts` içinde
+   `SUBSCRIPTION_PRODUCTS` olarak duruyor ve siteyle birebir eşleşiyor:
+   pro_monthly 9.990.000 mikro-USD, pro_yearly 99.990.000 (on aylık = iki ay
+   bedava), studio_monthly 24.990.000. Dosya ayrıca fiyatlandırma gerekçesini de
+   taşıyor (2026-08-29 rakip taraması). **Hâlâ doğrulanamayan tek şey ücretli
+   plan LİMİTLERİ** (3 ve 10 uygulama, ekip koltuğu) — onlar entitlement
+   tablosunda, yani uzak şemada. Not: dosyanın kendi kuralı *"Ekranda bu
+   sabitleri GÖSTERME"* — bu uygulama ekranı için; pazarlama sayfası Play'in
+   yerelleştirilmiş fiyatı göstereceğini zaten söylüyor.
 6. **Exams'te Excel'den toplu ders/gözetmen aktarımı** ve **madde analizi**.
 7. **KursOS'ta WhatsApp kanalı**, öğrenci listesi içe aktarma, dört rollü tek mobil
    uygulama, demo girişi.
