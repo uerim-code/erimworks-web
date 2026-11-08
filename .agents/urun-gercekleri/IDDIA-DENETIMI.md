@@ -201,5 +201,34 @@ yanlış söylüyor hem elindeki en güçlü güvence argümanını harcıyor.
    `+ p` → `~ p` yapıldı: önceki hâli yalnız h3'ün İLK paragrafını hizalıyordu,
    iki paragraflı bir h3'te ikincisi hizadan kaçıyordu. 84 sayfanın stil damgası
    yenilendi; 19 sayfa × 2 genişlik taşma/yatay kaydırma taraması temiz.
-5. Uygulama içi Labs kullanım kılavuzundaki "kalibrasyon tarihleri" ifadesini kaldır
-   (üründe karşılığı yok) ve TestRoster README'sinin bayat "iskelet" tablosunu düzelt.
+5. ~~Uygulama içi Labs kullanım kılavuzu ve TestRoster README'si.~~ **YAPILDI**
+   (2026-11-08). İkisi de bu deponun dışında, kendi dallarında commit edildi.
+
+   **`unvportal/unvportal` → `duzeltme/kilavuz-iddia-denetimi`** (`9a94a0a6`).
+   Kılavuzda denetimin işaretlediği bir değil **üç** bayat iddia çıktı:
+   · "Cihaz Envanteri: … kalibrasyon tarihleri" — `CihazEnvanteri` modelinde
+     kalibrasyon alanı yok (`models_v2.py:735`); gerçek alanlarla değiştirildi.
+   · "Sistemde dört farklı kullanıcı rolü bulunur" — `KullaniciRol` enum'unda
+     **altı** rol var (`models_v2.py:25`); `abd_admin` ve `danisman` hiç
+     anlatılmıyordu, oysa danışmanın arkasında transkript okuma, müfredat/ön
+     koşul analizi ve program çakışma kontrolü olan ayrı bir modül var.
+   · "Teknisyen: Sadece ders listesi ve deney yönetimi sayfasına erişir" —
+     yetki haritası bunun **tersini** söylüyor: `deps.py:72` teknisyene
+     {stok, rezervasyon} veriyor, akademik işlemleri vermiyor.
+
+   **`testroster` → `duzeltme/readme-durum`** (`ec5471d`). README'nin üst
+   tablosu "Faz 1 bitti → sıradaki Faz 2" ve "Uygulamalar henüz iskelet"
+   diyordu; `docs/FAZ-DURUM.md` sayıldığında **40 fazın tamamı işlenmiş:
+   26 bitti, 14 kısmi, 0 bekleyen**. Aşama satırı gerçek sayılarla değişti,
+   iskelet cümlesi yerine uygulamaların çalışır olduğu ama **Play'de yayında
+   olmadığı** (Faz 35–36 kısmi) yazıldı. Paket tablosuna da uyarı notu kondu:
+   tablo satılacak paketleri tarif ediyor, bugünkü çalışır durumu değil —
+   satın alma katmanı bağlı değil (29/39), TestProof ağ gönderimi yok (22),
+   AI model çağrısı yok (24).
+
+---
+
+**Denetimin beş maddesi de kapandı.** Açık kalanlar madde 4'teki ikinci
+öncelik listesinde (IPOS dikte/çeviri, TestRoster readiness score, Exams
+madde analizi, KursOS WhatsApp) ve yalnız Ümit'in yanıtlayabileceği sorularda
+(hangi UNVPortal kuşağı satılıyor, Quality ayrı marka mı, kurum sayıları).
