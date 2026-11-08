@@ -124,7 +124,7 @@
           "name": "Can we import our existing instrument list?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "An existing instrument list can be imported into UNVPortal Labs: instrument, consumable and laboratory lists held in spreadsheets are imported during deployment. Column mapping is agreed together during setup."
+            "text": "Existing lists are imported from an Excel file. The stock screen has a separate Excel upload button for instruments, glassware and consumables, and chemicals; the column names in the file's header row are mapped automatically (for instruments: name, make, model, serial number, location; for chemicals also CAS number, class, unit and critical quantity). We carry out the first import during deployment, after which an authorised user can upload at any time."
           }
         },
         {
@@ -255,7 +255,7 @@
     <p>Each laboratory is attached to the unit tree. A course is divided into experiment weeks and each week into its own activities; a PDF or Word template is attached to the activity and students access it before the session. Each student is assigned a separate QR-tagged sample: the sample's true value and acceptance tolerance are defined in advance, and the submitted result is graded against them.</p>
 
     <h3>Instrument booking and approval flow</h3>
-    <p>Instruments are defined with their location, working hours and a daily or hourly booking mode; maintenance days are marked as unavailable. A shareable link is generated for the department, so requests can also come from outside the institution. Incoming requests land in an approval queue; they are approved one by one or in bulk, and a reason is recorded if rejected. A reminder goes out automatically before the appointment, a record is kept after use, and a per-instrument usage report is produced at the end of term.</p>
+    <p>Instruments are defined with their location, working hours and a daily or hourly booking mode; maintenance days are marked as unavailable. A shareable link is generated for the department, so requests can also come from outside the institution. Incoming requests land in an approval queue; they are approved one by one or in bulk, and a reason is recorded if rejected. A reminder email goes out the day before an approved booking — automatically, through the scheduled job set up at deployment, or by hand from the admin screen, singly or in bulk. A record is kept after use, and a per-instrument usage report is produced at the end of term.</p>
 
     <h3>Consumable stock</h3>
     <p>Receipts, issues and stock counts are recorded. Materials that fall below the critical level are listed, and consumption history is exported for purchasing plans. For materials with a lot and expiry date, expired items are separated out.</p>
@@ -296,7 +296,7 @@
     <div class="faq">
       <details>
         <summary>Can we import our existing instrument list?</summary>
-        <p>An existing instrument list can be imported into UNVPortal Labs: instrument, consumable and laboratory lists held in spreadsheets are imported during deployment. Column mapping is agreed together during setup.</p>
+        <p>Existing lists are imported from an Excel file. The stock screen has a separate Excel upload button for instruments, glassware and consumables, and chemicals; the column names in the file's header row are mapped automatically (for instruments: name, make, model, serial number, location; for chemicals also CAS number, class, unit and critical quantity). We carry out the first import during deployment, after which an authorised user can upload at any time.</p>
       </details>
       <details>
         <summary>How many laboratories can be defined?</summary>

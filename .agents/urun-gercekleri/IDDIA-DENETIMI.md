@@ -76,12 +76,12 @@ yanlış söylüyor hem elindeki en güçlü güvence argümanını harcıyor.
 | "Cihazlar konum, çalışma saatleri, günlük/saatlik rezervasyon moduyla tanımlanır; bakım günleri müsait değil işaretlenir" | **DESTEKLENEN** | `AnalitikCihaz`: `konum`, `calisma_baslangic/bitis`, `rezervasyon_modu` ("gunluk"/"saatlik"), `musait_olmayan_tarihler` |
 | "Anabilim dalı için paylaşılabilir bağlantı; kurum dışından talep alınır" | **DESTEKLENEN** | `rezervasyon.py: POST /talep` (kimliksiz) + `CihazRezervasyon`: `ad_soyad`, `email`, `kurum`, `telefon` |
 | "Tek tek ya da toplu onaylanır, reddedilirse gerekçesi kaydedilir" | **DESTEKLENEN** | `/admin/rezervasyon/{id}/onayla`, `/reddet`, `/admin/toplu-onayla`, `/admin/toplu-duzenle-onayla`; `red_nedeni` alanı |
-| "Randevu öncesi hatırlatma otomatik gider" | **KISMEN** | Uçlar var (`/hatirlatma`, `/admin/hatirlatma-gonder`, **`/hatirlatma-cron`**) ve mail servisi bağlı. "Otomatik" olması cron'un kurulumda zamanlanmasına bağlı — ürün özelliği değil kurulum adımı. Metin "hatırlatma gönderilir" demeli ya da kurulum notu düşmeli. |
+| "Randevu öncesi hatırlatma otomatik gider" | **KISMEN — DÜZELTİLDİ 2026-11-08** | Uçlar var (`/hatirlatma`, `/admin/hatirlatma-gonder`, **`/hatirlatma-cron`**) ve mail servisi bağlı. "Otomatik" olması cron'un kurulumda zamanlanmasına bağlı — ürün özelliği değil kurulum adımı. Metin "hatırlatma gönderilir" demeli ya da kurulum notu düşmeli. |
 | "Dönem sonunda cihaz başına kullanım raporu" | **DESTEKLENEN** | `/admin/rapor`, `/admin/rezervasyon/{id}/kullanim` |
 | "Kritik seviyenin altına düşen malzeme listelenir" | **DESTEKLENEN** | `CamSarf.kritik_adet`, `Kimyasal.kritik_miktar` |
 | "Tüketim geçmişi satın alma planı için dışa aktarılır" | **DESTEKLENEN** | `stok.py` → `satin_alma_listesi.xlsx` |
 | "Lot ve son kullanma tarihi olan malzemelerde süresi geçenler ayrılır" | **DESTEKLENEN (dar)** | `KimyasalKap`: `lot_no`, `son_kullanma_tarihi`, `acilis_tarihi`. **Yalnız kimyasal kaplarında** — cam/sarf tarafında lot/SKT alanı yok. Cümle "olan malzemelerde" dediği için doğru, ama okuyan bunu sarf için de sanabilir. |
-| SSS: "Elektronik tablo halindeki cihaz, sarf ve laboratuvar listeleri kurulum sırasında içe aktarılıyor" | **DOĞRULANAMADI** | `stok.py` içinde excel/csv **içe aktarma ucu yok** (yalnız dışa aktarma var). Bu bir *hizmet* vaadi ise ("kurulum sırasında biz aktarıyoruz") doğru olabilir; ürün özelliği gibi okunuyor. Netleştirilmeli. |
+| SSS: "Elektronik tablo halindeki cihaz, sarf ve laboratuvar listeleri kurulum sırasında içe aktarılıyor" | **DESTEKLENEN — bu denetim ilk turda YANILDI** | İlk tarama `stok.py`'de içe aktarma ucu bulamamıştı; 2026-11-08'de yeniden bakıldığında **üç uç** çıktı: `POST /stok/import/cihaz` (s. 895), `/stok/import/cam-sarf` (s. 936), `/stok/import/kimyasal` (s. 980) — openpyxl ile, başlık satırından sütun eşlemeli. Arayüzde de var: `StokYonetimiPage.jsx` üç yerde "Excel Yükle" düğmesi (`.xlsx,.xls`). Yani özellik **sitenin anlattığından geniş**: kurulumla sınırlı değil, yetkili kullanıcı istediği zaman yükleyebiliyor. Site metni buna göre genişletildi. |
 | "Tarayıcı üzerinden çalışır, bulut ya da kendi sunucusu" | **DESTEKLENEN** | web uygulaması; dağıtım kararı kurumun |
 | "Yetkiler birim ve rol bazında; sorumlu yalnız kendi laboratuvarını görür" | **DESTEKLENEN** | `anabilim_dali_id` bağları + `alembic/versions/014_rls_public_tablolar.py` |
 
@@ -133,8 +133,10 @@ yanlış söylüyor hem elindeki en güçlü güvence argümanını harcıyor.
    eklendi. Ana sayfa hero'sundaki "beş platform tek veritabanı üzerinde" iddiası
    (beş ayrı ürün için büsbütün yanlıştı) kaldırıldı; yan panel altlığı "Platformlar
    ayrı ayrı lisanslanır · Türkçe ve İngilizce arayüz" oldu.
-2. Labs'teki iki ifadeyi netleştir: hatırlatmanın "otomatik"liği, Excel içe aktarmanın
-   ürün mü hizmet mi olduğu.
+2. ~~Labs'teki iki ifadeyi netleştir.~~ **YAPILDI** (2026-11-08). Hatırlatma artık
+   "bir gün önce gider; kurulumda zamanlanan görevle otomatik, gerekirse yönetim
+   ekranından elle" diyor. Excel içe aktarma iddiası **daraltılmadı, genişletildi** —
+   denetimin ilk turu yanılmıştı, özellik gerçek ve self-servis.
 3. Quality sayfasını gerçek kapsamıyla yeniden yaz — en büyük kazanç orada.
 4. ChemBioCalc ↔ Labs köprüsünü iki sayfaya da ekle.
 5. Uygulama içi Labs kullanım kılavuzundaki "kalibrasyon tarihleri" ifadesini kaldır
