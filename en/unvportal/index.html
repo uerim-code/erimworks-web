@@ -19,7 +19,7 @@
 <meta property="og:locale:alternate" content="tr_TR">
 <meta property="og:url" content="https://erimworks.com/en/unvportal/">
 <meta property="og:title" content="UNVPortal — Laboratory, examination and quality management system">
-<meta property="og:description" content="A modular management platform that runs laboratory, examination and quality processes on a single database.">
+<meta property="og:description" content="A modular management platform that runs laboratory, examination and quality processes from shared definitions.">
 <meta property="og:image" content="https://erimworks.com/assets/og-unvportal.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -106,7 +106,7 @@
           "name": "Can we license the modules separately?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "UNVPortal modules can be licensed separately: Labs, Exams and Quality each work on their own. When used together, unit, staff and permission definitions are read from a single database, so the same information is not entered twice."
+            "text": "UNVPortal modules can be licensed separately: Labs, Exams and Quality each work on their own. When used together, unit, staff and permission definitions are entered once: Labs and Exams read from the same database, and Quality only reads those records. The same information is not entered twice."
           }
         },
         {
@@ -203,7 +203,7 @@
 
   <div class="read">
     <h1>UNVPortal: laboratory, examination and quality management on one platform</h1>
-    <p class="lede">UNVPortal is a browser-based modular management platform for universities and higher education institutions. It runs laboratory operations, examination processes, and quality and accreditation work on the same database. Three modules are in production: Labs (laboratory management), Exams (examination management) and Quality (quality management); Connect and Intelligence are in preparation. Unit, staff, course and permission definitions are entered once, and all three modules read from the same record.</p>
+    <p class="lede">UNVPortal is a browser-based modular management platform for universities and higher education institutions. It runs laboratory operations, examination processes, and quality and accreditation work from shared unit, staff and course definitions. Three modules are in production: Labs (laboratory management), Exams (examination management) and Quality (quality management); Connect and Intelligence are in preparation. Unit, staff, course and permission definitions are entered once, and all three modules read the same record.</p>
     <div class="actions">
       <a class="btn btn-primary" href="/en/contact/">Request a demo</a>
       <a class="btn btn-quiet" href="https://unvportal.com/" rel="noopener">unvportal.com</a>
@@ -212,7 +212,7 @@
 
   <section aria-labelledby="h-what" class="read">
     <div class="section-head"><h2 id="h-what">What is a university management platform?</h2></div>
-    <p>A university management platform is modular software that runs a higher education institution's academic operations, such as laboratories, examinations, quality and accreditation, on a single database. The unit tree, staff, course and permission definitions are entered once; every module reads the same record, and the same information is not entered twice. UNVPortal is a university management platform of this kind, working through its Labs, Exams and Quality modules.</p>
+    <p>A university management platform is modular software that runs a higher education institution's academic operations, such as laboratories, examinations, quality and accreditation, from shared definitions. The unit tree, staff, course and permission definitions are entered once; every module reads the same record, and the same information is not entered twice. UNVPortal is a university management platform of this kind, working through its Labs, Exams and Quality modules.</p>
   </section>
   <section aria-labelledby="h-modules">
     <div class="section-head">
@@ -268,10 +268,11 @@
 
   <section aria-labelledby="h-why" class="read">
     <div class="section-head">
-      <h2 id="h-why">What a single database means in practice</h2>
+      <h2 id="h-why">What a single record means in practice</h2>
     </div>
     <p>In universities, laboratory, examination and quality work usually runs in three separate applications or three separate spreadsheets. The same lecturer is defined in three places, the same course code is written three different ways, and evidence for the quality report is collected piece by piece.</p>
-    <p>In UNVPortal, the unit tree, staff records, course and programme definitions and permissions are held in one place. When the Quality module asks for a piece of evidence, it links directly to the instrument usage report kept in the laboratory or to the programme outcome result calculated in the Exams module. When reporting time comes, there is nothing left to collect.</p>
+    <p>In UNVPortal, the unit tree, staff records, course and programme definitions and permissions are held in one place: Labs and Exams read from the same database. Quality runs on its own database and only reads those records — when it asks for a piece of evidence it links directly to the instrument usage report kept in the laboratory or to the programme outcome result calculated in the Exams module, without writing anything back to the running system. The source of every piece of evidence is recorded, and only the fields actually needed are carried over. When reporting time comes, there is nothing left to collect.</p>
+    <p>The separation is deliberate: quality work carries no risk of breaking a laboratory or examination system already in use. Remove Quality and Labs and Exams keep running exactly as before.</p>
   </section>
 
   <section aria-labelledby="h-deploy" class="read">
@@ -294,7 +295,7 @@
     <div class="faq">
       <details>
         <summary>Can we license the modules separately?</summary>
-        <p>UNVPortal modules can be licensed separately: Labs, Exams and Quality each work on their own. When used together, unit, staff and permission definitions are read from a single database, so the same information is not entered twice.</p>
+        <p>UNVPortal modules can be licensed separately: Labs, Exams and Quality each work on their own. When used together, unit, staff and permission definitions are entered once: Labs and Exams read from the same database, and Quality only reads those records. The same information is not entered twice.</p>
       </details>
       <details>
         <summary>Where is the data held?</summary>

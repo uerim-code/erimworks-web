@@ -124,7 +124,15 @@ yanlış söylüyor hem elindeki en güçlü güvence argümanını harcıyor.
 
 ## 5. Sıradaki iş
 
-1. "Aynı veritabanı" cümlelerini 11 sayfada düzelt (TR+EN birlikte).
+1. ~~"Aynı veritabanı" cümlelerini 11 sayfada düzelt (TR+EN birlikte).~~ **YAPILDI**
+   (2026-11-08). 12 dosyada 32 cümle düzeltildi: Labs↔Exams için "aynı veritabanı"
+   korundu, Quality için "kendi veritabanında çalışır, bu kayıtlardan yalnız okur"
+   oldu. `unvportal/index.html` ve EN karşılığındaki bölüm başlığı "Tek kaydın pratik
+   karşılığı" / "What a single record means in practice" olarak değişti; her ikisine
+   de "Quality kaldırılsa Labs ve Exams aynı şekilde çalışmayı sürdürür" paragrafı
+   eklendi. Ana sayfa hero'sundaki "beş platform tek veritabanı üzerinde" iddiası
+   (beş ayrı ürün için büsbütün yanlıştı) kaldırıldı; yan panel altlığı "Platformlar
+   ayrı ayrı lisanslanır · Türkçe ve İngilizce arayüz" oldu.
 2. Labs'teki iki ifadeyi netleştir: hatırlatmanın "otomatik"liği, Excel içe aktarmanın
    ürün mü hizmet mi olduğu.
 3. Quality sayfasını gerçek kapsamıyla yeniden yaz — en büyük kazanç orada.
