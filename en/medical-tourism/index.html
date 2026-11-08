@@ -10,8 +10,8 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Medical Tourism CRM and Operations Software — International Patient OS</title>
-<meta name="description" content="International Patient OS: for clinics treating patients from abroad, a single case record from enquiry to discharge, WhatsApp inbox, surgery planning, travel and incentive management.">
-<meta name="keywords" content="medical tourism software, medical tourism CRM, international patient management, patient coordination software, clinic management system, surgery scheduling, incentive file management, health tourism CRM">
+<meta name="description" content="International Patient OS: for clinics treating patients from abroad, one case record — WhatsApp inbox, translation and dictation, surgery planning, travel, case finance, agency commission, patient portal and incentive files.">
+<meta name="keywords" content="medical tourism software, medical tourism CRM, international patient management, patient coordination software, clinic management system, surgery scheduling, incentive file management, health tourism CRM, patient portal, agency commission tracking, medical dictation, complication tracking">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Erimworks">
@@ -19,7 +19,7 @@
 <meta property="og:locale:alternate" content="tr_TR">
 <meta property="og:url" content="https://erimworks.com/en/medical-tourism/">
 <meta property="og:title" content="Medical Tourism CRM and Operations Software — International Patient OS">
-<meta property="og:description" content="One case record from enquiry to discharge: inbox, surgery planning, travel, finance and incentive files.">
+<meta property="og:description" content="One case record from enquiry to discharge: inbox, translation and dictation, surgery planning, travel, finance, agency commission and incentive files.">
 <meta property="og:image" content="https://erimworks.com/assets/og-ipos.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -56,11 +56,19 @@
       "featureList": [
         "One inbox for WhatsApp, email and form messages",
         "One case file from lead to discharge",
+        "Multilingual communication: original, translation and correction as separate versions",
+        "Voice notes and transcripts, with a review queue that no draft leaves unapproved",
         "Surgeon review, quotes and package management",
         "Flight, hotel, transfer and surgery planning",
-        "Per-case revenue, cost and contribution margin",
+        "Per-case revenue, cost and contribution margin, with the rate frozen to the day",
+        "Partner and agency commission: plan, attribution, accrual, approval and payment",
+        "Complication register and a clinic-wide queue of open complications",
+        "Clinic health board: not technical detail, but what to do differently today",
         "Government incentive files and application tracking",
-        "Patient portal and multilingual communication"
+        "Patient portal: journey, documents, quote, payments, messages",
+        "Clinic's own domain: the address the patient sees is the clinic's",
+        "Calendar feed: appointments subscribed to in Google or Outlook",
+        "Mobile app for the field team (Patient OS Field)"
       ],
       "offers": {
         "@type": "Offer",
@@ -143,6 +151,30 @@
         },
         {
           "@type": "Question",
+          "name": "We pay commission to agencies — can we track that in the system?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can. Agencies, referring doctors and partners are defined with their commission plans; a case is attributed to a partner, the commission accrues against the accepted quote and passes through approval and payment. Who has earned what, and how much is still unpaid, is on one screen. A case that has been paid cannot be quietly re-attributed to another partner."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will our patients see our own domain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. A clinic can publish the platform under its own domain: the domain is added from an admin screen, the setup instruction is generated from that record itself and verification is carried out by the system. The address the patient sees is the clinic's own."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a mobile app for patients?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no app aimed at patients, and that is deliberate: patients already reach the clinic on WhatsApp, and they see their own dates, documents, quote and payments in the web portal, in their own language. Patient OS Field is for the field team — driver, clinician and coordinator; it is distributed to the clinic's staff as part of deployment."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "What does it cost?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -175,7 +207,7 @@
         "width": 1200,
         "height": 630
       },
-      "dateModified": "2026-11-04",
+      "dateModified": "2026-11-08",
       "speakable": {
         "@type": "SpeakableSpecification",
         "cssSelector": [
@@ -207,7 +239,7 @@
 </header>
 
 <main id="icerik" class="wrap">
-  <p class="crumbs"><a href="/en/">Erimworks</a><span>/</span>Medical tourism software<span class="crumbs-date">Last updated: <time datetime="2026-11-04">4 November 2026</time></span></p>
+  <p class="crumbs"><a href="/en/">Erimworks</a><span>/</span>Medical tourism software<span class="crumbs-date">Last updated: <time datetime="2026-11-08">8 November 2026</time></span></p>
 
   <div class="read">
     <h1>International Patient OS: from the first message to the closing of the incentive file</h1>
@@ -240,6 +272,9 @@
     <h3>One inbox and multilingual communication</h3>
     <p>Every message from WhatsApp Business, email and the web form lands in the same inbox. Team assignment, tags, response-time targets and internal notes sit on the same conversation. If the patient's language is different, the original text, the translation and any correction are stored as separate versions; who corrected what is not lost.</p>
 
+    <h3>Voice notes and transcripts</h3>
+    <p>A clinician leaves a note by speaking and the recording is turned into text. What comes out is a draft: it waits in a review queue and does not leave it until a clinician has read it and said it is right. The queue is not an archive — it shows only what has not been decided on, so decided items do not bury the ones that need somebody. A transcript is translated into the patient's language when it needs to be.</p>
+
     <h3>From lead to case</h3>
     <p>An incoming message becomes a lead, and the lead becomes a case. The case moves through a state machine: which stage can follow which is defined in code and cannot be skipped. The medical profile, consent versions, photos and test files are attached to the case; viewing and downloading are separate permissions.</p>
 
@@ -252,8 +287,16 @@
     <h3>Finance and incentives</h3>
     <p>The payment record is an immutable ledger; the same receipt is never posted twice. The exchange rate is chosen for the day of the transaction and frozen on the line; it does not change afterwards. On the incentive side, regulations are not hard-coded; they are held as versioned data, so when a rule changes, past calculations are not broken. A salary month cannot be claimed twice, and double funding is checked.</p>
 
+    <h3>Partner and agency commission</h3>
+    <p>Who sent the patient, what they are owed for it and what is still to pay sit on one screen. Agencies, referring doctors and partners are defined with their commission plans; a case is attributed to a partner and the commission accrues against the accepted quote, passes through approval and is paid. A case that has been paid cannot be quietly re-attributed to another partner; the record locks.</p>
+
+    <h3>Complications and clinic health</h3>
+    <p>A complication is opened on the case's own register and its status moves there. Complications that are open across the clinic are also listed in a single queue: answering "which of our patients is in treatment for a complication right now" does not require opening every case.</p>
+    <p>The clinic health board says what this clinic should do differently today — operational work, not a connection error or a provider response. Technical detail lives on a separate screen under a separate permission; a clinic manager is not shown a raw failure dump.</p>
+
     <h3>Patient portal</h3>
-    <p>Patients see their own journey, in their own language, on their own screen. Visibility is off by default: nothing is visible to the patient unless the clinic explicitly opens it.</p>
+    <p>Patients see their own journey, in their own language, on their own screen: their dates, their documents, their quote, their payments and the messages they have written to the clinic. Visibility is off by default: nothing is visible to the patient unless the clinic explicitly opens it.</p>
+    <p>The documents and payments pages ask for a second factor, and that proof is renewed every ten minutes. The reason is the realistic threat: a phone left unlocked on a table. Downloading a medical document is not the same act as checking a flight time.</p>
   </section>
 
   <section aria-labelledby="h-principles" class="read">
@@ -271,7 +314,11 @@
 
   <section aria-labelledby="h-access" class="read">
     <div class="section-head"><h2 id="h-access">Access and deployment</h2></div>
-    <p>Desk work runs in the browser. A separate mobile app is being prepared for work in the field: the driver's day, the surgeon's morning list and the coordinator's inbox. The mobile app has no advertising, tracking or in-app purchases; the clinic opens the account.</p>
+    <p>Desk work runs in the browser. For work in the field there is a separate mobile app — <strong>Patient OS Field</strong>: the driver's day, the surgeon's morning list and the coordinator's inbox. It has no advertising, tracking or in-app purchases; the clinic opens the account. <strong>It is not an app for patients</strong>: patients reach the clinic on WhatsApp and see their own records in the web portal.</p>
+
+    <p>A clinic can publish the platform under its own domain. The domain is added from an admin screen, the setup instruction is generated from that record itself and verification is carried out by the system; the address the patient sees is the clinic's own.</p>
+
+    <p>On the calendar side, a personal subscription link is generated so appointments appear in Google or Outlook. Only a digest of the link is stored, so the address is shown exactly once — if it is lost, a new one is issued and the old one stops working.</p>
     <p>The interface is in Turkish and English. The infrastructure for German, French, Arabic, Russian, Italian and Spanish is ready and enabled on request.</p>
     <p class="small">The clinic-side legal texts are on the product's own domain: <a href="https://clinic.erimworks.com/gizlilik" rel="noopener" hreflang="tr">privacy</a>, <a href="https://clinic.erimworks.com/kosullar" rel="noopener" hreflang="tr">terms</a>, <a href="https://clinic.erimworks.com/destek" rel="noopener" hreflang="tr">support</a>.</p>
   </section>
@@ -294,6 +341,18 @@
       <details>
         <summary>Can we import our existing patient records?</summary>
         <p>Existing patient records can be imported into International Patient OS: patient, quote and payment records held in spreadsheets are imported. Field mapping is agreed together during deployment.</p>
+      </details>
+      <details>
+        <summary>We pay commission to agencies — can we track that in the system?</summary>
+        <p>You can. Agencies, referring doctors and partners are defined with their commission plans; a case is attributed to a partner, the commission accrues against the accepted quote and passes through approval and payment. Who has earned what, and how much is still unpaid, is on one screen. A case that has been paid cannot be quietly re-attributed to another partner.</p>
+      </details>
+      <details>
+        <summary>Will our patients see our own domain?</summary>
+        <p>Yes. A clinic can publish the platform under its own domain: the domain is added from an admin screen, the setup instruction is generated from that record itself and verification is carried out by the system. The address the patient sees is the clinic's own.</p>
+      </details>
+      <details>
+        <summary>Is there a mobile app for patients?</summary>
+        <p>There is no app aimed at patients, and that is deliberate: patients already reach the clinic on WhatsApp, and they see their own dates, documents, quote and payments in the web portal, in their own language. <strong>Patient OS Field</strong> is for the field team — driver, clinician and coordinator; it is distributed to the clinic's staff as part of deployment.</p>
       </details>
       <details>
         <summary>What does it cost?</summary>

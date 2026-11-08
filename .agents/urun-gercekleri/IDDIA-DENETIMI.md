@@ -114,7 +114,41 @@ yanlış söylüyor hem elindeki en güçlü güvence argümanını harcıyor.
    UNSUPPORTED**)."* Herkesin "yapay zekâ" dediği yerde "yapay zekâ kullanmıyoruz,
    aynı veriden aynı raporu üretiyoruz" demek ayırt edici bir konum.
 3. **ChemBioCalc ↔ Labs köprüsü.** "Aynı ekosistem" iddiasının tek somut kanıtı.
-4. **IPOS'ta dikte ve çeviri**, hasta portalı, kiracıya özel alan adı, teklif üretimi.
+4. ~~**IPOS'ta dikte ve çeviri**, hasta portalı, kiracıya özel alan adı, teklif
+   üretimi.~~ **YAPILDI** (2026-11-08). Bu maddenin kendisi kısmen bayattı: çeviri,
+   hasta portalı, teklif ve döviz kuru sitede **zaten vardı**. Gerçekten eksik
+   olanlar eklendi (TR+EN), her biri `page.tsx` + rota olarak doğrulandı:
+   · **Sesli not ve transkript** (`app/dikte/`, `dictation.ts`) — inceleme kuyruğu
+     arşiv değil; taslak, hekim onaylamadan kuyruktan çıkmıyor.
+   · **İş ortağı ve acente komisyonu** (`app/is-ortaklari/`, `partners.ts`) —
+     komisyon planı, atıf, kabul edilen teklif üzerinden tahakkuk, onay/ödeme,
+     ödenmiş vakanın yeniden atfını engelleyen kilit. Bu pazarın çoğu acenteye
+     komisyon ödüyor; sitede hiç yoktu.
+   · **Komplikasyon kuyruğu** (`app/komplikasyon/`) ve **klinik sağlığı panosu**
+     (`app/klinik-sagligi/`) — ikincisinde `ClinicFailure` tipinde teknik mesaj
+     alanı yok, yani klinik yöneticisine ham hata dökümü gösterilemiyor.
+   · **Kiracıya özel alan adı** (`app/yonetim/alan-adlari/`, `tenant-domains.ts`)
+   · **Takvim akışı** (`app/hesap/calendar-feed.tsx`) — yalnız jetonun özeti saklanıyor.
+   · **Portal ikinci faktör** — belge/ödeme sayfaları on dakikada bir yeniden doğrulama.
+   SSS'ye üç soru eklendi (acente komisyonu, kendi alan adı, hastaya uygulama).
+
+   **⚠️ Yöntem notu — ekran aramasında tuzak.** `health-center` rotasını web'de
+   ararken "ekran yok" sonucuna vardım; yanlıştı. Bu depoda ekranlar **Türkçe
+   adlandırılmış** (`app/klinik-sagligi/`) ve servisi doğrudan import ediyor, yani
+   rota dosyasının adıyla arama onları bulmuyor. Servis adıyla değil, **servisin
+   export ettiği sınıf adıyla** aramak gerekiyor.
+
+   **⚠️ Mağaza durumu — "onaylandı" ile "yayında" ayrı şeyler.** Sayfa mobil
+   uygulama için "hazırlanıyor" diyordu; ASC'de **Patient OS Field 1.0.0
+   READY_FOR_SALE** göründü ve "App Store'da yayında" yazdım. Yanlıştı: uygulama
+   herkese açık değil (`itunes.apple.com/lookup` 0 sonuç, mağaza sayfası 404).
+   Sebebi `appAvailabilityV2` ucunun **404** dönmesi — uygulamanın hiçbir bölgede
+   dağıtım kaydı yok. Yani sürüm durumu (onay) ile bölge dağıtımı (yayın) ASC'de
+   **ayrı kayıtlar**; biri diğerini ima etmiyor. Metinden mağaza iddiası tamamen
+   kaldırıldı, "kurulumla birlikte kliniğin ekibine dağıtılır" denildi.
+   Aynı kontrolde **UNVPortal Quality iOS uygulaması 1.0.0 REJECTED** (2026-09-13)
+   çıktı; 2026-11-08'de Quality sayfasına yazdığım "Mobil uygulama var mı? Var."
+   cevabı da aynı şekilde koşullandırıldı.
 5. **TestRoster'da Production Readiness Score**, dropout riski, otomatik yerine tester.
 6. **Exams'te Excel'den toplu ders/gözetmen aktarımı** ve **madde analizi**.
 7. **KursOS'ta WhatsApp kanalı**, öğrenci listesi içe aktarma, dört rollü tek mobil

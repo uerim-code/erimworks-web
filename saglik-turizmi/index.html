@@ -10,8 +10,8 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Sağlık Turizmi CRM ve Operasyon Yazılımı — International Patient OS</title>
-<meta name="description" content="International Patient OS; sağlık turizmi yapan klinikler için hasta adayından taburculuğa tek vaka kaydı, WhatsApp gelen kutusu, cerrahi planlama, seyahat ve teşvik yönetimi.">
-<meta name="keywords" content="sağlık turizmi yazılımı, sağlık turizmi CRM, hasta takip sistemi, medikal turizm yazılımı, klinik yönetim sistemi, cerrahi planlama, hasta koordinasyon, teşvik yönetimi, uluslararası hasta">
+<meta name="description" content="International Patient OS; sağlık turizmi yapan klinikler için tek vaka kaydı: WhatsApp gelen kutusu, çeviri ve dikte, cerrahi planlama, seyahat, vaka finansı, ajans komisyonu, hasta portalı ve teşvik dosyası.">
+<meta name="keywords" content="sağlık turizmi yazılımı, sağlık turizmi CRM, hasta takip sistemi, medikal turizm yazılımı, klinik yönetim sistemi, cerrahi planlama, hasta koordinasyon, teşvik yönetimi, uluslararası hasta, hasta portalı, acente komisyon takibi, tıbbi dikte, komplikasyon takibi">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Erimworks">
@@ -19,7 +19,7 @@
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:url" content="https://erimworks.com/saglik-turizmi/">
 <meta property="og:title" content="Sağlık Turizmi CRM ve Operasyon Yazılımı — International Patient OS">
-<meta property="og:description" content="Hasta adayından taburculuğa tek vaka kaydı: gelen kutusu, cerrahi planlama, seyahat, finans ve teşvik dosyası.">
+<meta property="og:description" content="Hasta adayından taburculuğa tek vaka kaydı: gelen kutusu, çeviri ve dikte, cerrahi planlama, seyahat, finans, ajans komisyonu ve teşvik dosyası.">
 <meta property="og:image" content="https://erimworks.com/assets/og-ipos.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -56,11 +56,19 @@
       "featureList": [
         "WhatsApp, e-posta ve form mesajları için tek gelen kutusu",
         "Aday hastadan taburculuğa tek vaka dosyası",
+        "Çok dilli iletişim: orijinal metin, çeviri ve düzeltme ayrı sürümlerde",
+        "Sesli not alma ve transkript; hekim onayı olmadan kapanmayan inceleme kuyruğu",
         "Cerrah incelemesi, teklif ve paket yönetimi",
         "Uçuş, otel, transfer ve ameliyat planlaması",
-        "Vaka bazlı gelir, maliyet ve katkı payı",
+        "Vaka bazlı gelir, maliyet ve katkı payı; güne dondurulmuş döviz kuru",
+        "İş ortağı ve acente komisyonu: plan, atıf, tahakkuk, onay ve ödeme",
+        "Komplikasyon kaydı ve klinik geneli açık komplikasyon kuyruğu",
+        "Klinik sağlığı panosu: teknik ayrıntı değil, bugün yapılması gereken iş",
         "Devlet teşvik dosyası ve başvuru takibi",
-        "Hasta portalı ve çok dilli iletişim"
+        "Hasta portalı: yolculuk, belgeler, teklif, ödemeler, mesajlar",
+        "Kiracıya özel alan adı: klinik kendi adresiyle yayınlar",
+        "Takvim akışı: randevular Google ya da Outlook takvimine abone edilir",
+        "Saha ekibi için mobil uygulama (Patient OS Field)"
       ],
       "offers": {
         "@type": "Offer",
@@ -143,6 +151,30 @@
         },
         {
           "@type": "Question",
+          "name": "Acentelere komisyon ödüyoruz, bunu sistemde takip edebilir miyiz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Edebilirsiniz. Acenteler, yönlendiren hekimler ve iş ortakları komisyon planlarıyla tanımlanır; vaka ortağa atfedilir, komisyon kabul edilen teklif üzerinden tahakkuk eder ve onay-ödeme akışından geçer. Kim ne hak etti ve ne kadarı hâlâ ödenmedi tek ekranda görünür. Ödemesi yapılmış bir vaka sessizce başka bir ortağa atfedilemez."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hastalarımız kendi alan adımızı mı görecek?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet. Klinik platformu kendi alan adıyla yayınlayabilir: alan adı yönetim ekranından eklenir, kurulum yönergesi o kaydın kendisinden üretilir ve doğrulama sistemden yapılır. Hastanın gördüğü adres kliniğin kendi adresidir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hastalar için bir mobil uygulama var mı?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hastaya yönelik bir mobil uygulama yok ve bu bilinçli bir karar: hasta kliniğe zaten WhatsApp'tan ulaşıyor, kendi tarihlerini, belgelerini, teklifini ve ödemelerini ise web portalından kendi dilinde görüyor. Patient OS Field uygulaması saha ekibi içindir — şoför, hekim ve koordinatör; kurulumla birlikte kliniğin ekibine dağıtılır."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Fiyat nedir?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -175,7 +207,7 @@
       "workTranslation": {
         "@id": "https://erimworks.com/en/medical-tourism/#webpage"
       },
-      "dateModified": "2026-11-03",
+      "dateModified": "2026-11-08",
       "speakable": {
         "@type": "SpeakableSpecification",
         "cssSelector": [
@@ -207,7 +239,7 @@
 </header>
 
 <main id="icerik" class="wrap">
-  <p class="crumbs"><a href="/">Erimworks</a><span>/</span>Sağlık turizmi yazılımı<span class="crumbs-date">Son güncelleme: <time datetime="2026-11-03">3 Kasım 2026</time></span></p>
+  <p class="crumbs"><a href="/">Erimworks</a><span>/</span>Sağlık turizmi yazılımı<span class="crumbs-date">Son güncelleme: <time datetime="2026-11-08">8 Kasım 2026</time></span></p>
 
   <div class="read">
     <h1>International Patient OS: ilk mesajdan teşvik dosyasının kapanışına</h1>
@@ -240,6 +272,9 @@
     <h3>Tek gelen kutusu ve çok dilli iletişim</h3>
     <p>WhatsApp Business, e-posta ve web formundan gelen her mesaj aynı kutuya düşer. Ekip ataması, etiket, yanıt süresi hedefi ve iç not aynı konuşmanın üzerinde durur. Hastanın dili farklıysa orijinal metin, çeviri ve düzeltme ayrı sürümler olarak saklanır; kimin neyi düzelttiği kaybolmaz.</p>
 
+    <h3>Sesli not ve transkript</h3>
+    <p>Hekim notunu konuşarak bırakır, kayıt yazıya çevrilir. Çıkan metin taslaktır: inceleme kuyruğunda bekler ve bir hekim okuyup doğru olduğunu söylemeden kuyruktan çıkmaz. Kuyruk arşiv değildir — yalnız karara bağlanmamış kayıtları gösterir, karara bağlananlar aradan çekilir. Transkript gerektiğinde hastanın diline çevrilir.</p>
+
     <h3>Aday hastadan vakaya</h3>
     <p>Gelen mesaj adaya, aday vakaya döner. Vaka bir durum makinesi üzerinde ilerler: hangi aşamadan hangisine geçilebileceği kodda tanımlıdır, atlanamaz. Medikal profil, onam sürümleri, fotoğraf ve tahlil dosyaları vakaya bağlıdır; görüntüleme ile indirme ayrı yetkilerdir.</p>
 
@@ -252,8 +287,16 @@
     <h3>Finans ve teşvik</h3>
     <p>Ödeme kaydı değişmez bir defterdir; aynı tahsilat iki kez işlenmez. Kur, hareketin gerçekleştiği güne göre seçilip satıra dondurulur, sonradan değişmez. Teşvik tarafında mevzuat koda gömülmez, veri olarak tutulur ve sürümlenir; kural değiştiğinde geçmiş hesaplar bozulmaz. Bir maaş ayı iki kez talep edilemez, çifte destek kontrol edilir.</p>
 
+    <h3>İş ortağı ve acente komisyonu</h3>
+    <p>Hastayı kim gönderdi, karşılığında ne hak etti, ne kadarı hâlâ ödenmedi — üçü aynı ekranda durur. Acenteler, yönlendiren hekimler ve iş ortakları komisyon planlarıyla tanımlanır; vaka ortağa atfedilir ve komisyon kabul edilen teklif üzerinden tahakkuk eder, onaydan geçer, ödenir. Ödemesi yapılmış bir vaka sessizce başka ortağa atfedilemez; kayıt kilitlenir.</p>
+
+    <h3>Komplikasyon ve klinik sağlığı</h3>
+    <p>Komplikasyon vakanın kendi kaydında açılır ve durumu orada ilerler. Klinik genelinde açık olan komplikasyonlar ayrıca tek kuyrukta listelenir: "şu anda hangi hastamız komplikasyon tedavisinde" sorusunun cevabı için vakaları tek tek açmak gerekmez.</p>
+    <p>Klinik sağlığı panosu kliniğin bugün neyi farklı yapması gerektiğini söyler — bağlantı hatası ya da sağlayıcı yanıtı değil, operasyonel iş. Teknik ayrıntı ayrı bir ekranda ve ayrı bir yetkide durur; klinik yöneticisine ham hata dökümü gösterilmez.</p>
+
     <h3>Hasta portalı</h3>
-    <p>Hasta kendi ekranından yolculuğunu kendi dilinde görür. Görünürlük varsayılan olarak kapalıdır: bir bilgi hastaya, klinik açıkça açmadıkça görünmez.</p>
+    <p>Hasta kendi ekranından yolculuğunu kendi dilinde görür: tarihleri, belgelerini, teklifini, ödemelerini ve kliniğe yazdığı mesajları. Görünürlük varsayılan olarak kapalıdır: bir bilgi hastaya, klinik açıkça açmadıkça görünmez.</p>
+    <p>Belge ve ödeme sayfaları ikinci bir doğrulama ister ve bu doğrulama on dakikada bir yenilenir. Sebebi gerçekçi tehdittir: masada açık unutulmuş bir telefon. Tıbbi belge indirmek, uçuş saatine bakmakla aynı iş değildir.</p>
   </section>
 
   <section aria-labelledby="h-ilke" class="read">
@@ -271,7 +314,11 @@
 
   <section aria-labelledby="h-erisim" class="read">
     <div class="section-head"><h2 id="h-erisim">Erişim ve kurulum</h2></div>
-    <p>Masa başındaki iş tarayıcıda yürür. Sahadaki iş için ayrı bir mobil uygulama hazırlanıyor: şoförün günü, hekimin sabah listesi ve koordinatörün gelen kutusu. Mobil uygulamada reklam, izleme ve uygulama içi satın alma yoktur; hesabı klinik açar.</p>
+    <p>Masa başındaki iş tarayıcıda yürür. Sahadaki iş için ayrı bir mobil uygulama vardır — <strong>Patient OS Field</strong>: şoförün günü, hekimin sabah listesi ve koordinatörün gelen kutusu. Uygulamada reklam, izleme ve uygulama içi satın alma yoktur; hesabı klinik açar. <strong>Hastaya yönelik bir uygulama değildir</strong>: hasta kliniğe WhatsApp'tan ulaşır, kendi kayıtlarını web portalından görür.</p>
+
+    <p>Klinik platformu kendi alan adıyla yayınlayabilir. Alan adı yönetim ekranından eklenir, kurulum yönergesi o kaydın kendisinden üretilir ve doğrulama sistemden yapılır; hastanın gördüğü adres kliniğin kendi adresidir.</p>
+
+    <p>Takvim tarafında kişiye özel bir abonelik bağlantısı üretilir: randevular Google ya da Outlook takviminde görünür. Bağlantının yalnız özeti saklanır, yani adres bir kez gösterilir — kaybolursa yenisi üretilir, eskisi geçersizleşir.</p>
     <p>Arayüz Türkçe ve İngilizce. Almanca, Fransızca, Arapça, Rusça, İtalyanca ve İspanyolca için altyapı hazır, talep üzerine açılır.</p>
     <p class="small">Klinik tarafındaki hukuki metinler ürünün kendi alan adında: <a href="https://clinic.erimworks.com/gizlilik" rel="noopener">gizlilik</a>, <a href="https://clinic.erimworks.com/kosullar" rel="noopener">koşullar</a>, <a href="https://clinic.erimworks.com/destek" rel="noopener">destek</a>.</p>
   </section>
@@ -294,6 +341,18 @@
       <details>
         <summary>Mevcut hasta kayıtlarımızı aktarabilir miyiz?</summary>
         <p>Mevcut hasta kayıtları International Patient OS'a aktarılabilir: elektronik tablo halindeki hasta, teklif ve ödeme kayıtları içe aktarılıyor. Alan eşlemesi kurulum sırasında birlikte belirlenir.</p>
+      </details>
+      <details>
+        <summary>Acentelere komisyon ödüyoruz, bunu sistemde takip edebilir miyiz?</summary>
+        <p>Edebilirsiniz. Acenteler, yönlendiren hekimler ve iş ortakları komisyon planlarıyla tanımlanır; vaka ortağa atfedilir, komisyon kabul edilen teklif üzerinden tahakkuk eder ve onay-ödeme akışından geçer. Kim ne hak etti ve ne kadarı hâlâ ödenmedi tek ekranda görünür. Ödemesi yapılmış bir vaka sessizce başka bir ortağa atfedilemez.</p>
+      </details>
+      <details>
+        <summary>Hastalarımız kendi alan adımızı mı görecek?</summary>
+        <p>Evet. Klinik platformu kendi alan adıyla yayınlayabilir: alan adı yönetim ekranından eklenir, kurulum yönergesi o kaydın kendisinden üretilir ve doğrulama sistemden yapılır. Hastanın gördüğü adres kliniğin kendi adresidir.</p>
+      </details>
+      <details>
+        <summary>Hastalar için bir mobil uygulama var mı?</summary>
+        <p>Hastaya yönelik bir mobil uygulama yok ve bu bilinçli bir karar: hasta kliniğe zaten WhatsApp'tan ulaşıyor, kendi tarihlerini, belgelerini, teklifini ve ödemelerini ise web portalından kendi dilinde görüyor. <strong>Patient OS Field</strong> uygulaması saha ekibi içindir — şoför, hekim ve koordinatör; kurulumla birlikte kliniğin ekibine dağıtılır.</p>
       </details>
       <details>
         <summary>Fiyat nedir?</summary>
