@@ -137,7 +137,41 @@ yanlış söylüyor hem elindeki en güçlü güvence argümanını harcıyor.
    "bir gün önce gider; kurulumda zamanlanan görevle otomatik, gerekirse yönetim
    ekranından elle" diyor. Excel içe aktarma iddiası **daraltılmadı, genişletildi** —
    denetimin ilk turu yanılmıştı, özellik gerçek ve self-servis.
-3. Quality sayfasını gerçek kapsamıyla yeniden yaz — en büyük kazanç orada.
+3. ~~Quality sayfasını gerçek kapsamıyla yeniden yaz.~~ **YAPILDI** (2026-11-08).
+   Sayfa 8 bölümden 14 bölüme çıktı; TR+EN birlikte. Eklenen başlıklar — her biri
+   ekran + uç + controller olarak tek tek doğrulandı:
+   · **DÖF** (`capa/` 4 ekran, `/capa/overdue`, `/capa/recurrence`, `/capa/{id}/closure-gate`)
+   · **Risk ve fırsat** (`risks/` 4 ekran, `/risks/heat-map`, `/risks/{id}/gate`)
+   · **İç denetim** (`internal-audit/` 5 ekran, `plans/{id}/external-package`)
+   · **Yönetimin gözden geçirmesi**, **gösterge izleme** (`/indicators/{id}/trend`)
+   · **Mevzuat yükümlülükleri ve etki analizi** (`compliance/` 8 ekran;
+     `regulatory-changes/{id}/impact-preview`). Çift onay kuralı da yazıldı:
+     kabul eden, değişikliği girenden farklı VE etkilenen kayıtların sahibi olmak
+     zorunda (`regulatory-change.controller.ts` başlığı).
+   · **Standart sürüm karşılaştırma / madde soy ağacı / crosswalk + boşluk analizi**
+     (`standards-intelligence/`, `/accreditation/crosswalks`, `/gap-analysis`)
+   · **Tutanaktan veri çıkarma** (`extraction.controller.ts`: güven düzeyi,
+     sayfa konumu, düşük güvende insan seçimi, içe aktarım ayrı yetki)
+   · **Deterministik rapor motoru** — kanıtsız iddia UNSUPPORTED, rapor doğrulamadan
+     geçmez; YZ gerçeği üretmez, bulguyu cümleye çevirir ve insan onayı olmadan
+     yayımlanamaz (`report/` + `extraction/.../ai-report.controller.ts`)
+   · **Veri odası** — dış değerlendirici için AYRI guard: davet → e-posta OTP →
+     süreli token; yalnız açılan belgeler; her görüntüleme audit
+     (`dataroom/interfaces/http-external/`)
+   · **Mobil** (`apps/quality-mobile`, Flutter) — saha denetimi, belge tarama,
+     çevrimdışı kuyruk, "gönderildi" ile "sırada"nın ayrı gösterilmesi
+   · **SSO / yetkinlik / vekâlet / bağlayıcılar** (`federation/`, `competency/`,
+     `delegations/`, `self-service-integration/`)
+   Süreç yönetimi de tek cümleden genişletildi (görsel modelleme, sürümleme,
+   işletim örnekleri, performans panosu, gözden geçirme kuyruğu/kampanyası).
+   Sayfa uzadığı için (14 h2) başa sayfa-içi gezinme eklendi; `:target`
+   scroll-margin zaten site.css'te olduğu için yapışkan başlık hedefi örtmüyor
+   (ölçüldü: başlık 73px, hedef 112px). Diğer 6 sayfadaki Quality özeti de
+   güncellendi.
+   **Akreditasyon kurumu adı (YÖKAK vb.) hiçbir yere yazılmadı** — kodda yok.
+   **Hâlâ açık:** 157 sayfanın kaçının müşteriye açık olduğu ve Quality'nin
+   UNVPortal markası altında mı yoksa ayrı `unvplatform` ürünü olarak mı
+   satıldığı. Sayfa mevcut "UNVPortal Quality" adlandırmasını korudu.
 4. ChemBioCalc ↔ Labs köprüsünü iki sayfaya da ekle.
 5. Uygulama içi Labs kullanım kılavuzundaki "kalibrasyon tarihleri" ifadesini kaldır
    (üründe karşılığı yok) ve TestRoster README'sinin bayat "iskelet" tablosunu düzelt.
