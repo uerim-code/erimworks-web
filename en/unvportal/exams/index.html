@@ -56,8 +56,12 @@
       "featureList": [
         "Question bank and exam building",
         "Exam administration and session planning",
+        "Term exam timetable: halls, invigilators and slot assignment",
+        "Term setup from a single Excel file; templates for course and invigilator lists",
+        "New term built by copying the previous term's definitions",
         "Optical answer-sheet marking",
-        "Item analysis and result reports",
+        "Item analysis: difficulty, discrimination and item status",
+        "KR-20 exam reliability coefficient",
         "Learning outcome and programme outcome measurement"
       ],
       "isPartOf": {
@@ -153,6 +157,14 @@
         },
         {
           "@type": "Question",
+          "name": "How do we import our course and invigilator lists?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A term's exam timetable can be set up from a single Excel file: the date, course, hall and invigilator columns are read and exam days are derived from the date column. Course and invigilator lists can also be uploaded separately, each with a downloadable template. The next term is set up by copying the previous term's course, hall and invigilator definitions."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "What does it cost?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -185,7 +197,7 @@
         "width": 1200,
         "height": 630
       },
-      "dateModified": "2026-11-04",
+      "dateModified": "2026-11-08",
       "speakable": {
         "@type": "SpeakableSpecification",
         "cssSelector": [
@@ -217,7 +229,7 @@
 </header>
 
 <main id="icerik" class="wrap">
-  <p class="crumbs"><a href="/en/">Erimworks</a><span>/</span><a href="/en/unvportal/">UNVPortal</a><span>/</span>Exams<span class="crumbs-date">Last updated: <time datetime="2026-11-04">4 November 2026</time></span></p>
+  <p class="crumbs"><a href="/en/">Erimworks</a><span>/</span><a href="/en/unvportal/">UNVPortal</a><span>/</span>Exams<span class="crumbs-date">Last updated: <time datetime="2026-11-08">8 November 2026</time></span></p>
 
   <div class="read">
     <h1>UNVPortal Exams: builds the exam, marks it and links it to outcomes</h1>
@@ -251,11 +263,16 @@
     <h3>Administration and session planning</h3>
     <p>The exam date, halls and invigilators are assigned. Hall capacity is matched with the student list, and the seating plan and signature list are produced as printouts.</p>
 
+    <h3>The exam timetable: term, halls, invigilators</h3>
+    <p>A term's exam timetable is a job of its own and runs on its own screen: courses, halls and invigilators are defined tab by tab, exam days are set and slots are assigned.</p>
+    <p><strong>A term can be set up from a single Excel file.</strong> The date, course, hall and invigilator columns are read, exam days are derived from the date column, and the number of courses, halls and invigilators imported is reported back. Course and invigilator lists can also be uploaded separately, each with a downloadable template. The next term is set up by copying the previous term's course, hall and invigilator definitions — slot assignments are not copied; they are produced again.</p>
+
     <h3>Optical answer-sheet marking</h3>
     <p>The file from the optical reader is uploaded and matched against the answer key. Booklet-version separation, blank and double-marked answers, and forms whose student number could not be read are shown in separate lists. When a question is cancelled, scoring is recalculated.</p>
 
-    <h3>Item analysis</h3>
-    <p>Difficulty and discrimination are calculated for each question. Questions with low discrimination are listed and flagged in the bank, so the same question can be kept out of the next exam.</p>
+    <h3>Item analysis and exam reliability</h3>
+    <p>Difficulty and discrimination are calculated for each question: discrimination is the gap between the top third and the bottom third of the cohort in getting that question right. Each item is marked good, watch or problematic; questions with low discrimination are listed and flagged in the bank, so the same question can be kept out of the next exam.</p>
+    <p>For the exam as a whole, a <strong>KR-20 reliability coefficient</strong> is calculated — the numerical answer to the assessment office's question, "did this exam measure consistently?". If there are too few items or too few students, no coefficient is produced; a misleading number is not shown.</p>
 
     <h3>Learning and programme outcome analysis</h3>
     <p>The link made at question level is carried up the chain: the question is linked to a learning outcome, and the learning outcome to a programme outcome. When the exam is marked, the attainment level of the student, the course and the programme is calculated for every outcome. Comparisons across terms are produced as tables and used as evidence in the Quality module.</p>
@@ -297,6 +314,10 @@
       <details>
         <summary>Are results transferred to the student information system?</summary>
         <p>Grade lists can be exported from UNVPortal Exams. A direct connection to the student information system is set up under UNVPortal Connect, depending on the system the institution uses.</p>
+      </details>
+      <details>
+        <summary>How do we import our course and invigilator lists?</summary>
+        <p>A term's exam timetable can be set up from a single Excel file: the date, course, hall and invigilator columns are read and exam days are derived from the date column. Course and invigilator lists can also be uploaded separately, each with a downloadable template. The next term is set up by copying the previous term's course, hall and invigilator definitions.</p>
       </details>
       <details>
         <summary>What does it cost?</summary>

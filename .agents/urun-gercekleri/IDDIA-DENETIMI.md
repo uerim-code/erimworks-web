@@ -177,7 +177,30 @@ yanlış söylüyor hem elindeki en güçlü güvence argümanını harcıyor.
    tablosunda, yani uzak şemada. Not: dosyanın kendi kuralı *"Ekranda bu
    sabitleri GÖSTERME"* — bu uygulama ekranı için; pazarlama sayfası Play'in
    yerelleştirilmiş fiyatı göstereceğini zaten söylüyor.
-6. **Exams'te Excel'den toplu ders/gözetmen aktarımı** ve **madde analizi**.
+6. ~~**Exams'te Excel'den toplu ders/gözetmen aktarımı** ve **madde analizi**.~~
+   **YAPILDI** (2026-11-08). Bu madde de kısmen yanlıştı: **madde analizi sitede
+   zaten vardı** (kendi h3'üyle). Gerçekten eksik olan ikisi eklendi (TR+EN):
+   · **Sınav programı ayrı bir iş olarak** — dönem, derslik, gözetmen, slot
+     ataması (`lab-frontend/src/pages/SinavProgramPage.jsx`, 2.287 satır; uçlar
+     `sinav_program.py`). Site bunu "uygulama ve oturum planı" içinde tek
+     cümleye eritmişti. **Tek Excel dosyasından dönem kurulumu** (tarih, ders,
+     derslik, gözetmen sütunları; sınav günleri tarih sütunundan çıkarılıyor),
+     ayrı ders/gözetmen yüklemeleri (`/dersler/excel`, `/gozetmenler/excel`),
+     indirilebilir şablonlar (`/sablon/dersler`, `/sablon/gozetmenler`) ve
+     **önceki dönemi kopyalayarak yeni dönem kurma** yazıldı. SSS'ye de bir
+     soru eklendi — kurumsal satın almada en çok sorulan şey bu.
+   · **KR-20 güvenirlik katsayısı** — ürün gerçeği dosyasında bile yoktu, bu
+     turda bulundu: `sinav_otomasyon.py` `/analiz/{id}/guvenirlik`, dikotomik
+     maddeler için Cronbach Alpha eşdeğeri. `AnalizlerPage.jsx` dört analizi
+     birlikte çağırıyor (sınav, madde, öğrenci, güvenirlik). Madde analizi
+     anlatımı da yöntemiyle yazıldı: ayırt edicilik üst/alt üçte bir farkı,
+     maddeler iyi/dikkat/sorunlu olarak işaretleniyor. Katsayının madde ya da
+     öğrenci sayısı yetersizken üretilmediği de söylendi.
+   IRT **yazılmadı** (üründe yok); "kopya analizi" ve "çevrim içi sınav" da yok
+   ve sayfa bunları zaten iddia etmiyor.
+   **Eksik bulgu:** `AnalizlerPage.jsx:512` "Excel Rapor İndir" düğmesi
+   `toast.error('Excel rapor henüz hazır değil')` diyor — analiz ekranından
+   Excel raporu **yok**. Siteye yazılmadı.
 7. **KursOS'ta WhatsApp kanalı**, öğrenci listesi içe aktarma, dört rollü tek mobil
    uygulama, demo girişi.
 

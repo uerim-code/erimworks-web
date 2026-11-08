@@ -56,8 +56,12 @@
       "featureList": [
         "Soru havuzu ve sınav kurma",
         "Sınav uygulama ve oturum planı",
+        "Dönem sınav programı: derslik, gözetmen ve slot ataması",
+        "Tek Excel dosyasından dönem kurulumu; ders ve gözetmen listeleri için şablon",
+        "Önceki dönemin tanımlarını kopyalayarak yeni dönem kurma",
         "Optik form değerlendirme",
-        "Madde analizi ve sonuç raporları",
+        "Madde analizi: güçlük, ayırt edicilik ve madde durumu",
+        "KR-20 sınav güvenirlik katsayısı",
         "Öğrenme çıktısı ve program çıktısı ölçümü"
       ],
       "isPartOf": {
@@ -153,6 +157,14 @@
         },
         {
           "@type": "Question",
+          "name": "Ders ve gözetmen listelerimizi nasıl aktarıyoruz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dönemin sınav programı tek bir Excel dosyasından kurulabiliyor: dosyadaki tarih, ders, derslik ve gözetmen sütunları okunuyor ve sınav günleri tarih sütunundan çıkarılıyor. Ders ve gözetmen listeleri ayrı ayrı da yüklenebiliyor, her ikisi için indirilebilir şablon var. Bir sonraki dönem, bir öncekinin ders, derslik ve gözetmen tanımları kopyalanarak kuruluyor."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Fiyat nedir?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -185,7 +197,7 @@
       "workTranslation": {
         "@id": "https://erimworks.com/en/unvportal/exams/#webpage"
       },
-      "dateModified": "2026-11-03",
+      "dateModified": "2026-11-08",
       "speakable": {
         "@type": "SpeakableSpecification",
         "cssSelector": [
@@ -217,7 +229,7 @@
 </header>
 
 <main id="icerik" class="wrap">
-  <p class="crumbs"><a href="/">Erimworks</a><span>/</span><a href="/unvportal/">UNVPortal</a><span>/</span>Exams<span class="crumbs-date">Son güncelleme: <time datetime="2026-11-03">3 Kasım 2026</time></span></p>
+  <p class="crumbs"><a href="/">Erimworks</a><span>/</span><a href="/unvportal/">UNVPortal</a><span>/</span>Exams<span class="crumbs-date">Son güncelleme: <time datetime="2026-11-08">8 Kasım 2026</time></span></p>
 
   <div class="read">
     <h1>UNVPortal Exams: sınavı kurar, okur ve çıktıya bağlar</h1>
@@ -251,11 +263,16 @@
     <h3>Uygulama ve oturum planı</h3>
     <p>Sınav tarihi, salon ve gözetmen ataması yapılır. Salon kapasitesi ile öğrenci listesi eşleştirilir, oturma planı ve imza listesi çıktı olarak alınır.</p>
 
+    <h3>Sınav programı: dönem, derslik, gözetmen</h3>
+    <p>Dönemin sınav çizelgesi ayrı bir iştir ve ayrı bir ekranda yürür: dersler, derslikler ve gözetmenler sekme sekme tanımlanır, sınav günleri belirlenir, slot ataması yapılır.</p>
+    <p><strong>Dönem kurulumu tek bir Excel dosyasından yapılabilir.</strong> Dosyadaki tarih, ders, derslik ve gözetmen sütunları okunur; sınav günleri tarih sütunundan çıkarılır ve kaç ders, kaç derslik, kaç gözetmen aktarıldığı aktarım sonunda bildirilir. İsterseniz ders ve gözetmen listelerini ayrı ayrı da yükleyebilirsiniz; her ikisi için indirilebilir şablon vardır. Bir sonraki dönem, bir önceki dönemin ders, derslik ve gözetmen tanımları kopyalanarak kurulur — slot atamaları kopyalanmaz, yeniden üretilir.</p>
+
     <h3>Optik form değerlendirme</h3>
     <p>Optik okuyucudan çıkan dosya sisteme yüklenir ve cevap anahtarıyla eşleştirilir. Kitapçık türü ayrımı, boş ve çift işaretli cevaplar, öğrenci numarası okunamayan formlar ayrı listelerde gösterilir. Bir soru iptal edildiğinde puanlama tekrar hesaplanır.</p>
 
-    <h3>Madde analizi</h3>
-    <p>Her soru için güçlük ve ayırt edicilik hesaplanır. Ayırt ediciliği düşük çıkan sorular listelenir ve havuzda işaretlenir; sonraki sınavda aynı sorunun tekrar seçilmesi önlenebilir.</p>
+    <h3>Madde analizi ve sınav güvenirliği</h3>
+    <p>Her soru için güçlük ve ayırt edicilik hesaplanır: ayırt edicilik, sınavın en başarılı üçte biri ile en düşük üçte birinin o soruyu doğru yapma oranları arasındaki farktır. Her madde iyi, dikkat ve sorunlu olarak işaretlenir; ayırt ediciliği düşük çıkan sorular listelenir ve havuzda işaretlenir, sonraki sınavda aynı sorunun tekrar seçilmesi önlenebilir.</p>
+    <p>Sınavın bütünü için <strong>KR-20 güvenirlik katsayısı</strong> hesaplanır — ölçme değerlendirme biriminin "bu sınav tutarlı ölçmüş mü" sorusunun sayısal karşılığı. Madde sayısı ya da öğrenci sayısı yetersizse katsayı üretilmez; yanıltıcı bir sayı gösterilmez.</p>
 
     <h3>Öğrenme ve program çıktısı analizi</h3>
     <p>Soru düzeyinde kurulan bağ zincir halinde yukarı taşınır: soru öğrenme çıktısına, öğrenme çıktısı program çıktısına bağlanır. Sınav okunduğunda öğrencinin, dersin ve programın her çıktıdaki başarı düzeyi hesaplanır. Dönemler arası karşılaştırma tablo olarak alınır ve kalite modülünde kanıt olarak kullanılır.</p>
@@ -297,6 +314,10 @@
       <details>
         <summary>Sonuçlar öğrenci bilgi sistemine aktarılıyor mu?</summary>
         <p>UNVPortal Exams'ten not listesi dışa aktarılabiliyor. Öğrenci bilgi sistemine doğrudan bağlantı, kurumun kullandığı sisteme göre UNVPortal Connect kapsamında kuruluyor.</p>
+      </details>
+      <details>
+        <summary>Ders ve gözetmen listelerimizi nasıl aktarıyoruz?</summary>
+        <p>Dönemin sınav programı tek bir Excel dosyasından kurulabiliyor: dosyadaki tarih, ders, derslik ve gözetmen sütunları okunuyor ve sınav günleri tarih sütunundan çıkarılıyor. Ders ve gözetmen listeleri ayrı ayrı da yüklenebiliyor, her ikisi için indirilebilir şablon var. Bir sonraki dönem, bir öncekinin ders, derslik ve gözetmen tanımları kopyalanarak kuruluyor.</p>
       </details>
       <details>
         <summary>Fiyat nedir?</summary>
