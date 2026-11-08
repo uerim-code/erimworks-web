@@ -98,7 +98,7 @@ yanlış söylüyor hem elindeki en güçlü güvence argümanını harcıyor.
 | IPOS: "Yapay zekâ klinik karar vermez; tanı koymaz" | **DESTEKLENEN / iyi** | Doğru sınır çiziliyor. |
 | IPOS: WhatsApp için kliniğin kendi Meta hesabı gerekir | **DESTEKLENEN** | Doğru koşul, sayfada duruyor. |
 | Quality: "akreditasyon/denetim/belgelendirme yetkisi taşımaz" | **DESTEKLENEN / iyi** | Gerekli yasal sınır. |
-| ChemBioCalc sayfası | **EKSİK** | Lab köprüsü (`app/lab/`: tara/rezervasyon/stok/yoklama/onaylar/sonuç + `lib/unvportal.ts`) hiç anlatılmıyor. |
+| ChemBioCalc sayfası | **KAPANDI 2026-11-08** | Lab köprüsü (`app/lab/` altı ekran + `lib/unvportal.ts`) hem ChemBioCalc sayfasına hem Labs sayfasına (TR+EN) yazıldı; kimlik akışı ve "yalnız UNVPortal kurulu kurumda çalışır" koşulu dahil. Ayrıntı: 5. bölüm madde 4. |
 
 ---
 

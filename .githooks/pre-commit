@@ -1,0 +1,61 @@
+#!/bin/sh
+# Yayın kapısı — üretilen dosyalar kaynakla uyuşmadan commit edilmesin.
+#
+# NEDEN VAR — ÜÇÜ DE SESSİZ KUSUR. Üçünün de ortak özelliği, bozulduğunda
+# sayfanın yerelde hatasız açılmasıdır; bedeli yalnız canlıda görülür:
+#
+#   csp.py      → satır içi betiğin hash'i _headers'a girmezse tarayıcı betiği
+#                 SESSİZCE engeller. Sayfa açılır, betik çalışmaz.
+#   assets.py   → stil damgası bayatsa Cloudflare kenar sunucusu CSS'in eski
+#                 kopyasını yedi gün daha servis eder: taze HTML + bayat CSS.
+#                 (2026-11-06'da canlıda ölçüldü, assets.py başlığına bak.)
+#   sitemap.py  → yeni sayfa sitemap'e girmezse taranmaz.
+#   hreflang.py → TR/EN çiftinin tek tarafı güncellenirse Google hreflang
+#                 kümesini yok sayar ve EN sayfayı kopya sayar.
+#   jsonld.py   → bozuk JSON-LD sayfanın görünüşünü hiç etkilemez; sayfa
+#                 yalnızca Google'ın yapılandırılmış verisinden düşer.
+#
+# Beşi de elle çalıştırılan araçlardı ve unutulmaları an meselesiydi.
+# 2026-11-08'de ölçüldü: aynı oturumda yazılan SSS metinlerinden ikisinde
+# şema ile görünür metin ayrışmıştı (şemada "ÖNİZLEME", sayfada "önizleme")
+# ve kimse çalıştırmadığı için hreflang.py bunu söyleyememişti.
+#
+# Yalnız .html ya da .css hazırlanmışken koşar; .md commit'ini bekletmez.
+#
+# Atlamak gerekirse:  git commit --no-verify
+# Kapatmak gerekirse: git config --unset core.hooksPath
+
+if ! git diff --cached --name-only --diff-filter=ACM | grep -qE '\.(html|css)$'; then
+    exit 0
+fi
+
+kok=$(git rev-parse --show-toplevel)
+hata=0
+
+for arac in csp assets sitemap jsonld; do
+    if ! python3 "$kok/tools/$arac.py" --check; then
+        hata=1
+    fi
+done
+
+# hreflang.py --check almaz; her zaman kontrol modundadır.
+if ! python3 "$kok/tools/hreflang.py"; then
+    hata=1
+fi
+
+if [ "$hata" -ne 0 ]; then
+    cat <<'SON'
+
+Yayın kapısı commit'i durdurdu. Yukarıdaki satırlar neyin bayat olduğunu
+söylüyor. Üretilen dosyaları tazelemek için:
+
+    python3 tools/csp.py && python3 tools/assets.py
+
+jsonld.py bir şey ÜRETMEZ — bildirdiği kusur elle düzeltilir.
+
+Sonra değişenleri ekleyip commit'i tekrarlayın.
+SON
+    exit 1
+fi
+
+exit 0

@@ -123,7 +123,7 @@
           "name": "Can we import our existing student list?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "An existing student list can be imported into KursOS: student, teacher and package lists held in spreadsheets are imported and the column mapping is agreed together. The import shows a PREVIEW first: nothing is saved when the file is uploaded — what will happen to each row (new record, duplicate, phone number to be reformatted) is shown on screen, and it is written only once you approve it. We do the first import during deployment; after that an authorised user does it whenever they need to."
+            "text": "An existing student list can be imported into KursOS: student, teacher and package lists held in spreadsheets are imported and the column mapping is agreed together. The import shows a preview first: nothing is saved when the file is uploaded — what will happen to each row (new record, duplicate, phone number to be reformatted) is shown on screen, and it is written only once you approve it. We do the first import during deployment; after that an authorised user does it whenever they need to."
           }
         },
         {
@@ -290,7 +290,7 @@
       <tr><th>Domain</th><td>Your own domain or subdomain. The student and parent portal lives at the same address.</td></tr>
       <tr><th>Mobile app</th><td>There is <strong>one app</strong>, and the choice of institution is inside it: a user who signs in reaches their own institution, and picks from a list if they belong to more than one. Your institution's name, logo and colour appear inside the app, and mobile access and feature settings are managed from your admin panel. The store listing is ours — <strong>you do not need to open an Apple or Google developer account</strong>.</td></tr>
     </table>
-    <p>So your students never see a name called KursOS. Several business units can also run under the same institution: an art school and a music department stand with separate timetables, separate teaching staff and separate service lists, while student and payment records are shared.</p>
+    <p>So the address, the interface and the brand your students see are yours. Several business units can also run under the same institution: an art school and a music department stand with separate timetables, separate teaching staff and separate service lists, while student and payment records are shared.</p>
     <p>Tenant isolation is enforced at database level: a query with no tenant returns no data. Permissions are role-based and re-read on the server with every request; when a permission is revoked, it takes effect on the next operation. Who changed what and when remains in the audit log.</p>
   </section>
 

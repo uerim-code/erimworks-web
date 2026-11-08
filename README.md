@@ -103,3 +103,36 @@ python3 tools/hreflang.py      # çiftler, JSON-LD ve SSS eşleşmesi; sorun var
 **Bir çiftin tek tarafını değiştirince bunu çalıştır.** EN sayfa yazarken ürün
 `@id`'si TR köküyle aynı kalır (`https://erimworks.com/unvportal/#app`); yalnız
 `WebPage` düğümü `/en/` altındadır.
+
+## Yapılandırılmış veri (JSON-LD)
+
+```
+python3 tools/jsonld.py           # bulguları yaz
+python3 tools/jsonld.py --check   # kusur varsa 1 ile çık
+```
+
+İki şeye bakar: her `application/ld+json` bloğu geçerli JSON mu, ve `FAQPage`
+içinde bildirilen her sorunun sayfanın görünür metninde bir karşılığı var mı.
+`hreflang.py` ile iş bölümü: o yalnız TR/EN çiftlerinde ama orada **birebir**
+eşleşme arar; bu dosya bütün yayın sayfalarında ama yalnız "sayfada karşılığı
+var mı" diye bakar. Tek dilli sayfalar (TestRoster, uygulama sayfaları)
+hreflang denetiminin dışında kaldığı için bu boşluk ayrıca kapatıldı.
+
+## Yayın kapısı (git hook)
+
+Yukarıdaki beş aracın hiçbiri kendiliğinden çalışmıyordu; hepsi "değişiklikten
+sonra şunu çalıştır" notuna bağlıydı. `.githooks/pre-commit` bunu bir kapıya
+çevirir: hazırlanan dosyalar arasında `.html` ya da `.css` varsa `csp`,
+`assets`, `sitemap`, `jsonld` ve `hreflang` kontrolleri koşar, biri bayatsa
+commit durur. Yaklaşık bir saniye sürer.
+
+```
+git config core.hooksPath .githooks   # yeni klonda bir kez
+git commit --no-verify                # tek seferlik atlamak için
+git config --unset core.hooksPath     # tamamen kapatmak için
+```
+
+**Neden gerekti — ölçüldü (2026-11-08):** aynı oturumda dört sayfaya SSS
+eklenirken iki tanesinde şema ile görünür metin ayrıştı (şemada "ÖNİZLEME",
+sayfada "önizleme"). `hreflang.py` bunu yakalayabilirdi ama kimse
+çalıştırmamıştı; kusur ancak araçlar tek tek elden geçirilirken görüldü.
