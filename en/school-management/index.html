@@ -63,7 +63,12 @@
         "Assignments, submissions and file attachments",
         "Collections, debt tracking and teacher earnings",
         "Student and parent portal",
-        "Institution's own brand, domain and mobile app",
+        "Institution's own brand and domain",
+        "One mobile app with four roles: coordinator, teacher, student, parent",
+        "Mobile register-taking and switching between institutions",
+        "Demo sign-in for all four roles, with data refreshed to today",
+        "WhatsApp shared inbox and approved reminder templates",
+        "Student list import with a preview step",
         "Multi-tenant: every institution in its own data"
       ],
       "offers": {
@@ -118,7 +123,7 @@
           "name": "Can we import our existing student list?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "An existing student list can be imported into KursOS: student, teacher and package lists held in spreadsheets are imported during deployment. Column mapping is agreed together during setup."
+            "text": "An existing student list can be imported into KursOS: student, teacher and package lists held in spreadsheets are imported and the column mapping is agreed together. The import shows a PREVIEW first: nothing is saved when the file is uploaded — what will happen to each row (new record, duplicate, phone number to be reformatted) is shown on screen, and it is written only once you approve it. We do the first import during deployment; after that an authorised user does it whenever they need to."
           }
         },
         {
@@ -142,7 +147,7 @@
           "name": "Will our students see the name \"KursOS\"?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Students do not see the name KursOS. KursOS is the product name; the deployment carries your institution's brand, logo and domain. The mobile app is also published to the stores under your institution's own name."
+            "text": "Not in the web interface or the portal: the deployment carries your institution's brand, logo and your own domain, and KursOS is only the product name. On mobile there is a single app; it sits in the store under the product name, but once you are inside it, your institution's branding is what you see."
           }
         },
         {
@@ -150,7 +155,7 @@
           "name": "Does the mobile app need separate development?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The KursOS mobile app needs no separate development. The app is a white-label client that connects to the same API; the brand, icon and store listing are configured for your institution and published. The only step that must be done in the institution's name is opening the Apple and Google developer accounts, because the stores tie the listing to the developer account."
+            "text": "Neither separate development nor a separate store release is needed. There is a single mobile app: a user who signs in reaches their own institution, and picks from a list if they belong to more than one. The app uses the same API as the web, carries your institution's branding inside it, and its access and feature settings are managed from your admin panel. You do not need to open an Apple or Google developer account."
           }
         },
         {
@@ -269,6 +274,10 @@
     <p>Payments are recorded and the outstanding balance is visible per student. There is a rule that blocks lesson scheduling when a payment is overdue; the institution can keep it on or off.</p>
     <p>Teacher earnings are calculated under one of three models: a fixed amount <strong>per lesson</strong>, a <strong>percentage</strong> of collections, or <strong>salaried</strong>. All three models can be used side by side in the same institution; each teacher is calculated under their own model. Collections, balances and earnings are taken from the same report screen.</p>
 
+    <h3>The mobile app: four roles, one app</h3>
+    <p>Coordinator, teacher, student and parent all use the same app; whoever signs in gets their own role's screens. The thing a teacher does most in the room — taking the register — is one tap away, with lessons, announcements, assignments and packages on their own tabs. A teacher or parent attached to more than one institution switches between them from a list.</p>
+    <p>The app has a <strong>demo sign-in</strong>: one button for each of the four roles opens a sample institution, and the demo data is refreshed to today on every sign-in, so the dates are never stale.</p>
+
     <h3>Messaging and reminders</h3>
     <p>WhatsApp is connected through the institution's own Meta account. Incoming messages are collected in one inbox and handed to a coordinator when needed. Lesson reminders go out through approved templates; the system keeps a ledger of approved templates and lists as warnings any templates a reminder needs but that have not been approved.</p>
   </section>
@@ -279,7 +288,7 @@
     <table>
       <tr><th>Web interface</th><td>Your institution's name, logo and colour. The logo is tested separately on dark and light backgrounds.</td></tr>
       <tr><th>Domain</th><td>Your own domain or subdomain. The student and parent portal lives at the same address.</td></tr>
-      <tr><th>Mobile app</th><td>Published to the App Store and Google Play <strong>under your institution's own name</strong>, with its own icon and its own developer account. The app connects to the same API; it is not a separate piece of software.</td></tr>
+      <tr><th>Mobile app</th><td>There is <strong>one app</strong>, and the choice of institution is inside it: a user who signs in reaches their own institution, and picks from a list if they belong to more than one. Your institution's name, logo and colour appear inside the app, and mobile access and feature settings are managed from your admin panel. The store listing is ours — <strong>you do not need to open an Apple or Google developer account</strong>.</td></tr>
     </table>
     <p>So your students never see a name called KursOS. Several business units can also run under the same institution: an art school and a music department stand with separate timetables, separate teaching staff and separate service lists, while student and payment records are shared.</p>
     <p>Tenant isolation is enforced at database level: a query with no tenant returns no data. Permissions are role-based and re-read on the server with every request; when a permission is revoked, it takes effect on the next operation. Who changed what and when remains in the audit log.</p>
@@ -302,7 +311,7 @@
     <div class="faq">
       <details>
         <summary>Can we import our existing student list?</summary>
-        <p>An existing student list can be imported into KursOS: student, teacher and package lists held in spreadsheets are imported during deployment. Column mapping is agreed together during setup.</p>
+        <p>An existing student list can be imported into KursOS: student, teacher and package lists held in spreadsheets are imported and the column mapping is agreed together. The import shows a <strong>preview</strong> first: nothing is saved when the file is uploaded — what will happen to each row (new record, duplicate, phone number to be reformatted) is shown on screen, and it is written only once you approve it. We do the first import during deployment; after that an authorised user does it whenever they need to.</p>
       </details>
       <details>
         <summary>Are there group lessons as well as one-to-one lessons?</summary>
@@ -314,11 +323,11 @@
       </details>
       <details>
         <summary>Will our students see the name "KursOS"?</summary>
-        <p>Students do not see the name KursOS. KursOS is the product name; the deployment carries your institution's brand, logo and domain. The mobile app is also published to the stores under your institution's own name.</p>
+        <p>Not in the web interface or the portal: the deployment carries your institution's brand, logo and your own domain, and KursOS is only the product name. On mobile there is a single app; it sits in the store under the product name, but once you are inside it, your institution's branding is what you see.</p>
       </details>
       <details>
         <summary>Does the mobile app need separate development?</summary>
-        <p>The KursOS mobile app needs no separate development. The app is a white-label client that connects to the same API; the brand, icon and store listing are configured for your institution and published. The only step that must be done in the institution's name is opening the Apple and Google developer accounts, because the stores tie the listing to the developer account.</p>
+        <p>Neither separate development nor a separate store release is needed. There is a single mobile app: a user who signs in reaches their own institution, and picks from a list if they belong to more than one. The app uses the same API as the web, carries your institution's branding inside it, and its access and feature settings are managed from your admin panel. You do not need to open an Apple or Google developer account.</p>
       </details>
       <details>
         <summary>What does it cost?</summary>

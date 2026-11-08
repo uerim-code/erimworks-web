@@ -201,8 +201,40 @@ yanlış söylüyor hem elindeki en güçlü güvence argümanını harcıyor.
    **Eksik bulgu:** `AnalizlerPage.jsx:512` "Excel Rapor İndir" düğmesi
    `toast.error('Excel rapor henüz hazır değil')` diyor — analiz ekranından
    Excel raporu **yok**. Siteye yazılmadı.
-7. **KursOS'ta WhatsApp kanalı**, öğrenci listesi içe aktarma, dört rollü tek mobil
-   uygulama, demo girişi.
+7. ~~**KursOS'ta WhatsApp kanalı**, öğrenci listesi içe aktarma, dört rollü tek
+   mobil uygulama, demo girişi.~~ **YAPILDI** (2026-11-08). Bu madde de kısmen
+   bayattı: WhatsApp, öğrenci aktarma, kendi alan adı ve yedekleme sitede zaten
+   vardı.
+
+   **🔴 Asıl bulgu bu maddede değil, sayfanın YANLIŞ bir iddiasındaydı.** Site
+   üç ayrı yerde mobil uygulamanın *"App Store ve Google Play'e kurumunuzun
+   kendi adıyla, kendi ikonuyla ve **kendi geliştirici hesabıyla** yüklendiğini"*
+   söylüyordu. Ürün gerçeği dosyası bunun tersini yazıyor (*"Mobil uygulama tek
+   uygulamadır; 'her kuruma özel mağaza uygulaması' denmemeli"*) ve kod da öyle:
+   `kursos-mobile/app/kurumlar.tsx` **uygulama içinde kurum seçimi** yapıyor
+   (*"birden çok kuruma bağlı kullanıcı seçer; sunucu doğrular"*),
+   `ayarlar/mobil/page.tsx` ise mobil erişim ve özellik ayarlarını **kurum
+   panelinden** okutuyor — kuruma özel derleme olsaydı bu ayarlara gerek olmazdı.
+   ASC'de de tek bir `com.erimworks.kursos` kaydı var (Erimworks hesabında,
+   2026-11-08'de WAITING_FOR_REVIEW).
+   Bu, teslim edilemeyecek bir satış vaadiydi ve altı yerde (TR+EN; marka
+   tablosu, iki SSS, özet cümle) düzeltildi. Yeni hâli satış açısından da daha
+   iyi: *"Apple ya da Google geliştirici hesabı açmanız gerekmiyor."*
+
+   Ayrıca eklenenler: **dört rollü tek mobil uygulama** h3'ü (yoklama, sekmeler,
+   kurumlar arası geçiş) ve **dört rol için demo girişi** (`giris.tsx`
+   `demoGiris(rol)`; veri her girişte bugüne tazeleniyor); **öğrenci içe
+   aktarmanın önizleme adımı** (`ogrenciler/ice-aktar/page.tsx`: *"ÖNCE
+   ÖNİZLEME, SONRA YAZMA"*). JSON-LD `featureList` 11'den 16 maddeye çıktı.
+
+   **Yazılmayanlar:** (a) `ayarlar/kampanyalar/page.tsx` içinde ilgi alanları
+   `gitar, piyano, keman, bağlama, davul, şan` diye **koda gömülü** — sayfanın
+   "hiçbir yerde tek bir kurumun adı koda gömülü değil" iddiasıyla tam
+   çelişmiyor ama jenerik değil, o yüzden kampanya özelliği siteye yazılmadı.
+   (b) Mobilde reklam (`src/ads`) ve abonelik (`src/purchases`) altyapısı var —
+   misafir/öğrenci tarafı reklamlı, Pro tarafı abonelikli. Kurumsal alıcı için
+   anlamlı bir bilgi ama satışta nasıl çerçeveleneceği Ümit'in kararı; siteye
+   yazılmadı.
 
 ---
 

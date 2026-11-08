@@ -63,7 +63,12 @@
         "Ödev, teslim ve dosya ekleme",
         "Tahsilat, borç takibi ve eğitmen hakediş hesabı",
         "Öğrenci ve veli portalı",
-        "Kuruma özel marka, alan adı ve mobil uygulama",
+        "Kuruma özel marka ve alan adı",
+        "Dört rollü tek mobil uygulama: koordinatör, öğretmen, öğrenci, veli",
+        "Mobil yoklama ve kurumlar arası geçiş",
+        "Dört rol için demo girişi; demo verisi her girişte tazelenir",
+        "WhatsApp birleşik gelen kutusu ve onaylı hatırlatma şablonları",
+        "Önizlemeli öğrenci listesi içe aktarma",
         "Çok kiracılı yapı: her kurum kendi verisinde"
       ],
       "offers": {
@@ -118,7 +123,7 @@
           "name": "Mevcut öğrenci listemizi aktarabilir miyiz?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Mevcut öğrenci listesi KursOS'a aktarılabilir: elektronik tablo halindeki öğrenci, eğitmen ve paket listeleri kurulum sırasında içe aktarılıyor. Sütun eşlemesi kurulum sırasında birlikte belirlenir."
+            "text": "Mevcut öğrenci listesi KursOS'a aktarılabilir: elektronik tablo halindeki öğrenci, eğitmen ve paket listeleri içe aktarılıyor ve sütun eşlemesi birlikte belirleniyor. İçe aktarma önce ÖNİZLEME gösterir: dosya yüklendiğinde hiçbir şey kaydedilmez, her satırın ne olacağı — yeni kayıt mı, mükerrer mi, telefon biçimi düzeltilecek mi — ekranda görünür ve ancak onaylarsanız yazılır. İlk aktarımı kurulumda biz yaparız, sonrasında yetkili kullanıcı kendisi yükler."
           }
         },
         {
@@ -142,7 +147,7 @@
           "name": "Öğrencilerimiz \"KursOS\" adını görecek mi?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Öğrenciler KursOS adını görmez. KursOS ürünün adı; kurulum kurumunuzun markası, logosu ve alan adıyla yapılıyor. Mobil uygulama da mağazalara kurumunuzun kendi adıyla çıkıyor."
+            "text": "Web arayüzünde ve portalda görmezler: kurulum kurumunuzun markası, logosu ve kendi alan adınızla yapılıyor, KursOS yalnız ürünün adı. Mobil tarafta tek bir uygulama var; mağazada ürünün adıyla duruyor, ama uygulamaya girildiğinde kurumunuzun markası görünüyor."
           }
         },
         {
@@ -150,7 +155,7 @@
           "name": "Mobil uygulama için ayrı bir geliştirme gerekiyor mu?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "KursOS mobil uygulaması için ayrı bir geliştirme gerekmiyor. Uygulama aynı API'ye bağlanan beyaz etiket bir istemci; kurumunuz için marka, ikon ve mağaza kaydı ayarlanıp yayınlanıyor. Apple ve Google hesabının kurum adına açılması gereken tek adım, çünkü mağazalar bunu geliştirici hesabına bağlı istiyor."
+            "text": "Ne ayrı bir geliştirme ne de ayrı bir mağaza yayını gerekiyor. Tek bir mobil uygulama var: kullanıcı giriş yapınca kendi kurumuna bağlanıyor, birden çok kuruma bağlıysa listeden seçiyor. Uygulama web ile aynı API'yi kullanıyor ve kurumunuzun markasını içeride taşıyor; mobil erişim ve özellik ayarları kurum panelinden yönetiliyor. Apple ya da Google geliştirici hesabı açmanız gerekmiyor."
           }
         },
         {
@@ -187,7 +192,7 @@
       "workTranslation": {
         "@id": "https://erimworks.com/en/school-management/#webpage"
       },
-      "dateModified": "2026-11-03",
+      "dateModified": "2026-11-08",
       "speakable": {
         "@type": "SpeakableSpecification",
         "cssSelector": [
@@ -219,7 +224,7 @@
 </header>
 
 <main id="icerik" class="wrap">
-  <p class="crumbs"><a href="/">Erimworks</a><span>/</span>Kurs ve sanat okulu yönetimi<span class="crumbs-date">Son güncelleme: <time datetime="2026-11-03">3 Kasım 2026</time></span></p>
+  <p class="crumbs"><a href="/">Erimworks</a><span>/</span>Kurs ve sanat okulu yönetimi<span class="crumbs-date">Son güncelleme: <time datetime="2026-11-08">8 Kasım 2026</time></span></p>
 
   <div class="read">
     <h1>KursOS: ders programı, tahsilat ve hakediş aynı kayıtta</h1>
@@ -269,6 +274,10 @@
     <p>Tahsilat kaydedilir, kalan borç öğrenci bazında görünür. Gecikmiş ödemede ders planlamayı engelleyen bir kural vardır; kurum bunu açık ya da kapalı tutabilir.</p>
     <p>Eğitmen hakedişi üç ayrı modelden biriyle hesaplanır: <strong>ders başına</strong> sabit tutar, tahsilattan <strong>yüzde</strong>, ya da <strong>maaşlı</strong>. Aynı kurumda üç model bir arada kullanılabilir; her eğitmen kendi modeliyle hesaplanır. Tahsilat, borç ve hakediş aynı rapor ekranından alınır.</p>
 
+    <h3>Mobil uygulama: dört rol, tek uygulama</h3>
+    <p>Koordinatör, öğretmen, öğrenci ve veli aynı uygulamayı kullanır; giriş kime aitse o rolün ekranı açılır. Öğretmenin sahada en çok yaptığı iş — yoklama — tek dokunuşla alınır; dersler, duyurular, ödevler ve paketler ayrı sekmelerde durur. Birden çok kuruma bağlı bir öğretmen ya da veli, kurumlar listesinden geçiş yapar.</p>
+    <p>Uygulamada <strong>demo girişi</strong> vardır: dört rolün her biri için tek düğmeyle örnek bir kuruma girilir ve demo verisi her girişte bugüne göre tazelenir — tarihler geçmişte kalmaz.</p>
+
     <h3>Mesajlaşma ve hatırlatma</h3>
     <p>WhatsApp, kurumun kendi Meta hesabı üzerinden bağlanır. Gelen mesajlar tek gelen kutusunda toplanır ve gerektiğinde koordinatöre devredilir. Ders hatırlatmaları onaylı şablonlarla gider; sistem onaylı şablon defterini tutar ve hatırlatmanın ihtiyaç duyduğu ama onaylanmamış şablonları uyarı olarak listeler.</p>
   </section>
@@ -279,9 +288,9 @@
     <table>
       <tr><th>Web arayüzü</th><td>Kurumunuzun adı, logosu ve rengi. Logo koyu ve açık zeminde ayrı ayrı test edilir.</td></tr>
       <tr><th>Alan adı</th><td>Kendi alan adınız ya da alt alan adınız. Öğrenci ve veli portalı da aynı adres altında.</td></tr>
-      <tr><th>Mobil uygulama</th><td>App Store ve Google Play'e <strong>kurumunuzun kendi adıyla</strong>, kendi ikonuyla ve kendi geliştirici hesabıyla yüklenir. Uygulama aynı API'ye bağlanır; ayrı bir yazılım değildir.</td></tr>
+      <tr><th>Mobil uygulama</th><td><strong>Tek bir uygulama</strong> vardır ve kurum seçimi uygulamanın içindedir: kullanıcı giriş yapınca kendi kurumuna bağlanır, birden çok kuruma bağlıysa listeden seçer. Uygulamanın içinde kurumunuzun adı, logosu ve rengi görünür; mobil erişim ve özellik ayarları kurum panelinden yönetilir. Mağaza kaydı bizdedir — <strong>sizin Apple ya da Google geliştirici hesabı açmanız gerekmez</strong>.</td></tr>
     </table>
-    <p>Yani öğrenciniz KursOS diye bir ad görmez. Aynı kurum altında birden çok iş birimi de çalışabilir: bir sanat okulu ile müzik bölümü ayrı programlar, ayrı eğitmen kadroları ve ayrı hizmet listeleriyle durur, öğrenci ve tahsilat kaydı ortaktır.</p>
+    <p>Yani öğrencinizin gördüğü adres, arayüz ve marka sizin olur. Aynı kurum altında birden çok iş birimi de çalışabilir: bir sanat okulu ile müzik bölümü ayrı programlar, ayrı eğitmen kadroları ve ayrı hizmet listeleriyle durur, öğrenci ve tahsilat kaydı ortaktır.</p>
     <p>Kurum izolasyonu veritabanı seviyesinde zorlanır: kiracı belirtilmemiş bir sorgu veri döndürmez. Yetkiler rol bazlıdır ve her istekte sunucuda yeniden okunur; bir yetki geri alındığında bir sonraki işlemde geçerli olur. Kim neyi ne zaman değiştirdi denetim kaydında durur.</p>
   </section>
 
@@ -302,7 +311,7 @@
     <div class="faq">
       <details>
         <summary>Mevcut öğrenci listemizi aktarabilir miyiz?</summary>
-        <p>Mevcut öğrenci listesi KursOS'a aktarılabilir: elektronik tablo halindeki öğrenci, eğitmen ve paket listeleri kurulum sırasında içe aktarılıyor. Sütun eşlemesi kurulum sırasında birlikte belirlenir.</p>
+        <p>Mevcut öğrenci listesi KursOS'a aktarılabilir: elektronik tablo halindeki öğrenci, eğitmen ve paket listeleri içe aktarılıyor ve sütun eşlemesi birlikte belirleniyor. İçe aktarma önce <strong>önizleme</strong> gösterir: dosya yüklendiğinde hiçbir şey kaydedilmez, her satırın ne olacağı — yeni kayıt mı, mükerrer mi, telefon biçimi düzeltilecek mi — ekranda görünür ve ancak onaylarsanız yazılır. İlk aktarımı kurulumda biz yaparız, sonrasında yetkili kullanıcı kendisi yükler.</p>
       </details>
       <details>
         <summary>Birebir ders dışında grup dersi de var mı?</summary>
@@ -314,11 +323,11 @@
       </details>
       <details>
         <summary>Öğrencilerimiz "KursOS" adını görecek mi?</summary>
-        <p>Öğrenciler KursOS adını görmez. KursOS ürünün adı; kurulum kurumunuzun markası, logosu ve alan adıyla yapılıyor. Mobil uygulama da mağazalara kurumunuzun kendi adıyla çıkıyor.</p>
+        <p>Web arayüzünde ve portalda görmezler: kurulum kurumunuzun markası, logosu ve kendi alan adınızla yapılıyor, KursOS yalnız ürünün adı. Mobil tarafta tek bir uygulama var; mağazada ürünün adıyla duruyor, ama uygulamaya girildiğinde kurumunuzun markası görünüyor.</p>
       </details>
       <details>
         <summary>Mobil uygulama için ayrı bir geliştirme gerekiyor mu?</summary>
-        <p>KursOS mobil uygulaması için ayrı bir geliştirme gerekmiyor. Uygulama aynı API'ye bağlanan beyaz etiket bir istemci; kurumunuz için marka, ikon ve mağaza kaydı ayarlanıp yayınlanıyor. Apple ve Google hesabının kurum adına açılması gereken tek adım, çünkü mağazalar bunu geliştirici hesabına bağlı istiyor.</p>
+        <p>Ne ayrı bir geliştirme ne de ayrı bir mağaza yayını gerekiyor. Tek bir mobil uygulama var: kullanıcı giriş yapınca kendi kurumuna bağlanıyor, birden çok kuruma bağlıysa listeden seçiyor. Uygulama web ile aynı API'yi kullanıyor ve kurumunuzun markasını içeride taşıyor; mobil erişim ve özellik ayarları kurum panelinden yönetiliyor. Apple ya da Google geliştirici hesabı açmanız gerekmiyor.</p>
       </details>
       <details>
         <summary>Fiyat nedir?</summary>
