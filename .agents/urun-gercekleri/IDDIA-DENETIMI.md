@@ -172,6 +172,34 @@ yanlış söylüyor hem elindeki en güçlü güvence argümanını harcıyor.
    **Hâlâ açık:** 157 sayfanın kaçının müşteriye açık olduğu ve Quality'nin
    UNVPortal markası altında mı yoksa ayrı `unvplatform` ürünü olarak mı
    satıldığı. Sayfa mevcut "UNVPortal Quality" adlandırmasını korudu.
-4. ChemBioCalc ↔ Labs köprüsünü iki sayfaya da ekle.
+4. ~~ChemBioCalc ↔ Labs köprüsünü iki sayfaya da ekle.~~ **YAPILDI** (2026-11-08).
+   Labs sayfasına (TR+EN) "Cihaz başında telefonla" / "At the bench, on a phone"
+   h3'ü, ChemBioCalc sayfasına çift dilli "Kurumsal laboratuvar modülü" bölümü.
+   Doğrulanan zincir: `chemcalc-pro/app/lab/` altı ekran (tara, rezervasyon, stok,
+   yoklama, onaylar, sonuç) → `lib/unvportal.ts` + `constants/unvportal.ts`
+   (`api.unvportal.com/api/v2`) → `unvportal/backend/.../entegrasyon.py`
+   `POST /entegrasyon/chembiocalc/baglan`. Yani köprü ESKİ `unvportal` FastAPI
+   deposuna bağlanıyor, `unvplatform`a değil.
+   Metne giren güvenlik koşulları koddan: kullanıcı UNVPortal'da kayıtlı olmalı
+   VE hesabında `chembiocalc` platformu açık olmalı — *"implicit admin bypass
+   YOK"*; verilen token kısa ömürlü (2 saat, web oturumu 8 saat); her başarılı
+   köprü denetim izine yazılıyor; ekran görünürlüğünü rol yetenekleri belirliyor.
+   Ürün gerçeği dosyasının uyarısına uyuldu: köprünün yalnız UNVPortal kurulu
+   kurumda çalıştığı her iki metinde de açıkça koşullandırıldı, bağımsız
+   kullanıcıya "laboratuvarını yönet" denmedi.
+   **Not:** `chembiocalc.com` ayrı depodadır (`chemcalc-pro/apps/web/public`);
+   oradaki siteye bu bölüm eklenmedi.
+
+   **Yan bulgu — site genelinde bir stil kusuru düzeltildi.** Bölüm içi h3'lerin
+   accent çizgisi `section[aria-labelledby="h-neyapar"]` seçicisine sabitlenmişti.
+   EN sayfalarında aynı bölümün id'si `h-does` olduğu için **stil İngilizce
+   sayfaların hiçbirinde çalışmıyordu**: ölçüldü, TR Labs h3 padding 18px + 2px
+   çizgi, EN Labs 0px + çizgi yok. Aynı sayfa iki dilde farklı görünüyordu.
+   `iletisim`, `en/contact`, `en/medical-tourism`, `en/school-management`,
+   `en/unvportal/exams`, her iki `unvportal/index` de stilsiz kalıyordu.
+   Seçici id'den bağımsız hale getirildi (`section[aria-labelledby] > h3`) ve
+   `+ p` → `~ p` yapıldı: önceki hâli yalnız h3'ün İLK paragrafını hizalıyordu,
+   iki paragraflı bir h3'te ikincisi hizadan kaçıyordu. 84 sayfanın stil damgası
+   yenilendi; 19 sayfa × 2 genişlik taşma/yatay kaydırma taraması temiz.
 5. Uygulama içi Labs kullanım kılavuzundaki "kalibrasyon tarihleri" ifadesini kaldır
    (üründe karşılığı yok) ve TestRoster README'sinin bayat "iskelet" tablosunu düzelt.

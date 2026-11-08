@@ -717,11 +717,20 @@ section[aria-labelledby="h-kim"] > ul {
   section[aria-labelledby="h-kim"] > ul { max-width: 100%; width: 100%; margin-left: 0; }
 }
 
-section[aria-labelledby="h-neyapar"] h3 { position: relative; padding-left: 18px; margin-top: 34px; }
-section[aria-labelledby="h-neyapar"] h3::before {
+/* Bölüm içi h3'lerin accent çizgisi. Seçici önce `h-neyapar` id'sine
+   sabitlenmişti; EN sayfalarında aynı bölümün id'si `h-does` olduğu için
+   stil İNGİLİZCE SAYFALARIN HİÇBİRİNDE çalışmıyordu — aynı sayfa iki dilde
+   farklı görünüyordu (ölçüldü 2026-11-08: TR Labs padding 18px + 2px çizgi,
+   EN Labs 0px + çizgi yok). Artık id'den bağımsız: bölümün DOĞRUDAN çocuğu
+   olan her h3. `~ p` ise h3'ü izleyen TÜM paragrafları hizalar; `+ p` yalnız
+   ilkini yakalıyordu, bu yüzden iki paragraflı bir h3'te ikinci paragraf
+   hizadan kaçıyordu. `.section-head` içindeki açıklama h3'lerden ÖNCE
+   geldiği için etkilenmez. */
+main.wrap section[aria-labelledby] > h3 { position: relative; padding-left: 18px; margin-top: 34px; }
+main.wrap section[aria-labelledby] > h3::before {
   content: ""; position: absolute; left: 0; top: 5px; bottom: 3px; width: 2px; background: var(--accent); border-radius: 1px;
 }
-section[aria-labelledby="h-neyapar"] h3 + p { padding-left: 18px; }
+main.wrap section[aria-labelledby] > h3 ~ p { padding-left: 18px; }
 
 main.wrap li::marker { color: var(--accent); }
 
@@ -733,7 +742,7 @@ main.wrap .read > p,
 main.wrap .read > ul > li,
 main.wrap .read > ol > li,
 main.wrap section[aria-labelledby] > p,
-section[aria-labelledby="h-neyapar"] h3 + p,
+main.wrap section[aria-labelledby] > h3 ~ p,
 .faq details > p,
 article[data-lang] p, article[data-lang] li {
   color: var(--ink-2); font-size: var(--t-body); line-height: 1.68;
