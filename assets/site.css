@@ -717,11 +717,20 @@ section[aria-labelledby="h-kim"] > ul {
   section[aria-labelledby="h-kim"] > ul { max-width: 100%; width: 100%; margin-left: 0; }
 }
 
-section[aria-labelledby="h-neyapar"] h3 { position: relative; padding-left: 18px; margin-top: 34px; }
-section[aria-labelledby="h-neyapar"] h3::before {
+/* Bölüm içi h3'lerin accent çizgisi. Seçici önce `h-neyapar` id'sine
+   sabitlenmişti; EN sayfalarında aynı bölümün id'si `h-does` olduğu için
+   stil İNGİLİZCE SAYFALARIN HİÇBİRİNDE çalışmıyordu — aynı sayfa iki dilde
+   farklı görünüyordu (ölçüldü 2026-11-08: TR Labs padding 18px + 2px çizgi,
+   EN Labs 0px + çizgi yok). Artık id'den bağımsız: bölümün DOĞRUDAN çocuğu
+   olan her h3. `~ p` ise h3'ü izleyen TÜM paragrafları hizalar; `+ p` yalnız
+   ilkini yakalıyordu, bu yüzden iki paragraflı bir h3'te ikinci paragraf
+   hizadan kaçıyordu. `.section-head` içindeki açıklama h3'lerden ÖNCE
+   geldiği için etkilenmez. */
+main.wrap section[aria-labelledby] > h3 { position: relative; padding-left: 18px; margin-top: 34px; }
+main.wrap section[aria-labelledby] > h3::before {
   content: ""; position: absolute; left: 0; top: 5px; bottom: 3px; width: 2px; background: var(--accent); border-radius: 1px;
 }
-section[aria-labelledby="h-neyapar"] h3 + p { padding-left: 18px; }
+main.wrap section[aria-labelledby] > h3 ~ p { padding-left: 18px; }
 
 main.wrap li::marker { color: var(--accent); }
 
@@ -733,7 +742,7 @@ main.wrap .read > p,
 main.wrap .read > ul > li,
 main.wrap .read > ol > li,
 main.wrap section[aria-labelledby] > p,
-section[aria-labelledby="h-neyapar"] h3 + p,
+main.wrap section[aria-labelledby] > h3 ~ p,
 .faq details > p,
 article[data-lang] p, article[data-lang] li {
   color: var(--ink-2); font-size: var(--t-body); line-height: 1.68;
@@ -742,6 +751,29 @@ main.wrap .read > p.lede { font-size: var(--t-lede); line-height: 1.6; }
 main.wrap .small, main.wrap .muted, .meta { font-size: var(--t-small); }
 main.wrap > section.read + section.read { border-top: 1px solid var(--line); padding-top: 34px; }
 
+/* OKUMA SÜTUNUNDA BAŞLIK RİTMİ. h2 üst boşluk taşımıyordu (margin: 0, yalnız
+   margin-bottom: 12px) ve .actions alt boşluk vermiyor. Ölçüldü (2026-11-09):
+   düğme grubundan sonra gelen h2 düğmeye 0 px ile yapışıyordu (scanyra,
+   scanlyte); akan metinde ise h2 önceki paragrafın 16 px altında, kendi
+   içeriğinin 12 px üstünde duruyor, başlık iki bölüm arasında asılı
+   kalıyordu. Artık üstte 40, altta 12: başlık kendi bölümüne ait okunuyor.
+   Tam boy h2, üstte 32 taşıyan h3'ten az boşluk alamaz; çizgili bölüm
+   geçişinden (51) de fazla alamaz. 40 bu ikisinin arasıdır.
+   `* +` şartı kasıtlı: kabının İLK çocuğu olan başlıklar (.section-head,
+   .card, .faq-item, section.read açılışı) etkilenmez, onların ritmi kendi
+   kabından gelir. `:where()` de kasıtlı: özgüllüğü sıfırlar, böylece bu
+   kural yalnız bir VARSAYILAN olur ve sınıflı her kural onu ezer —
+   hukuki metinlerdeki `article[data-lang] h2` (19 px başlık, üstte 30) ve
+   `.rule` kendi değerini korur. Sayfaya satır içi boşluk yazarak
+   geçiştirme (qrwise ve testroster'da öyle yapılmıştı) — kural burada. */
+:where(.read) * + h2 { margin-top: 40px; }
+/* İki dilli sayfalarda TR ve EN bloğunu ayıran çizgi. Tarayıcının kabartmalı
+   gri çizgisiyle çıkıyor, önceki paragrafa 16, sonraki başlığa 9 px
+   duruyordu. Artık sistemin saç teli çizgisi ve iki yanı eşit; kenar
+   boşlukları çakıştığı için çizgiden sonraki başlık da 40'ta kalır, 80'e
+   çıkmaz. */
+:where(.read) hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
+
 /* ========================== ESKİ SAYFALARDAN DEVRALINAN ========================== */
 .rows { border-top: 1px solid var(--line); margin-top: 18px; }
 .row { display: grid; grid-template-columns: 40px 1fr; gap: 16px; align-items: start; padding: 20px 0; border-bottom: 1px solid var(--line); }
@@ -749,7 +781,9 @@ main.wrap > section.read + section.read { border-top: 1px solid var(--line); pad
 .row h3 { margin: 0 0 4px; font-size: var(--t-ui); font-weight: 600; }
 .row h3 a { color: var(--ink); }
 .row h3 a:hover { color: var(--accent); text-decoration: none; }
-.row p { margin: 0; color: var(--muted-2); font-size: var(--t-small); }
+.row p { margin: 0; color: var(--muted-2); font-size: var(--t-small); max-width: 520px; }
+/* Satır ölçüsü: bant genişliğinde (1168px) bu paragraflar satır başına 108
+   karaktere çıkıyordu, İngilizce sayfada 126'ya. Ölçü px ile verildi. */
 .row .actions { margin-top: 12px; gap: 8px; }
 
 .top { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }

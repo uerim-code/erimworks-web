@@ -10,8 +10,8 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Quality Management and Accreditation System — UNVPortal Quality</title>
-<meta name="description" content="A quality management system used by the whole institution: task assignment and evidence upload for staff, committee and decision tracking, the PDCA cycle, self-assessment reports.">
-<meta name="keywords" content="quality management system, accreditation software, quality assurance system, self-assessment report software, PDCA cycle, committee management, evidence management, higher education quality">
+<meta name="description" content="A quality management system used by the whole institution: tasks and evidence, corrective actions and risk, regulatory impact analysis, internal audit, self-assessment reports, assessor data room.">
+<meta name="keywords" content="quality management system, accreditation software, quality assurance system, self-assessment report software, PDCA cycle, CAPA software, corrective and preventive action, risk management software, regulatory compliance tracking, internal audit software, data room, committee management, evidence management, higher education quality">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Erimworks">
@@ -19,7 +19,7 @@
 <meta property="og:locale:alternate" content="tr_TR">
 <meta property="og:url" content="https://erimworks.com/en/unvportal/quality/">
 <meta property="og:title" content="Quality Management and Accreditation System — UNVPortal Quality">
-<meta property="og:description" content="Process, committee, decision, action and evidence management with self-assessment reports.">
+<meta property="og:description" content="Tasks and evidence, corrective actions and risk, regulatory impact analysis, internal audit and evidence-backed self-assessment reports — in one system.">
 <meta property="og:image" content="https://erimworks.com/assets/og-unvportal.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -27,7 +27,7 @@
 <meta name="twitter:image" content="https://erimworks.com/assets/og-unvportal.png">
 <meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0b0c10" media="(prefers-color-scheme: dark)">
-<link rel="stylesheet" href="/assets/site.css?v=65088472a1">
+<link rel="stylesheet" href="/assets/site.css?v=fa7cec1667">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -48,18 +48,30 @@
       "operatingSystem": "Web browser",
       "url": "https://erimworks.com/unvportal/kalite/",
       "installUrl": "https://unvportal.com/giris/quality",
-      "description": "Quality management system used by the whole institution. With no academic/administrative divide, every member of staff carries out the task assigned to them and uploads the evidence; committees, decisions, the PDCA cycle and self-assessment reports run on the same record.",
+      "description": "Quality management system used by the whole institution. With no academic/administrative divide, every member of staff carries out the task assigned to them and uploads the evidence; committees, decisions, the PDCA cycle and self-assessment reports run on the same record. Nonconformities and corrective action, risk, regulatory obligations and change impact analysis, internal audit, management review and indicator tracking are part of the same system.",
       "inLanguage": [
         "tr",
         "en"
       ],
       "featureList": [
         "Task assignment and evidence upload for all staff",
-        "Process and committee management",
-        "Meeting, decision and action tracking",
+        "Process definition, visual modelling, versioning and performance measurement",
+        "Committee, meeting, decision and action tracking",
         "Evidence file management linked to records",
         "PDCA cycle monitoring",
-        "Unit and institutional self-assessment reports"
+        "Nonconformities and corrective/preventive action (CAPA) with overdue and recurrence analysis",
+        "Risk and opportunity management with a risk heat map",
+        "Regulatory obligation inventory and regulatory change impact analysis",
+        "Standard version comparison, clause lineage, criterion crosswalk and gap analysis",
+        "Internal audit plans, checklists, findings and field work",
+        "Management review",
+        "Indicator and target tracking",
+        "Data extraction from meeting minutes, with confidence level and page position",
+        "Evidence-backed, reproducible unit and institutional self-assessment reports",
+        "Time-limited, audited data room access for external assessors",
+        "Mobile field audit, document scanning and offline work",
+        "SSO identity federation, competency gates and delegation management",
+        "SFTP and read-only database connectors with no-code mapping"
       ],
       "isPartOf": {
         "@type": "SoftwareApplication",
@@ -154,6 +166,38 @@
         },
         {
           "@type": "Question",
+          "name": "Do we need separate software for nonconformities (CAPA) and risk?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Nonconformity records, root cause analysis, corrective and preventive actions, the overdue dashboard and recurrence analysis are inside UNVPortal Quality; risks are assessed on the institution's own matrix and shown on a heat map. A CAPA arising from an audit finding opens in the same chain and does not have to be transferred to another system."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does AI write the report?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The facts in the report do not come from AI. The report is generated deterministically from evidence records: the same data produces the same output every time, and because a claim without evidence is marked unsupported, the report cannot pass approval. AI only turns those findings into sentences and adds them as drafts; the provenance of the text can be viewed and nothing is published without human approval."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do we open documents to an external assessor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Through the data room. No account is created for the external assessor on the institution's system: with an invitation link, a one-time code sent to their email and a time-limited session, they see only the sections and documents opened to them. Every view and download is logged; questions and answers, additional evidence requests and the visit agenda run from the same place. When the period ends or access is revoked, the session closes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a mobile app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes; it is distributed to the institution's staff as part of deployment. In the mobile app an auditor writes field notes, turns a nonconformity into a finding, attaches the evidence on the spot and scans a document with the phone camera. With no connection the record is queued on the device; the app shows what has been sent separately from what is still waiting."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "What does it cost?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -186,7 +230,7 @@
         "width": 1200,
         "height": 630
       },
-      "dateModified": "2026-11-04",
+      "dateModified": "2026-11-08",
       "speakable": {
         "@type": "SpeakableSpecification",
         "cssSelector": [
@@ -218,16 +262,25 @@
 </header>
 
 <main id="icerik" class="wrap">
-  <p class="crumbs"><a href="/en/">Erimworks</a><span>/</span><a href="/en/unvportal/">UNVPortal</a><span>/</span>Quality<span class="crumbs-date">Last updated: <time datetime="2026-11-04">4 November 2026</time></span></p>
+  <p class="crumbs"><a href="/en/">Erimworks</a><span>/</span><a href="/en/unvportal/">UNVPortal</a><span>/</span>Quality<span class="crumbs-date">Last updated: <time datetime="2026-11-08">8 November 2026</time></span></p>
 
   <div class="read">
     <h1>UNVPortal Quality: collects the evidence the moment it is created</h1>
-    <p class="lede">UNVPortal Quality is a browser-based quality management and accreditation system for universities and higher education institutions. Process and committee definitions, meeting, decision and action tracking, evidence management linked to criteria, the PDCA cycle and self-assessment reports run on the same record. The whole institution uses the system: with no academic/administrative divide, every member of staff carries out the task assigned to them and uploads the evidence. When reporting time comes, there is nothing left to collect.</p>
+    <p class="lede">UNVPortal Quality is a browser-based quality management and accreditation system for universities and higher education institutions. Process and committee definitions, meeting, decision and action tracking, evidence management linked to criteria, the PDCA cycle and self-assessment reports run on the same record. Nonconformities and corrective action, risk, regulatory obligations, internal audit, management review and indicator tracking are part of the same system. The whole institution uses the system: with no academic/administrative divide, every member of staff carries out the task assigned to them and uploads the evidence. When reporting time comes, there is nothing left to collect.</p>
     <div class="actions">
       <!--email_off--><a class="btn btn-primary" href="mailto:contact@erimworks.com?subject=UNVPortal%20Quality%20demo%20request">Request a demo</a><!--/email_off-->
       <a class="btn btn-quiet" href="https://unvportal.com/giris/quality" rel="noopener">User sign-in</a>
     </div>
     <p class="small" style="margin-top:14px">This module was previously referred to as <strong>QualityOS</strong>.</p>
+    <nav class="small muted" aria-label="On this page" style="margin-top:18px">On this page:
+      <a href="#h-does">What it does</a> ·
+      <a href="#h-capa">Nonconformities, risk and audit</a> ·
+      <a href="#h-compliance">Regulatory and standard tracking</a> ·
+      <a href="#h-report">Reports and the data room</a> ·
+      <a href="#h-mobile">In the field</a> ·
+      <a href="#h-ops">Permissions and integration</a> ·
+      <a href="#h-faq">FAQ</a>
+    </nav>
   </div>
 
   <section aria-labelledby="h-what" class="read">
@@ -258,8 +311,12 @@
     <p>Work arising from a criterion falls to the responsible member of staff as a task. On their own screen they see what needs to be done, the deadline and which evidence is expected; when the work is done, the evidence is uploaded there. A task without evidence does not close and shows as missing in the unit report.</p>
     <p>Because the whole institution uses the same screen, quality data does not depend on one unit's end-of-term effort: it is recorded as the work is done. Who completed which task and when remains in the audit log.</p>
 
-    <h3>Process and committee management</h3>
-    <p>The institution's processes are defined with their owner, inputs and outputs. Committees are set up with members, terms of reference and a meeting calendar; which committees a person sits on is visible on a single screen.</p>
+    <h3>Process management</h3>
+    <p>The institution's processes are defined and versioned with their owner, inputs and outputs; the flow is drawn on a canvas in the browser. The process catalogue shows who owns which process and how processes depend on one another. Running processes are tracked as instances.</p>
+    <p>On the performance dashboard, target attainment, the number of observations and data quality sit in separate columns: a problem with the measurement itself is not read as a drop in performance. Processes whose review date has come fall into a queue and are worked through as campaigns — a review date cannot pass unnoticed.</p>
+
+    <h3>Committee management</h3>
+    <p>Committees are set up with members, terms of reference and a meeting calendar; which committees a person sits on is visible on a single screen.</p>
 
     <h3>Meetings, decisions and actions</h3>
     <p>The meeting agenda is prepared, the decision is written into the minutes, and the action arising from the decision is opened with its owner and target date. Overdue actions are collected in a separate list. The next meeting's agenda starts with the open actions of the previous one.</p>
@@ -274,6 +331,83 @@
     <p>The report template is built from criterion headings. The evidence and indicators linked to each heading come from the system; text fields are filled in by the unit. Unit reports are consolidated into the institutional report, and the system lists which unit has left which heading empty.</p>
   </section>
 
+
+  <section aria-labelledby="h-capa" class="read">
+    <div class="section-head">
+      <h2 id="h-capa">Nonconformities, risk and internal audit</h2>
+      <p>Quality management is not only collecting evidence: what was done when something went wrong is on record too.</p>
+    </div>
+
+    <h3>Nonconformities and corrective action (CAPA)</h3>
+    <p>A nonconformity arising from an audit, a complaint or an indicator missing its target is recorded with its source, severity, class and owner. Root cause analysis is carried out with a method; corrective and preventive actions are attached to it. Closure passes through a gate: a CAPA whose effectiveness has not been verified does not close.</p>
+    <p>Overdue CAPAs and those approaching their deadline are collected on a separate dashboard with the days remaining. Recurrence analysis shows how many times the same nonconformity has come up and in which process — a recurring nonconformity is evidence that a correction counted as closed did not work.</p>
+
+    <h3>Risk and opportunity</h3>
+    <p>Risks are assessed on the institution's own matrix and shown on a heat map; opportunities are kept in a separate list. A risk, too, passes through a gate as it closes.</p>
+
+    <h3>Internal audit</h3>
+    <p>The audit plan, the checklist template and auditor assignments are set up in the system. During field work notes are written, a nonconformity is turned into a finding and evidence is attached; the CAPA arising from a finding opens in the same chain. The package for an external assessor is compiled from the plan in one go.</p>
+
+    <h3>Management review</h3>
+    <p>The agenda is built from a template and its inputs come from the system: indicators, open CAPAs, audit findings, risks. Decisions taken are opened as actions and enter the same follow-up as every other action.</p>
+
+    <h3>Indicator tracking</h3>
+    <p>Indicators are defined with their target, unit and period; the trend is visible across periods. The PDCA closure check looks at whether the indicator actually moved after the improvement.</p>
+  </section>
+
+  <section aria-labelledby="h-compliance" class="read">
+    <div class="section-head">
+      <h2 id="h-compliance">Regulatory and standard tracking</h2>
+      <p>So that when a binding text changes, what it affects does not have to be looked up by hand.</p>
+    </div>
+
+    <h3>Obligation inventory</h3>
+    <p>The regulatory provisions binding on the institution are recorded as obligations, with their owner, assessment schedule and the evidence expected. The matrix shows which obligation maps to which process and criterion; the readiness index says which obligation is left without evidence.</p>
+
+    <h3>Regulatory change and impact analysis</h3>
+    <p>When a watched source changes, a record is opened and matched to the relevant provisions. Before it is accepted, an impact preview is produced: which obligations, processes and criteria this change affects. On acceptance, impact records are generated and the owners are notified.</p>
+    <p>Acceptance is a separate permission, and holding that permission is not enough on its own: the person accepting must be someone other than the person who entered the change, and must own the affected records. One person cannot accept a change they entered themselves.</p>
+
+    <h3>Standard versions and criterion mapping</h3>
+    <p>Two versions of a standard are compared and the changed clauses are extracted; clause lineage shows a clause's counterpart in the previous version as a chain. A crosswalk is built between two sets of criteria, and gap analysis lists which criterion is left uncovered — this is how you see which evidence can be reused when moving from one accreditation to another.</p>
+    <p class="small muted">A comparison changes no obligation by itself: the machine proposes, a person publishes.</p>
+  </section>
+
+  <section aria-labelledby="h-report" class="read">
+    <div class="section-head">
+      <h2 id="h-report">Reading the evidence, producing the report, opening it to an assessor</h2>
+    </div>
+
+    <h3>Extracting data from minutes</h3>
+    <p>When scanned meeting minutes are uploaded, decisions, attendees and actions are extracted field by field; each field's confidence level and its position in the document are shown. Where confidence is low, a person picks the match. Running the extraction, viewing it and importing it are separate permissions, and extraction finalises nothing — closing a meeting or formalising a decision belongs to another permission.</p>
+
+    <h3>Report generation</h3>
+    <p>The report is generated deterministically from evidence records: the same data produces the same output every time. Every claim is linked to a criterion clause and to at least one piece of evidence; a claim without evidence is marked unsupported and the report does not pass validation. "Not yet measured" and "measured and not met" are separate states, and the second one is not hidden.</p>
+    <p>AI can write report text, but it does not produce the report's facts: it turns the findings of the deterministic engine into sentences and adds them as draft claims. The provenance of the text can be viewed, nothing is published without human approval, and a claim without evidence does not pass approval in the first place.</p>
+
+    <h3>Data room</h3>
+    <p>No account is created for an external assessor on the institution's system. With an invitation link, a one-time code sent to their email and a time-limited session, they see only the sections and documents opened to them; every view and every download is logged. They ask questions — the answer is published once the institution approves it; they request additional evidence; they see the visit agenda. When the period ends or access is revoked, the session closes immediately.</p>
+  </section>
+
+  <section aria-labelledby="h-mobile" class="read">
+    <div class="section-head"><h2 id="h-mobile">In the field and on the phone</h2></div>
+    <p>Part of quality work does not happen at a desk. In the mobile app an auditor writes notes in the field, turns a nonconformity into a finding and attaches the evidence on the spot; a document is scanned with the phone camera and uploaded. Tasks, evidence, meetings and decision tracking are visible on the phone too.</p>
+    <p>With no connection the record is queued on the device and sent when the network returns. The app <strong>shows what has been sent separately from what is still waiting</strong>: marking both the same way would let an auditor believe they had done something they had not. If the record on the server changed in the meantime, the conflict is put to the user rather than silently overwritten.</p>
+  </section>
+
+  <section aria-labelledby="h-ops" class="read">
+    <div class="section-head"><h2 id="h-ops">Permissions, identity and integration</h2></div>
+
+    <h3>Permissions and identity</h3>
+    <p>Permissions are granted through a permission catalogue. The institution connects its own identity provider (SSO); user mapping and role rules are defined, and federation sessions and identity audit events are visible.</p>
+
+    <h3>Competency and delegation</h3>
+    <p>A task can carry a competency requirement: someone who does not meet it cannot take the work on, and that block is recorded. A warning is raised before competency certificates expire. During leave or an assignment, a permission is delegated to a deputy for a set period; out-of-the-ordinary access is logged separately and reviewed afterwards.</p>
+
+    <h3>Connectors</h3>
+    <p>To bring in data from the institution's other systems, SFTP file transfer and a read-only database view are connected; mapping is set up without writing code. Connection health, errors and records that could not be processed are monitored on their own screen.</p>
+  </section>
+
   <section aria-labelledby="h-cycle" class="read">
     <div class="section-head"><h2 id="h-cycle">Why the reporting period is a squeeze</h2></div>
     <table class="kiyas">
@@ -283,6 +417,9 @@
       <tr><td>Evidence documents are collected in report week</td><td>Evidence linked to the criterion the moment it is created</td></tr>
       <tr><td>The same document is kept separately in several units</td><td>One record linked from several criteria</td></tr>
       <tr><td>The result of the improvement is not measured</td><td>No action closes without the PDCA check stage</td></tr>
+      <tr><td>The same nonconformity comes up again at every audit</td><td>Recurrence analysis shows how many times it has come up</td></tr>
+      <tr><td>When a regulation changes, its effects are looked up by hand</td><td>The change is matched to provisions; the processes and criteria affected are listed</td></tr>
+      <tr><td>Documents are sent to the assessor in folders or email attachments</td><td>Time-limited, audited access from the data room, to opened documents only</td></tr>
     </table>
   </section>
 
@@ -315,6 +452,22 @@
       <details>
         <summary>Can the report be exported as Word or PDF?</summary>
         <p>In UNVPortal Quality, the self-assessment report is compiled in the system and exported. The heading structure the institution wants is defined in the template.</p>
+      </details>
+      <details>
+        <summary>Do we need separate software for nonconformities (CAPA) and risk?</summary>
+        <p>No. Nonconformity records, root cause analysis, corrective and preventive actions, the overdue dashboard and recurrence analysis are inside UNVPortal Quality; risks are assessed on the institution's own matrix and shown on a heat map. A CAPA arising from an audit finding opens in the same chain and does not have to be transferred to another system.</p>
+      </details>
+      <details>
+        <summary>Does AI write the report?</summary>
+        <p>The facts in the report do not come from AI. The report is generated deterministically from evidence records: the same data produces the same output every time, and because a claim without evidence is marked unsupported, the report cannot pass approval. AI only turns those findings into sentences and adds them as drafts; the provenance of the text can be viewed and nothing is published without human approval.</p>
+      </details>
+      <details>
+        <summary>How do we open documents to an external assessor?</summary>
+        <p>Through the data room. No account is created for the external assessor on the institution's system: with an invitation link, a one-time code sent to their email and a time-limited session, they see only the sections and documents opened to them. Every view and download is logged; questions and answers, additional evidence requests and the visit agenda run from the same place. When the period ends or access is revoked, the session closes.</p>
+      </details>
+      <details>
+        <summary>Is there a mobile app?</summary>
+        <p>Yes; it is distributed to the institution's staff as part of deployment. In the mobile app an auditor writes field notes, turns a nonconformity into a finding, attaches the evidence on the spot and scans a document with the phone camera. With no connection the record is queued on the device; the app shows what has been sent separately from what is still waiting.</p>
       </details>
       <details>
         <summary>What does it cost?</summary>

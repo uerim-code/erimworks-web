@@ -27,7 +27,7 @@
 <meta name="twitter:image" content="https://erimworks.com/assets/og-unvportal.png">
 <meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0b0c10" media="(prefers-color-scheme: dark)">
-<link rel="stylesheet" href="/assets/site.css?v=65088472a1">
+<link rel="stylesheet" href="/assets/site.css?v=fa7cec1667">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -124,7 +124,7 @@
           "name": "Can we import our existing instrument list?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "An existing instrument list can be imported into UNVPortal Labs: instrument, consumable and laboratory lists held in spreadsheets are imported during deployment. Column mapping is agreed together during setup."
+            "text": "Existing lists are imported from an Excel file. The stock screen has a separate Excel upload button for instruments, glassware and consumables, and chemicals; the column names in the file's header row are mapped automatically (for instruments: name, make, model, serial number, location; for chemicals also CAS number, class, unit and critical quantity). We carry out the first import during deployment, after which an authorised user can upload at any time."
           }
         },
         {
@@ -255,7 +255,7 @@
     <p>Each laboratory is attached to the unit tree. A course is divided into experiment weeks and each week into its own activities; a PDF or Word template is attached to the activity and students access it before the session. Each student is assigned a separate QR-tagged sample: the sample's true value and acceptance tolerance are defined in advance, and the submitted result is graded against them.</p>
 
     <h3>Instrument booking and approval flow</h3>
-    <p>Instruments are defined with their location, working hours and a daily or hourly booking mode; maintenance days are marked as unavailable. A shareable link is generated for the department, so requests can also come from outside the institution. Incoming requests land in an approval queue; they are approved one by one or in bulk, and a reason is recorded if rejected. A reminder goes out automatically before the appointment, a record is kept after use, and a per-instrument usage report is produced at the end of term.</p>
+    <p>Instruments are defined with their location, working hours and a daily or hourly booking mode; maintenance days are marked as unavailable. A shareable link is generated for the department, so requests can also come from outside the institution. Incoming requests land in an approval queue; they are approved one by one or in bulk, and a reason is recorded if rejected. A reminder email goes out the day before an approved booking — automatically, through the scheduled job set up at deployment, or by hand from the admin screen, singly or in bulk. A record is kept after use, and a per-instrument usage report is produced at the end of term.</p>
 
     <h3>Consumable stock</h3>
     <p>Receipts, issues and stock counts are recorded. Materials that fall below the critical level are listed, and consumption history is exported for purchasing plans. For materials with a lot and expiry date, expired items are separated out.</p>
@@ -265,6 +265,10 @@
 
     <h3>Academic practicals and attendance</h3>
     <p>Practical sessions tied to the course timetable are opened and attendance is recorded against the session. At the end of term, participation counts and attendance status are reported per student.</p>
+
+    <h3>At the bench, on a phone</h3>
+    <p>The field app for Labs is <a href="/chembiocalc/" hreflang="tr">ChemBioCalc</a>. Where the institution runs UNVPortal, staff connect to its laboratory module with their own ChemBioCalc account and do the work at the bench instead of going back to a desk: scan the QR label on a chemical container and deduct the amount used, request an instrument booking, approve or reject pending requests, search the chemical inventory, take attendance with student QR codes and view the results of session activities.</p>
+    <p>The data stays in Labs; no copy is kept on the phone. Connecting requires the user to be registered in UNVPortal with ChemBioCalc access enabled on their account — the same permission is required of an administrator, so a role alone is not enough. The session issued is short-lived and every connection is written to the audit trail. Which screens appear on the phone is decided by the user's role in Labs.</p>
   </section>
 
   <section aria-labelledby="h-diff" class="read">
@@ -286,7 +290,7 @@
       <h2 id="h-deploy">Deployment and access</h2>
     </div>
     <p>It runs in the browser, with no separate software to install. The institution can choose a cloud deployment or its own server. Permissions are granted per unit and role; a laboratory supervisor sees only their own laboratory.</p>
-    <p>Labs shares one database with <a href="/en/unvportal/exams/">UNVPortal Exams</a> and <a href="/en/unvportal/quality/">UNVPortal Quality</a>. When deployed together, staff, course and unit definitions are entered once.</p>
+    <p>Labs shares one database with <a href="/en/unvportal/exams/">UNVPortal Exams</a>; when deployed together, staff, course and unit definitions are entered once. <a href="/en/unvportal/quality/">UNVPortal Quality</a> runs on its own database and only reads those records.</p>
   </section>
 
   <section aria-labelledby="h-faq" class="read">
@@ -296,7 +300,7 @@
     <div class="faq">
       <details>
         <summary>Can we import our existing instrument list?</summary>
-        <p>An existing instrument list can be imported into UNVPortal Labs: instrument, consumable and laboratory lists held in spreadsheets are imported during deployment. Column mapping is agreed together during setup.</p>
+        <p>Existing lists are imported from an Excel file. The stock screen has a separate Excel upload button for instruments, glassware and consumables, and chemicals; the column names in the file's header row are mapped automatically (for instruments: name, make, model, serial number, location; for chemicals also CAS number, class, unit and critical quantity). We carry out the first import during deployment, after which an authorised user can upload at any time.</p>
       </details>
       <details>
         <summary>How many laboratories can be defined?</summary>

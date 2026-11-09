@@ -10,8 +10,8 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Kalite Yönetim ve Akreditasyon Sistemi — UNVPortal Quality</title>
-<meta name="description" content="Kurumun tamamının kullandığı kalite yönetim sistemi: personele görev atama ve kanıt yükleme, komisyon ve karar takibi, PUKÖ döngüsü, iç değerlendirme raporları.">
-<meta name="keywords" content="kalite yönetim sistemi, akreditasyon yazılımı, kalite güvence sistemi, iç değerlendirme raporu yazılımı, KİDR, BİDR, PUKÖ döngüsü, komisyon yönetimi, kanıt yönetimi, yükseköğretim kalite">
+<meta name="description" content="Kurumun tamamının kullandığı kalite yönetim sistemi: görev ve kanıt, DÖF ve risk, mevzuat etki analizi, iç denetim, iç değerlendirme raporu, denetçiye veri odası.">
+<meta name="keywords" content="kalite yönetim sistemi, akreditasyon yazılımı, kalite güvence sistemi, iç değerlendirme raporu yazılımı, KİDR, BİDR, PUKÖ döngüsü, DÖF yazılımı, düzeltici önleyici faaliyet, risk yönetimi yazılımı, mevzuat uyum takibi, iç denetim yazılımı, veri odası, komisyon yönetimi, kanıt yönetimi, yükseköğretim kalite">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Erimworks">
@@ -19,7 +19,7 @@
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:url" content="https://erimworks.com/unvportal/kalite/">
 <meta property="og:title" content="Kalite Yönetim ve Akreditasyon Sistemi — UNVPortal Quality">
-<meta property="og:description" content="Süreç, komisyon, karar, eylem ve kanıt yönetimi ile iç değerlendirme raporları.">
+<meta property="og:description" content="Görev ve kanıt, DÖF ve risk, mevzuat etki analizi, iç denetim ve kanıta bağlı iç değerlendirme raporu — tek sistemde.">
 <meta property="og:image" content="https://erimworks.com/assets/og-unvportal.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -27,7 +27,7 @@
 <meta name="twitter:image" content="https://erimworks.com/assets/og-unvportal.png">
 <meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0b0c10" media="(prefers-color-scheme: dark)">
-<link rel="stylesheet" href="/assets/site.css?v=65088472a1">
+<link rel="stylesheet" href="/assets/site.css?v=fa7cec1667">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -48,18 +48,30 @@
       "operatingSystem": "Web tarayıcısı",
       "url": "https://erimworks.com/unvportal/kalite/",
       "installUrl": "https://unvportal.com/giris/quality",
-      "description": "Kurumun tamamının kullandığı kalite yönetim sistemi. Akademik ve idari ayrımı olmadan her personel kendisine tanımlı görevi yerine getirir ve kanıtını yükler; komisyon, karar, PUKÖ döngüsü ve iç değerlendirme raporları aynı kayıttan yürür.",
+      "description": "Kurumun tamamının kullandığı kalite yönetim sistemi. Akademik ve idari ayrımı olmadan her personel kendisine tanımlı görevi yerine getirir ve kanıtını yükler; komisyon, karar, PUKÖ döngüsü ve iç değerlendirme raporları aynı kayıttan yürür. Uygunsuzluk ve düzeltici faaliyet, risk, mevzuat yükümlülükleri ve etki analizi, iç denetim, yönetimin gözden geçirmesi ve gösterge izleme aynı sistemin parçasıdır.",
       "inLanguage": [
         "tr",
         "en"
       ],
       "featureList": [
         "Tüm personele görev atama ve kanıt yükleme",
-        "Süreç ve komisyon yönetimi",
-        "Toplantı, karar ve eylem takibi",
+        "Süreç tanımlama, görsel modelleme, sürümleme ve performans ölçümü",
+        "Komisyon, toplantı, karar ve eylem takibi",
         "Kanıt dosyası yönetimi ve kayda bağlama",
         "PUKÖ döngüsü izleme",
-        "Birim ve kurum iç değerlendirme raporları"
+        "Uygunsuzluk ve düzeltici/önleyici faaliyet (DÖF); gecikme ve tekrar analizi",
+        "Risk ve fırsat yönetimi, risk ısı haritası",
+        "Mevzuat yükümlülük envanteri ve mevzuat değişikliği etki analizi",
+        "Standart sürüm karşılaştırma, madde soy ağacı, ölçüt eşlemesi ve boşluk analizi",
+        "İç denetim planı, kontrol listesi, bulgu ve saha çalışması",
+        "Yönetimin gözden geçirmesi",
+        "Gösterge ve hedef izleme",
+        "Toplantı tutanağından veri çıkarma (güven düzeyi ve sayfa konumuyla)",
+        "Kanıta bağlı, yeniden üretilebilir birim ve kurum iç değerlendirme raporları",
+        "Dış değerlendiriciye süreli ve izlenen veri odası erişimi",
+        "Mobil uygulamada saha denetimi, belge tarama ve çevrimdışı çalışma",
+        "SSO ile kimlik federasyonu, yetkinlik şartı ve vekâlet yönetimi",
+        "SFTP ve salt okunur veritabanı bağlayıcıları, kodsuz eşleme"
       ],
       "isPartOf": {
         "@type": "SoftwareApplication",
@@ -154,6 +166,38 @@
         },
         {
           "@type": "Question",
+          "name": "Uygunsuzluk (DÖF) ve risk yönetimi için ayrı bir yazılım gerekiyor mu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gerekmiyor. Uygunsuzluk kaydı, kök neden analizi, düzeltici ve önleyici faaliyetler, gecikme panosu ve tekrar analizi UNVPortal Quality'nin içindedir; riskler kurumun kendi matrisinde değerlendirilir ve ısı haritasında görülür. Denetim bulgusundan doğan DÖF aynı zincirde açılır, ayrı bir sisteme aktarılması gerekmez."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Raporu yapay zeka mı yazıyor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Raporun gerçekleri yapay zekadan gelmez. Rapor, kanıt kayıtlarından deterministik olarak üretilir: aynı veriden her seferinde aynı çıktı çıkar ve kanıtı olmayan iddia desteksiz işaretlendiği için rapor onaydan geçemez. Yapay zeka yalnız bu bulguları cümleye çevirip taslak olarak ekler; metnin kökeni görüntülenebilir ve insan onayı olmadan yayımlanamaz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dış değerlendiriciye belgeleri nasıl açıyoruz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Veri odası üzerinden. Dış değerlendiriciye kurumun sisteminde hesap açılmaz: davet bağlantısı, e-postasına gönderilen tek kullanımlık kod ve süreli bir oturumla yalnız kendisine açılan bölüm ve belgeleri görür. Her görüntüleme ve indirme kayda geçer; soru-cevap, ek kanıt talebi ve ziyaret takvimi aynı yerden yürür. Süre dolduğunda ya da erişim iptal edildiğinde oturum kapanır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mobil uygulama var mı?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Var; kurulumla birlikte kurumun ekibine dağıtılır. Mobil uygulamada denetçi sahada not düşer, uygunsuzluğu bulguya çevirir, kanıtı o anda iliştirir ve belgeyi telefon kamerasıyla tarayıp yükler. Bağlantı yoksa kayıt cihazda kuyruğa girer; uygulama gönderilmiş kayıtla sırada bekleyeni ayrı gösterir."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Fiyat nedir?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -186,7 +230,7 @@
       "workTranslation": {
         "@id": "https://erimworks.com/en/unvportal/quality/#webpage"
       },
-      "dateModified": "2026-11-03",
+      "dateModified": "2026-11-08",
       "speakable": {
         "@type": "SpeakableSpecification",
         "cssSelector": [
@@ -218,16 +262,25 @@
 </header>
 
 <main id="icerik" class="wrap">
-  <p class="crumbs"><a href="/">Erimworks</a><span>/</span><a href="/unvportal/">UNVPortal</a><span>/</span>Quality<span class="crumbs-date">Son güncelleme: <time datetime="2026-11-03">3 Kasım 2026</time></span></p>
+  <p class="crumbs"><a href="/">Erimworks</a><span>/</span><a href="/unvportal/">UNVPortal</a><span>/</span>Quality<span class="crumbs-date">Son güncelleme: <time datetime="2026-11-08">8 Kasım 2026</time></span></p>
 
   <div class="read">
     <h1>UNVPortal Quality: kanıtı oluştuğu anda toplar</h1>
-    <p class="lede">UNVPortal Quality, üniversiteler ve yükseköğretim kurumları için geliştirilmiş web tabanlı bir kalite yönetim ve akreditasyon sistemidir. Süreç ve komisyon tanımları, toplantı, karar ve eylem takibi, ölçüte bağlı kanıt yönetimi, PUKÖ döngüsü ve iç değerlendirme raporları aynı kayıttan yürür. Sistemi kurumun tamamı kullanır: akademik ve idari ayrımı olmadan her personel kendisine tanımlı görevi yapar ve kanıtını yükler. Rapor dönemi geldiğinde toplanacak yeni bir şey kalmaz.</p>
+    <p class="lede">UNVPortal Quality, üniversiteler ve yükseköğretim kurumları için geliştirilmiş web tabanlı bir kalite yönetim ve akreditasyon sistemidir. Süreç ve komisyon tanımları, toplantı, karar ve eylem takibi, ölçüte bağlı kanıt yönetimi, PUKÖ döngüsü ve iç değerlendirme raporları aynı kayıttan yürür. Uygunsuzluk ve düzeltici faaliyet, risk, mevzuat yükümlülükleri, iç denetim, yönetimin gözden geçirmesi ve gösterge izleme de aynı sistemin parçasıdır. Sistemi kurumun tamamı kullanır: akademik ve idari ayrımı olmadan her personel kendisine tanımlı görevi yapar ve kanıtını yükler. Rapor dönemi geldiğinde toplanacak yeni bir şey kalmaz.</p>
     <div class="actions">
       <!--email_off--><a class="btn btn-primary" href="mailto:contact@erimworks.com?subject=UNVPortal%20Quality%20sunum%20talebi">Sunum talep edin</a><!--/email_off-->
       <a class="btn btn-quiet" href="https://unvportal.com/giris/quality" rel="noopener">Kullanıcı girişi</a>
     </div>
     <p class="small" style="margin-top:14px">Bu modül daha önce <strong>QualityOS</strong> adıyla anılıyordu.</p>
+    <nav class="small muted" aria-label="Bu sayfada" style="margin-top:18px">Bu sayfada:
+      <a href="#h-neyapar">Ne yapar</a> ·
+      <a href="#h-dof">Uygunsuzluk, risk ve iç denetim</a> ·
+      <a href="#h-mevzuat">Mevzuat ve standart takibi</a> ·
+      <a href="#h-rapor">Rapor ve veri odası</a> ·
+      <a href="#h-mobil">Sahada ve telefonda</a> ·
+      <a href="#h-isletim">Yetki ve entegrasyon</a> ·
+      <a href="#h-sss">Sık sorulanlar</a>
+    </nav>
   </div>
 
   <section aria-labelledby="h-nedir" class="read">
@@ -258,8 +311,12 @@
     <p>Ölçütten doğan iş, sorumlu personele görev olarak düşer. Kişi kendi ekranında ne yapması gerektiğini, süresini ve hangi kanıtın beklendiğini görür; işi yaptığında kanıtı oraya yükler. Kanıt yüklenmemiş görev kapanmaz ve birim raporunda eksik görünür.</p>
     <p>Kurumun tamamı aynı ekranı kullandığı için kalite verisi tek bir birimin dönem sonu çabasına bağlı kalmaz: iş yapıldığı anda kaydedilir. Kimin hangi görevi ne zaman tamamladığı denetim kaydında durur.</p>
 
-    <h3>Süreç ve komisyon yönetimi</h3>
-    <p>Kurumun süreçleri sahibi, girdisi ve çıktısıyla tanımlanır. Komisyonlar üyeleri, görev tanımı ve toplantı takvimiyle kurulur; bir kişinin hangi komisyonlarda yer aldığı tek ekranda görünür.</p>
+    <h3>Süreç yönetimi</h3>
+    <p>Kurumun süreçleri sahibi, girdisi ve çıktısıyla tanımlanır ve sürümlenir; akış tarayıcıdaki tuvalde çizilir. Süreç kataloğu kimin hangi süreçten sorumlu olduğunu ve süreçler arası bağımlılıkları gösterir. İşleyen süreçler örnek olarak izlenir.</p>
+    <p>Performans panosunda hedef karşılama oranı, gözlem sayısı ve veri kalitesi ayrı sütunlarda durur: ölçümün kendisinde bir sorun varsa bu, performans düşüşü gibi okunmaz. Gözden geçirme tarihi gelen süreçler kuyruğa düşer ve kampanya olarak toplu yürütülür — bir sürecin gözden geçirme tarihinin sessizce geçmesi mümkün olmaz.</p>
+
+    <h3>Komisyon yönetimi</h3>
+    <p>Komisyonlar üyeleri, görev tanımı ve toplantı takvimiyle kurulur; bir kişinin hangi komisyonlarda yer aldığı tek ekranda görünür.</p>
 
     <h3>Toplantı, karar ve eylem</h3>
     <p>Toplantı gündemi hazırlanır, karar tutanağa yazılır ve karardan doğan eylem sorumlusuyla, hedef tarihiyle birlikte açılır. Süresi geçen eylemler ayrı listede toplanır. Bir sonraki toplantının gündemi önceki toplantının açık eylemleriyle başlar.</p>
@@ -274,6 +331,83 @@
     <p>Rapor şablonu ölçüt başlıklarıyla kurulur. Her başlığa bağlı kanıtlar ve göstergeler sistemden gelir, metin alanları birim tarafından doldurulur. Birim raporları kurum raporunda toplanır; hangi birimin hangi başlığı boş bıraktığı listelenir.</p>
   </section>
 
+
+  <section aria-labelledby="h-dof" class="read">
+    <div class="section-head">
+      <h2 id="h-dof">Uygunsuzluk, risk ve iç denetim</h2>
+      <p>Kalite yönetimi yalnız kanıt toplamak değildir: bir şey yanlış gittiğinde ne yapıldığının da kaydı tutulur.</p>
+    </div>
+
+    <h3>Uygunsuzluk ve düzeltici faaliyet (DÖF)</h3>
+    <p>Denetimden, şikâyetten ya da bir göstergenin hedefi kaçırmasından doğan uygunsuzluk kayda girer: kaynağı, ciddiyeti, sınıfı ve sorumlusuyla. Kök neden analizi bir yöntemle yürütülür; düzeltici ve önleyici faaliyetler buna bağlanır. Kapanış bir kapıdan geçer: etkinliği doğrulanmamış DÖF kapanmaz.</p>
+    <p>Geciken ve son tarihi yaklaşan DÖF'ler kalan gün sayısıyla ayrı panoda toplanır. Tekrar analizi, aynı uygunsuzluğun hangi süreçte kaçıncı kez çıktığını gösterir — tekrar eden bir uygunsuzluk, kapatılmış sayılan bir düzeltmenin işe yaramadığının kanıtıdır.</p>
+
+    <h3>Risk ve fırsat</h3>
+    <p>Riskler kurumun kendi matrisinde değerlendirilir ve ısı haritasında görülür; fırsatlar ayrı listede tutulur. Risk de kapanırken bir kapıdan geçer.</p>
+
+    <h3>İç denetim</h3>
+    <p>Denetim planı, kontrol listesi şablonu ve denetçi ataması sistemde kurulur. Saha çalışmasında not düşülür, uygunsuzluk bulguya çevrilir, kanıt iliştirilir; bulgudan doğan DÖF aynı zincirde açılır. Dış değerlendiriciye verilecek paket plandan tek seferde derlenir.</p>
+
+    <h3>Yönetimin gözden geçirmesi</h3>
+    <p>Toplantı gündemi şablondan kurulur ve girdileri sistemden gelir: göstergeler, açık DÖF'ler, denetim bulguları, riskler. Çıkan kararlar eylem olarak açılır ve diğer eylemlerle aynı takibe girer.</p>
+
+    <h3>Gösterge izleme</h3>
+    <p>Göstergeler hedefi, birimi ve dönemiyle tanımlanır; trend dönemler arasında görülür. PUKÖ kapanış kontrolü, iyileştirmenin ardından göstergenin gerçekten kıpırdayıp kıpırdamadığına bakar.</p>
+  </section>
+
+  <section aria-labelledby="h-mevzuat" class="read">
+    <div class="section-head">
+      <h2 id="h-mevzuat">Mevzuat ve standart takibi</h2>
+      <p>Kurumu bağlayan metin değişince neyin etkilendiğini elde aramak zorunda kalmamak için.</p>
+    </div>
+
+    <h3>Yükümlülük envanteri</h3>
+    <p>Kurumu bağlayan mevzuat maddeleri yükümlülük olarak kaydedilir: sahibi, değerlendirme takvimi ve beklenen kanıtla. Matris hangi yükümlülüğün hangi süreç ve ölçütle eşleştiğini gösterir; hazır olma göstergesi hangi yükümlülüğün kanıtsız kaldığını söyler.</p>
+
+    <h3>Mevzuat değişikliği ve etki analizi</h3>
+    <p>İzlenen kaynakta bir değişiklik olduğunda kayıt açılır ve ilgili maddelerle eşleştirilir. Kabul edilmeden önce etki önizlemesi alınır: bu değişiklik hangi yükümlülükleri, süreçleri ve ölçütleri etkiliyor. Kabulle birlikte etki kayıtları üretilir ve sorumlulara bildirim gider.</p>
+    <p>Kabul ayrı bir yetkidir ve yalnız yetki sahibi olmak yetmez: kabul eden kişi, değişikliği sisteme girenden farklı olmak ve etkilenen kayıtların sahibi olmak zorundadır. Bir kişinin kendi girdiği değişikliği tek başına kabul etmesi mümkün değildir.</p>
+
+    <h3>Standart sürümleri ve ölçüt eşlemesi</h3>
+    <p>Bir standardın iki sürümü karşılaştırılır ve değişen maddeler çıkarılır; madde soy ağacı bir maddenin önceki sürümdeki karşılığını zincirle gösterir. İki ölçüt seti arasında eşleme kurulur, boşluk analizi hangi ölçütün karşılıksız kaldığını listeler — bir akreditasyondan diğerine geçerken hangi kanıtın yeniden kullanılabileceği böyle görülür.</p>
+    <p class="small muted">Karşılaştırma çıktısı hiçbir yükümlülüğü kendiliğinden değiştirmez: makine önerir, insan yayımlar.</p>
+  </section>
+
+  <section aria-labelledby="h-rapor" class="read">
+    <div class="section-head">
+      <h2 id="h-rapor">Kanıtı okumak, raporu üretmek, denetçiye açmak</h2>
+    </div>
+
+    <h3>Tutanaktan veri çıkarma</h3>
+    <p>Taranmış toplantı tutanağı yüklendiğinde kararlar, katılımcılar ve eylemler alan alan çıkarılır; her alanın güven düzeyi ve belgedeki sayfa konumu gösterilir. Güven düşükse eşleşmeyi insan seçer. Çıkarımı başlatmak, görmek ve içe aktarmak ayrı yetkilerdir; çıkarım hiçbir şeyi kesinleştirmez — toplantıyı kapatmak ya da kararı resmîleştirmek başka bir yetkinin işidir.</p>
+
+    <h3>Rapor üretimi</h3>
+    <p>Rapor, kanıt kayıtlarından deterministik olarak üretilir: aynı veriden her seferinde aynı çıktı çıkar. Her iddia bir ölçüt maddesine ve en az bir kanıta bağlanır; kanıtı olmayan iddia desteksiz işaretlenir ve rapor doğrulamadan geçmez. "Henüz ölçülmedi" ile "ölçüldü, karşılanmadı" ayrı durumlardır ve ikincisi gizlenmez.</p>
+    <p>Yapay zeka rapor metni yazabilir, ama raporun gerçeklerini o üretmez: deterministik motorun çıkardığı bulguları cümleye çevirir ve taslak iddia olarak ekler. Metnin kökeni görüntülenebilir, insan onayı olmadan yayımlanamaz, kanıtsız iddia zaten onaydan geçmez.</p>
+
+    <h3>Veri odası</h3>
+    <p>Dış değerlendiriciye kurumun sisteminde hesap açılmaz. Davet bağlantısı, e-postasına gönderilen tek kullanımlık kod ve süreli bir oturumla yalnız kendisine açılan bölüm ve belgeleri görür; her görüntüleme ve her indirme kayda geçer. Soru sorar — kurum cevabı onayladığında yayımlanır; ek kanıt talep eder; ziyaret takvimini görür. Süre dolduğunda ya da erişim iptal edildiğinde oturum anında kapanır.</p>
+  </section>
+
+  <section aria-labelledby="h-mobil" class="read">
+    <div class="section-head"><h2 id="h-mobil">Sahada ve telefonda</h2></div>
+    <p>Kalite çalışmasının bir kısmı masa başında olmaz. Mobil uygulamada denetçi sahada not düşer, uygunsuzluğu bulguya çevirir ve kanıtı o anda iliştirir; belgeyi telefon kamerasıyla tarayıp yükler. Görev, kanıt, toplantı ve karar takibi de telefonda görülür.</p>
+    <p>Bağlantı yoksa kayıt cihazda kuyruğa girer ve ağ gelince gönderilir. Uygulama <strong>gönderilmiş kayıtla sırada bekleyeni ayrı gösterir</strong>: ikisini aynı işaretle göstermek, denetçiye yapmadığı bir şeyi yaptı sandırırdı. Sunucudaki kayıt arada değiştiyse çakışma kullanıcıya sorulur, sessizce üzerine yazılmaz.</p>
+  </section>
+
+  <section aria-labelledby="h-isletim" class="read">
+    <div class="section-head"><h2 id="h-isletim">Yetki, kimlik ve entegrasyon</h2></div>
+
+    <h3>Yetki ve kimlik</h3>
+    <p>Yetkiler bir yetki kataloğu üzerinden verilir. Kurum kendi kimlik sağlayıcısıyla (SSO) bağlanır; kullanıcı eşlemesi ve rol kuralları tanımlanır, federasyon oturumları ve kimlik denetim olayları görülür.</p>
+
+    <h3>Yetkinlik ve vekâlet</h3>
+    <p>Bir göreve yetkinlik şartı konulabilir: şartı karşılamayan kişi o işi alamaz ve bu engel kayda geçer. Yetkinlik belgelerinin süresi dolmadan önce uyarı çıkar. İzin ya da görevlendirme halinde yetki süreli olarak vekile devredilir; olağandışı erişim ayrı kayda geçer ve sonradan incelenir.</p>
+
+    <h3>Bağlayıcılar</h3>
+    <p>Kurumdaki diğer sistemlerden veri almak için SFTP dosya aktarımı ve salt okunur veritabanı görünümü bağlanır; eşleme kod yazmadan kurulur. Bağlantıların sağlığı, hataları ve işlenemeyen kayıtları ayrı ekranda izlenir.</p>
+  </section>
+
   <section aria-labelledby="h-dongu" class="read">
     <div class="section-head"><h2 id="h-dongu">Rapor dönemi neden sıkışıyor</h2></div>
     <table class="kiyas">
@@ -283,6 +417,9 @@
       <tr><td>Kanıt belgeleri rapor haftasında toplanıyor</td><td>Kanıt oluştuğu anda ölçüte bağlanıyor</td></tr>
       <tr><td>Aynı belge birden çok birimde ayrı ayrı duruyor</td><td>Tek kayda birden çok ölçütten bağlantı</td></tr>
       <tr><td>İyileştirmenin sonucu ölçülmüyor</td><td>PUKÖ kontrol aşaması olmadan eylem kapanmıyor</td></tr>
+      <tr><td>Aynı uygunsuzluk her denetimde yeniden çıkıyor</td><td>Tekrar analizi kaçıncı kez çıktığını gösteriyor</td></tr>
+      <tr><td>Mevzuat değişince etkisi tek tek elde aranıyor</td><td>Değişiklik maddelerle eşleşiyor, etkilenen süreç ve ölçütler listeleniyor</td></tr>
+      <tr><td>Denetçiye belgeler klasör ya da e-posta ekiyle gönderiliyor</td><td>Veri odasından süreli, yalnız açılan belgelerle ve izlenen erişim</td></tr>
     </table>
   </section>
 
@@ -317,6 +454,22 @@
         <p>UNVPortal Quality'de iç değerlendirme raporu sistemde derleniyor ve dışa aktarılıyor. Kurumun istediği başlık düzeni şablonda tanımlanıyor.</p>
       </details>
       <details>
+        <summary>Uygunsuzluk (DÖF) ve risk yönetimi için ayrı bir yazılım gerekiyor mu?</summary>
+        <p>Gerekmiyor. Uygunsuzluk kaydı, kök neden analizi, düzeltici ve önleyici faaliyetler, gecikme panosu ve tekrar analizi UNVPortal Quality'nin içindedir; riskler kurumun kendi matrisinde değerlendirilir ve ısı haritasında görülür. Denetim bulgusundan doğan DÖF aynı zincirde açılır, ayrı bir sisteme aktarılması gerekmez.</p>
+      </details>
+      <details>
+        <summary>Raporu yapay zeka mı yazıyor?</summary>
+        <p>Raporun gerçekleri yapay zekadan gelmez. Rapor, kanıt kayıtlarından deterministik olarak üretilir: aynı veriden her seferinde aynı çıktı çıkar ve kanıtı olmayan iddia desteksiz işaretlendiği için rapor onaydan geçemez. Yapay zeka yalnız bu bulguları cümleye çevirip taslak olarak ekler; metnin kökeni görüntülenebilir ve insan onayı olmadan yayımlanamaz.</p>
+      </details>
+      <details>
+        <summary>Dış değerlendiriciye belgeleri nasıl açıyoruz?</summary>
+        <p>Veri odası üzerinden. Dış değerlendiriciye kurumun sisteminde hesap açılmaz: davet bağlantısı, e-postasına gönderilen tek kullanımlık kod ve süreli bir oturumla yalnız kendisine açılan bölüm ve belgeleri görür. Her görüntüleme ve indirme kayda geçer; soru-cevap, ek kanıt talebi ve ziyaret takvimi aynı yerden yürür. Süre dolduğunda ya da erişim iptal edildiğinde oturum kapanır.</p>
+      </details>
+      <details>
+        <summary>Mobil uygulama var mı?</summary>
+        <p>Var; kurulumla birlikte kurumun ekibine dağıtılır. Mobil uygulamada denetçi sahada not düşer, uygunsuzluğu bulguya çevirir, kanıtı o anda iliştirir ve belgeyi telefon kamerasıyla tarayıp yükler. Bağlantı yoksa kayıt cihazda kuyruğa girer; uygulama gönderilmiş kayıtla sırada bekleyeni ayrı gösterir.</p>
+      </details>
+      <details>
         <summary>Fiyat nedir?</summary>
         <p>UNVPortal Quality fiyatı kurumsal lisans modelindedir; kullanıcı sayısı ve seçilen modüllere göre teklif ile belirleniyor. Teklif ve canlı sunum için <!--email_off-->contact@erimworks.com<!--/email_off--> adresine iletebilirsiniz.</p>
       </details>
@@ -337,7 +490,7 @@
 
   <section class="read">
     <h2 lang="en">In English</h2>
-    <p class="en" lang="en"><a href="/en/unvportal/quality/" hreflang="en">Read this page in English</a> · UNVPortal Quality is a quality management system for higher education institutions. It defines processes and committees, records meetings, decisions and the actions arising from them, and keeps evidence as records linked to criteria rather than as files scattered across folders. Every action passes through a plan, do, check and act cycle and cannot close until a measurement is entered. Unit and institutional self-assessment reports are assembled from that same data. Previously referred to as QualityOS. For pricing or a live demo, write to <!--email_off--><a href="mailto:contact@erimworks.com">contact@erimworks.com</a><!--/email_off-->.</p>
+    <p class="en" lang="en"><a href="/en/unvportal/quality/" hreflang="en">Read this page in English</a> · UNVPortal Quality is a quality management system for higher education institutions. It defines processes and committees, records meetings, decisions and the actions arising from them, and keeps evidence as records linked to criteria rather than as files scattered across folders. Every action passes through a plan, do, check and act cycle and cannot close until a measurement is entered. Unit and institutional self-assessment reports are assembled from that same data, deterministically: a claim without evidence is marked unsupported and the report cannot pass validation. Nonconformities and corrective actions, risk, regulatory obligations and change impact analysis, internal audit, management review and indicator tracking are part of the same system, as is a data room that gives an external assessor time-limited, audited access without an account on the institution's system. Previously referred to as QualityOS. For pricing or a live demo, write to <!--email_off--><a href="mailto:contact@erimworks.com">contact@erimworks.com</a><!--/email_off-->.</p>
   </section>
 
 </main>

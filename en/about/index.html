@@ -26,7 +26,7 @@
 <meta name="twitter:image" content="https://erimworks.com/assets/og-erimworks.png">
 <meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0b0c10" media="(prefers-color-scheme: dark)">
-<link rel="stylesheet" href="/assets/site.css?v=65088472a1">
+<link rel="stylesheet" href="/assets/site.css?v=fa7cec1667">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -104,7 +104,7 @@
   <p class="crumbs"><a href="/en/">Erimworks</a><span>/</span>About<span class="crumbs-date">Last updated: <time datetime="2026-11-04">4 November 2026</time></span></p>
   <div class="read">
     <h1>About Erimworks</h1>
-    <p class="lede">Erimworks is an independent software studio based in Türkiye. It develops 5 management platforms that run institutional processes on a single database for universities, medical tourism clinics and schools, and publishes 8 mobile apps on the App Store and Google Play under the developer name <strong>Erimworks</strong>. Design, development, deployment and support are handled directly by the founder.</p>
+    <p class="lede">Erimworks is an independent software studio based in Türkiye. It develops 5 multi-tenant management platforms that run institutional processes for universities, medical tourism clinics and schools, and publishes 8 mobile apps on the App Store and Google Play under the developer name <strong>Erimworks</strong>. Design, development, deployment and support are handled directly by the founder.</p>
 
     <h2 id="h-what">What we build</h2>
     <p>Erimworks builds two kinds of product: browser-based B2B platforms through which institutions run their own processes, and mobile apps for end users.</p>
@@ -113,7 +113,7 @@
       <tbody>
         <tr><td><a href="/en/unvportal/labs/">UNVPortal Labs</a></td><td>University and research laboratories</td><td>Laboratory management system (LIMS): samples, instrument booking, consumable stock, attendance</td></tr>
         <tr><td><a href="/en/unvportal/exams/">UNVPortal Exams</a></td><td>Faculties and colleges</td><td>Question bank, booklet generation, optical marking, learning and programme outcome analysis</td></tr>
-        <tr><td><a href="/en/unvportal/quality/">UNVPortal Quality</a></td><td>Quality coordination offices</td><td>Evidence collection, committee and decision tracking, the PDCA cycle, self-assessment reports</td></tr>
+        <tr><td><a href="/en/unvportal/quality/">UNVPortal Quality</a></td><td>Quality coordination offices</td><td>Tasks and evidence, corrective action and risk, regulatory impact analysis, internal audit, self-assessment reports</td></tr>
         <tr><td><a href="/en/medical-tourism/">International Patient OS</a></td><td>Clinics treating patients from abroad</td><td>One inbox, case record, surgery and travel planning, per-case finance, incentive files</td></tr>
         <tr><td><a href="/en/school-management/">KursOS</a></td><td>Art, music and language schools</td><td>Lesson schedule, packages and waitlists, parent portal, collections and teacher earnings; white-label</td></tr>
         <tr><td><a href="/testroster/" hreflang="tr">TestRoster</a></td><td>Android developers</td><td>Finds testers for Google Play 14-day closed tests and produces a measurable test file</td></tr>
@@ -125,7 +125,7 @@
     <ul>
       <li><strong>One deployment per institution.</strong> Every B2B deployment is configured around the institution's unit structure, business rules and permission scheme. The licence is quoted based on user count and selected modules, and runs in the cloud or on the institution's own server.</li>
       <li><strong>Tenant isolation at database level.</strong> Each institution's data is held in its own tenant record; the separation is enforced not in application code but in the database's row-level security (RLS) rules.</li>
-      <li><strong>One database, several modules.</strong> UNVPortal's Labs, Exams and Quality modules read unit, staff and course definitions once; the same data is not entered twice. Modules can be licensed separately.</li>
+      <li><strong>Define once, every module reads it.</strong> UNVPortal's Labs and Exams modules read unit, staff and course definitions from the same database; Quality runs on its own database and only reads those records. The same data is not entered twice, and modules can be licensed separately.</li>
       <li><strong>Two interface languages.</strong> The platforms ship with Turkish and English interfaces; the legal texts of the mobile apps are published in up to 18 languages.</li>
       <li><strong>Response time.</strong> Institutional enquiries are answered within a business day, app support requests within two, through <!--email_off--><a href="mailto:contact@erimworks.com">contact@erimworks.com</a><!--/email_off-->.</li>
     </ul>

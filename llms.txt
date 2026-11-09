@@ -19,7 +19,7 @@
 - [ChemBioCalc](https://erimworks.com/chembiocalc/): Chemistry, molecular biology and pharmacy calculators for the lab. iOS and Android. Product site: https://chembiocalc.com
 - [Dozify](https://dozify.app): GLP-1 dose, weight and meal tracker. iOS. Product site: https://dozify.app
 - [Scanyra](https://erimworks.com/scanyra/): Document scanner that produces multi-page PDFs from the phone camera. iOS and Android. Formerly Scanlyte.
-- [QRwise](https://erimworks.com/qrwise/): QR code reader and generator. iOS.
+- [QRwise](https://erimworks.com/qrwise/): QR code generator and reader. Codes never expire: no account, no redirect server, the content lives in the code itself. iOS and Android. App Store: https://apps.apple.com/app/id6785031754 · Google Play: https://play.google.com/store/apps/details?id=com.uerim.qrwise
 - [Owndex](https://erimworks.com/owndex/): Warranty, return-window and receipt tracker. iOS.
 - [Match Manor](https://erimworks.com/match-manor/): Match puzzle game. iOS and Android.
 - [AstroRota](https://erimworks.com/astrorota/): Void-of-course Moon intervals, planetary retrogrades and Moon phases in the user's time zone, based on NASA JPL ephemeris data.

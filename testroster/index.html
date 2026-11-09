@@ -7,14 +7,14 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TestRoster — Run your 14-day closed test end to end</title>
-<meta name="description" content="Find testers for your Google Play closed test, measure who actually tested on which day, and finish with a verifiable report.">
+<meta name="description" content="Find testers for your Google Play closed test, measure who actually tested on which day, and finish with an immutable test dossier, a readiness score and dropout alerts.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Erimworks">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="tr_TR">
 <meta property="og:url" content="https://erimworks.com/testroster/">
 <meta property="og:title" content="TestRoster — Run your 14-day closed test end to end">
-<meta property="og:description" content="Find testers for your Google Play closed test, measure who actually tested on which day, and finish with a verifiable report.">
+<meta property="og:description" content="Measure who actually tested on which day, and finish with an immutable test dossier, a readiness score and dropout alerts.">
 <meta property="og:image" content="https://erimworks.com/assets/og-erimworks.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -22,7 +22,7 @@
 <meta name="twitter:image" content="https://erimworks.com/assets/og-erimworks.png">
 <meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0b0c10" media="(prefers-color-scheme: dark)">
-<link rel="stylesheet" href="/assets/site.css?v=65088472a1">
+<link rel="stylesheet" href="/assets/site.css?v=fa7cec1667">
 <style>
   /* Sayfanın BİRİNCİL dili artık İngilizce; paylaşılan stil `.en`i
      ikincil dil sayıp soluklaştırıyor. Yalnızca bu sayfalarda geri
@@ -52,8 +52,11 @@
         "Shared Google Group tester list",
         "Opt-in link verified against package name",
         "Per-day, per-tester testing time",
-        "Dropout alerts (Pro)",
-        "Verifiable test dossier"
+        "Immutable test dossier, with JSON and CSV export on paid plans",
+        "Readiness score over six signals, with blockers listed separately",
+        "Dropout risk levels with a grace window (Pro)",
+        "Replacement tester requests ranked by reliability (Pro)",
+        "Screen and flow coverage analysis (Studio)"
       ],
       "author": {
         "@type": "Person",
@@ -164,6 +167,18 @@
   <p class="en">If the tester allows it, time spent in the tested app is measured with Android usage statistics. Without permission the tester starts the timer manually and the record is marked "low confidence". Uploading a screenshot does not count as testing.</p>
   <p class="en">The app does <strong>not</strong> read other apps' screen content and does not use AccessibilityService.</p>
 
+  <h2 class="en">The test dossier</h2>
+  <p class="en">What the 14 days produced becomes a file: who tested and on which days, how long for, which screens and flows were reached, what was reported and what was resolved. It is generated on the server and cannot be edited afterwards. Community gets the summary; full JSON and CSV export belongs to the paid plans.</p>
+  <p class="en">It is <strong>a summary of what happened</strong> — a record for you and your team, not a document to submit to Google.</p>
+
+  <h2 class="en">Readiness score</h2>
+  <p class="en">Six signals are scored from your own campaign: screen and flow coverage, testing continuity, tester reliability, critical bug status, feedback resolution and build stability. Blockers are listed separately rather than buried in the number — unresolved critical bugs, too few active testers, broken continuity, no feedback at all, campaign not finished.</p>
+  <p class="en">The score is a quality indicator drawn from testing data inside TestRoster. <strong>It has no relation to Google Play's review decision</strong>, and that sentence is shown beside the number every time it appears.</p>
+
+  <h2 class="en">When a tester goes quiet</h2>
+  <p class="en">On the paid plans each tester carries a risk level — low, medium, high, or confirmed dropout — recalculated from actual testing activity, with a grace window so somebody who joined yesterday is not judged for it. The thresholds are data, not code, so they can be tuned without a release.</p>
+  <p class="en">Once a dropout is confirmed, a replacement request opens. Candidates are ranked by reliability, the most urgent request is filled first, and a slot cannot be filled twice. Community does not get this: it sees the tester count and nothing more.</p>
+
   <h2 class="en">Plans</h2>
   <p class="en"><strong>Community (free):</strong> 1 app, 14 testers, a 14-day campaign, daily tracking and the test dossier. <strong>Pro ($9.99/mo):</strong> 3 apps, dropout alerts, replacement tester flow. <strong>Studio ($24.99/mo):</strong> 10 apps, team seats, screen coverage analysis. Yearly gives you two months free. Play shows the amount you actually pay in your own currency. Subscriptions renew automatically; terms are in the <a href="terms">Terms of Use</a>.</p>
 
@@ -188,7 +203,7 @@
 
 </section>
 
-  <hr style="border:none;border-top:1px solid var(--line);margin:40px 0">
+  <hr>
 
 <section lang="tr" id="tr" aria-labelledby="h-tr">
   <h2 id="h-tr">TestRoster</h2>
@@ -210,6 +225,18 @@
   <h2>Süre nasıl ölçülüyor</h2>
   <p>Tester izin verirse test edilen uygulamada geçen süre Android'in kullanım istatistikleriyle ölçülür. İzin vermeyen tester süreyi elle başlatır ve kayıt "düşük güven" olarak işaretlenir. Ekran görüntüsü yükleyip "test ettim" demenin bir karşılığı yoktur.</p>
   <p>Uygulama başka uygulamaların ekran içeriğini <strong>okumaz</strong>; AccessibilityService kullanılmaz.</p>
+
+  <h2>Test dosyası</h2>
+  <p>On dört günün ürettiği şey bir dosyaya dönüşür: kim hangi gün ne kadar test etti, hangi ekran ve akışlara ulaşıldı, ne raporlandı, neyi çözdünüz. Dosya sunucuda üretilir ve sonradan değiştirilemez. Community özetini alır; tam JSON ve CSV dışa aktarma ücretli planlara aittir.</p>
+  <p>Bu dosya <strong>olanın özetidir</strong> — size ve ekibinize ait bir kayıt, Google'a sunulacak bir belge değil.</p>
+
+  <h2>Hazırlık skoru</h2>
+  <p>Kendi kampanyanızdan altı sinyal puanlanır: ekran ve akış kapsamı, test devamlılığı, tester güvenilirliği, kritik bug durumu, geri bildirim çözümü ve sürüm kararlılığı. Engelleyiciler sayının içinde kaybolmaz, ayrı listelenir: çözülmemiş kritik bug, hedefin altında aktif tester, kırılmış devamlılık, hiç gelmemiş geri bildirim, tamamlanmamış kampanya.</p>
+  <p>Skor, TestRoster içindeki test verilerine dayanan bir kalite göstergesidir. <strong>Google Play'in inceleme kararıyla ilgisi yoktur</strong> ve bu cümle skorun göründüğü her yerde sayının yanında durur.</p>
+
+  <h2>Tester sessizleşince</h2>
+  <p>Ücretli planlarda her tester bir risk seviyesi taşır — düşük, orta, yüksek ya da kesinleşmiş ayrılma. Seviye gerçek test etkinliğinden yeniden hesaplanır ve yeni katılan biri hemen yargılanmasın diye bir tolerans penceresi vardır. Eşikler kodda değil veride tutulur, yani yeni sürüm beklemeden ayarlanabilir.</p>
+  <p>Ayrılma kesinleşince yedek tester talebi açılır. Adaylar güvenilirliğe göre sıralanır, en acil talep önce dolar ve bir slot iki kez doldurulamaz. Community'de bu yoktur: yalnız tester sayacını görür.</p>
 
   <h2>Planlar</h2>
   <p><strong>Community (ücretsiz):</strong> 1 uygulama, 14 tester, 14 günlük kampanya, günlük takip ve test dosyası. <strong>Pro ($9,99/ay):</strong> 3 uygulama, tester düşüş uyarıları, yedek tester akışı. <strong>Studio ($24,99/ay):</strong> 10 uygulama, ekip koltuğu, ekran kapsamı analizi. Yıllık alırsan iki ay bedava. Ödeyeceğin tutarı kendi para biriminde Play gösterir. Abonelikler otomatik yenilenir; koşullar <a href="terms">Kullanım Koşulları</a>'nda.</p>

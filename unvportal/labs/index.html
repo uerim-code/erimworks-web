@@ -27,7 +27,7 @@
 <meta name="twitter:image" content="https://erimworks.com/assets/og-unvportal.png">
 <meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0b0c10" media="(prefers-color-scheme: dark)">
-<link rel="stylesheet" href="/assets/site.css?v=65088472a1">
+<link rel="stylesheet" href="/assets/site.css?v=fa7cec1667">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -124,7 +124,7 @@
           "name": "Mevcut cihaz listemizi aktarabilir miyiz?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Mevcut cihaz listesi UNVPortal Labs'e aktarılabilir: elektronik tablo halindeki cihaz, sarf ve laboratuvar listeleri kurulum sırasında içe aktarılıyor. Sütun eşlemesi kurulum sırasında birlikte belirlenir."
+            "text": "Mevcut listeler Excel dosyasından içe aktarılır. Stok ekranında cihaz, cam/sarf malzeme ve kimyasal listeleri için ayrı ayrı Excel yükleme düğmesi vardır; dosyanın başlık satırındaki sütun adları eşlenir (cihazda ad, marka, model, seri no, konum; kimyasalda ayrıca CAS no, sınıf, birim ve kritik miktar). İlk aktarımı kurulum sırasında biz yaparız, sonrasında yetkili kullanıcı istediği zaman kendisi yükler."
           }
         },
         {
@@ -255,7 +255,7 @@
     <p>Her laboratuvar birim ağacına bağlanır. Ders, deney haftalarına ve her hafta kendi aktivitelerine ayrılır; aktiviteye PDF ya da Word şablonu eklenir, öğrenci oturum öncesinde erişir. Her öğrenciye QR etiketli ayrı bir numune atanır: numunenin gerçek değeri ve kabul toleransı önceden tanımlıdır.</p>
 
     <h3>Cihaz rezervasyonu ve onay akışı</h3>
-    <p>Cihazlar konumu, çalışma saatleri ve günlük ya da saatlik rezervasyon moduyla tanımlanır; bakıma alınan günler müsait olmayan tarih olarak işaretlenir. Anabilim dalı için paylaşılabilir bir bağlantı üretilir, böylece kurum dışından da talep alınır. Gelen talep onay kuyruğuna düşer; tek tek ya da toplu onaylanır, reddedilirse gerekçesi kaydedilir. Randevu öncesi hatırlatma otomatik gider, kullanım sonrası kayıt tutulur ve dönem sonunda cihaz başına kullanım raporu alınır.</p>
+    <p>Cihazlar konumu, çalışma saatleri ve günlük ya da saatlik rezervasyon moduyla tanımlanır; bakıma alınan günler müsait olmayan tarih olarak işaretlenir. Anabilim dalı için paylaşılabilir bir bağlantı üretilir, böylece kurum dışından da talep alınır. Gelen talep onay kuyruğuna düşer; tek tek ya da toplu onaylanır, reddedilirse gerekçesi kaydedilir. Onaylı randevulardan bir gün önce hatırlatma e-postası gider; kurulumda zamanlanan görev gönderir, gerekirse yönetim ekranından tek tek ya da toplu olarak elle de gönderilir. Kullanım sonrası kayıt tutulur ve dönem sonunda cihaz başına kullanım raporu alınır.</p>
 
     <h3>Sarf malzeme stoğu</h3>
     <p>Giriş, çıkış ve sayım kayıtları tutulur. Kritik seviyenin altına düşen malzeme listelenir, tüketim geçmişi satın alma planı için dışa aktarılır. Lot ve son kullanma tarihi olan malzemelerde süresi geçenler ayrılır.</p>
@@ -265,6 +265,10 @@
 
     <h3>Akademik uygulama ve yoklama</h3>
     <p>Ders programına bağlı uygulama oturumları açılır, katılım oturuma işlenir. Dönem sonunda öğrenci bazında katılım sayısı ve devam durumu rapor olarak alınır.</p>
+
+    <h3>Cihaz başında telefonla</h3>
+    <p>Labs'ın saha uygulaması <a href="/chembiocalc/">ChemBioCalc</a>'tır. Kurumda UNVPortal kurulu olduğunda personel kendi ChemBioCalc hesabıyla kurumun laboratuvar modülüne bağlanır ve işini cihazın yanında, masaya dönmeden yapar: kimyasal kabının QR etiketini okutup kullandığı miktarı düşer, cihaz rezervasyonu talep eder, bekleyen talepleri onaylar ya da reddeder, kimyasal envanterinde arama yapar, öğrenci QR'larıyla yoklama alır, ders aktivitelerinin sonuçlarını görüntüler.</p>
+    <p>Veri Labs'ta kalır; telefonda kopyası tutulmaz. Bağlanmak için kullanıcının UNVPortal'da kayıtlı olması ve hesabında ChemBioCalc erişiminin açılmış olması gerekir — yöneticide de bu izin ayrıca aranır, rol tek başına yetmez. Verilen oturum kısa ömürlüdür ve her bağlanma denetim izine yazılır. Telefonda hangi ekranın görüneceğini kullanıcının Labs'taki rolü belirler.</p>
   </section>
 
   <section aria-labelledby="h-fark" class="read">
@@ -286,7 +290,7 @@
       <h2 id="h-kurulum">Kurulum ve erişim</h2>
     </div>
     <p>Tarayıcı üzerinden çalışır, ayrı program kurulumu gerekmez. Kurum bulut kurulumunu ya da kendi sunucusunu tercih edebilir. Yetkiler birim ve rol bazında verilir; bir laboratuvar sorumlusu yalnız kendi laboratuvarını görür.</p>
-    <p>Labs, <a href="/unvportal/sinav/">UNVPortal Exams</a> ve <a href="/unvportal/kalite/">UNVPortal Quality</a> ile aynı veritabanını paylaşır. Birlikte kurulduğunda personel, ders ve birim tanımları bir kez girilir.</p>
+    <p>Labs, <a href="/unvportal/sinav/">UNVPortal Exams</a> ile aynı veritabanını kullanır; birlikte kurulduğunda personel, ders ve birim tanımları bir kez girilir. <a href="/unvportal/kalite/">UNVPortal Quality</a> kendi veritabanında çalışır ve bu kayıtlardan yalnız okur.</p>
   </section>
 
   <section aria-labelledby="h-sss" class="read">
@@ -296,7 +300,7 @@
     <div class="faq">
       <details>
         <summary>Mevcut cihaz listemizi aktarabilir miyiz?</summary>
-        <p>Mevcut cihaz listesi UNVPortal Labs'e aktarılabilir: elektronik tablo halindeki cihaz, sarf ve laboratuvar listeleri kurulum sırasında içe aktarılıyor. Sütun eşlemesi kurulum sırasında birlikte belirlenir.</p>
+        <p>Mevcut listeler Excel dosyasından içe aktarılır. Stok ekranında cihaz, cam/sarf malzeme ve kimyasal listeleri için ayrı ayrı Excel yükleme düğmesi vardır; dosyanın başlık satırındaki sütun adları eşlenir (cihazda ad, marka, model, seri no, konum; kimyasalda ayrıca CAS no, sınıf, birim ve kritik miktar). İlk aktarımı kurulum sırasında biz yaparız, sonrasında yetkili kullanıcı istediği zaman kendisi yükler.</p>
       </details>
       <details>
         <summary>Kaç laboratuvar tanımlanabilir?</summary>
@@ -331,7 +335,7 @@
 
   <section class="read">
     <h2 lang="en">In English</h2>
-    <p class="en" lang="en"><a href="/en/unvportal/labs/" hreflang="en">Read this page in English</a> · UNVPortal Labs is a laboratory management system for universities and research groups. It assigns a QR-tagged sample to each student and grades the submitted result against the sample’s true value and tolerance, handles instrument booking with an approval queue and usage reports, tracks consumable stock with low-level alerts, and records attendance for academic sessions. It runs in the browser and shares one database with UNVPortal Exams and Quality, so staff, courses and units are defined once. Previously published as ErimPortal. For pricing or a live demo, write to <!--email_off--><a href="mailto:contact@erimworks.com">contact@erimworks.com</a><!--/email_off-->.</p>
+    <p class="en" lang="en"><a href="/en/unvportal/labs/" hreflang="en">Read this page in English</a> · UNVPortal Labs is a laboratory management system for universities and research groups. It assigns a QR-tagged sample to each student and grades the submitted result against the sample’s true value and tolerance, handles instrument booking with an approval queue and usage reports, tracks consumable stock with low-level alerts, and records attendance for academic sessions. It runs in the browser and shares one database with UNVPortal Exams, so staff, courses and units are defined once; UNVPortal Quality runs separately and only reads those records. ChemBioCalc serves as its field app, so stock deductions, bookings and attendance can be handled at the bench by phone. Previously published as ErimPortal. For pricing or a live demo, write to <!--email_off--><a href="mailto:contact@erimworks.com">contact@erimworks.com</a><!--/email_off-->.</p>
   </section>
 
 </main>
