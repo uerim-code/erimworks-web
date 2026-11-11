@@ -23,7 +23,8 @@
 - [Owndex](https://erimworks.com/owndex/): Warranty, return-window and receipt tracker. iOS.
 - [Match Manor](https://erimworks.com/match-manor/): Match puzzle game. iOS and Android.
 - [AstroRota](https://erimworks.com/astrorota/): Void-of-course Moon intervals, planetary retrogrades and Moon phases in the user's time zone, based on NASA JPL ephemeris data.
-- [Pikaro](https://erimworks.com/pikaro/) and [Restla](https://erimworks.com/restla/): published and working, no longer actively developed (OS-compatibility updates only).
+- [Restla](https://erimworks.com/en/restla/) · [Türkçe](https://erimworks.com/restla/): Focus timer with built-in 20-20-20 eye breaks. A painted tortoise walks beside the clock and carries one stone per 20 minutes of focus; every 20 minutes the app pauses for a 20-second look-away (20 feet / 6 m). Sessions of 20, 40, 60, 90 minutes or no end (classic 20-20-20 timer); Pomodoro mode; no app blocking, no account, works offline; 17 languages; iOS Home Screen widget. Free with a banner ad; Pro is a one-time purchase. A reminder, not medical advice. iOS: https://apps.apple.com/app/id6787410696
+- [Pikaro](https://erimworks.com/pikaro/): pixel colour-by-number game. Published and working, no longer actively developed (OS-compatibility updates only).
 
 ## Company
 
