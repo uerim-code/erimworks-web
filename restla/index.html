@@ -1,19 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-<link rel="canonical" href="https://erimworks.com/restla/"/>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <title>Restla — Göz molası zamanlayıcı | Erimworks</title>
-  <meta name="description" content="Restla, ekran başında göz molası hatırlatan bir zamanlayıcıdır. App Store bağlantısı, gizlilik politikası ve kullanım koşulları (EULA) bu sayfada.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://erimworks.com/restla/">
+<link rel="alternate" hreflang="tr" href="https://erimworks.com/restla/">
+<link rel="alternate" hreflang="en" href="https://erimworks.com/en/restla/">
+<link rel="alternate" hreflang="x-default" href="https://erimworks.com/restla/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Restla – Kaplumbağalı odak sayacı ve 20-20-20 göz molası (iPhone)</title>
+<meta name="description" content="Restla bir odak sayacıdır: sen çalışırken küçük bir kaplumbağa yanında yürür ve her 20 dakikada bir 20 saniye uzağa baktırır. Uygulamaları engellemez, hesap istemez, çevrimdışı çalışır. Pro tek seferlik bir satın alma.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Erimworks">
 <meta property="og:locale" content="tr_TR">
+<meta property="og:locale:alternate" content="en_US">
 <meta property="og:url" content="https://erimworks.com/restla/">
-<meta property="og:title" content="Restla — Göz molası zamanlayıcı | Erimworks">
-<meta property="og:description" content="Restla, ekran başında göz molası hatırlatan bir zamanlayıcıdır. App Store bağlantısı, gizlilik politikası ve kullanım koşulları (EULA) bu sayfada.">
+<meta property="og:title" content="Restla – Kaplumbağalı odak sayacı ve 20-20-20 göz molası">
+<meta property="og:description" content="Sen çalışırken yürüyen bir kaplumbağa ve her 20 dakikada bir 20 saniyelik göz molası. Uygulamaları engellemez, hesap istemez.">
 <meta property="og:image" content="https://erimworks.com/assets/og-erimworks.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -22,6 +27,16 @@
 <meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0b0c10" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="/assets/site.css?v=fa7cec1667">
+<style>
+  .shots { margin: 28px 0 8px; }
+  .shots .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .shots img { display: block; width: 100%; height: auto; border: 1px solid var(--line-2); border-radius: 14px; background: #f4f4f2; }
+  .shots figcaption { margin-top: 12px; font-size: var(--t-small); color: var(--muted); line-height: 1.55; }
+  @media (max-width: 44rem) {
+    .shots .row { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 10px; padding-bottom: 6px; -webkit-overflow-scrolling: touch; }
+    .shots img { flex: 0 0 66%; min-width: 0; scroll-snap-align: start; border-radius: 10px; }
+  }
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -33,8 +48,11 @@
       ],
       "@id": "https://erimworks.com/restla/#app",
       "name": "Restla",
-      "applicationCategory": "HealthApplication",
+      "alternateName": "Restla: Odak ve Göz Molası",
+      "applicationCategory": "ProductivityApplication",
+      "applicationSubCategory": "HealthApplication",
       "operatingSystem": "iOS",
+      "softwareVersion": "1.3.0",
       "url": "https://erimworks.com/restla/",
       "installUrl": "https://apps.apple.com/app/id6787410696",
       "downloadUrl": "https://apps.apple.com/app/id6787410696",
@@ -42,10 +60,39 @@
         "https://apps.apple.com/app/id6787410696"
       ],
       "image": "https://erimworks.com/assets/apps/restla.png",
-      "description": "Ekran başında düzenli göz molası hatırlatan zamanlayıcı.",
+      "screenshot": [
+        "https://erimworks.com/assets/apps/restla/tr/running.png",
+        "https://erimworks.com/assets/apps/restla/tr/break.png",
+        "https://erimworks.com/assets/apps/restla/tr/shore.png"
+      ],
+      "description": "Kaplumbağalı odak sayacı: 20, 40, 60 ya da 90 dakikalık oturumlar, her 20 dakikada bir 20 saniyelik göz molası (20-20-20 kuralı), uygulama engelleme yok. Her oturum bir taş yığını bırakır. Çevrimdışı çalışır, hesap istemez.",
       "inLanguage": [
         "tr",
-        "en"
+        "en",
+        "de",
+        "es",
+        "fr",
+        "it",
+        "pt",
+        "ru",
+        "pl",
+        "id",
+        "vi",
+        "th",
+        "hi",
+        "ar",
+        "ja",
+        "ko",
+        "zh"
+      ],
+      "featureList": [
+        "20, 40, 60, 90 dakikalık odak oturumları ya da bitişsiz 20-20-20 sayacı",
+        "Çalıştığın her 20 dakika için bir taş taşıyan kaplumbağa",
+        "Her blok sonunda 20 saniyelik, onaylanan göz molası",
+        "Uygulama engelleme yok, çıkış cezası yok",
+        "Kıyı ekranı: oturum yığınları, 36 taş türü, haftalık grafik",
+        "Pomodoro modu ve toplantı için duraklatma",
+        "Tamamen çevrimdışı, hesapsız"
       ],
       "author": {
         "@type": "Person",
@@ -58,14 +105,24 @@
         "name": "Erimworks",
         "url": "https://erimworks.com/"
       },
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://apps.apple.com/app/id6787410696",
-        "description": "Ücretsiz indirme; uygulama içi satın alma veya abonelik içerebilir."
-      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Restla",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://apps.apple.com/app/id6787410696"
+        },
+        {
+          "@type": "Offer",
+          "name": "Restla Pro (banner kaldırma, 3 kabuk rengi, 12 ocak taşı, 365 gün geçmiş)",
+          "price": "1.99",
+          "priceCurrency": "USD",
+          "category": "Tek seferlik uygulama içi satın alma",
+          "url": "https://apps.apple.com/app/id6787410696"
+        }
+      ],
       "mainEntityOfPage": {
         "@id": "https://erimworks.com/restla/#webpage"
       }
@@ -74,7 +131,7 @@
       "@type": "WebPage",
       "@id": "https://erimworks.com/restla/#webpage",
       "url": "https://erimworks.com/restla/",
-      "name": "Restla — Göz molası zamanlayıcı | Erimworks",
+      "name": "Restla – Kaplumbağalı odak sayacı ve 20-20-20 göz molası (iPhone)",
       "inLanguage": "tr",
       "isPartOf": {
         "@id": "https://erimworks.com/#site"
@@ -85,7 +142,7 @@
       "publisher": {
         "@id": "https://erimworks.com/#org"
       },
-      "dateModified": "2026-11-03"
+      "dateModified": "2026-11-10"
     },
     {
       "@type": "BreadcrumbList",
@@ -109,6 +166,68 @@
           "item": "https://erimworks.com/restla/"
         }
       ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://erimworks.com/restla/#sss",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Restla uygulamaları engelliyor mu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hayır. Restla ne uygulamalarını ne telefonunu kilitler, Ekran Süresi izni de istemez. Oturum sırasında çıkarsan saat çalışmaya devam eder; döndüğünde ne kadar uzak kaldığını ve o sırada kaç taş konduğunu tek satırda görürsün. Gün serisi de gitmez: ancak iki boş günden sonra biter."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "20-20-20 kuralı kanıtlanmış mı?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Amerikan Optometri Birliği ve Amerikan Oftalmoloji Akademisi kuralı öneriyor. Araştırmalar hâlâ az: en kapsamlı çalışma (Talens-Estarelles ve ark., Contact Lens and Anterior Eye, 2023; 29 bilgisayar kullanıcısı) hatırlatma alındığı sürece göz yorgunluğu ve kuru göz belirtilerinin azaldığını, hatırlatmalar kesildikten bir hafta sonra geri geldiğini buldu. Yani yaptığın sürece yardımcı görünüyor; bir şeyi önlediğini gösteren kimse yok. Restla bir hatırlatıcıdır, tedavi değildir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Taşlar ve Kıyı nedir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Çalıştığın her 20 dakikalık blok için kaplumbağa bir taş taşır; oturum bitince taşlar Kıyı'da küçük bir yığın olarak durur. 36 taş türü vardır ve ömür boyu odak dakikanla sabit bir sırada açılır; şans yok, eşikler yazılıdır. Onaylanan her göz molası bu merdivene 5 dakika kredi ekler. Pro 12 ocak taşı daha açar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Pro ne kadar ve ne yapıyor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tek seferlik bir satın alma, abonelik yok; fiyatı mağazada yerel para biriminde görürsün. Hiç almazsan banner kalır, üç kabuk rengi ile on iki ocak taşını görmezsin; gerisi aynıdır: kaplumbağa, 36 taş, Kıyı, seri, bütün süreler ve modlar ücretsizdir, geçmiş 90 gün tutulur."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sadece göz molası istiyorsam?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oturum süresi olarak “Bitiş yok” seç: Restla sen durdurana kadar klasik 20-20-20 sayacı olarak çalışır, her 20 dakikada bir 20 saniye. Pomodoro modu (25 dakika odak, kısa aralar) ve toplantı için 30, 60 ya da 90 dakika duraklatma da yerinde duruyor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Restla çevrimdışı çalışır mı?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet. Kayıt istemez ve sunucuya hiçbir şey göndermez; oturumların, taşların ve ayarların telefonunda kalır. Ücretsiz sürümdeki reklam banner'ı yalnızca boştaki ana ekranda görünür ve yüklenmek için bağlantı ister; başka hiçbir şey istemez."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Android sürümü var mı?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Restla'nın Android sürümü Google Play'de test aşamasında; iPhone sürümünden sonra yayınlanacak. Çıktığında haber almak istersen contact@erimworks.com adresine yaz."
+          }
+        }
+      ]
     }
   ]
 }
@@ -125,39 +244,110 @@
       <a href="/#uygulamalar">Uygulamalar</a>
       <a href="/iletisim/">İletişim</a>
     </nav>
+    <nav class="lang" aria-label="Dil / Language">
+      <a href="/restla/" hreflang="tr" aria-current="page">TR</a>
+      <a href="/en/restla/" hreflang="en" lang="en">EN</a>
+    </nav>
   </div>
 </header>
 
 <main id="icerik" class="wrap">
-<div class="read">
+  <p class="crumbs"><a href="/">Erimworks</a><span>/</span><a href="/#uygulamalar">Uygulamalar</a><span>/</span>Restla<span class="crumbs-date">Son güncelleme: <time datetime="2026-11-10">10 Kasım 2026</time></span></p>
 
-<div class="top">
-    <img src="../apps/restla.png" alt="Restla" width="64" height="64">
-    <h1>Restla</h1>
+  <div class="read">
+    <div class="top">
+      <img src="/apps/restla.png?v=1.3.0" alt="Restla uygulama ikonu" width="64" height="64">
+      <h1>Gözlerin, odağından çok önce yorulur. Restla her 20 dakikada bir uzağa baktırır.</h1>
+    </div>
+    <p class="lede">Restla, iPhone için bir odak sayacıdır. 20, 40, 60 ya da 90 dakikalık bir oturum başlatırsın; küçük bir kaplumbağa saatin yanında yola çıkar ve çalıştığın her 20 dakika için bir taş taşır. Her 20 dakikada bir Restla durur, 20 saniye uzağa bakarsın, “Uzağa baktım” dersin ve oturum sürer. Uygulama engelleme yok, hesap yok, çevrimdışı çalışır, ücretsiz. Pro tek seferlik bir satın almadır.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="https://apps.apple.com/app/id6787410696" rel="noopener">App Store'dan indir</a>
+      <a class="btn btn-quiet" href="#nasil">Nasıl çalışır</a>
+    </div>
   </div>
 
-  <p class="lede">Ekran başında düzenli göz molası hatırlatan zamanlayıcı.</p>
-  <p class="lede en" lang="en">A timer that reminds you to take regular eye breaks from the screen.</p>
+  <section aria-labelledby="h-neden" class="read">
+    <div class="section-head"><h2 id="h-neden">Engellemeyen, utandırmayan bir odak sayacı</h2></div>
+    <p><strong>Çoğu odak uygulaması seni saatlerce ekrana baktırır ve buna verimlilik der.</strong> Restla tersini yapar: oturumun içine göz molasını koyar. Her 20 dakikalık blok bitince ekran kararır, kaplumbağa boynunu uzatıp uzağa bakar; sen de yaklaşık 6 metre ötedeki bir şeye bakarsın. 20 saniye sonra “Uzağa baktım” dersin, taş yerleşir, çalışma devam eder.</p>
+    <p><strong>Çıkınca hiçbir şey olmaz.</strong> Restla uygulamalarını da telefonunu da kilitlemez. Mesaja bakmak için ayrılırsan kaplumbağa kabuğuna çekilir, saat çalışmaya devam eder. Döndüğünde tek satır görürsün: “14 dk uzaktaydın. Bir taş kondu.” Hiçbir şey ölmez, üzülmez, seri kaybolmaz. Erken durdursan bile 10 dakikayı geçen her oturum sayılır.</p>
+    <p><strong>Yönetilecek bir şey yok.</strong> Görev listesi ya da hedef girmezsin; bir süre seçer, Başlat'a basarsın. Toplantı için 30, 60 ya da 90 dakika duraklatabilirsin; sonra kaldığı yerden sürer.</p>
+  </section>
 
-  <h2>İndir / Download</h2>
-  <p class="links">
-    <a href="https://apps.apple.com/app/id6787410696" rel="noopener">App Store ↗</a>
-  </p>
+  <section aria-labelledby="h-nasil" class="read" id="nasil">
+    <div class="section-head"><h2 id="h-nasil">Nasıl çalışır</h2></div>
+    <ol>
+      <li><strong>Süreyi seç ve başlat.</strong> 20, 40, 60, 90 dakika ya da “Bitiş yok”. Kaplumbağa yola çıkar; her dakika bir adım atar, 20 dakikada bir taş taşır.</li>
+      <li><strong>Blok bitince uzağa bak.</strong> Karanlık mola ekranında tek kırmızı ibre 20 saniyeyi tarar, kaplumbağa uzağa bakar. “Uzağa baktım” onayı taş merdivenine 5 dakika kredi ekler.</li>
+      <li><strong>Oturum bitince yığın kalır.</strong> Taşlar Kıyı'da küçük bir yığın olur. Her oturum bir yığın; haftalık dakikalar, molalar ve gün serin aynı ekranda.</li>
+    </ol>
+    <figure class="shots">
+      <div class="row">
+        <img src="/assets/apps/restla/tr/running.png" alt="Restla ana ekranı: büyük saat, altında bir taş taşıyan kaplumbağa ve ilerideki sonraki taş; başlıkta bugünkü molalar ve gün serisi" width="540" height="1173" loading="lazy" decoding="async">
+        <img src="/assets/apps/restla/tr/break.png" alt="Karanlık göz molası ekranı: 20 saniyeyi tarayan kırmızı ibre, uzağa bakan kaplumbağa ve Uzağa baktım düğmesi" width="540" height="1173" loading="lazy" decoding="async">
+        <img src="/assets/apps/restla/tr/shore.png" alt="Kıyı ekranı: oturum yığınları sırası, açılan taş türleri ve haftalık grafik" width="540" height="1173" loading="lazy" decoding="async">
+      </div>
+      <figcaption>Soldan sağa: çalışan oturum, göz molası, Kıyı. iPhone ekran görüntüleri, Restla 1.3.0.</figcaption>
+    </figure>
+  </section>
 
-  <h2>Hukuki metinler / Legal</h2>
-  <p class="links">
-    <a href="privacy">Gizlilik Politikası / Privacy Policy</a><br>
-    <a href="terms">Kullanım Koşulları (EULA) / Terms of Use</a>
-  </p>
+  <section aria-labelledby="h-kiyi" class="read">
+    <div class="section-head"><h2 id="h-kiyi">Kıyı: şansa değil dakikaya bağlı bir koleksiyon</h2></div>
+    <p>36 taş türü vardır ve ömür boyu odak dakikanla <strong>sabit bir sırada</strong> açılır. Hangi taşın ne zaman geleceği yazılıdır; çekilişle ya da günlük görevle değil. Kıyı ekranında yığınlarının sırasını, taş merdivenini ve son yedi günü görürsün. Gün serisi iki boş günde biter; bir boş gün seni geriye atmaz, “kaybettin” denmez.</p>
+  </section>
 
-</div>
+  <section aria-labelledby="h-pro" class="read">
+    <div class="section-head"><h2 id="h-pro">Pro: tek ödeme, abonelik yok</h2></div>
+    <p>Pro tek seferlik bir satın almadır; ABD fiyatı 1,99 $, mağazada yerel para biriminde gösterilir. Reklam banner'ını kaldırır, kaplumbağa için üç kabuk rengi ve on iki ocak taşı açar, oturum geçmişini 90 gün yerine bir yıl tutar. Kaplumbağa, 36 taş, Kıyı, seri, bütün süreler ve modlar herkese ücretsizdir; banner yalnızca boştaki ana ekranda görünür, oturum ve mola sırasında reklam yoktur.</p>
+  </section>
+
+  <section aria-labelledby="h-sss" class="read faq">
+    <div class="section-head"><h2 id="h-sss">Sorular</h2></div>
+    <details>
+      <summary>Restla uygulamaları engelliyor mu?</summary>
+      <p>Hayır. Restla ne uygulamalarını ne telefonunu kilitler, Ekran Süresi izni de istemez. Oturum sırasında çıkarsan saat çalışmaya devam eder; döndüğünde ne kadar uzak kaldığını ve o sırada kaç taş konduğunu tek satırda görürsün. Gün serisi de gitmez: ancak iki boş günden sonra biter.</p>
+    </details>
+    <details>
+      <summary>20-20-20 kuralı kanıtlanmış mı?</summary>
+      <p>Amerikan Optometri Birliği ve Amerikan Oftalmoloji Akademisi kuralı öneriyor. Araştırmalar hâlâ az: en kapsamlı çalışma (<a href="https://doi.org/10.1016/j.clae.2022.101744" rel="noopener">Talens-Estarelles ve ark., Contact Lens and Anterior Eye, 2023</a>; 29 bilgisayar kullanıcısı) hatırlatma alındığı sürece göz yorgunluğu ve kuru göz belirtilerinin azaldığını, hatırlatmalar kesildikten bir hafta sonra geri geldiğini buldu. Yani yaptığın sürece yardımcı görünüyor; bir şeyi önlediğini gösteren kimse yok. Restla bir hatırlatıcıdır, tedavi değildir.</p>
+    </details>
+    <details>
+      <summary>Taşlar ve Kıyı nedir?</summary>
+      <p>Çalıştığın her 20 dakikalık blok için kaplumbağa bir taş taşır; oturum bitince taşlar Kıyı'da küçük bir yığın olarak durur. 36 taş türü vardır ve ömür boyu odak dakikanla sabit bir sırada açılır; şans yok, eşikler yazılıdır. Onaylanan her göz molası bu merdivene 5 dakika kredi ekler. Pro 12 ocak taşı daha açar.</p>
+    </details>
+    <details>
+      <summary>Pro ne kadar ve ne yapıyor?</summary>
+      <p>Tek seferlik bir satın alma, abonelik yok; fiyatı mağazada yerel para biriminde görürsün. Hiç almazsan banner kalır, üç kabuk rengi ile on iki ocak taşını görmezsin; gerisi aynıdır: kaplumbağa, 36 taş, Kıyı, seri, bütün süreler ve modlar ücretsizdir, geçmiş 90 gün tutulur.</p>
+    </details>
+    <details>
+      <summary>Sadece göz molası istiyorsam?</summary>
+      <p>Oturum süresi olarak “Bitiş yok” seç: Restla sen durdurana kadar klasik 20-20-20 sayacı olarak çalışır, her 20 dakikada bir 20 saniye. Pomodoro modu (25 dakika odak, kısa aralar) ve toplantı için 30, 60 ya da 90 dakika duraklatma da yerinde duruyor.</p>
+    </details>
+    <details>
+      <summary>Restla çevrimdışı çalışır mı?</summary>
+      <p>Evet. Kayıt istemez ve sunucuya hiçbir şey göndermez; oturumların, taşların ve ayarların telefonunda kalır. Ücretsiz sürümdeki reklam banner'ı yalnızca boştaki ana ekranda görünür ve yüklenmek için bağlantı ister; başka hiçbir şey istemez.</p>
+    </details>
+    <details>
+      <summary>Android sürümü var mı?</summary>
+      <p>Restla'nın Android sürümü Google Play'de test aşamasında; iPhone sürümünden sonra yayınlanacak. Çıktığında haber almak istersen <!--email_off--><a href="mailto:contact@erimworks.com">contact@erimworks.com</a><!--/email_off--> adresine yaz.</p>
+    </details>
+  </section>
+
+  <section aria-labelledby="h-hukuki" class="read">
+    <div class="section-head"><h2 id="h-hukuki">Hukuki metinler</h2></div>
+    <p class="links">
+      <a href="/restla/tr/privacy">Gizlilik Politikası</a> · <a href="/restla/privacy" hreflang="en" lang="en">Privacy Policy</a><br>
+      <a href="/restla/tr/terms">Kullanım Koşulları (EULA)</a> · <a href="/restla/terms" hreflang="en" lang="en">Terms of Use</a>
+    </p>
+    <p>Restla bir sayaç ve hatırlatıcıdır, tıbbi tavsiye değildir. Gözlerin ağrıyorsa bir göz sağlığı uzmanına görün.</p>
+    <p class="en" lang="en"><a href="/en/restla/" hreflang="en">Read this page in English</a> · Restla is a focus timer for iPhone with a small tortoise that walks while you work and a 20-second eye break every 20 minutes. No app blocking, no account, works offline; Pro is a one-time $1.99.</p>
+  </section>
 </main>
 
 <footer class="site-foot">
   <div class="wrap">
     Restla, <a href="https://erimworks.com/">Erimworks</a> tarafından geliştirilir ·
-    <!--email_off--><a href="mailto:contact@erimworks.com">contact@erimworks.com</a><!--/email_off--> · <a href="/hakkimizda/">Hakkımızda</a> · <a href="/gizlilik/">Gizlilik</a>
-    </div>
+    <!--email_off--><a href="mailto:contact@erimworks.com">contact@erimworks.com</a><!--/email_off--> · <a href="/hakkimizda/">Hakkımızda</a> · <a href="/gizlilik/">Gizlilik</a> · <a href="/en/restla/" hreflang="en" lang="en">English</a>
+  </div>
 </footer>
 </body>
 </html>
