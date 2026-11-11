@@ -31,6 +31,34 @@ DILLER = {
     "id": ("id", "id"), "th": ("th", "th"), "vi": ("vi", "vi"),
 }
 URL_RE = re.compile(r"https?://\S+")
+NATIVE = {"tr": "Türkçe", "en": "English", "de": "Deutsch", "es": "Español", "fr": "Français",
+          "it": "Italiano", "pt": "Português", "ru": "Русский", "pl": "Polski", "ja": "日本語",
+          "ko": "한국어", "zh-Hans": "简体中文", "ar": "العربية", "hi": "हिन्दी", "id": "Bahasa Indonesia",
+          "th": "ไทย", "vi": "Tiếng Việt"}
+OG = {"tr": "tr_TR", "en": "en_US", "de": "de_DE", "es": "es_ES", "fr": "fr_FR", "it": "it_IT",
+      "pt": "pt_BR", "ru": "ru_RU", "pl": "pl_PL", "ja": "ja_JP", "ko": "ko_KR", "zh-Hans": "zh_CN",
+      "ar": "ar_SA", "hi": "hi_IN", "id": "id_ID", "th": "th_TH", "vi": "vi_VN"}
+ALL_LANGS = ["en", "tr", "de", "es", "fr", "it", "pt", "ru", "pl", "id", "vi", "th", "hi", "ar", "ja", "ko", "zh-Hans"]
+LANGROW_START, LANGROW_END = "<!-- restla-langs -->", "<!-- /restla-langs -->"
+
+
+def lang_row(current: str) -> str:
+    items = []
+    for l, u in alternates():
+        if l == "x-default":
+            continue
+        name = html.escape(NATIVE[l])
+        if l == current:
+            items.append(f'<span aria-current="page" lang="{l}">{name}</span>')
+        else:
+            items.append(f'<a href="{u.replace(TABAN, "")}" hreflang="{l}" lang="{l}">{name}</a>')
+    return (f'{LANGROW_START}<nav class="read links" aria-label="Restla" lang="en" dir="ltr" '
+            f'style="margin-top:40px">Restla: {" · ".join(items)}</nav>{LANGROW_END}')
+
+
+def og_tags(current: str) -> str:
+    alts = "\n".join(f'<meta property="og:locale:alternate" content="{OG[l]}">' for l in NATIVE if l != current)
+    return f'<meta property="og:locale" content="{OG[current]}">\n' + alts
 
 
 def alternates() -> list[tuple[str, str]]:
@@ -108,8 +136,13 @@ def page(meta: dict, klasor: str, lang: str, head_tail: str, header: str, footer
     intro, rest = bl[0], bl[1:]
     body = []
     for b in rest:
-        if all(URL_RE.search(x) for x in b):          # legal links block
-            body.append('<p class="links">' + "<br>".join(linkify(x) for x in b) + "</p>")
+        if all(URL_RE.search(x) for x in b):          # legal links block: "Label: URL" -> <a>Label</a>
+            links = []
+            for x in b:
+                url_ = URL_RE.search(x).group(0)
+                label = re.sub(r"[\s:：]+$", "", x[: x.find(url_)]).strip() or url_
+                links.append(f'<a href="{url_.replace(TABAN, "")}">{html.escape(label)}</a>')
+            body.append('<p class="links">' + " · ".join(links) + "</p>")
             continue
         if is_heading(b[0], b):
             body.append(f'<section class="read"><div class="section-head"><h2>{html.escape(heading_case(b[0], meta["description"], lang))}</h2></div>')
@@ -122,10 +155,15 @@ def page(meta: dict, klasor: str, lang: str, head_tail: str, header: str, footer
         "@graph": [
             {"@type": ["SoftwareApplication", "MobileApplication"], "@id": f"{TABAN}/restla/#app",
              "name": "Restla", "alternateName": meta["name"], "applicationCategory": "ProductivityApplication",
-             "operatingSystem": "iOS", "url": url, "installUrl": STORE, "downloadUrl": STORE,
-             "image": f"{TABAN}/assets/apps/restla.png", "description": desc_meta, "inLanguage": lang,
-             "offers": [{"@type": "Offer", "price": "0", "priceCurrency": "USD", "url": STORE}],
-             "publisher": {"@type": "Organization", "@id": f"{TABAN}/#org", "name": "Erimworks", "url": f"{TABAN}/"}},
+             "applicationSubCategory": "HealthApplication", "operatingSystem": "iOS", "url": url,
+             "installUrl": STORE, "downloadUrl": STORE, "sameAs": [STORE],
+             "image": f"{TABAN}/assets/apps/restla.png", "description": desc_meta, "inLanguage": ALL_LANGS,
+             "offers": [{"@type": "Offer", "name": "Restla", "price": "0", "priceCurrency": "USD",
+                         "availability": "https://schema.org/InStock", "url": STORE},
+                        {"@type": "Offer", "name": "Restla Pro", "price": "1.99", "priceCurrency": "USD",
+                         "category": "One-time in-app purchase", "url": STORE}],
+             "publisher": {"@type": "Organization", "@id": f"{TABAN}/#org", "name": "Erimworks", "url": f"{TABAN}/"},
+             "mainEntityOfPage": {"@id": f"{url}#webpage"}},
             {"@type": "WebPage", "@id": f"{url}#webpage", "url": url, "name": title, "inLanguage": lang,
              "isPartOf": {"@id": f"{TABAN}/#site"}, "about": {"@id": f"{TABAN}/restla/#app"},
              "publisher": {"@id": f"{TABAN}/#org"}},
@@ -146,6 +184,7 @@ def page(meta: dict, klasor: str, lang: str, head_tail: str, header: str, footer
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Erimworks">
+{og_tags(lang)}
 <meta property="og:url" content="{url}">
 <meta property="og:title" content="{html.escape(title)}">
 <meta property="og:description" content="{html.escape(desc_meta)}">
@@ -157,23 +196,28 @@ def page(meta: dict, klasor: str, lang: str, head_tail: str, header: str, footer
 </script>
 </head>
 <body>
+<div lang="en" dir="ltr">
 {header}
+</div>
 <main id="content" class="wrap">
-  <p class="crumbs"><a href="/en/">Erimworks</a><span>/</span><a href="/en/restla/">Restla</a><span>/</span>{html.escape(lang)}</p>
+  <p class="crumbs" lang="en" dir="ltr"><a href="/en/">Erimworks</a><span>/</span><a href="/en/restla/">Restla</a><span>/</span><span lang="{lang}">{html.escape(NATIVE[lang])}</span></p>
   <div class="read">
     <div class="top">
       <img src="/apps/restla.png?v=1.3.0" alt="Restla" width="64" height="64">
-      <h1>{html.escape(meta['name'])}</h1>
+      <h1>{html.escape(intro[0])}</h1>
     </div>
-    <p class="lede">{"<br>".join(linkify(x) for x in intro)}</p>
+    <p class="lede">{linkify(" ".join(intro[1:]))}</p>
     <div class="actions">
       <a class="btn btn-primary" href="{STORE}" rel="noopener">App Store</a>
       <a class="btn btn-quiet" href="/en/restla/" hreflang="en" lang="en">English</a>
     </div>
   </div>
   {chr(10).join(body)}
+  {lang_row(lang)}
 </main>
+<div lang="en" dir="ltr">
 {footer}
+</div>
 </body>
 </html>
 """
@@ -199,6 +243,14 @@ def main() -> int:
         p = KOK / f
         s = p.read_text(encoding="utf-8")
         s = re.sub(r'(<link rel="alternate" hreflang="[^"]+" href="[^"]+">\n?)+', alt_links() + "\n", s, count=1)
+        cur = "en" if f.startswith("en/") else "tr"
+        s = re.sub(r'<meta property="og:locale" content="[^"]+">\n(<meta property="og:locale:alternate" content="[^"]+">\n?)+',
+                   og_tags(cur) + "\n", s, count=1)
+        s = s.replace('"zh"', '"zh-Hans"')
+        if LANGROW_START in s:
+            s = re.sub(re.escape(LANGROW_START) + ".*?" + re.escape(LANGROW_END), lang_row(cur), s, flags=re.S)
+        else:
+            s = s.replace("</main>", "  " + lang_row(cur) + "\n</main>", 1)
         p.write_text(s, encoding="utf-8")
         print("güncellendi", f)
     return 0
