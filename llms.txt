@@ -20,7 +20,7 @@
 - [Dozify](https://dozify.app): GLP-1 dose, weight and meal tracker. iOS. Product site: https://dozify.app
 - [Scanyra](https://erimworks.com/scanyra/): Document scanner that produces multi-page PDFs from the phone camera. iOS and Android. Formerly Scanlyte.
 - [QRwise](https://erimworks.com/qrwise/): QR code generator and reader. Codes never expire: no account, no redirect server, the content lives in the code itself. iOS and Android. App Store: https://apps.apple.com/app/id6785031754 · Google Play: https://play.google.com/store/apps/details?id=com.uerim.qrwise
-- [Owndex](https://erimworks.com/owndex/): Warranty, return-window and receipt tracker. iOS.
+- [Owndex](https://erimworks.com/owndex/): Warranty, return-window and receipt-photo tracker with reminders before warranties and return windows expire. iOS (Android in testing). Pages in 8 languages: /owndex/ (tr), /owndex/en/, /owndex/de/, /owndex/fr/, /owndex/es/, /owndex/ja/, /owndex/ko/, /owndex/zh/.
 - [Match Manor](https://erimworks.com/match-manor/): Match puzzle game. iOS and Android.
 - [AstroRota](https://erimworks.com/astrorota/): Void-of-course Moon intervals, planetary retrogrades and Moon phases in the user's time zone, based on NASA JPL ephemeris data.
 - [Pikaro](https://erimworks.com/pikaro/) and [Restla](https://erimworks.com/restla/): published and working, no longer actively developed (OS-compatibility updates only).
