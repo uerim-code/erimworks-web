@@ -136,3 +136,36 @@ git config --unset core.hooksPath     # tamamen kapatmak için
 eklenirken iki tanesinde şema ile görünür metin ayrıştı (şemada "ÖNİZLEME",
 sayfada "önizleme"). `hreflang.py` bunu yakalayabilirdi ama kimse
 çalıştırmamıştı; kusur ancak araçlar tek tek elden geçirilirken görüldü.
+
+## Çerez rızası ve ölçüm
+
+Ölçüm Google Tag Manager (`GTM-TPV949ZK`) ile yapılır ve **yalnız ziyaretçi
+kabul ederse yüklenir**. Mantık `assets/cerez.js` içinde; satır içi betik yok,
+yani CSP hash'i gerektirmez.
+
+```
+python3 tools/cerez.py           # betiği her sayfaya koy / damgayı tazele
+python3 tools/cerez.py --check   # eksik ya da bayatsa 1 ile çık
+```
+
+Davranış, ölçülerek doğrulandı (2026-11-11, yerel tarayıcı):
+
+| Durum | GTM betiği | Çerez |
+|---|---|---|
+| Karar verilmemiş | yüklenmez | yok |
+| Reddedildi | yüklenmez | yok |
+| Kabul edildi | yüklenir | `_ga`, `_ga_*` |
+
+Google'ın önerdiği Consent Mode v2'de GTM her zaman yüklenir ve rıza yokken
+çerezsiz ping gönderir; burada o yol **seçilmedi**. "Reddet"e basan
+ziyaretçinin tarayıcısından Google'a hiçbir istek gitmemesi savunması kolay
+tek davranış. Reklam kişiselleştirmesi ve reklam kullanıcı verisi ise her
+durumda kapalı — kabul edilse bile.
+
+Rıza kararı `localStorage`da `ew-cerez` anahtarında durur; bunun için çerez
+kullanılmaz. Gizlilik sayfasındaki "Çerez tercihimi değiştir" düğmesi kararı
+sıfırlar (`data-cerez-ayar` özniteliği taşıyan herhangi bir öge çalışır).
+
+**Metin değişirse `SURUM` sabitini artır** — eski rızalar geçersizleşir ve
+bant yeniden sorulur. Kapsam genişlediğinde (yeni bir ölçüm aracı) bu
+zorunludur: eski rıza yeni kapsamı karşılamaz.

@@ -20,7 +20,7 @@
 <meta name="twitter:image" content="https://erimworks.com/assets/og-erimworks.png">
 <meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0b0c10" media="(prefers-color-scheme: dark)">
-<link rel="stylesheet" href="/assets/site.css?v=fa7cec1667">
+<link rel="stylesheet" href="/assets/site.css?v=448ade64a3">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -47,6 +47,7 @@
   ]
 }
 </script>
+<script src="/assets/cerez.js?v=2b606906b9" defer></script>
 </head>
 <body>
 <a class="skip" href="#icerik">İçeriğe atla</a>
@@ -77,18 +78,27 @@
       <thead><tr><th>Kaynak</th><th>Veri</th><th>Amaç ve hukuki sebep</th><th>Saklama</th></tr></thead>
       <tbody>
         <tr><td>Erişim kayıtları (barındırma: Cloudflare)</td><td>IP adresi, tarayıcı ve cihaz bilgisi, istek zamanı ve adresi</td><td>Sitenin güvenli ve kesintisiz sunulması, saldırı ve hata tespiti (KVKK m. 5/2-f, meşru menfaat)</td><td>Cloudflare'in kenar sunucu kayıt süreleri; Erimworks ayrıca kopya tutmaz</td></tr>
-        <tr><td>Site analitiği (Cloudflare Web Analytics)</td><td>Sayfa görüntüleme, ülke, tarayıcı türü — çerez kullanılmaz, kişi bazlı profil çıkarılmaz</td><td>Hangi sayfaların okunduğunu anlamak (meşru menfaat)</td><td>Toplu istatistik; kişiye bağlanmaz</td></tr>
+        <tr><td>Site ölçümü (Google Tag Manager / Google Analytics)</td><td>Sayfa görüntüleme, yönlendiren adres, yaklaşık konum (ülke/şehir), cihaz ve tarayıcı türü</td><td>Hangi sayfaların okunduğunu anlamak (KVKK m. 5/1, <strong>açık rıza</strong> — çerez bandından verilir)</td><td>Rıza vermezseniz hiç toplanmaz. Rıza verirseniz Google Analytics saklama süresi boyunca; rızanızı her an geri alabilirsiniz</td></tr>
+        <tr><td>Çerez tercihiniz</td><td><code>ew-cerez</code> anahtarı (kabul/ret ve tarihi)</td><td>Kararınızı hatırlamak, her sayfada yeniden sormamak</td><td>Yalnızca tarayıcınızın yerel deposunda; Erimworks'e iletilmez</td></tr>
         <tr><td>Dil tercihi</td><td><code>ew_lang</code> anahtarı (TR/EN)</td><td>Seçtiğiniz arayüz dilini hatırlamak</td><td>Yalnızca tarayıcınızın yerel deposunda; Erimworks'e iletilmez</td></tr>
         <tr><td>E-posta ile iletişim</td><td>Ad, e-posta adresi, mesaj içeriği ve eklediğiniz bilgiler</td><td>Talebin yanıtlanması, teklif ve sunum süreci (KVKK m. 5/2-c, sözleşmenin kurulması; m. 5/2-f)</td><td>Yazışma süresince ve ilgili mevzuatın öngördüğü süre boyunca</td></tr>
         <tr><td>TestRoster bekleme listesi formu</td><td>E-posta adresi, seçilen dil</td><td>Uygulama yayınlandığında tek bir bildirim göndermek (KVKK m. 5/1, açık rıza — formu göndermekle verilir)</td><td>Bildirim gönderilince silinir; dilediğiniz an e-posta ile silinmesini isteyebilirsiniz</td></tr>
       </tbody>
     </table>
 
-    <h2 id="h-cerez">3. Çerezler</h2>
-    <p>erimworks.com kendi adına çerez yerleştirmez ve reklam ya da izleme çerezi kullanmaz. Barındırma sağlayıcısı Cloudflare, bot koruması gibi güvenlik işlevleri için teknik çerez yerleştirebilir; bu çerezler kimlik tespiti ya da pazarlama için kullanılmaz.</p>
+    <h2 id="h-cerez">3. Çerezler ve ölçüm</h2>
+    <p>Sitede <strong>ölçüm çerezi</strong> kullanılır ve bunlar <strong>yalnız siz kabul ederseniz</strong> yerleştirilir. İlk ziyaretinizde sayfanın altında bir bant çıkar; karar verene kadar hiçbir ölçüm başlamaz.</p>
+    <ul>
+      <li><strong>Reddederseniz:</strong> Google Tag Manager <em>hiç yüklenmez</em>. Tarayıcınızdan Google'a tek bir istek bile gitmez; çerez yerleştirilmez.</li>
+      <li><strong>Kabul ederseniz:</strong> Google Tag Manager yüklenir ve hangi sayfaların görüntülendiği ölçülür.</li>
+      <li><strong>Her iki durumda da</strong> reklam kişiselleştirmesi ve reklam amaçlı kullanıcı verisi kapalıdır (<code>ad_personalization</code> ve <code>ad_user_data</code> daima <em>denied</em>). Hakkınızda reklam profili çıkarılmaz.</li>
+    </ul>
+    <p>Kararınız tarayıcınızın yerel deposunda <code>ew-cerez</code> anahtarıyla saklanır — bunun için çerez bile kullanılmaz. <strong>Verdiğiniz rızayı dilediğiniz an geri alabilirsiniz:</strong></p>
+    <p><button type="button" class="btn btn-sm btn-quiet" data-cerez-ayar>Çerez tercihimi değiştir</button></p>
+    <p>Bunun dışında barındırma sağlayıcısı Cloudflare, bot koruması gibi güvenlik işlevleri için teknik çerez yerleştirebilir; bu çerezler kimlik tespiti ya da pazarlama için kullanılmaz ve rızaya bağlı değildir (KVKK m. 5/2-f).</p>
 
     <h2 id="h-aktarim">4. Üçüncü taraflar ve yurt dışına aktarım</h2>
-    <p>Site <strong>Cloudflare</strong> (barındırma, içerik dağıtım ağı, analitik) altyapısında sunulur; TestRoster bekleme listesi kayıtları <strong>Supabase</strong> altyapısında tutulur. Bu sağlayıcıların sunucuları yurt dışında bulunabilir; aktarım KVKK'nın 9. maddesi çerçevesinde ve yalnızca yukarıdaki amaçlarla sınırlı olarak yapılır. Veriler satılmaz, reklam amacıyla paylaşılmaz. Sitede App Store, Google Play, unvportal.com, chembiocalc.com gibi dış adreslere bağlantılar vardır; o sitelerin kendi gizlilik metinleri geçerlidir.</p>
+    <p>Site <strong>Cloudflare</strong> (barındırma, içerik dağıtım ağı) altyapısında sunulur; TestRoster bekleme listesi kayıtları <strong>Supabase</strong> altyapısında tutulur. Çerez bandından rıza vermeniz hâlinde site ölçümü <strong>Google Ireland Limited</strong> (Google Tag Manager / Google Analytics) tarafından yapılır ve veriler Google'ın sunucularına, ABD dahil yurt dışına aktarılabilir; rıza vermezseniz bu aktarım hiç gerçekleşmez. Bu sağlayıcıların sunucuları yurt dışında bulunabilir; aktarım KVKK'nın 9. maddesi çerçevesinde ve yalnızca yukarıdaki amaçlarla sınırlı olarak yapılır. Veriler satılmaz, reklam amacıyla paylaşılmaz. Sitede App Store, Google Play, unvportal.com, chembiocalc.com gibi dış adreslere bağlantılar vardır; o sitelerin kendi gizlilik metinleri geçerlidir.</p>
 
     <h2 id="h-haklar">5. Haklarınız</h2>
     <p>KVKK'nın 11. maddesi uyarınca; kişisel verinizin işlenip işlenmediğini öğrenme, işlenmişse bilgi talep etme, amacına uygun kullanılıp kullanılmadığını öğrenme, aktarıldığı üçüncü kişileri bilme, eksik ya da yanlış işlenmişse düzeltilmesini, şartları oluşmuşsa silinmesini ya da yok edilmesini isteme, bu işlemlerin aktarılan üçüncü kişilere bildirilmesini isteme, otomatik sistemlerle analiz sonucu aleyhinize bir sonuca itiraz etme ve zarara uğramanız hâlinde giderilmesini talep etme haklarına sahipsiniz. Avrupa Ekonomik Alanı'ndan ziyaret ediyorsanız GDPR kapsamındaki erişim, düzeltme, silme, kısıtlama, taşınabilirlik ve itiraz hakları da geçerlidir.</p>
@@ -100,8 +110,8 @@
     <h2 id="h-degisiklik">7. Değişiklikler</h2>
     <p>Bu metin gerektiğinde güncellenir; yürürlük tarihi sayfanın üstünde belirtilir. Esaslı değişikliklerde ana sayfadan duyurulur.</p>
 
-    <h2 lang="en">In English</h2>
-    <p class="en" lang="en">This notice covers the erimworks.com website only; each Erimworks app and platform has its own privacy policy, linked from its product page. The data controller is Erimworks (Ümit Can Erim), <!--email_off-->contact@erimworks.com<!--/email_off-->. The site is hosted on Cloudflare, whose edge logs record IP address, user agent and request time for security purposes; Cloudflare Web Analytics is cookie-less and aggregate. Your language choice is stored only in your browser. E-mails you send are kept for the duration of the correspondence and any legally required period. The TestRoster waiting-list form stores your e-mail address in Supabase for a single launch notification and is deleted afterwards or on request. No advertising or tracking cookies are set, and no data is sold. You may exercise your access, rectification, erasure, restriction, portability and objection rights under KVKK and the GDPR by writing to <!--email_off--><a href="mailto:contact@erimworks.com">contact@erimworks.com</a><!--/email_off-->; requests are answered within 30 days.</p>
+    <h2 lang="en" id="h-en">In English</h2>
+    <p class="en" lang="en">This notice covers the erimworks.com website only; each Erimworks app and platform has its own privacy policy, linked from its product page. The data controller is Erimworks (Ümit Can Erim), <!--email_off-->contact@erimworks.com<!--/email_off-->. The site is hosted on Cloudflare, whose edge logs record IP address, user agent and request time for security purposes. Measurement cookies (Google Tag Manager / Google Analytics) are used <strong>only if you accept them</strong> in the banner shown on your first visit: if you decline, Google Tag Manager is never loaded and not a single request leaves your browser for Google. Ad personalization and ad user data are disabled in both cases, so no advertising profile is built about you; where you accept, data may be transferred to Google Ireland Limited and its servers outside Turkey, including the United States. You can change your decision at any time from the cookie section of this page. Your language choice and your cookie decision are stored only in your browser. E-mails you send are kept for the duration of the correspondence and any legally required period. The TestRoster waiting-list form stores your e-mail address in Supabase for a single launch notification and is deleted afterwards or on request. No advertising cookies are set and no data is sold. You may exercise your access, rectification, erasure, restriction, portability and objection rights under KVKK and the GDPR by writing to <!--email_off--><a href="mailto:contact@erimworks.com">contact@erimworks.com</a><!--/email_off-->; requests are answered within 30 days.</p>
   </div>
 </main>
 
