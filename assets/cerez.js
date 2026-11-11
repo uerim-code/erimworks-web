@@ -60,6 +60,34 @@
     } catch (e) { /* yazılamıyorsa karar bu oturumluk geçerli */ }
   }
 
+  /* Rıza geri alınınca ölçüm çerezleri SİLİNİR.
+   *
+   * ÖLÇÜLDÜ (2026-11-11, canlı): kabul edip sonra reddeden ziyaretçide yeni
+   * istek gitmiyordu ama `_ga` ve `_ga_<konteyner>` çerezleri tarayıcıda
+   * duruyordu. Rızanın geri alınması, verilmesi kadar etkili olmalı; kalan
+   * çerez bir sonraki kabulde aynı kimliği geri getirir.
+   *
+   * Çerez hangi alan adıyla yazıldıysa o alan adıyla silinir: GA4 çerezi
+   * genelde `.erimworks.com` kaydeder, oysa silme denemesi varsayılan olarak
+   * tam ana makineye yazar ve hiçbir şey silinmez. Bu yüzden boş alan adı,
+   * ana makine ve kök alan adı — üçü birden denenir.
+   */
+  function olcumCerezleriniSil() {
+    var host = location.hostname;
+    var alanlar = ['', host, '.' + host];
+    var parca = host.split('.');
+    if (parca.length > 2) alanlar.push('.' + parca.slice(-2).join('.'));
+
+    document.cookie.split(';').forEach(function (ham) {
+      var ad = ham.split('=')[0].trim();
+      if (!/^(_ga|_gid|_gat)/.test(ad)) return;
+      alanlar.forEach(function (d) {
+        document.cookie = ad + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/' +
+          (d ? '; domain=' + d : '');
+      });
+    });
+  }
+
   /* Consent Mode varsayılanları — GTM'den ÖNCE dataLayer'a girmeli. */
   function rizaVarsayilani() {
     window.dataLayer = window.dataLayer || [];
@@ -126,7 +154,7 @@
     b.appendChild(kutu);
 
     function kapat() { b.remove(); }
-    ret.addEventListener('click', function () { yaz(false); kapat(); });
+    ret.addEventListener('click', function () { yaz(false); olcumCerezleriniSil(); kapat(); });
     kabul.addEventListener('click', function () { yaz(true); gtmYukle(); kapat(); });
 
     document.body.appendChild(b);
@@ -146,6 +174,7 @@
     if (!t) return;
     e.preventDefault();
     try { window.localStorage.removeItem(ANAHTAR); } catch (err) { /* yok sayılır */ }
+    olcumCerezleriniSil();
     if (!document.querySelector('.cerez')) bantKur();
   });
 
