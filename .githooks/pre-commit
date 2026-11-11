@@ -14,25 +14,30 @@
 #                 kümesini yok sayar ve EN sayfayı kopya sayar.
 #   jsonld.py   → bozuk JSON-LD sayfanın görünüşünü hiç etkilemez; sayfa
 #                 yalnızca Google'ın yapılandırılmış verisinden düşer.
+#   cerez.py    → rıza betiği bir sayfada eksikse o sayfa ziyaretçiye hiçbir
+#                 şey sormaz; damgası bayatsa rıza mantığındaki düzeltme
+#                 ziyaretçiye bir hafta ulaşmaz. İkisi de görünmeden bozulur.
 #
-# Beşi de elle çalıştırılan araçlardı ve unutulmaları an meselesiydi.
+# Altısı da elle çalıştırılan araçlardı ve unutulmaları an meselesiydi.
 # 2026-11-08'de ölçüldü: aynı oturumda yazılan SSS metinlerinden ikisinde
 # şema ile görünür metin ayrışmıştı (şemada "ÖNİZLEME", sayfada "önizleme")
 # ve kimse çalıştırmadığı için hreflang.py bunu söyleyememişti.
 #
-# Yalnız .html ya da .css hazırlanmışken koşar; .md commit'ini bekletmez.
+# Yalnız .html, .css ya da .js hazırlanmışken koşar; .md commit'ini bekletmez.
+# .js de sayılır: assets/cerez.js tek başına değiştiğinde damgası tam o anda
+# bayatlar, yani kapının en çok gerektiği commit'tir.
 #
 # Atlamak gerekirse:  git commit --no-verify
 # Kapatmak gerekirse: git config --unset core.hooksPath
 
-if ! git diff --cached --name-only --diff-filter=ACM | grep -qE '\.(html|css)$'; then
+if ! git diff --cached --name-only --diff-filter=ACM | grep -qE '\.(html|css|js)$'; then
     exit 0
 fi
 
 kok=$(git rev-parse --show-toplevel)
 hata=0
 
-for arac in csp assets sitemap jsonld; do
+for arac in csp assets sitemap jsonld cerez; do
     if ! python3 "$kok/tools/$arac.py" --check; then
         hata=1
     fi

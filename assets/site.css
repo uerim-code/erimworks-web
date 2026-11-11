@@ -903,9 +903,42 @@ form.wl button[disabled] { opacity: .6; cursor: default; }
   th, td { padding: 10px 10px; }
 }
 
+/* ========================== ÇEREZ BANDI ==========================
+   Karar verilene kadar görünür, sonra kaybolur. Sayfanın akışını değil
+   alt kenarını kullanır; içeriğin üstüne binmesin diye kendi genişliği
+   okuma sütunu kadardır, daha geniş değil.
+
+   DÜĞMELER EŞİT AĞIRLIKTA DEĞİL — "Reddet" sessiz, "Kabul et" dolu düğme;
+   ama ikisi de AYNI BOYUTTA, aynı yerde ve ikisi de tek tık. Rızanın
+   serbestçe verilmiş sayılması için reddetmenin kabul etmekten zor
+   olmaması yeter; görsel vurgu farkı buna aykırı değildir. */
+.cerez {
+  position: fixed; z-index: 60;
+  left: 50%; transform: translateX(-50%);
+  bottom: 16px; width: calc(100% - 32px); max-width: 760px;
+  display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+  padding: 16px 18px;
+  background: var(--surface); border: 1px solid var(--line-2);
+  border-radius: var(--r-2); box-shadow: var(--sh-2);
+}
+.cerez-metin { margin: 0; flex: 1 1 320px; font-size: var(--t-small); line-height: 1.6; color: var(--ink-2); }
+.cerez-dugmeler { display: flex; gap: 10px; flex: 0 0 auto; }
+.cerez-dugmeler .btn { white-space: nowrap; }
+
+@media (max-width: 560px) {
+  .cerez { bottom: 10px; width: calc(100% - 20px); padding: 14px 15px; gap: 12px; }
+  .cerez-dugmeler { width: 100%; }
+  .cerez-dugmeler .btn { flex: 1 1 0; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cerez { animation: cerez-gir .22s var(--ease) both; }
+  @keyframes cerez-gir { from { opacity: 0; transform: translate(-50%, 8px); } to { opacity: 1; transform: translate(-50%, 0); } }
+}
+
 /* ========================== BASKI ========================== */
 @media print {
-  .site-head, .cta-band, .site-foot, .langbar, .actions { display: none !important; }
+  .site-head, .cta-band, .site-foot, .langbar, .actions, .cerez { display: none !important; }
   body { background: #fff; color: #000; }
   a { color: #000; text-decoration: underline; }
 }

@@ -47,6 +47,18 @@ TESTROSTER_API = "https://iebavqhqsldsxjmiquhy.supabase.co"
 CF_BEACON = "https://static.cloudflareinsights.com"
 CF_RUM = "https://cloudflareinsights.com"
 
+# Google Tag Manager — YALNIZ ZİYARETÇİ RIZA VERİRSE yüklenir (assets/cerez.js).
+# Politikada yine de sürekli duruyor: CSP istek anında değil yanıt anında
+# yazılır, yani "rıza verilmiş ziyaretçi" diye ayrı bir başlık üretilemez.
+# İzin vermek ile yüklemek ayrı şeylerdir; rıza yoksa bu adreslere hiçbir
+# istek gitmez.
+#
+# connect-src'de GA4'ün toplama uçları da var: GTM konteyneri içine bir GA4
+# etiketi konduğunda ölçüm oraya gider ve eksikse SESSİZCE düşer — konsolda
+# görünür ama veri kaybı fark edilmez.
+GTM = "https://www.googletagmanager.com"
+GA_TOPLAMA = "https://*.google-analytics.com https://*.analytics.google.com"
+
 SCRIPT_DESENI = re.compile(r"<script(?![^>]*\bsrc=)([^>]*)>(.*?)</script>", re.S)
 
 
@@ -72,11 +84,11 @@ def politika() -> str:
         "object-src 'none'",
         "frame-ancestors 'none'",
         "form-action 'self'",
-        "script-src 'self' " + " ".join(hashler()) + f" {CF_BEACON}",
+        "script-src 'self' " + " ".join(hashler()) + f" {CF_BEACON} {GTM}",
         "style-src 'self' 'unsafe-inline'",
         "font-src 'self'",
-        "img-src 'self' data:",
-        f"connect-src 'self' {TESTROSTER_API} {CF_RUM}",
+        f"img-src 'self' data: {GTM} {GA_TOPLAMA}",
+        f"connect-src 'self' {TESTROSTER_API} {CF_RUM} {GTM} {GA_TOPLAMA}",
         "upgrade-insecure-requests",
     ])
 
