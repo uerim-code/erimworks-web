@@ -24,9 +24,16 @@
 
   var GTM = 'GTM-TPV949ZK';
   var ANAHTAR = 'ew-cerez';           // localStorage anahtarı
-  var SURUM = 1;                      // metin/kapsam değişirse artır, rıza yenilenir
+  var SURUM = 2;                      // metin/kapsam değişirse artır, rıza yenilenir
 
-  var EN = document.documentElement.lang === 'en';
+  /* Türkçe YALNIZ `lang` tr* olan sayfalarda; geri kalan HER dil İngilizce alır.
+   *
+   * ÖLÇÜLDÜ (2026-11-13): eski karşılaştırma `lang === 'en'` idi, yani `de`,
+   * `ja`, `zh-Hans`, `ar`, `pt-BR` ... hepsi "İngilizce değil" sayılıp TÜRKÇE
+   * bant görüyordu — 122 sayfanın 61'i. Almanya'daki ziyaretçiye hiç
+   * bilmediği bir dilde rıza sorusu göstermek rızayı da savunulamaz kılar.
+   */
+  var EN = (document.documentElement.lang || '').toLowerCase().indexOf('tr') !== 0;
   var M = EN ? {
     metin: 'We use measurement cookies to see which pages are read. They are not set unless you accept, and no advertising profile is built either way.',
     detay: 'Privacy notice',
@@ -200,7 +207,43 @@
     ret.focus();
   }
 
+  /* ALTBİLGİYE "Çerez tercihi" — her sayfada.
+   *
+   * 2026-11-13'e dek bu bağlantı YALNIZ `/gizlilik/` sayfasında vardı: ana
+   * sayfada, ürün sayfalarında, `/hakkimizda/`'da hiç yoktu. Verilen rıza
+   * aynı kolaylıkla geri alınabilmeli; ziyaretçiyi önce gizlilik sayfasını
+   * bulmaya zorlamak bu kolaylık değil.
+   *
+   * Düğme değil BAĞLANTI, ve adresi gerçek: JS çalışmazsa gizlilik
+   * sayfasının çerez bölümüne gider (orada elle yazılmış düğme duruyor),
+   * JS çalışırsa aşağıdaki `[data-cerez-ayar]` dinleyicisi tıklamayı yakalar
+   * ve bandı açar. Kardeşleriyle aynı etiket olduğu için ek CSS istemez.
+   *
+   * İki altbilgi kalıbı var: zengin olanlarda `.foot-bottom` satırı (bağlantı
+   * oraya eklenir), sade olanlarda tek bir `<p>` ya da çıplak metin (araya
+   * sitenin kullandığı " · " ayracı girer).
+   */
+  function altbilgiyeEkle() {
+    var sar = document.querySelector('footer.site-foot .wrap') ||
+              document.querySelector('footer .wrap') ||
+              document.querySelector('footer');
+    if (!sar || sar.querySelector('[data-cerez-ayar]')) return;
+
+    var a = document.createElement('a');
+    a.href = GIZLILIK;
+    a.setAttribute('data-cerez-ayar', '');
+    a.textContent = M.tercih;
+
+    var satir = sar.querySelector('.foot-bottom');
+    if (satir) { satir.appendChild(a); return; }
+
+    var hedef = sar.querySelector(':scope > p:last-of-type') || sar;
+    hedef.appendChild(document.createTextNode(' \u00b7 '));
+    hedef.appendChild(a);
+  }
+
   function baslat() {
+    altbilgiyeEkle();
     var karar = oku();
     if (karar === true) { gtmYukle(); return; }
     /* Karar "reddet" ise her açılışta ölçüm çerezleri silinir. Yenileme ve
