@@ -18,6 +18,13 @@ NEDEN ARAÇ — İKİ AYRI UNUTMA:
    Bu dosyada düzeltilecek şey insanların izlenme tercihi olduğu için
    gecikme kabul edilebilir değil.
 
+UYGULAMA HUKUKİ SAYFALARI HARİÇ (`privacy.html`, `terms.html`): bu sayfaları
+mobil uygulamalar açıyor (paywall ve ayarlardaki Gizlilik / Koşullar linkleri).
+Orada çerez bandı ya da GTM olursa, ATT'de "takip etme" diyen kullanıcıya
+çerez sorulmuş olur; Apple bunu 5.1.1(iv) sayıyor. 2026-11-13'te Restla 1.3.1
+tam bu sebeple reddedildi. Bu sayfalarda betik YOKTUR ve --check, birisi
+geri koyarsa hata verir.
+
 Etiket `</head>`in hemen öncesine, `defer` ile girer: betik sayfayı
 bloklamaz ama DOM hazır olduğunda bant kurulur.
 """
@@ -43,6 +50,9 @@ def etiket() -> str:
     return f'<script src="/assets/cerez.js?v={damga()}" defer></script>\n'
 
 
+UYGULAMA_SAYFASI = {"privacy.html", "terms.html"}
+
+
 def yaz(kontrol: bool) -> int:
     hedef = etiket()
     bayat: list[str] = []
@@ -51,6 +61,15 @@ def yaz(kontrol: bool) -> int:
     for yol in sayfalar():
         metin = yol.read_text(encoding="utf-8")
         mevcut = DESEN.search(metin)
+        if yol.name in UYGULAMA_SAYFASI:
+            if not mevcut:
+                continue
+            if kontrol:
+                bayat.append(f"{yol.relative_to(KOK)}: uygulama hukuki sayfasında çerez betiği OLMAMALI")
+                continue
+            yol.write_text(DESEN.sub("", metin, count=1), encoding="utf-8")
+            yazildi += 1
+            continue
 
         if mevcut and mevcut.group(0).strip() == hedef.strip():
             continue
