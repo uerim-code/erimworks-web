@@ -154,7 +154,30 @@
     b.appendChild(kutu);
 
     function kapat() { b.remove(); }
-    ret.addEventListener('click', function () { yaz(false); olcumCerezleriniSil(); kapat(); });
+
+    /* REDDEDİNCE SAYFAYI YENİLE.
+     *
+     * GTM bir kez yüklendikten sonra sayfadan KALDIRILAMAZ: kurduğu dinleyiciler
+     * yaşamaya devam eder. Sinyali kapatıp `_ga*` çerezlerini silmek yeni çerez
+     * yazılmasını ve kişiye bağlanmayı engelliyor, ama etiketin yüklü olduğu bir
+     * sayfada reddetme anında ölçüme bir istek daha gidebiliyor (çerezsiz).
+     * Rızanın geri alınması, verilmesi kadar etkili olmalı; bir kez yüklenen
+     * etiketten kurtulmanın tek yolu sayfayı yenilemek.
+     *
+     * İki koşul birlikte aranır:
+     *   - `yuklendi` — GTM gerçekten bu sayfada yüklendi. Karar verilmemişken
+     *     "Reddet" seçene yenileme yapılmaz: orada yüklenmiş bir şey yok ve
+     *     sayfayı sebepsiz yenilemek okuyana yerini kaybettirir.
+     *   - `oku() === false` — karar depolamaya KALICI yazıldı. Gizli pencerede
+     *     localStorage yazamıyoruz; yenileme kararı silip bandı geri getirir,
+     *     yani reddeden ziyaretçiye aynı soruyu tekrar sorardı.
+     */
+    ret.addEventListener('click', function () {
+      yaz(false);
+      olcumCerezleriniSil();
+      if (yuklendi && oku() === false) { location.reload(); return; }
+      kapat();
+    });
     kabul.addEventListener('click', function () { yaz(true); gtmYukle(); kapat(); });
 
     document.body.appendChild(b);
