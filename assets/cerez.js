@@ -108,6 +108,21 @@
     gtag('consent', 'update', { analytics_storage: 'granted' });
   }
 
+  /* Reddetme anında ölçüm sinyalini KAPAT.
+   *
+   * ÖLÇÜLDÜ (2026-11-13, canlı): kabul edip sonra reddeden ziyaretçide `_ga`
+   * siliniyordu ama `_ga_<konteyner>` hayatta kalıyordu. Sebep: rıza geri
+   * alınırken sinyal hiç `denied`e çevrilmiyordu, yani sayfadaki GA4 hâlâ
+   * ölçüyordu ve oturum çerezini her olayda yeniden yazıyordu — silme ile
+   * yazma yarışıyordu. Sinyal önce kapanır, çerezler SONRA silinir.
+   */
+  function rizaKapat() {
+    if (!yuklendi) return;
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    gtag('consent', 'update', { analytics_storage: 'denied' });
+  }
+
   var yuklendi = false;
   function gtmYukle() {
     if (yuklendi || !GTM) return;
@@ -174,6 +189,7 @@
      */
     ret.addEventListener('click', function () {
       yaz(false);
+      rizaKapat();
       olcumCerezleriniSil();
       if (yuklendi && oku() === false) { location.reload(); return; }
       kapat();
@@ -187,7 +203,10 @@
   function baslat() {
     var karar = oku();
     if (karar === true) { gtmYukle(); return; }
-    if (karar === false) return;
+    /* Karar "reddet" ise her açılışta ölçüm çerezleri silinir. Yenileme ve
+       sinyal kapatma yarışı kapatıyor, bu satır kapanmayan her ihtimali
+       kapatıyor: reddeden ziyaretçinin tarayıcısında ölçüm çerezi KALMAZ. */
+    if (karar === false) { olcumCerezleriniSil(); return; }
     bantKur();
   }
 
