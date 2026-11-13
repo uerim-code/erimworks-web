@@ -4,7 +4,8 @@
     python3 tools/hreflang.py        # sorun varsa 1 ile çıkar
 
 Her sayfada hreflang taşıyan <link rel="alternate"> varsa:
-- küme tam olarak {tr, en, x-default} olmalı, x-default = tr
+- küme en az {tr, en, x-default} içermeli, x-default = tr; çok dilli kümelerde
+  (ör. /restla/<dil>/) her dil aynı kümeyi taşımalı
 - sayfanın kendi dili kendi canonical'ını göstermeli
 - karşı sayfa var olmalı, aynı alternatif kümesini taşımalı, <html lang> uymalı
 - JSON-LD geçerli olmalı; WebPage.url canonical'a, inLanguage <html lang>'a eşit
@@ -45,14 +46,14 @@ def main() -> int:
     hatalar: list[str] = []
     for u, p in sayfalar.items():
         a = p["alts"]
-        if set(a) != {"tr", "en", "x-default"}:
+        if not {"tr", "en", "x-default"} <= set(a):
             hatalar.append(f"{u}: hreflang kümesi {sorted(a)}")
             continue
         if a[p["lang"]] != u:
             hatalar.append(f"{u}: kendi dili ({p['lang']}) {a[p['lang']]} gösteriyor")
         if a["x-default"] != a["tr"]:
             hatalar.append(f"{u}: x-default ≠ tr")
-        for dil in ("tr", "en"):
+        for dil in [k for k in a if k != "x-default"]:
             diger = sayfalar.get(a[dil])
             if not diger:
                 hatalar.append(f"{u}: {dil} hedefi yok: {a[dil]}")
@@ -86,7 +87,7 @@ def main() -> int:
     if hatalar:
         print("\n".join(hatalar))
         return 1
-    print(f"hreflang güncel ({len(sayfalar)} sayfa, {len(sayfalar) // 2} çift).")
+    print(f"hreflang güncel ({len(sayfalar)} sayfa).")
     return 0
 
 
