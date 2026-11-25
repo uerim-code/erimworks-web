@@ -17,6 +17,9 @@
 #   cerez.py    → rıza betiği bir sayfada eksikse o sayfa ziyaretçiye hiçbir
 #                 şey sormaz; damgası bayatsa rıza mantığındaki düzeltme
 #                 ziyaretçiye bir hafta ulaşmaz. İkisi de görünmeden bozulur.
+#   hukuki_cikmaz.py → uygulamaların açtığı privacy/terms sayfalarından bandlı
+#                 site sayfalarına link kalırsa Apple 5.1.1(iv) ile reddeder
+#                 (Restla 1.3.4, 25 Kas 2026).
 #
 # Altısı da elle çalıştırılan araçlardı ve unutulmaları an meselesiydi.
 # 2026-11-08'de ölçüldü: aynı oturumda yazılan SSS metinlerinden ikisinde
@@ -37,7 +40,7 @@ fi
 kok=$(git rev-parse --show-toplevel)
 hata=0
 
-for arac in csp assets sitemap jsonld cerez; do
+for arac in csp assets sitemap jsonld cerez hukuki_cikmaz; do
     if ! python3 "$kok/tools/$arac.py" --check; then
         hata=1
     fi
