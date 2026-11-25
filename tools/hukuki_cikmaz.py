@@ -36,6 +36,14 @@ def sayfalar() -> list[Path]:
                   if p.name in ADLAR and "node_modules" not in p.parts and ".git" not in p.parts)
 
 
+SITE = re.compile(r'https?://(www\.)?erimworks\.com(?=[/"#?]|$)')
+
+
+def goreli(href: str) -> str:
+    """https://erimworks.com/x -> /x ; https://erimworks.com -> /"""
+    return SITE.sub('', href) or '/' if SITE.match(href) else href
+
+
 def donustur(html: str) -> str:
     # Üst menü: kelime işareti link olmaktan çıkar, menü kalkar.
     html = re.sub(r'<a class="wordmark" href="[^"]*">([^<]*)</a>', r'<span class="wordmark">\1</span>', html)
@@ -54,12 +62,23 @@ def donustur(html: str) -> str:
             return metin
         return m.group(0)
     html = re.sub(r'<a href="(/[^"]*)">(.*?)</a>', govde, html, flags=re.S)
+    # Tam adresli site linkleri (https://erimworks.com/...) de aynı kurala tabi.
+    def tam(m: re.Match) -> str:
+        href, metin = goreli(m.group(1)), m.group(2)
+        if not VARLIK.match(href) and not HUKUKI.search(href):
+            return metin
+        return m.group(0)
+    html = re.sub(r'<a href="(https?://(?:www\.)?erimworks\.com[^"]*)"[^>]*>(.*?)</a>', tam, html, flags=re.S)
     return html
 
 
 def site_linkleri(html: str) -> list[str]:
-    return [h for h in re.findall(r'href="([^"]+)"', html)
-            if h.startswith("/") and not VARLIK.match(h) and not HUKUKI.search(h)]
+    out = []
+    for h in re.findall(r'<a [^>]*href="([^"]+)"', html):
+        g = goreli(h)
+        if g.startswith("/") and not VARLIK.match(g) and not HUKUKI.search(g):
+            out.append(h)
+    return out
 
 
 def main() -> int:
