@@ -1,0 +1,6 @@
+# Cloudflare Pages yol yönlendirmeleri (host seviyesi www→apex: functions/_middleware.js)
+# /scanyra/lens-alternative/ : İngilizce karşılaştırma sayfasının kısa adresi. Sayfa 2026-11-09'dan
+# beri /en/scanyra/microsoft-lens-alternative/ altında indeksli; ikinci bir İngilizce kopya aynı
+# aramada kendi kendiyle yarışırdı, o yüzden kalıcı yönlendirme.
+/scanyra/lens-alternative/  /en/scanyra/microsoft-lens-alternative/  301
+/scanyra/lens-alternative   /en/scanyra/microsoft-lens-alternative/  301
